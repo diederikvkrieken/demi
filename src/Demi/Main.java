@@ -1,9 +1,17 @@
 package Demi;
 
+
 public class Main {
 
     public static void main(String[] args)
     {
-        System.out.println("Hello World!");
+        Model mod = new Model();
+
+        Controller ctrl = new Controller(mod);
+
+        ctrl.runSimulation();
+
+
+
     }
 }

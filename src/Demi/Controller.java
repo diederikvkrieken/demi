@@ -6,34 +6,53 @@ package Demi;
 public class Controller {
 
     private Model mod;
+    int n_agents=3;
+    Settings set = new Settings();
 
     public Controller(Model model){
         this.mod = model;
     }
+
     public void run(int n){
-        //Let every agent update it's belief
+        //Start new proposal round
+        int propose_agent = n % n_agents;
+        String name = set.getName(propose_agent);
+        System.out.println("name is vrij cool "+name);
+
         for (Agent agent : mod.getAgents() ) {
+            if (agent.getName().equals(name)){
+                System.out.println("Proposal door agent");
+                agent.consession_strategy(mod.getCurrentState());
+
+            }else{
+                System.out.println("Other agent update");
+            }
             agent.observe(mod.getCurrentState());
 
         }
-        //Let every agent generate new offer
-        for (Agent agent : mod.getAgents() ) {
-            agent.generateOffer(n);
-        }
+
+//        //Let every agent update it's belief
+//        for (Agent agent : mod.getAgents() ) {
+//            agent.observe(mod.getCurrentState());
+//
+//        }
+//        //Let every agent generate new offer
+//        for (Agent agent : mod.getAgents() ) {
+//            agent.generateOffer(n);
+//            double value = agent.utility(mod.getCurrentState().getBase(), mod.getCurrentState().getAcid(), mod.getCurrentState().getWater());
+//            System.out.println("value = "+value);
+//        }
+
 
         //check offers
         int deal = checkOffers();
         if (deal == 2){
             System.out.println("WE HAVE AN AGREEMENT");;
         }
-
-
-
-
     }
     public void runSimulation(){
         //until
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Running Simulation");
             run(i);
         }

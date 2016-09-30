@@ -33,4 +33,12 @@ public class Settings {
 
     }
 
+    public String[] getNames() {
+        return names;
+    }
+
+    public String getName(int i){
+        return names[i];
+    }
+
 }

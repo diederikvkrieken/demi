@@ -28,6 +28,12 @@ public class Agent {
 
     protected Preferences preferences;
 
+    public double utility(int base, int acid, int water){
+        double value = 0.0;
+        value = base - water;
+        return value;
+    }
+
     public void observe(State state){
         belief = state;
     }
@@ -120,6 +126,9 @@ public class Agent {
 
     }
 
+
+
+
     public Agent(String name) {
         this.name = name;
         belief = new State();
@@ -147,5 +156,9 @@ public class Agent {
 
     public Offer getOffer(){
         return currentOffer;
+    }
+
+    public State consession_strategy(int n){
+        return
     }
 }

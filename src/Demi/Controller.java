@@ -7,53 +7,48 @@ public class Controller {
 
     private Model mod;
     int n_agents=3;
-    Settings set = new Settings();
 
     public Controller(Model model){
         this.mod = model;
     }
 
-    public void run(int n){
+    public void run(int t){
         //Start new proposal round
-        int propose_agent = n % n_agents;
-        String name = set.getName(propose_agent);
-        System.out.println("name is vrij cool "+name);
+        int propose_agent = t % mod.getn_agents();
+        String name = mod.getnameAgents(propose_agent);
 
         for (Agent agent : mod.getAgents() ) {
+            /*
+            * Import here is to decide whether to update the current belief of the agent
+            * Feasible?
+            * */
             if (agent.getName().equals(name)){
-                System.out.println("Proposal door agent");
-                agent.consession_strategy(mod.getCurrentState());
+                System.out.println("Proposal by agent:"+ name);
+                //agent.concessionStrategy(t);
+                State weight = agent.calculateWeight(mod, t);
+                State proposal = agent.calculateProposal(weight);
+                mod.prose(agent,proposal,t);
 
             }else{
                 System.out.println("Other agent update");
+                State x = agent.getOffer();
+                agent.addOffer(x);
+                //if
             }
             agent.observe(mod.getCurrentState());
 
         }
 
-//        //Let every agent update it's belief
-//        for (Agent agent : mod.getAgents() ) {
-//            agent.observe(mod.getCurrentState());
-//
-//        }
-//        //Let every agent generate new offer
-//        for (Agent agent : mod.getAgents() ) {
-//            agent.generateOffer(n);
-//            double value = agent.utility(mod.getCurrentState().getBase(), mod.getCurrentState().getAcid(), mod.getCurrentState().getWater());
-//            System.out.println("value = "+value);
-//        }
-
-
         //check offers
-        int deal = checkOffers();
-        if (deal == 2){
+//        int deal = checkOffers();
+//        if (deal == 3){
             System.out.println("WE HAVE AN AGREEMENT");;
-        }
+//        }
     }
     public void runSimulation(){
         //until
         for (int i = 0; i < 3; i++) {
-            System.out.println("Running Simulation");
+            System.out.println("Running Simulation" +i);
             run(i);
         }
         System.out.println("simulation run");
@@ -61,9 +56,9 @@ public class Controller {
 
     public int checkOffers(){
         int deal = 0;
-        int base = 0;
-        int acid = 0;
-        int water = 0;
+        double base = 0;
+        double acid = 0;
+        double water = 0;
         for (Agent agent : mod.getAgents() ) {
             acid += agent.getOffer().getAcid();
             base += agent.getOffer().getBase();
@@ -71,17 +66,17 @@ public class Controller {
         }
         if (acid <= mod.getCurrentState().getAcid()){
             System.out.println("Acid agreement achieved");
-            System.out.println("Acid = "+ Integer.toString(mod.getCurrentState().getAcid())+", agreement = "+Integer.toString(acid));
+            System.out.println("Acid = "+ Double.toString(mod.getCurrentState().getAcid())+", agreement = "+Double.toString(acid));
             deal++;
         }
         if (base <= mod.getCurrentState().getBase()){
             System.out.println("Base agreement achieved");
-            System.out.println("Base = "+ Integer.toString(mod.getCurrentState().getBase())+", agreement = "+Integer.toString(base));
+            System.out.println("Base = "+ Double.toString(mod.getCurrentState().getBase())+", agreement = "+Double.toString(base));
             deal++;
         }
         if (water >= mod.getCurrentState().getWater()){
             System.out.println("Water agreement achieved");
-            System.out.println("Water = "+ Integer.toString(mod.getCurrentState().getWater())+", agreement = "+Integer.toString(water));
+            System.out.println("Water = "+ Double.toString(mod.getCurrentState().getWater())+", agreement = "+Double.toString(water));
             deal++;
         }
         return deal;

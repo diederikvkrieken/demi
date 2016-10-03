@@ -12,12 +12,11 @@ public class Agent {
     * Desire is a goal
     * Intention is a plan
     * */
-    private Offer currentOffer;
-    private ArrayList<Offer> prevOffer = new ArrayList<Offer>();
 
+    private State currentOffer;
+    private ArrayList<State> prevOffer = new ArrayList<State>();
 
     State belief;
-
 
     public Agent(){
 
@@ -26,9 +25,10 @@ public class Agent {
 
     protected String name;
 
-    protected Preferences preferences;
+    //protected Preferences preferences;
 
     public double utility(int base, int acid, int water){
+
         double value = 0.0;
         value = base - water;
         return value;
@@ -37,8 +37,10 @@ public class Agent {
     public void observe(State state){
         belief = state;
     }
+
+
     public void generateOffer(int i){
-        Offer of = new Offer();
+        State of = new State();
         if (i ==0){
             if (name.equals("Anion")){
                 of.setBase(belief.getBase());
@@ -136,15 +138,14 @@ public class Agent {
 
     public Agent (String name, String[] pref){
         this.name = name;
-        this.preferences = new Preferences();
-        this.preferences.preferences = pref;
+        //this.preferences = new Preferences();
+        //this.preferences.preferences = pref;
         belief = new State();
     }
-    public class Preferences {
-        String[] preferences;
-        int counter;
-
-    }
+    //public class Preferences {
+    //    String[] preferences;
+    //    int counter;
+    //}
 
     public String getName() {
         return name;
@@ -154,11 +155,45 @@ public class Agent {
         this.name = name;
     }
 
-    public Offer getOffer(){
+    public State getOffer(){
         return currentOffer;
     }
 
     public State consession_strategy(int n){
-        return
+        State s = new State();
+        return s;
     }
+    public void addOffer(State of){
+        prevOffer.add(of);
+    }
+
+    public void concessionStrategy(int t){
+        //updateConcession(t);
+        //See algorithm 3 in Zheng 2015
+
+    }
+
+    public State calculateWeight(Model mod, int t){
+        State weight = new State();
+        int base =0;
+        int acid = 0;
+        int water = 0;
+        for (State offer : mod.getRecentOffers(t)){
+            base += offer.getBase();
+            acid += offer.getAcid();
+            water += offer.getWater();
+        }
+        weight.setAcid(acid/mod.getn_agents());
+        weight.setBase(base/mod.getn_agents());
+        weight.setWater(water/mod.getn_agents());
+        return weight;
+    }
+
+    public State calculateProposal(State weight){
+        State offer = weight;
+        this.currentOffer = offer;
+        this.prevOffer.add(offer);
+        return offer;
+    }
+
 }

@@ -3,7 +3,7 @@ package Demi;
 /**
  * Created by diederik.van.krieken on 13-9-2016.
  */
-public class Anion extends Agent {
+public class Neut extends Agent {
     /*
     * Anions contains 6 filters
     * */
@@ -20,15 +20,7 @@ public class Anion extends Agent {
 //      4. Currently Y \in {A1, ..., A6} filter being used for cleaning
 //      5. Currently w amount of base being used for cleaning
 
-    private double[] a = new double[6];
-    private double[] b = new double[6];
-    private double[] c = new double[6];
-    private double[] d = new double[6];
-    private double[] e = new double[6];
-    private int[] z = new int[6]; //filter being used for water cleaning, 1 or zero when not being used
-    private int[] y = new int[6]; //filter being cleaned, 1 or 0 when not being used
-
-    private double x,w;// knowledge about the water and base being used
+    private double a,b;// knowledge about the acid and base being used
 
     @Override
     public double utility(int base, int acid, int water){

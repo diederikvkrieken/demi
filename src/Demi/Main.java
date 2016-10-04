@@ -5,13 +5,20 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Model mod = new Model();
 
-        Controller ctrl = new Controller(mod);
+        Test test = new Test();
 
-        ctrl.runSimulation();
+
+
+//        Model mod = new Model();
+//
+//        Controller ctrl = new Controller(mod);
+//
+//        ctrl.runSimulation();
 
 
 
     }
+
+
 }

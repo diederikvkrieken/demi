@@ -21,19 +21,22 @@ public class Controller {
             /*
             * Import here is to decide whether to update the current belief of the agent
             * Feasible?
+            * We decide on a simplified world where no change occurs
             * */
             if (agent.getName().equals(name)){
                 System.out.println("Proposal by agent:"+ name);
-                //agent.concessionStrategy(t);
+                agent.concessionStrategy(t);
                 State weight = agent.calculateWeight(mod, t);
                 State proposal = agent.calculateProposal(weight);
-                mod.prose(agent,proposal,t);
+                mod.propose(agent,proposal,t);
 
             }else{
                 System.out.println("Other agent update");
                 State x = agent.getOffer();
                 agent.addOffer(x);
-                //if
+                if (agent.utility(agent.getOffer())> agent.utility(agent.getPrevBestOffer())){
+                    agent.setPrevBestOffer(agent.getOffer());
+                }
             }
             agent.observe(mod.getCurrentState());
 

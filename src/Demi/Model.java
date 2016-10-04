@@ -12,14 +12,15 @@ public class Model {
 //TODO initialize;
 
     private ArrayList<State> states;
-    private ArrayList[] offers = new ArrayList[this.getn_agents()];
+    private Settings set = new Settings();
 
+    private ArrayList[] offers = new ArrayList[getn_agents()];
+    //private ArrayList[] offers = new ArrayList[this.getn_agents()];
 
     private State currentState;
 
-    private Agent[] agents;
 
-    private Settings set = new Settings();
+    private Agent[] agents;
 
     public Model(){
 
@@ -44,10 +45,12 @@ public class Model {
         ArrayList<State> of = new ArrayList<State>();
         for (int i = 0; i < getn_agents(); i++) {
             if (!this.offers[i].isEmpty()) {
-                offers[i].get(t-1);
-                of.add(this.offers[i].get(t));
+                //System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
+                //State test = (State) offers[i].get(t-1);
+
+                of.add((State)this.offers[i].get(t));
             }else{
-                for (int i = 0; i < set.getnAgents(); i++) {
+                for (int j = 0; j < set.getnAgents(); j++) {
                     of.add(currentState);
                 }
             }

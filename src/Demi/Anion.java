@@ -27,15 +27,26 @@ public class Anion extends Agent {
     private double[] e = new double[6];
     private int[] z = new int[6]; //filter being used for water cleaning, 1 or zero when not being used
     private int[] y = new int[6]; //filter being cleaned, 1 or 0 when not being used
+    //Using default utility funtion ax+bx
+    private double alpha = 0.3;
+    private double beta = -0.4;
 
     private double x,w;// knowledge about the water and base being used
 
     @Override
-    public double utility(int base, int acid, int water){
-        double value = 0.0;
-        value = base - water;
+    public double utility(State offer){
+        double value;
+        value = offer.getBase() - offer.getWater();
         return value;
     }
+
+    public double consessionStrategy(State offer){
+        double value;
+        value = -alpha / beta;
+        return value;
+    }
+
+
 
 
 

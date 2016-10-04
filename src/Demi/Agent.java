@@ -15,8 +15,10 @@ public class Agent {
 
     private State currentOffer;
     private ArrayList<State> prevOffer = new ArrayList<State>();
+    private State prevBestOf;
 
     State belief;
+
 
     public Agent(){
 
@@ -26,13 +28,6 @@ public class Agent {
     protected String name;
 
     //protected Preferences preferences;
-
-    public double utility(int base, int acid, int water){
-
-        double value = 0.0;
-        value = base - water;
-        return value;
-    }
 
     public void observe(State state){
         belief = state;
@@ -173,6 +168,10 @@ public class Agent {
 
     }
 
+
+
+    //Should be updated to only calculate weight of those with no interest
+    //eg Anion no say in Acid.
     public State calculateWeight(Model mod, int t){
         State weight = new State();
         int base =0;
@@ -195,5 +194,20 @@ public class Agent {
         this.prevOffer.add(offer);
         return offer;
     }
+
+    //Default utility
+    //Maximize the Water
+    public double utility(State offer){
+        return offer.getWater();
+    }
+
+    public void setPrevBestOffer(State offer){
+        this.prevBestOf = offer;
+    }
+
+    public State getPrevBestOffer(){
+        return prevBestOf;
+    }
+
 
 }

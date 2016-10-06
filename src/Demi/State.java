@@ -14,6 +14,9 @@ public class State {
 
 
     public State(){
+        this.base = 0;
+        this.acid = 0;
+        this.water = 0;
 
     }
 
@@ -21,6 +24,13 @@ public class State {
         this.acid = a;
         this.base = b;
         this.water = w;
+    }
+
+    public State (double a, double b, double w, int r){
+        this.acid = a;
+        this.base = b;
+        this.water = w;
+        this.round = r;
     }
 
     @Override

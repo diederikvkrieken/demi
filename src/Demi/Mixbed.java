@@ -32,9 +32,9 @@ public class Mixbed extends Agent {
     private double x,w, v;// knowledge about the water and base and acid being used
 
     @Override
-    public double utility(int base, int acid, int water){
+    public double utility(State offer){
         double value = 0.0;
-        value = base - water;
+        value = offer.getBase() - offer.getWater();
         return value;
     }
 

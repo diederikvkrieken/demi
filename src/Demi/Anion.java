@@ -1,5 +1,8 @@
 package Demi;
 
+import static java.lang.Math.exp;
+import static java.lang.Math.log;
+
 /**
  * Created by diederik.van.krieken on 13-9-2016.
  */
@@ -33,19 +36,48 @@ public class Anion extends Agent {
 
     private double x,w;// knowledge about the water and base being used
 
+    public double getUtility() {
+        return utility;
+    }
+
+    public void setUtility(double utility) {
+        this.utility = utility;
+    }
+
+    private double utility;
+
     @Override
     public double utility(State offer){
         double value;
-        value = offer.getBase() - offer.getWater();
+        value = exp(offer.getBase() - offer.getWater());
         return value;
     }
 
     public double consessionStrategy(State offer){
         double value;
         value = -alpha / beta;
+        this.utility = value;
         return value;
     }
 
+
+    public State pointOnConcessionLine(State x, double u){
+        double first_cor = x.getWater();
+        double second_cor = x.getBase();
+        State xPlusOne = new State();
+        xPlusOne.setWater((double)-0.5*(log(u)+first_cor-second_cor));
+        xPlusOne.setBase((double) 0.5*(log(u)+first_cor+second_cor));
+        return xPlusOne;
+    }
+
+    public State pointOnConcessionLine(State x){
+        double first_cor = x.getWater();
+        double second_cor = x.getBase();
+        State xPlusOne = new State();
+        xPlusOne.setWater(0.5*(-log(this.utility)+first_cor+second_cor));
+        xPlusOne.setBase(0.5*(log(this.utility)+first_cor+second_cor));
+        return xPlusOne;
+    }
 
 
 

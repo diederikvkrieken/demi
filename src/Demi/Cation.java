@@ -31,9 +31,9 @@ public class Cation extends Agent {
     private double x,w;// knowledge about the water and acid being used
 
     @Override
-    public double utility(int base, int acid, int water){
+    public double utility(State offer){
         double value = 0.0;
-        value = acid - water;
+        value = offer.getBase() - offer.getWater();
         return value;
     }
 

@@ -12,7 +12,7 @@ public class Settings {
     // Name is checked to see if it is the agent to check
     private String[] names = {"Anion", "Cation", "Mixbed", "Neut"};
     //What value does the first state have?
-    private int[] firstStateValues = {100, 120, 150};
+    private double[] firstStateValues = {0.100, 0.120, 0.150};
 
     public Agent[] initializeAgents(){
         //initialize nAgents agents

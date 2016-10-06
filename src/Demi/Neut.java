@@ -23,9 +23,9 @@ public class Neut extends Agent {
     private double a,b;// knowledge about the acid and base being used
 
     @Override
-    public double utility(int base, int acid, int water){
+    public double utility(State offer){
         double value = 0.0;
-        value = base - water;
+        value = offer.getBase() - offer.getWater();
         return value;
     }
 

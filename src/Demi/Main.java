@@ -13,8 +13,9 @@ public class Main {
 //        ctrl.runSimulation();
 
         State s = new State();
-        s.setWater(0.7);
+        s.setWater(0.3);
         s.setBase(0.3);
+        s.setAcid(0.3);
         Anion a = new Anion();
         a.setUtility(0.4415);
         State s2 = a.pointOnConcessionLine(s);

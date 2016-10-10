@@ -1,5 +1,31 @@
 clear all
+hold off
+%x = -10:0.5:10;
+x = 0:0.05:1;
+[X,Y] = meshgrid(x);
+%Z = -(Y.^2)+(X*-Y) ;
+%Z = exp((X+Y) - (X-Y).^2);
+%Z = (abs(X)./abs(Y)) - ((X-Y).^3);
+Z = exp((-X.*Y) - ((X-Y).^2)+1)/exp(1);
+W = -(X.^2) + (X.*Y) - (Y.^2) +1;
+u = 0.9;
+%y = 0.5 * (x + sqrt((-4*u) - (3* (x.^2)) + 4));
+%z = 0.5 * (x - sqrt((-4*u) - (3* (x.^2)) + 4));
+%contour3(X,Y,Z,30)
+%hold on
+surf(X,Y,Z)
+hold on
+ylim([0,1])
+%plot(x,y)
+%plot(x,z)
+xlabel('x')
+ylabel('y')
+zlabel('z')
 
+
+%x^2+2*x*y+y^2=0;
+
+%%
 x = [0:1:100];
 %y = [0:.7:300];
 alpha = 0.3;
@@ -33,9 +59,18 @@ clear all
 x = 0:0.05:1;
 [X,Y] = meshgrid(x);
 Z = exp(-X+Y)/exp(1);
+W = exp(X+X)/exp(1);
 normZ = Z - min(Z(:));
 normZ = normZ ./ max(normZ(:)); % *
-contour3(X,Y,Z,50)
+surf(X,Y,Z)
+%contour3(X,Y,Z,50)
+%%
+x = 1:10;
+y = 11:20;
+z = x'*y;
+c = randi(10,10);
+surf(x,y,z,c)
+%%
 xlabel('water')
 ylabel('base')
 zlabel('utility')
@@ -55,6 +90,10 @@ scatter(0.5*(-(log(u)+1)+water+base),0.5*((log(u)+1)+water+base))
 %bod = [0.7;0.3];
 %scatter(bod)
 %plot(bod)
+%%
+
+
+
 %%
 x = 0:0.05:1;
 [X,Y] = meshgrid(x);

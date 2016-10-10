@@ -10,7 +10,7 @@ public class Anion extends Agent {
     /*
     * Anions contains 6 filters
     * */
-
+    int n_filters = 6;
 //      1. Knowledge of anion head about the sub-agents:
 //          {A1, ..., A6} can process a amount of water
 //          {A1, ..., A6} needs to be cleaned after b water
@@ -23,18 +23,18 @@ public class Anion extends Agent {
 //      4. Currently Y \in {A1, ..., A6} filter being used for cleaning
 //      5. Currently w amount of base being used for cleaning
 
-    private double[] a = new double[6];
-    private double[] b = new double[6];
-    private double[] c = new double[6];
-    private double[] d = new double[6];
-    private double[] e = new double[6];
-    private int[] z = new int[6]; //filter being used for water cleaning, 1 or zero when not being used
-    private int[] y = new int[6]; //filter being cleaned, 1 or 0 when not being used
-    //Using default utility funtion ax+bx
-    private double alpha = 0.3;
-    private double beta = -0.4;
-
-    private double x,w;// knowledge about the water and base being used
+//    private double[] a = new double[n_filters];
+//    private double[] b = new double[n_filters];
+//    private double[] c = new double[n_filters];
+//    private double[] d = new double[n_filters];
+//    private double[] e = new double[n_filters];
+//    private int[] z = new int[n_filters]; //filter being used for water cleaning, 1 or zero when not being used
+//    private int[] y = new int[n_filters]; //filter being cleaned, 1 or 0 when not being used
+//    //Using default utility funtion ax+bx
+//    private double alpha = 0.3;
+//    private double beta = -0.4;
+//
+//    private double x,w;// knowledge about the water and base being used
 
     public double getUtility() {
         return utility;
@@ -49,24 +49,33 @@ public class Anion extends Agent {
     @Override
     public double utility(State offer){
         double value;
-        value = exp(offer.getBase() - offer.getWater());
+        value = exp(offer.getBase() - offer.getWater())/exp(1);
         return value;
     }
 
-    public double consessionStrategy(State offer){
-        double value;
-        value = -alpha / beta;
-        this.utility = value;
-        return value;
-    }
+//    public double consessionStrategy(State offer){
+//        double value;
+//        value = -alpha / beta;
+//        this.utility = value;
+//        return value;
+//    }
 
+    /*
+    * Below calculates the point closest to state on the concession line.
+    * Since the utility function is e^(base-water)/e
+    * The solutions lie on the indifference curve using the cartesian solution
+    * See: https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
+    *
+    * Two options, calculation using the minimum utility as saved in the agent,
+    * Or by giving an updated utility
+    * */
 
     public State pointOnConcessionLine(State x, double u){
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
-        xPlusOne.setWater((double)-0.5*(log(u)+first_cor-second_cor));
-        xPlusOne.setBase((double) 0.5*(log(u)+first_cor+second_cor));
+        xPlusOne.setWater(0.5*(-(log(u)+1)+first_cor+second_cor));
+        xPlusOne.setBase(0.5*((log(u)+1)+first_cor+second_cor));
         return xPlusOne;
     }
 
@@ -74,8 +83,8 @@ public class Anion extends Agent {
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
-        xPlusOne.setWater(0.5*(-log(this.utility)+first_cor+second_cor));
-        xPlusOne.setBase(0.5*(log(this.utility)+first_cor+second_cor));
+        xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
+        xPlusOne.setBase(0.5*((log(this.utility)+1)+first_cor+second_cor));
         return xPlusOne;
     }
 

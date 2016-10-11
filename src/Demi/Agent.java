@@ -14,17 +14,22 @@ public class Agent {
     * Intention is a plan
     * */
 
-    private State currentOffer;
+    private State currentOffer; //x^j_t
     private ArrayList<State> prevOffer = new ArrayList<State>();
-    private State prevBestOf;
+    private State prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
+    // which is the offer that provides the highest utility to Agent i among all offers
+    // made by Agent j until Agent j’s next-to-last offer
+    // (i.e., not including Agent j’s standing offer) in period t.
 
     State belief;
 
 
     public Agent(){
 
-        belief = new State();
+        //belief = new State();
     }
+
+
 
     protected String name;
 
@@ -199,7 +204,21 @@ public class Agent {
     //Default utility
     //Maximize the Water
     public double utility(State offer){
+        System.out.println("THERE IS SOMETHING WRONG. THE AGENTS UTILITY IS WATER");
         return offer.getWater();
+    }
+
+    public boolean reservationCurveCheck(State offer){
+        System.out.println("THERE IS SOMETHING WRONG. THE AGENTS Reservation function is not used");
+        return false;
+    }
+
+    /*
+    * Implement of the Reactive Concession Strategy
+    * */
+
+    public double utilityChange(int t){
+
     }
 
     public void setPrevBestOffer(State offer){

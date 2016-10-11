@@ -2,6 +2,7 @@ package Demi;
 
 import static java.lang.Math.exp;
 import static java.lang.Math.log;
+import static java.lang.Math.sqrt;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
@@ -52,6 +53,20 @@ public class Cation extends Agent {
     }
 
 
+    /*
+    * Calculation from point to line
+    *
+    * Indifference curve van e^(x-y) is gelijk aan y = x +log(utility)
+    * Oftewel 0 = x -y +log(utility)
+    * a = - 1; b = +1; c = -1;
+    * x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2}
+    * y = \frac{a(-bx_0 + ay_0)-bc}{a^2 + b^2}
+    *
+    * x = 0.5*(x+y-(log(u)+1))
+    * y = 0.5*(x+y+(log(u)+1))
+    * */
+
+
     public State pointOnConcessionLine(State x, double u){
         double first_cor = x.getWater();
         double second_cor = x.getAcid();
@@ -70,5 +85,18 @@ public class Cation extends Agent {
         return xPlusOne;
     }
 
+    // Anion reservation function is base  = water^2
+    // So base has to be equal or less than sqrt(water)
+
+    @Override
+    public boolean reservationCurveCheck(State offer){
+        double first_cor = offer.getWater();
+        double second_cor = offer.getAcid();
+        if (second_cor <= sqrt(first_cor)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }

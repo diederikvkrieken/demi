@@ -1,0 +1,63 @@
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction in Production, AI and the use case environment}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Production and Manufacturing}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Artificial Intelligence}{2}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Ecosystem of the case study}{2}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Thesis outline}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Problem Definition \& Research Goal}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Problem Analysis}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Area of Application}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Relevance}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Scientific relevance}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Business relevance}{6}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Research Goal}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}Research Approach}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}Research Process}{7}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Evaluation Method}{8}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Research Questions}{8}{section.2.7}
+\contentsline {chapter}{\numberline {3}Literature Study \& Theoretical framework}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Manufacturing processes}{10}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Asset management}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Process control}{12}{subsection.3.1.2}
+\contentsline {subsubsection}{Planning}{13}{section*.6}
+\contentsline {subsection}{\numberline {3.1.3}Predictive maintenance systems}{14}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Real-time Monitoring}{15}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Agent Solutions}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Object-oriented programming}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Multi-Agent Systems}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Holonic Systems}{17}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Task/resource allocation}{18}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Scheduling and planning}{19}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Negotiation}{20}{subsection.3.2.6}
+\contentsline {subsubsection}{Negotiation Protocol}{21}{section*.11}
+\contentsline {subsubsection}{Negotiation Strategies}{22}{section*.12}
+\contentsline {subsubsection}{Negotiation states}{22}{section*.13}
+\contentsline {subsubsection}{Evaluating /equilibrium solutions}{23}{section*.14}
+\contentsline {subsubsection}{Principled Negotiation}{24}{section*.17}
+\contentsline {subsubsection}{Hierarchy and Voting}{24}{section*.18}
+\contentsline {subsubsection}{Mapping of negotiation protocols}{24}{section*.19}
+\contentsline {subsubsection}{Single-Issue}{25}{section*.22}
+\contentsline {subsubsection}{Multi-Issue}{26}{section*.23}
+\contentsline {subsubsection}{Multi-lateral}{27}{section*.25}
+\contentsline {subsubsection}{Heuristic methods in negotiation}{28}{section*.26}
+\contentsline {subsubsection}{Learning methods in Negotiation}{29}{section*.27}
+\contentsline {subsection}{\numberline {3.2.7}Negotiation in Manufacturing}{29}{subsection.3.2.7}
+\contentsline {chapter}{\numberline {4}Research Design \& Application}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Mapping of Literature on usecase}{32}{section.4.1}
+\contentsline {section}{\numberline {4.2}Demineralization of water}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Negotiation model}{34}{section.4.3}
+\contentsline {section}{\numberline {4.4}Details of the Agents}{35}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Anion}{37}{subsection.4.4.1}
+\contentsline {subsubsection}{Utility function}{37}{section*.35}
+\contentsline {subsubsection}{Facts}{39}{section*.38}
+\contentsline {subsection}{\numberline {4.4.2}Cation}{40}{subsection.4.4.2}
+\contentsline {subsubsection}{Facts}{40}{section*.42}
+\contentsline {subsection}{\numberline {4.4.3}Mixbed}{42}{subsection.4.4.3}
+\contentsline {subsubsection}{Facts}{42}{section*.46}
+\contentsline {subsection}{\numberline {4.4.4}Neut}{44}{subsection.4.4.4}
+\contentsline {subsubsection}{Facts}{44}{section*.48}
+\contentsline {section}{\numberline {4.5}Evaluation}{44}{section.4.5}
+\contentsline {section}{\numberline {4.6}Algorithm}{45}{section.4.6}

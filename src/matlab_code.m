@@ -58,20 +58,14 @@ hold off
 clear all
 x = 0:0.05:1;
 [X,Y] = meshgrid(x);
-Z = exp(-X+Y)/exp(1);
+Z = exp(-X-Y);%/exp(1);
 W = exp(X+X)/exp(1);
 normZ = Z - min(Z(:));
 normZ = normZ ./ max(normZ(:)); % *
 surf(X,Y,Z)
 %contour3(X,Y,Z,50)
-%%
-x = 1:10;
-y = 11:20;
-z = x'*y;
-c = randi(10,10);
-surf(x,y,z,c)
-%%
-xlabel('water')
+
+xlabel('acid')
 ylabel('base')
 zlabel('utility')
 hold on
@@ -81,19 +75,38 @@ hold on
 %t3 = meshgrid(z);
 
 %surf(t1,t2,t3)
-water = 0.3;
+acid = 0.3;
 base = 0.3;
-scatter(water,base);
-u = 0.4415;
-plot(x, (x+log(u)+1));
-scatter(0.5*(-(log(u)+1)+water+base),0.5*((log(u)+1)+water+base))
+scatter(acid,base);
+u = 0.4;
+ylim([0 1])
+plot(x, (-x-log(u)));
+a = 0.5*(-(log(u))+acid-base)
+b = 0.5*(-(log(u))-acid+base)
+scatter(a,b)
 %bod = [0.7;0.3];
 %scatter(bod)
 %plot(bod)
 %%
-
-
-
+%%
+clear all
+hold off
+x = 1:10;
+y = 11:20;
+z = x'*y;
+c = randi(10,10);
+sliceomatic(x,y,z,c)
+%%
+clear all
+x = 0:0.05:1;
+[X,Y,Z] = meshgrid(x, x, x);
+c = exp(X+Y+Z);
+sliceomatic1p0(c)
+%%
+clear all
+[x,y,z] = meshgrid(-2:.2:2, -2:.25:2, -2:.16:2);
+v = x .* exp(-x.^2 - y.^2 - z.^2);
+sliceomatic(v)
 %%
 x = 0:0.05:1;
 [X,Y] = meshgrid(x);
@@ -134,7 +147,15 @@ clear all
 x = [-1:0.1:5];
 plot(x, (0.5*log(x)) + 0.5*log(10));
 %%
-
+clear all
+hold off
+x = [0:0.05:1];
+%y = x.^2;
+plot(x,x-0.2)
+hold on
+plot(x, x+0.2);
+ylim([0 1]);
+%%
 
 %%
 clear all

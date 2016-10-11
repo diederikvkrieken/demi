@@ -1,0 +1,106 @@
+\documentclass[a4paper]{report}
+
+\usepackage[english]{babel}
+%%\usepackage[dutch]{babel}
+\usepackage{amsmath} % default math package
+\usepackage{amsfonts} % extra fonts package
+\usepackage{amssymb} % extended symbol collection
+\usepackage{comment}
+\usepackage{float}
+\usepackage[english]{isodate}
+%\usepackage{caption}  % voor caption aanpassingen %\usepackage[center]{caption}  % voor centreren caption
+%\usepackage{color}
+%\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{multirow}
+\usepackage{todo}
+\usepackage{url}
+\usepackage[justification=centering]{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage[round]{natbib} % 'round' voor ronde haken, % 'longnamesfirst' voor vermelden van alle auteurs (1e referentie)
+%
+%\ifx\pdfoutput\undefined
+% we are running LaTeX, not pdflatex
+%\usepackage{graphicx}
+
+%\else
+% we are running pdflatex, so convert .eps files to .pdf
+%\usepackage[pdftex]{graphicx}
+%\usepackage{epstopdf}
+%\fi
+\selectlanguage{english}
+%%\selectlanguage{dutch}
+%\DeclareCaptionFont{bold}{\bfseries}
+%\DeclareCaptionFont{normal}{\color{black}}
+%%\captionsetup{labelfont=bold,textfont=normal}
+%%\captionsetup{labelfont=bold,font={normal}}
+%\captionsetup{font=small,labelfont=bf,textfont=bf}
+%
+%
+%% hiermee kan je vaker naar een footnote refereren, zie:
+%% http://anthony.liekens.net/index.php/LaTeX/MultipleFootnoteReferences
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\newcommand{\footnoteremember}[2]{\footnote{#2}\newcounter{#1}\setcounter{#1}{\value{footnote}}}
+%\newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}
+%
+%%by default LaTeX will place an extra space after a . this can disable that behavior:
+%%\frenchspacing % this is probably not necessary when using english instead of dutch
+%
+%% the following lines makes sure equations and algorithms are not just numbered 1, 2, ...,N but SectionNr.EquationNr
+\numberwithin{equation}{chapter}
+%\numberwithin{algorithm}{section}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%in plaats van \fnsymbol zijn hier nog een aantal mogelijkheden:
+%\arabic   1, 2, 3 ...
+%\alph     a, b, c ...
+%\Alph     A, B, C ...
+%\roman    i, ii, iii ...
+%\Roman    I, II, III ...
+%\fnsymbol *, †, ‡, ... en een aantal andere symbolen
+
+% Title Page
+\title{
+	{\bf Negotiation in a modular manufacturing process}\\
+	{\it Master Thesis v 0.4\\}
+}
+\author{ {\bf Diederik van Krieken}  \\
+	Artificial Intelligence \\
+	Univeristy of Groningen, the Netherlands\\
+	{\small \href{mailto:d.r.j.van.krieken@student.rug.nl}{d.r.j.van.krieken@student.rug.nl}}\\
+	{\small S2009730}\\\\
+	Internal supervisor: \\
+	Rineke Verbrugge (Artificial Intelligence, RUG)\\\\
+}
+
+\date{\printdayoff\today}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\begin{document}
+	\pagestyle{plain}
+	\pagenumbering{roman}
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+\input{./tex/abstract.tex}
+
+\input{./tex/intro.tex}
+\input{./tex/problem.tex}
+\input{./tex/literature.tex}
+\input{./tex/design.tex}
+%\input{./tex/results.tex}
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{./bib/MAS_thesis}
+
+\end{document}          

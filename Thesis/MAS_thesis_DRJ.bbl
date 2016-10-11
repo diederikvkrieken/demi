@@ -1,0 +1,377 @@
+\begin{thebibliography}{55}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abedin et~al.(2014)Abedin, Chao, and Godwin]{abedin2014agenda}
+Fahmida Abedin, Kuo-Ming Chao, and Nick Godwin.
+\newblock An agenda based multi issue negotiation approach.
+\newblock \emph{Journal of Ambient Intelligence and Humanized Computing},
+  5\penalty0 (4):\penalty0 455--473, 2014.
+
+\bibitem[Anumba et~al.(2003)Anumba, Ren, Thorpe, Ugwu, and
+  Newnham]{anumba2003negotiation}
+CJ~Anumba, Z~Ren, A~Thorpe, OO~Ugwu, and L~Newnham.
+\newblock Negotiation within a multi-agent system for the collaborative design
+  of light industrial buildings.
+\newblock \emph{Advances in Engineering Software}, 34\penalty0 (7):\penalty0
+  389--401, 2003.
+
+\bibitem[Beheshti and Mozayani(2014)]{beheshti2014homan}
+Rahmatollah Beheshti and Nasser Mozayani.
+\newblock Homan, a learning based negotiation method for holonic multi-agent
+  systems.
+\newblock \emph{Journal of Intelligent \& Fuzzy Systems}, 26\penalty0
+  (2):\penalty0 655--666, 2014.
+
+\bibitem[Beheshti et~al.(2016)Beheshti, Barmaki, and
+  Mozayani]{beheshti2016negotiations}
+Rahmatollah Beheshti, Roghayeh Barmaki, and Nasser Mozayani.
+\newblock Negotiations in holonic multi-agent systems.
+\newblock In \emph{Recent Advances in Agent-based Complex Automated
+  Negotiation}, pages 107--118. Springer, 2016.
+
+\bibitem[Brandl and {BR\&L Consulting}(2008)]{brandl2008ISA}
+Dennis Brandl and {BR\&L Consulting}.
+\newblock What is isa-95? industrial best practices of manufacturing
+  information technologies with isa-95 models, May 2008.
+\newblock URL \url{http://apsom.org/docs/t061_isa95-04.pdf}.
+
+\bibitem[Bruccoleri et~al.(2005)Bruccoleri, Nigro, Perrone, Renna, and
+  La~Diega]{bruccoleri2005production}
+M~Bruccoleri, G~Lo Nigro, G~Perrone, P~Renna, and S~Noto La~Diega.
+\newblock Production planning in reconfigurable enterprises and reconfigurable
+  production systems.
+\newblock \emph{CIRP Annals-Manufacturing Technology}, 54\penalty0
+  (1):\penalty0 433--436, 2005.
+
+\bibitem[de~la Hoz et~al.(2015)de~la Hoz, Gimenez-Guzman, Marsa-Maestre, and
+  Orden]{de2015automated}
+Enrique de~la Hoz, Jose~Manuel Gimenez-Guzman, Ivan Marsa-Maestre, and David
+  Orden.
+\newblock Automated negotiation for resource assignment in wireless
+  surveillance sensor networks.
+\newblock \emph{Sensors}, 15\penalty0 (11):\penalty0 29547--29568, 2015.
+
+\bibitem[Di~Nocera(2015)]{di2015multi}
+Dario Di~Nocera.
+\newblock \emph{Multi-agent automated negotiation for management of services in
+  smart cities}.
+\newblock PhD thesis, 2015.
+
+\bibitem[Endriss(2006)]{endriss2006monotonic}
+Ulle Endriss.
+\newblock Monotonic concession protocols for multilateral negotiation.
+\newblock In \emph{Proceedings of the fifth international joint conference on
+  Autonomous agents and multiagent systems}, pages 392--399. ACM, 2006.
+
+\bibitem[Engell and Harjunkoski(2012)]{engell2012optimal}
+Sebastian Engell and Iiro Harjunkoski.
+\newblock Optimal operation: Scheduling, advanced control and their
+  integration.
+\newblock \emph{Computers \& Chemical Engineering}, 47:\penalty0 121--133,
+  2012.
+
+\bibitem[Fatima et~al.(2014{\natexlab{a}})Fatima, Kraus, and
+  Wooldridge]{fatima2014negotiation}
+Shaheen Fatima, Sarit Kraus, and Michael Wooldridge.
+\newblock The negotiation game.
+\newblock \emph{IEEE Intelligent Systems}, 29\penalty0 (5):\penalty0 57--61,
+  2014{\natexlab{a}}.
+
+\bibitem[Fatima et~al.(2014{\natexlab{b}})Fatima, Kraus, and
+  Wooldridge]{fatima2014principles}
+Shaheen Fatima, Sarit Kraus, and Michael Wooldridge.
+\newblock \emph{Principles of Automated Negotiation}.
+\newblock Cambridge University Press, 2014{\natexlab{b}}.
+
+\bibitem[Fatima et~al.(2004)Fatima, Wooldridge, and Jennings]{fatima2004agenda}
+Shaheen~S Fatima, Michael Wooldridge, and Nicholas~R Jennings.
+\newblock An agenda-based framework for multi-issue negotiation.
+\newblock \emph{Artificial Intelligence}, 152\penalty0 (1):\penalty0 1--45,
+  2004.
+
+\bibitem[Feng et~al.(2014)Feng, Li, and Sun]{feng2014multi}
+Qiang Feng, Songjie Li, and Bo~Sun.
+\newblock A multi-agent based intelligent configuration method for aircraft
+  fleet maintenance personnel.
+\newblock \emph{Chinese Journal of Aeronautics}, 27\penalty0 (2):\penalty0
+  280--290, 2014.
+
+\bibitem[Fisher et~al.(1987)Fisher, Ury, and Patton]{fisher1987getting}
+Roger Fisher, William Ury, and Bruce Patton.
+\newblock \emph{Getting to Yes}.
+\newblock Simon \& Schuster Sound Ideas, 1987.
+
+\bibitem[Giret(2005)]{giret2005multi}
+Adriana Giret.
+\newblock A multi agent methodology for holonic manufacturing systems.
+\newblock In \emph{Proceedings of the fourth international joint conference on
+  Autonomous agents and multiagent systems}, pages 1375--1375. ACM, 2005.
+
+\bibitem[Harjunkoski et~al.(2009)Harjunkoski, Nystr{\"o}m, and
+  Horch]{harjunkoski2009integration}
+Iiro Harjunkoski, Rasmus Nystr{\"o}m, and Alexander Horch.
+\newblock Integration of scheduling and control -- {T}heory or practice?
+\newblock \emph{Computers \& Chemical Engineering}, 33\penalty0 (12):\penalty0
+  1909--1918, 2009.
+
+\bibitem[Hevner and Chatterjee(2010)]{hevner2010design}
+Alan Hevner and Samir Chatterjee.
+\newblock \emph{Design Science Research in Information Systems}.
+\newblock Springer, 2010.
+
+\bibitem[Jennings et~al.(2001)Jennings, Faratin, Lomuscio, Parsons, Wooldridge,
+  and Sierra]{jennings2001automated}
+Nicholas~R Jennings, Peyman Faratin, Alessio~R Lomuscio, Simon Parsons,
+  Michael~J Wooldridge, and Carles Sierra.
+\newblock Automated negotiation: prospects, methods and challenges.
+\newblock \emph{Group Decision and Negotiation}, 10\penalty0 (2):\penalty0
+  199--215, 2001.
+
+\bibitem[Konolige and Nilsson(1980)]{konolige1980multiple}
+Kurt Konolige and Nils~J Nilsson.
+\newblock Multiple-agent planning systems.
+\newblock In \emph{AAAI}, volume~80, pages 138--142, 1980.
+
+\bibitem[Kraus et~al.(1995)Kraus, Wilkenfeld, and Zlotkin]{kraus1995multiagent}
+Sarit Kraus, Jonathan Wilkenfeld, and Gilad Zlotkin.
+\newblock Multiagent negotiation under time constraints.
+\newblock \emph{Artificial intelligence}, 75\penalty0 (2):\penalty0 297--345,
+  1995.
+
+\bibitem[Kravari and Bassiliades(2015)]{kravari2015survey}
+Kalliopi Kravari and Nick Bassiliades.
+\newblock A survey of agent platforms.
+\newblock \emph{Journal of Artificial Societies and Social Simulation},
+  18\penalty0 (1):\penalty0 11, 2015.
+
+\bibitem[Lai et~al.(2004)Lai, Li, Sycara, and Giampapa]{lai2004literature}
+Guoming Lai, Cuihong Li, Katia Sycara, and Joseph Giampapa.
+\newblock Literature review on multi-attribute negotiations.
+\newblock \emph{Robotics Inst., Carnegie Mellon Univ., Pittsburgh, PA, Tech.
+  Rep. CMU-RI-TR-04-66}, 2004.
+
+\bibitem[Leit{\~a}o(2009)]{leitao2009agent}
+Paulo Leit{\~a}o.
+\newblock Agent-based distributed manufacturing control: A state-of-the-art
+  survey.
+\newblock \emph{Engineering Applications of Artificial Intelligence},
+  22\penalty0 (7):\penalty0 979--991, 2009.
+
+\bibitem[Leit{\~a}o et~al.(2013)Leit{\~a}o, Ma{\v{r}}{\'\i}k, and
+  Vrba]{leitao2013past}
+Paulo Leit{\~a}o, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, and Pavel Vrba.
+\newblock Past, present, and future of industrial agent applications.
+\newblock \emph{IEEE Transactions on Industrial Informatics}, 9\penalty0
+  (4):\penalty0 2360--2372, 2013.
+
+\bibitem[Leitao et~al.(2016)Leitao, Karnouskos, Ribeiro, Lee, Strasser, and
+  Colombo]{leitao2016smart}
+Paulo Leitao, Stamatis Karnouskos, Luis Ribeiro, Jay Lee, Thomas Strasser, and
+  Armando~W Colombo.
+\newblock Smart agents in industrial cyber--physical systems.
+\newblock \emph{Proceedings of the IEEE}, 104\penalty0 (5):\penalty0
+  1086--1101, 2016.
+
+\bibitem[Marsa-Maestre et~al.(2014)Marsa-Maestre, Klein, Jonker, and
+  Aydo{\u{g}}an]{marsa2014problems}
+Ivan Marsa-Maestre, Mark Klein, Catholijn~M Jonker, and Reyhan Aydo{\u{g}}an.
+\newblock From problems to protocols: Towards a negotiation handbook.
+\newblock \emph{Decision Support Systems}, 60:\penalty0 39--54, 2014.
+
+\bibitem[Monostori et~al.(2016)Monostori, Kadar, Bauernhansl, Kondoh, Kumar,
+  Reinhart, Sauer, Schuh, Sihn, and Ueda]{monostori2016cyber}
+L.~Monostori, B.~Kadar, T.~Bauernhansl, S.~Kondoh, S.~Kumar, G.~Reinhart,
+  O.~Sauer, G.~Schuh, W.~Sihn, and K.~Ueda.
+\newblock Cyber-physical systems in manufacturing.
+\newblock \emph{CIRP Annals -- Manufacturing Technology}, 65\penalty0
+  (2):\penalty0 621--641, 2016.
+
+\bibitem[Monostori et~al.(2006)Monostori, V{\'a}ncza, and
+  Kumara]{monostori2006agent}
+L{\'a}szl{\'o} Monostori, J{\'o}zsef V{\'a}ncza, and Soundar~RT Kumara.
+\newblock Agent-based systems for manufacturing.
+\newblock \emph{CIRP Annals-Manufacturing Technology}, 55\penalty0
+  (2):\penalty0 697--720, 2006.
+
+\bibitem[Muller et~al.(2008)Muller, Marquez, and Iung]{muller2008concept}
+Alexandre Muller, Adolfo~Crespo Marquez, and Beno{\^\i}t Iung.
+\newblock On the concept of e-maintenance: Review and current research.
+\newblock \emph{Reliability Engineering \& System Safety}, 93\penalty0
+  (8):\penalty0 1165--1187, 2008.
+
+\bibitem[Parunak(1999)]{parunak1999industrial}
+H~Van~Dyke Parunak.
+\newblock Industrial and practical applications of dai.
+\newblock \emph{Multiagent systems: a modern approach to distributed artificial
+  intelligence}, pages 337--421, 1999.
+
+\bibitem[Pinedo(2005)]{pinedo2005planning}
+Michael Pinedo.
+\newblock \emph{Planning and scheduling in manufacturing and services},
+  volume~24.
+\newblock Springer, 2005.
+
+\bibitem[Pipattanasomporn et~al.(2009)Pipattanasomporn, Feroze, and
+  Rahman]{pipattanasomporn2009multi}
+Manisa Pipattanasomporn, Hassan Feroze, and S~Rahman.
+\newblock Multi-agent systems in a distributed smart grid: Design and
+  implementation.
+\newblock In \emph{Power Systems Conference and Exposition, 2009. PSCE'09.
+  IEEE/PES}, pages 1--8. IEEE, 2009.
+
+\bibitem[Rabelo et~al.(1999)Rabelo, Camarinha-Matos, and
+  Afsarmanesh]{rabelo1999multi}
+Ricardo~J Rabelo, Luis~M Camarinha-Matos, and Hamideh Afsarmanesh.
+\newblock Multi-agent-based agile scheduling.
+\newblock \emph{Robotics and Autonomous Systems}, 27\penalty0 (1):\penalty0
+  15--28, 1999.
+
+\bibitem[Rahwan et~al.(2003)Rahwan, Ramchurn, Jennings, Mcburney, Parsons, and
+  Sonenberg]{rahwan2003argumentation}
+Iyad Rahwan, Sarvapali~D Ramchurn, Nicholas~R Jennings, Peter Mcburney, Simon
+  Parsons, and Liz Sonenberg.
+\newblock Argumentation-based negotiation.
+\newblock \emph{The Knowledge Engineering Review}, 18\penalty0 (04):\penalty0
+  343--375, 2003.
+
+\bibitem[Rao et~al.(1995)Rao, Georgeff, et~al.]{rao1995bdi}
+Anand~S Rao, Michael~P Georgeff, et~al.
+\newblock Bdi agents: From theory to practice.
+\newblock In \emph{ICMAS}, volume~95, pages 312--319, 1995.
+
+\bibitem[Rosa et~al.(2009)Rosa, Miranda, Matos, Sheble, and
+  Silva]{rosa2009intelligent}
+M~Rosa, V~Miranda, M~Matos, G~Sheble, and AM~Silva.
+\newblock Intelligent agent-based environment to coordinate maintenance
+  schedule discussions.
+\newblock In \emph{Intelligent System Applications to Power Systems, 2009.
+  ISAP'09. 15th International Conference on}, pages 1--7. IEEE, 2009.
+
+\bibitem[Schramm and Morais(2013)]{schramm2013bilateral}
+Fernando Schramm and Danielle~Costa Morais.
+\newblock A bilateral and multi-issue negotiation framework to support a supply
+  chain of construction industry.
+\newblock \emph{Pesquisa Operacional}, 33\penalty0 (3):\penalty0 491--512,
+  2013.
+
+\bibitem[Shen et~al.(2003)Shen, Norrie, and Barth{\`e}s]{shen2003multi}
+Weiming Shen, Douglas~H Norrie, and Jean-Paul Barth{\`e}s.
+\newblock \emph{Multi-agent systems for concurrent intelligent design and
+  manufacturing}.
+\newblock CRC press, 2003.
+
+\bibitem[Shoham(1993)]{shoham1993agent}
+Yoav Shoham.
+\newblock Agent-oriented programming.
+\newblock \emph{Artificial intelligence}, 60\penalty0 (1):\penalty0 51--92,
+  1993.
+
+\bibitem[Slaughter et~al.(2015)Slaughter, Bean, and
+  Mittal]{deloitte2015connected}
+Andrew Slaughter, Gregory Bean, and Anshu Mittal.
+\newblock Connected barrels, august 2015.
+\newblock URL
+  \url{http://dupress.com/articles/internet-of-things-iot-in-oil-and-gas-industry/}.
+
+\bibitem[Smith(1980)]{smith1980communication}
+R~Smith.
+\newblock Communication and control in problem solver.
+\newblock \emph{IEEE Transactions on computers}, 29\penalty0 (12):\penalty0
+  1104--1113, 1980.
+
+\bibitem[Trappey et~al.(2013)Trappey, Trappey, and Ni]{trappey2013multi}
+Amy~JC Trappey, Charles~V Trappey, and Wei-Chun Ni.
+\newblock A multi-agent collaborative maintenance platform applying game theory
+  negotiation strategies.
+\newblock \emph{Journal of Intelligent Manufacturing}, 24\penalty0
+  (3):\penalty0 613--623, 2013.
+
+\bibitem[Van~Brussel et~al.(1998)Van~Brussel, Wyns, Valckenaers, Bongaerts, and
+  Peeters]{van1998reference}
+Hendrik Van~Brussel, Jo~Wyns, Paul Valckenaers, Luc Bongaerts, and Patrick
+  Peeters.
+\newblock Reference architecture for holonic manufacturing systems: Prosa.
+\newblock \emph{Computers in industry}, 37\penalty0 (3):\penalty0 255--274,
+  1998.
+
+\bibitem[Vermaak and Kinyua(2007)]{vermaak2007multi}
+Herman Vermaak and Johnson Kinyua.
+\newblock Multi-agent systems based intelligent maintenance management for a
+  component-handling platform.
+\newblock In \emph{Automation Science and Engineering, 2007. CASE 2007. IEEE
+  International Conference on}, pages 1057--1062. IEEE, 2007.
+
+\bibitem[Vinyals et~al.(2011)Vinyals, Rodriguez-Aguilar, and
+  Cerquides]{vinyals2010survey}
+Meritxell Vinyals, Juan~A Rodriguez-Aguilar, and Jesus Cerquides.
+\newblock A survey on sensor networks from a multiagent perspective.
+\newblock \emph{The Computer Journal}, 54\penalty0 (3):\penalty0 455--470,
+  2011.
+
+\bibitem[Vrba et~al.(2011)Vrba, Tich{\`y}, Ma{\v{r}}{\'\i}k, Hall, Staron,
+  Maturana, and Kadera]{vrba2011rockwell}
+Pavel Vrba, Pavel Tich{\`y}, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, Kenwood~H Hall,
+  Raymond~J Staron, Francisco~P Maturana, and Petr Kadera.
+\newblock Rockwell automation's holonic and multiagent control systems
+  compendium.
+\newblock \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews)}, 41\penalty0 (1):\penalty0 14--30, 2011.
+
+\bibitem[Wangermann and Stengel(1998)]{wangermann1998principled}
+John~P Wangermann and Robert~F Stengel.
+\newblock Principled negotiation between intelligent agents: a model for air
+  traffic management.
+\newblock \emph{Artificial Intelligence in Engineering}, 12\penalty0
+  (3):\penalty0 177--187, 1998.
+
+\bibitem[Wong and Fang(2010)]{wong2010multi}
+TN~Wong and Fang Fang.
+\newblock A multi-agent protocol for multilateral negotiations in supply chain
+  management.
+\newblock \emph{International Journal of Production Research}, 48\penalty0
+  (1):\penalty0 271--299, 2010.
+
+\bibitem[Wooldridge(2009)]{wooldridge2009introduction}
+Michael Wooldridge.
+\newblock \emph{An Introduction to Multiagent Systems}.
+\newblock John Wiley \& Sons, 2009.
+
+\bibitem[Wu et~al.(2009)Wu, de~Weerdt, and La~Poutr{\'e}]{wu2009efficient}
+Mengxiao Wu, Mathijs de~Weerdt, and Han La~Poutr{\'e}.
+\newblock Efficient methods for multi-agent multi-issue negotiation: allocating
+  resources.
+\newblock In \emph{International Conference on Principles and Practice of
+  Multi-Agent Systems}, pages 97--112. Springer, 2009.
+
+\bibitem[Yu et~al.(2003)Yu, Iung, and Panetto]{yu2003multi}
+Ren Yu, Benoit Iung, and Herv{\'e} Panetto.
+\newblock A multi-agents based e-maintenance system with case-based reasoning
+  decision support.
+\newblock \emph{Engineering Applications of Artificial Intelligence},
+  16\penalty0 (4):\penalty0 321--333, 2003.
+
+\bibitem[Zheng et~al.(2015)Zheng, Chakraborty, Dai, and
+  Sycara]{zheng2015automated}
+Ronghuo Zheng, Nilanjan Chakraborty, Tinglong Dai, and Katia Sycara.
+\newblock Automated multilateral negotiation on multiple issues with private
+  information.
+\newblock \emph{Available at SSRN 2677729}, 2015.
+
+\bibitem[Zheng et~al.(2014)Zheng, Martin, Brohman, and Da~Xu]{zheng2014cloud}
+Xianrong Zheng, Patrick Martin, Kathryn Brohman, and Li~Da~Xu.
+\newblock Cloud service negotiation in internet of things environment: a mixed
+  approach.
+\newblock \emph{Industrial Informatics, IEEE Transactions on}, 10\penalty0
+  (2):\penalty0 1506--1515, 2014.
+
+\bibitem[Zhou et~al.(2004)Zhou, Fox, Lee, and Nee]{zhou2004bus}
+R~Zhou, B~Fox, HP~Lee, and AYC Nee.
+\newblock Bus maintenance scheduling using multi-agent systems.
+\newblock \emph{Engineering Applications of Artificial Intelligence},
+  17\penalty0 (6):\penalty0 623--630, 2004.
+
+\end{thebibliography}

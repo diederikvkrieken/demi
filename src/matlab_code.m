@@ -58,7 +58,7 @@ hold off
 clear all
 x = 0:0.05:1;
 [X,Y] = meshgrid(x);
-Z = exp(-X-Y);%/exp(1);
+Z = exp(X+Y)/exp(2);
 W = exp(X+X)/exp(1);
 normZ = Z - min(Z(:));
 normZ = normZ ./ max(normZ(:)); % *
@@ -68,6 +68,8 @@ surf(X,Y,Z)
 xlabel('acid')
 ylabel('base')
 zlabel('utility')
+
+%%
 hold on
 %[t1,t2] = meshgrid(x);
 %t2 = t2+log(0.4415);

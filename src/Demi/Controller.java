@@ -29,6 +29,7 @@ public class Controller {
                 State weight = agent.calculateWeight(mod, t);
                 State proposal = agent.calculateProposal(weight);
                 mod.propose(agent,proposal,t);
+                System.out.println(proposal);
 
             }else{
                 System.out.println("Other agent update");

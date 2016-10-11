@@ -37,7 +37,7 @@ public class Mixbed extends Agent {
 
     private double x,w, v;// knowledge about the water and base and acid being used
 
-    @   public double getUtility() {
+    public double getUtility() {
         return utility;
     }
 

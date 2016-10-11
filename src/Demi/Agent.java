@@ -22,10 +22,11 @@ public class Agent {
     // (i.e., not including Agent j’s standing offer) in period t.
 
     State belief;
-
+    double desirableUtility;
 
     public Agent(){
-
+        this.desirableUtility = 0;
+        this.currentOffer = new State(0,0,0);
         //belief = new State();
     }
 
@@ -171,7 +172,7 @@ public class Agent {
     public void concessionStrategy(int t){
         //updateConcession(t);
         //See algorithm 3 in Zheng 2015
-
+        this.desirableUtility = 1 - (t*0.01);
     }
 
 
@@ -218,7 +219,7 @@ public class Agent {
     * */
 
     public double utilityChange(int t){
-
+        return t*0.01;
     }
 
     public void setPrevBestOffer(State offer){

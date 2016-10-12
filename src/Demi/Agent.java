@@ -14,6 +14,14 @@ public class Agent {
     * Intention is a plan
     * */
 
+    public State getCurrentOffer() {
+        return currentOffer;
+    }
+
+    public void setCurrentOffer(State currentOffer) {
+        this.currentOffer = currentOffer;
+    }
+
     private State currentOffer; //x^j_t
     private ArrayList<State> prevOffer = new ArrayList<State>();
     private State prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
@@ -26,7 +34,7 @@ public class Agent {
 
     public Agent(){
         this.desirableUtility = 0;
-        this.currentOffer = new State(0,0,0);
+        //this.currentOffer = new State(0,0,0);
         //belief = new State();
     }
 
@@ -173,6 +181,7 @@ public class Agent {
         //updateConcession(t);
         //See algorithm 3 in Zheng 2015
         this.desirableUtility = 1 - (t*0.01);
+        System.out.println("Consession value =:"+this.desirableUtility);
     }
 
 

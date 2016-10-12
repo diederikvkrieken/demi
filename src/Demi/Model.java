@@ -45,7 +45,7 @@ public class Model {
         ArrayList<State> of = new ArrayList<State>();
         for (int i = 0; i < getn_agents(); i++) {
             if (!this.offers[i].isEmpty()) {
-                //System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
+                System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
                 //State test = (State) offers[i].get(t-1);
 
                 of.add((State)this.offers[i].get(t));

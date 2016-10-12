@@ -66,10 +66,10 @@ surf(X,Y,Z)
 %contour3(X,Y,Z,50)
 
 xlabel('acid')
-ylabel('base')
+ylabel('water')
 zlabel('utility')
 
-%%
+
 hold on
 %[t1,t2] = meshgrid(x);
 %t2 = t2+log(0.4415);

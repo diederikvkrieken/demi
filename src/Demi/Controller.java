@@ -24,17 +24,20 @@ public class Controller {
             * We decide on a simplified world where no change occurs
             * */
             if (agent.getName().equals(name)){
-                System.out.println("Proposal by agent:"+ name);
+                System.out.println("Proposal by agent: "+ name);
                 agent.concessionStrategy(t);
                 State weight = agent.calculateWeight(mod, t);
                 State proposal = agent.calculateProposal(weight);
                 mod.propose(agent,proposal,t);
-                System.out.println(proposal);
+                System.out.println("Proposal is: "+proposal);
 
             }else{
                 System.out.println("Other agent update");
                 State x = agent.getOffer();
                 agent.addOffer(x);
+                System.out.println(agent.getName());
+                System.out.println(agent.getOffer().toString());
+                System.out.println(agent.getPrevBestOffer());
                 if (agent.utility(agent.getOffer())> agent.utility(agent.getPrevBestOffer())){
                     agent.setPrevBestOffer(agent.getOffer());
                 }

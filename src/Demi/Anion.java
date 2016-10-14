@@ -11,7 +11,9 @@ public class Anion extends Agent {
     /*
     * Anions contains 6 filters
     * */
-    int n_filters = 6;
+
+
+//   int n_filters = 6;
 //      1. Knowledge of anion head about the sub-agents:
 //          {A1, ..., A6} can process a amount of water
 //          {A1, ..., A6} needs to be cleaned after b water
@@ -37,15 +39,13 @@ public class Anion extends Agent {
 //
 //    private double x,w;// knowledge about the water and base being used
 
-    public double getUtility() {
-        return utility;
-    }
-
-    public void setUtility(double utility) {
-        this.utility = utility;
-    }
-
-    private double utility;
+//    public double getUtility() {
+//        return utility;
+//    }
+//
+//    public void setUtility(double utility) {
+//        this.utility = utility;
+//    }
 
     @Override
     public double utility(State offer){
@@ -91,15 +91,20 @@ public class Anion extends Agent {
         State xPlusOne = new State();
         xPlusOne.setWater(0.5*(-(log(u)+1)+first_cor+second_cor));
         xPlusOne.setBase(0.5*((log(u)+1)+first_cor+second_cor));
+
         return xPlusOne;
     }
 
+    @Override
     public State pointOnConcessionLine(State x){
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.utility);
         xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
+        System.out.println(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
         xPlusOne.setBase(0.5*((log(this.utility)+1)+first_cor+second_cor));
+        System.out.println("The point is: "+xPlusOne.toString());
         return xPlusOne;
     }
 
@@ -116,6 +121,10 @@ public class Anion extends Agent {
         }else{
             return false;
         }
+    }
+
+    Anion(String name){
+        super(name);
     }
 
 

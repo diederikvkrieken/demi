@@ -6,58 +6,68 @@ package Demi;
 public class Controller {
 
     private Model mod;
-    int n_agents=3;
+    //int n_agents=4;
 
     public Controller(Model model){
         this.mod = model;
     }
 
-    public void run(int t){
+    public void run(int t) {
         //Start new proposal round
         int propose_agent = t % mod.getn_agents();
         String name = mod.getnameAgents(propose_agent);
 
-        for (Agent agent : mod.getAgents() ) {
+        for (Agent agent : mod.getAgents()) {
             /*
             * Import here is to decide whether to update the current belief of the agent
             * Feasible?
             * We decide on a simplified world where no change occurs
             * */
-            if (agent.getName().equals(name)){
-                System.out.println("Proposal by agent: "+ name);
+            if (agent.getName().equals(name)) {
+                System.out.println("Proposal by agent: " + name);
+                System.out.println("The " + name + " Concedes");
                 agent.concessionStrategy(t);
+                System.out.println("The " + name + " weights");
                 State weight = agent.calculateWeight(mod, t);
-                State proposal = agent.calculateProposal(weight);
-                mod.propose(agent,proposal,t);
-                System.out.println("Proposal is: "+proposal);
+                System.out.println("The " + " weights is "+ weight.toString());
+                State proposal = agent.pointOnConcessionLine(weight);
+                System.out.println(proposal.toString());
+                mod.propose(agent, proposal, t);
+                System.out.println("Proposal is: " + proposal);
 
-            }else{
-                System.out.println("Other agent update");
+            } else {
+                System.out.println("Other agent update "+agent.getName());
                 State x = agent.getOffer();
                 agent.addOffer(x);
-                System.out.println(agent.getName());
-                System.out.println(agent.getOffer().toString());
-                System.out.println(agent.getPrevBestOffer());
-                if (agent.utility(agent.getOffer())> agent.utility(agent.getPrevBestOffer())){
-                    agent.setPrevBestOffer(agent.getOffer());
-                }
+                mod.propose(agent, x, t);
+//                System.out.println(agent.getName());
+//                System.out.println(agent.getOffer().toString());
+//                System.out.println(agent.getPrevBestOffer(t));
+//                if (agent.utility(agent.getOffer()) > agent.utility(agent.getPrevBestOffer(t))) {
+//                    agent.setPrevBestOffer(t,agent.getOffer());
+//                }
             }
-            agent.observe(mod.getCurrentState());
+            //agent.observe(mod.getCurrentState());
 
         }
-
-        //check offers
-//        int deal = checkOffers();
-//        if (deal == 3){
-            System.out.println("WE HAVE AN AGREEMENT");;
-//        }
     }
+//
+//        //check offers
+////        int deal = checkOffers();
+////        if (deal == 3){
+//            System.out.println("WE HAVE AN AGREEMENT");;
+////        }
+//    }
+
+
     public void runSimulation(){
         //until
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Running Simulation" +i);
+        for (int i = 0; i < 30; i++) {
+            System.out.println("Running Simulation " +i);
             run(i);
+            mod.newRound(i+1);
         }
+
         System.out.println("simulation run");
     }
 

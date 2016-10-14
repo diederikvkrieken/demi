@@ -184,3 +184,13 @@ zlabel('utility')
 
 
 %%
+x = 0:0.05:1;
+[X,Y] = meshgrid(x);
+Z = exp(
+Z = 0.5 * (-abs(X).^2+abs(Y).^2);
+normZ = Z - min(Z(:));
+normZ = normZ ./ max(normZ(:)); % *
+contour3(X,Y,Z,50)
+xlabel('water')
+ylabel('base')
+zlabel('utility')

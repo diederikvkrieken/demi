@@ -1,7 +1,10 @@
 package Demi;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.util.ArrayList;
 import java.lang.Math;
+import java.util.Iterator;
 
 /**
  * Created by diederik.van.krieken on 12-9-2016.
@@ -14,26 +17,38 @@ public class Agent {
     * Intention is a plan
     * */
 
-    public State getCurrentOffer() {
-        return currentOffer;
-    }
-
-    public void setCurrentOffer(State currentOffer) {
-        this.currentOffer = currentOffer;
-    }
+//    public State getCurrentOffer() {
+//        return currentOffer;
+//    }
+//
+//    public void setCurrentOffer(State currentOffer) {
+//        this.currentOffer = currentOffer;
+//    }
 
     private State currentOffer; //x^j_t
+
+    public ArrayList<State> getPrevOffer() {
+        return prevOffer;
+    }
+
+    public void setPrevOffer(ArrayList<State> prevOffer) {
+        this.prevOffer = prevOffer;
+    }
+
     private ArrayList<State> prevOffer = new ArrayList<State>();
-    private State prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
+    private State[] prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
     // which is the offer that provides the highest utility to Agent i among all offers
     // made by Agent j until Agent j’s next-to-last offer
     // (i.e., not including Agent j’s standing offer) in period t.
 
-    State belief;
+//    State belief;
     double desirableUtility;
+    double utility;
+
 
     public Agent(){
-        this.desirableUtility = 0;
+        this.desirableUtility = 1;
+        this.utility = 1;
         //this.currentOffer = new State(0,0,0);
         //belief = new State();
     }
@@ -45,113 +60,115 @@ public class Agent {
     //protected Preferences preferences;
 
     public void observe(State state){
-        belief = state;
+        //belief = state;
     }
 
 
-    public void generateOffer(int i){
-        State of = new State();
-        if (i ==0){
-            if (name.equals("Anion")){
-                of.setBase(belief.getBase());
-                of.setAcid(0);
-                of.setWater(0);
-                System.out.println(name+": " + of.toString());
-                this.prevOffer.add(of);
-
-            }else if (name.equals("Cation")){
-                of.setBase(0);
-                of.setAcid(belief.getAcid());
-                of.setWater(0);
-                System.out.println(name+": " + of.toString());
-
-                this.prevOffer.add(of);
-
-            }else if (name.equals("Mixbed")){
-                of.setBase(0);
-                of.setAcid(0);
-                of.setWater(belief.getWater() );
-                System.out.println(name+": " + of.toString());
-
-                prevOffer.add(of);
-
-            }else if (name.equals("Neut")){
-                of.setBase(belief.getBase());
-                of.setAcid(belief.getAcid());
-                of.setWater(0);
-                System.out.println(name+": " + of.toString());
-
-                prevOffer.add(of);
-
-            }else {
-                //ERRROOORRRR
-                System.out.println("ERROR!!!!! NAME NOT CORRECT");
-                System.out.println(name+" is not recognize1");
-
-            }
-            this.currentOffer = of;
-        }else {
-            i--;
-            if (name.equals("Anion")) {
-                of.setBase(prevOffer.get(i).getBase() - 10);
-                of.setAcid(prevOffer.get(i).getAcid());
-                of.setWater(prevOffer.get(i).getWater() + 10);
-                this.prevOffer.add(of);
-                System.out.println(name+": " + of.toString());
-
-
-
-
-            } else if (name.equals("Cation")) {
-                of.setBase(prevOffer.get(i).getBase());
-                of.setAcid(prevOffer.get(i).getAcid() - 10);
-                of.setWater(prevOffer.get(i).getWater() + 10);
-                this.prevOffer.add(of);
-                System.out.println(name+": " + of.toString());
-
-
-            } else if (name.equals("Mixbed")) {
-                of.setBase(prevOffer.get(i).getBase() + 5);
-                of.setAcid(prevOffer.get(i).getAcid() + 5);
-                of.setWater(prevOffer.get(i).getWater() - 10);
-                this.prevOffer.add(of);
-                System.out.println(name+": " + of.toString());
-
-
-            }else if (name.equals("Neut")) {
-                of.setBase(prevOffer.get(i).getBase() - 5);
-                of.setAcid(prevOffer.get(i).getAcid() - 5);
-                of.setWater(prevOffer.get(i).getWater());
-                this.prevOffer.add(of);
-                System.out.println(name+": " + of.toString());
-
-
-            } else {
-                //ERRROOORRRR
-                System.out.println("ERROR!!!!! NAME NOT CORRECT");
-                System.out.println(name+" is not recognize2");
-
-            }
-            this.currentOffer = of;
-        }
-
-
-    }
+//    public void generateOffer(int i){
+//        State of = new State();
+//        if (i ==0){
+//            if (name.equals("Anion")){
+//                //of.setBase(belief.getBase());
+//                of.setAcid(0);
+//                of.setWater(0);
+//                System.out.println(name+": " + of.toString());
+//                this.prevOffer.add(of);
+//
+//            }else if (name.equals("Cation")){
+//                of.setBase(0);
+//                //of.setAcid(belief.getAcid());
+//                of.setWater(0);
+//                System.out.println(name+": " + of.toString());
+//
+//                this.prevOffer.add(of);
+//
+//            }else if (name.equals("Mixbed")){
+//                of.setBase(0);
+//                of.setAcid(0);
+//                of.setWater(belief.getWater() );
+//                System.out.println(name+": " + of.toString());
+//
+//                prevOffer.add(of);
+//
+//            }else if (name.equals("Neut")){
+//                of.setBase(belief.getBase());
+//                of.setAcid(belief.getAcid());
+//                of.setWater(0);
+//                System.out.println(name+": " + of.toString());
+//
+//                prevOffer.add(of);
+//
+//            }else {
+//                //ERRROOORRRR
+//                System.out.println("ERROR!!!!! NAME NOT CORRECT");
+//                System.out.println(name+" is not recognize1");
+//
+//            }
+//            this.currentOffer = of;
+//        }else {
+//            i--;
+//            if (name.equals("Anion")) {
+//                of.setBase(prevOffer.get(i).getBase() - 10);
+//                of.setAcid(prevOffer.get(i).getAcid());
+//                of.setWater(prevOffer.get(i).getWater() + 10);
+//                this.prevOffer.add(of);
+//                System.out.println(name+": " + of.toString());
+//
+//
+//
+//
+//            } else if (name.equals("Cation")) {
+//                of.setBase(prevOffer.get(i).getBase());
+//                of.setAcid(prevOffer.get(i).getAcid() - 10);
+//                of.setWater(prevOffer.get(i).getWater() + 10);
+//                this.prevOffer.add(of);
+//                System.out.println(name+": " + of.toString());
+//
+//
+//            } else if (name.equals("Mixbed")) {
+//                of.setBase(prevOffer.get(i).getBase() + 5);
+//                of.setAcid(prevOffer.get(i).getAcid() + 5);
+//                of.setWater(prevOffer.get(i).getWater() - 10);
+//                this.prevOffer.add(of);
+//                System.out.println(name+": " + of.toString());
+//
+//
+//            }else if (name.equals("Neut")) {
+//                of.setBase(prevOffer.get(i).getBase() - 5);
+//                of.setAcid(prevOffer.get(i).getAcid() - 5);
+//                of.setWater(prevOffer.get(i).getWater());
+//                this.prevOffer.add(of);
+//                System.out.println(name+": " + of.toString());
+//
+//
+//            } else {
+//                //ERRROOORRRR
+//                System.out.println("ERROR!!!!! NAME NOT CORRECT");
+//                System.out.println(name+" is not recognize2");
+//
+//            }
+//            this.currentOffer = of;
+//        }
+//
+//
+//    }
 
 
 
 
     public Agent(String name) {
         this.name = name;
-        belief = new State();
+        desirableUtility = 1;
+        this.utility = 1;
+ //       belief = new State();
     }
 
-    public Agent (String name, String[] pref){
-        this.name = name;
-        //this.preferences = new Preferences();
-        //this.preferences.preferences = pref;
-        belief = new State();
-    }
+//    public Agent (String name, String[] pref){
+//        this.name = name;
+//        //this.preferences = new Preferences();
+//        //this.preferences.preferences = pref;
+////        belief = new State();
+//    }
     //public class Preferences {
     //    String[] preferences;
     //    int counter;
@@ -174,13 +191,14 @@ public class Agent {
         return s;
     }
     public void addOffer(State of){
-        prevOffer.add(of);
+        currentOffer = of;
     }
 
     public void concessionStrategy(int t){
         //updateConcession(t);
         //See algorithm 3 in Zheng 2015
         this.desirableUtility = 1 - (t*0.01);
+        this.utility = 1-(t*0.01);
         System.out.println("Consession value =:"+this.desirableUtility);
     }
 
@@ -188,12 +206,17 @@ public class Agent {
 
     //Should be updated to only calculate weight of those with no interest
     //eg Anion no say in Acid.
+    //TODO
+    // Ensure only the correct weight are updated
     public State calculateWeight(Model mod, int t){
         State weight = new State();
-        int base =0;
-        int acid = 0;
-        int water = 0;
-        for (State offer : mod.getRecentOffers(t)){
+        double base =0;
+        double acid = 0;
+        double water = 0;
+        Iterator<State> it = prevOffer.iterator();
+        while (it.hasNext()){
+            State offer = it.next();
+            //System.out.println(offer.toString());
             base += offer.getBase();
             acid += offer.getAcid();
             water += offer.getWater();
@@ -205,10 +228,15 @@ public class Agent {
     }
 
     public State calculateProposal(State weight){
-        State offer = weight;
+        State offer = this.pointOnConcessionLine(weight);
         this.currentOffer = offer;
         this.prevOffer.add(offer);
         return offer;
+    }
+
+    public State pointOnConcessionLine(State x){
+        System.out.println("Doing the agent projection, not the anion/mixbed/neut/cation");
+        return x;
     }
 
     //Default utility
@@ -231,13 +259,23 @@ public class Agent {
         return t*0.01;
     }
 
-    public void setPrevBestOffer(State offer){
-        this.prevBestOf = offer;
+    public void setPrevBestOffer(int i,State offer){
+        this.prevBestOf[i] = offer;
     }
 
-    public State getPrevBestOffer(){
-        return prevBestOf;
+    public State getPrevBestOffer(int i){
+        return prevBestOf[i];
     }
 
+    @Override
+    public String toString() {
+        return "Agent{" +
+                "currentOffer=" + currentOffer +
+                ", prevOffer=" + prevOffer +
+                ", prevBestOf=" + prevBestOf +
+                ", desirableUtility=" + desirableUtility +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
 }

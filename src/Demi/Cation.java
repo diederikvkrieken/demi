@@ -35,15 +35,15 @@ public class Cation extends Agent {
 //
 //    private double x,w;// knowledge about the water and acid being used
 
-    public double getUtility() {
-        return utility;
-    }
-
-    public void setUtility(double utility) {
-        this.utility = utility;
-    }
-
-    private double utility;
+//    public double getUtility() {
+//        return utility;
+//    }
+//
+//    public void setUtility(double utility) {
+//        this.utility = utility;
+//    }
+//
+//    private double utility;
 
     @Override
     public double utility(State offer){
@@ -75,13 +75,17 @@ public class Cation extends Agent {
         xPlusOne.setAcid(0.5*((log(u)+1)+first_cor+second_cor));
         return xPlusOne;
     }
-
+    @Override
     public State pointOnConcessionLine(State x){
         double first_cor = x.getWater();
         double second_cor = x.getAcid();
         State xPlusOne = new State();
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.utility);
         xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
-        xPlusOne.setAcid(0.5*((log(this.utility)+1)+first_cor+second_cor));
+        System.out.println(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
+        xPlusOne.setBase(0.5*((log(this.utility)+1)+first_cor+second_cor));
+        System.out.println("The point is: "+xPlusOne.toString());
+
         return xPlusOne;
     }
 
@@ -97,6 +101,9 @@ public class Cation extends Agent {
         }else{
             return false;
         }
+    }
+    Cation(String name){
+        super(name);
     }
 
 }

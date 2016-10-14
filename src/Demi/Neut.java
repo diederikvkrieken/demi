@@ -24,17 +24,17 @@ public class Neut extends Agent {
 //      4. Currently Y \in {A1, ..., A6} filter being used for cleaning
 //      5. Currently w amount of base being used for cleaning
 
-    private double a,b;// knowledge about the acid and base being used
+//    private double a,b;// knowledge about the acid and base being used
 
-    public double getUtility() {
-        return utility;
-    }
-
-    public void setUtility(double utility) {
-        this.utility = utility;
-    }
-
-    private double utility;
+//    public double getUtility() {
+//        return utility;
+//    }
+//
+//    public void setUtility(double utility) {
+//        this.utility = utility;
+//    }
+//
+//    private double utility;
 
     @Override
     public double utility(State offer){
@@ -64,7 +64,7 @@ public class Neut extends Agent {
         xPlusOne.setBase(0.5*((log(u)) + first_cor + second_cor));
         return xPlusOne;
     }
-
+    @Override
     public State pointOnConcessionLine(State x){
         double first_cor = x.getAcid();
         double second_cor = x.getBase();
@@ -89,6 +89,9 @@ public class Neut extends Agent {
         return false;
     }
 
+    Neut(String name){
+        super(name);
+    }
 
 
 

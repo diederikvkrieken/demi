@@ -37,15 +37,15 @@ public class Mixbed extends Agent {
 
     private double x,w, v;// knowledge about the water and base and acid being used
 
-    public double getUtility() {
-        return utility;
-    }
-
-    public void setUtility(double utility) {
-        this.utility = utility;
-    }
-
-    private double utility;
+//    public double getUtility() {
+//        return utility;
+//    }
+//
+//    public void setUtility(double utility) {
+//        this.utility = utility;
+//    }
+//
+//    private double utility;
 
     @Override
     public double utility(State offer){
@@ -77,6 +77,7 @@ public class Mixbed extends Agent {
         return xPlusOne;
     }
 
+    @Override
     public State pointOnConcessionLine(State x){
         double first_cor = x.getAcid();
         double second_cor = x.getBase();
@@ -84,6 +85,9 @@ public class Mixbed extends Agent {
         xPlusOne.setAcid(0.5*(-(log(this.utility))+first_cor-second_cor));
         xPlusOne.setBase(0.5*((log(this.utility))-first_cor+second_cor));
         return xPlusOne;
+    }
+    Mixbed(String name){
+        super(name);
     }
 
 }

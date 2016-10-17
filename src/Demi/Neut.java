@@ -77,17 +77,17 @@ public class Neut extends Agent {
     // Anion reservation function is acid = water +- 0.1
     // So base has to be equal or less than sqrt(water)
 
-    @Override
-    public boolean reservationCurveCheck(State offer){
-        double first_cor = offer.getBase();
-        double second_cor = offer.getAcid();
-        if (second_cor >= (first_cor-0.2)) {
-            if (second_cor <= (first_cor+0.2)) {
-                return true;
-            }
-        }
-        return false;
-    }
+//    @Override
+//    public boolean reservationCurveCheck(State offer){
+//        double first_cor = offer.getBase();
+//        double second_cor = offer.getAcid();
+//        if (second_cor >= (first_cor-0.2)) {
+//            if (second_cor <= (first_cor+0.2)) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
     Neut(String name){
         super(name);

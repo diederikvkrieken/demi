@@ -82,7 +82,6 @@ public class Cation extends Agent {
         State xPlusOne = new State();
         System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.utility);
         xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
-        System.out.println(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
         xPlusOne.setAcid(0.5*((log(this.utility)+1)+first_cor+second_cor));
         xPlusOne.setBase(x.getBase());
         System.out.println("The point is: "+xPlusOne.toString());
@@ -93,16 +92,16 @@ public class Cation extends Agent {
     // Anion reservation function is base  = water^2
     // So base has to be equal or less than sqrt(water)
 
-    @Override
-    public boolean reservationCurveCheck(State offer){
-        double first_cor = offer.getWater();
-        double second_cor = offer.getAcid();
-        if (second_cor <= sqrt(first_cor)) {
-            return true;
-        }else{
-            return false;
-        }
-    }
+//    @Override
+//    public boolean reservationCurveCheck(State offer){
+//        double first_cor = offer.getWater();
+//        double second_cor = offer.getAcid();
+//        if (second_cor <= sqrt(first_cor)) {
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    }
     Cation(String name){
         super(name);
     }

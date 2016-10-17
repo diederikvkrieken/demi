@@ -77,14 +77,14 @@ hold on
 %t3 = meshgrid(z);
 
 %surf(t1,t2,t3)
-acid = 0.3;
 base = 0.3;
-scatter(acid,base);
+water = 0.3;
+scatter(base,water);
 u = 0.4;
 ylim([0 1])
 plot(x, (-x-log(u)));
-a = 0.5*(-(log(u))+acid-base)
-b = 0.5*(-(log(u))-acid+base)
+a = 0.5*(-(log(u))+base-water)
+b = 0.5*(-(log(u))-base+water)
 scatter(a,b)
 %bod = [0.7;0.3];
 %scatter(bod)
@@ -184,13 +184,49 @@ zlabel('utility')
 
 
 %%
-x = 0:0.05:1;
+clear all
+hold off
+x = -0.5:0.05:1;
 [X,Y] = meshgrid(x);
-Z = exp(
-Z = 0.5 * (-abs(X).^2+abs(Y).^2);
-normZ = Z - min(Z(:));
-normZ = normZ ./ max(normZ(:)); % *
-contour3(X,Y,Z,50)
+Z = exp(-X+Y)/exp(1);
+%Z = 0.5 * (-abs(X).^2+abs(Y).^2);
+%normZ = Z - min(Z(:));
+%normZ = normZ ./ max(normZ(:)); % *
+%contour3(X,Y,Z,50)
 xlabel('water')
 ylabel('base')
-zlabel('utility')
+%zlabel('utility')
+hold on
+
+water = 0.25;
+base = 0.5;
+%scatter(water,base);
+u = 0.99;
+ylim([0 1])
+xlim([-0.5 1])
+
+plot(x, (x+(log(u)+1)));
+plot(x,-x+((log(u)+1)));
+a = 0.5*(-(log(u)+1)+water+base)
+b = 0.5*((log(u)+1)+water+base)
+points = [water, a;base, b];
+scatter(points(1,:), points(2,:))
+%bod = [0.7;0.3];
+%scatter(bod)
+%plot(bod)
+%%
+%clear all
+u = 0.99;
+z = 0.5;
+t = 0.2;
+Q1 = [z; z+(log(u)+1)];
+Q2 = [t; t+(log(u)+1)];
+P = [0.25; 0.5];
+a = 0.05;
+b = 1.04;
+X3 = [0.25,0.5;a,b];
+d2 = pdist(X3,'euclidean')
+sqrt((0.25-a)^2+(0.5-b)^2)
+% Ax+By+X = 0; (m,n)
+% d = Am+Bn+C / sqrt(A^2 + B^2)
+d3 = (0.25-0.5+(log(u)+1))/(sqrt(2))

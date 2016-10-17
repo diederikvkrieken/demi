@@ -27,11 +27,6 @@ public class Controller {
             * Feasible?
             * We decide on a simplified world where no change occurs
             * */
-            if(agent.getPrevOffer().size()>4){
-                System.out.println(mod.toString());
-                System.out.println(t);
-                System.out.println(agent.getPrevOffer().size());
-            }
             if (agent.getName().equals(name)) {
                 System.out.println("Proposal by agent: " + name);
                 System.out.println("The " + name + " Concedes");
@@ -43,7 +38,6 @@ public class Controller {
                 System.out.println(proposal.toString());
                 mod.propose(agent, proposal, t);
                 System.out.println("Proposal is: " + proposal);
-
             } else {
                 System.out.println("Other agent update "+agent.getName());
                 State x = agent.getOffer();
@@ -93,45 +87,45 @@ public class Controller {
             a.calculateWeight(mod, 0);
 
         }
-        int i =0;
+        int i =1;
         while(!isConverge && i < nRounds) {
             System.out.println("Running Simulation " + i);
+            mod.newRound(i);
             run(i);
             i++;
-            mod.newRound(i);
         }
 
 
         System.out.println("simulation run");
     }
 
-    public int checkOffers(){
-        int deal = 0;
-        double base = 0;
-        double acid = 0;
-        double water = 0;
-        for (Agent agent : mod.getAgents() ) {
-            acid += agent.getOffer().getAcid();
-            base += agent.getOffer().getBase();
-            water += agent.getOffer().getWater();
-        }
-        if (acid <= mod.getCurrentState().getAcid()){
-            System.out.println("Acid agreement achieved");
-            System.out.println("Acid = "+ Double.toString(mod.getCurrentState().getAcid())+", agreement = "+Double.toString(acid));
-            deal++;
-        }
-        if (base <= mod.getCurrentState().getBase()){
-            System.out.println("Base agreement achieved");
-            System.out.println("Base = "+ Double.toString(mod.getCurrentState().getBase())+", agreement = "+Double.toString(base));
-            deal++;
-        }
-        if (water >= mod.getCurrentState().getWater()){
-            System.out.println("Water agreement achieved");
-            System.out.println("Water = "+ Double.toString(mod.getCurrentState().getWater())+", agreement = "+Double.toString(water));
-            deal++;
-        }
-        return deal;
-
-    }
+//    public int checkOffers(){
+//        int deal = 0;
+//        double base = 0;
+//        double acid = 0;
+//        double water = 0;
+//        for (Agent agent : mod.getAgents() ) {
+//            acid += agent.getOffer().getAcid();
+//            base += agent.getOffer().getBase();
+//            water += agent.getOffer().getWater();
+//        }
+//        if (acid <= mod.getCurrentState().getAcid()){
+//            System.out.println("Acid agreement achieved");
+//            System.out.println("Acid = "+ Double.toString(mod.getCurrentState().getAcid())+", agreement = "+Double.toString(acid));
+//            deal++;
+//        }
+//        if (base <= mod.getCurrentState().getBase()){
+//            System.out.println("Base agreement achieved");
+//            System.out.println("Base = "+ Double.toString(mod.getCurrentState().getBase())+", agreement = "+Double.toString(base));
+//            deal++;
+//        }
+//        if (water >= mod.getCurrentState().getWater()){
+//            System.out.println("Water agreement achieved");
+//            System.out.println("Water = "+ Double.toString(mod.getCurrentState().getWater())+", agreement = "+Double.toString(water));
+//            deal++;
+//        }
+//        return deal;
+//
+//    }
 
 }

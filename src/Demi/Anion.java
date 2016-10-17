@@ -112,16 +112,16 @@ public class Anion extends Agent {
     // Anion reservation function is base  = water^2
     // So base has to be equal or less than sqrt(water)
 
-    @Override
-    public boolean reservationCurveCheck(State offer){
-        double first_cor = offer.getWater();
-        double second_cor = offer.getBase();
-        if (second_cor <= sqrt(first_cor)) {
-            return true;
-        }else{
-            return false;
-        }
-    }
+//    @Override
+//    public boolean reservationCurveCheck(State offer){
+//        double first_cor = offer.getWater();
+//        double second_cor = offer.getBase();
+//        if (second_cor <= sqrt(first_cor)) {
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    }
 
     Anion(String name){
         super(name);

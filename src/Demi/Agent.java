@@ -55,8 +55,12 @@ public class Agent {
     // (i.e., not including Agent j’s standing offer) in period t.
 
 //    State belief;
+    //desirableUtility = the monotonically decreasing concession strategy
     double desirableUtility;
+    //utility
     double utility;
+    private double minimumUtility = 0.3;
+
 
 
     public Agent(){
@@ -214,10 +218,13 @@ public class Agent {
             t=100;
         }
         this.desirableUtility = 1 - (t*0.01);
-        this.utility = 1-(t*0.01);
+//        this.utility = 1-(t*0.01);
         System.out.println("Consession value =:"+this.desirableUtility);
         //TODO
         // Check for reservation curve
+        if (this.desirableUtility < this.minimumUtility){
+            this.desirableUtility = this.minimumUtility;
+        }
     }
 
 
@@ -261,26 +268,27 @@ public class Agent {
         return offer.getWater();
     }
 
-    public boolean reservationCurveCheck(State offer){
+    public boolean reservationCurveCheck(double utility){
         System.out.println("THERE IS SOMETHING WRONG. THE AGENTS Reservation function is not used");
-        return false;
+        return (utility > minimumUtility);
+//        return false;
     }
 
     /*
     * Implement of the Reactive Concession Strategy
     * */
 
-    public double utilityChange(int t){
-        return t*0.01;
-    }
+//    public double utilityChange(int t){
+//        return t*0.01;
+//    }
 
-    public void setPrevBestOffer(int i,State offer){
-        this.prevBestOf[i] = offer;
-    }
+//    public void setPrevBestOffer(int i,State offer){
+//        this.prevBestOf[i] = offer;
+//    }
 
-    public State getPrevBestOffer(int i){
-        return prevBestOf[i];
-    }
+//    public State getPrevBestOffer(int i){
+//        return prevBestOf[i];
+//    }
 
     @Override
     public String toString() {

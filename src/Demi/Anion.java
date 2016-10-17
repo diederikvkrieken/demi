@@ -100,10 +100,10 @@ public class Anion extends Agent {
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
-        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.utility);
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+" utility "+this.utility);
         xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
-        System.out.println(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
         xPlusOne.setBase(0.5*((log(this.utility)+1)+first_cor+second_cor));
+        xPlusOne.setAcid(x.getAcid());
         System.out.println("The point is: "+xPlusOne.toString());
         return xPlusOne;
     }

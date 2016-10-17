@@ -44,9 +44,12 @@ public class Model {
         }
         //Each agent proposes their offer
         for (Agent a :agents) {
-            a.setPrevOffer(offers.get(i));
+            //a.setPrevOffer(offers.get(i));
+            System.out.println(a.getPrevOffer());
             //System.out.println(a.toString());
         }
+        System.out.println(offers.get(i).toString());
+
 
         //}
 

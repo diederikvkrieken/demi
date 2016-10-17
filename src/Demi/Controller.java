@@ -1,13 +1,17 @@
 package Demi;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by diederik.van.krieken on 13-9-2016.
  */
 public class Controller {
 
     private Model mod;
+    private boolean isConverge = false;
+    private double tolerance = 0.1;
     //int n_agents=4;
-
+    int nRounds = 30;
     public Controller(Model model){
         this.mod = model;
     }
@@ -23,6 +27,11 @@ public class Controller {
             * Feasible?
             * We decide on a simplified world where no change occurs
             * */
+            if(agent.getPrevOffer().size()>4){
+                System.out.println(mod.toString());
+                System.out.println(t);
+                System.out.println(agent.getPrevOffer().size());
+            }
             if (agent.getName().equals(name)) {
                 System.out.println("Proposal by agent: " + name);
                 System.out.println("The " + name + " Concedes");
@@ -47,9 +56,27 @@ public class Controller {
 //                    agent.setPrevBestOffer(t,agent.getOffer());
 //                }
             }
+
             //agent.observe(mod.getCurrentState());
 
         }
+        double maxdistance = 0;
+        for (Agent a:mod.getAgents()) {
+            double distance = calculateDistance(a.getOffer(), a.getCurrentWeight());
+            if (distance > maxdistance){
+                maxdistance = distance;
+            }
+        }
+        if (maxdistance < tolerance){
+            isConverge = true;
+        }
+    }
+
+    private double calculateDistance(State offer, State currentWeight) {
+        double acid = abs(offer.getAcid() - currentWeight.getAcid());
+        double base = abs(offer.getBase() - currentWeight.getBase());
+        double water = abs(offer.getWater() - currentWeight.getWater());
+        return(acid +base + water);
     }
 //
 //        //check offers
@@ -62,11 +89,18 @@ public class Controller {
 
     public void runSimulation(){
         //until
-        for (int i = 0; i < 30; i++) {
-            System.out.println("Running Simulation " +i);
-            run(i);
-            mod.newRound(i+1);
+        for (Agent a:mod.getAgents()) {
+            a.calculateWeight(mod, 0);
+
         }
+        int i =0;
+        while(!isConverge && i < nRounds) {
+            System.out.println("Running Simulation " + i);
+            run(i);
+            i++;
+            mod.newRound(i);
+        }
+
 
         System.out.println("simulation run");
     }

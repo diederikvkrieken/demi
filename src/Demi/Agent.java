@@ -27,11 +27,24 @@ public class Agent {
 
     private State currentOffer; //x^j_t
 
+    public State getCurrentWeight() {
+        return currentWeight;
+    }
+
+    public void setCurrentWeight(State currentWeight) {
+        this.currentWeight = currentWeight;
+    }
+
+    private State currentWeight; // w_{t-1}
+
     public ArrayList<State> getPrevOffer() {
         return prevOffer;
     }
 
     public void setPrevOffer(ArrayList<State> prevOffer) {
+        if (prevOffer.size()>4){
+            System.out.println("Greater than 8");
+        }
         this.prevOffer = prevOffer;
     }
 
@@ -197,9 +210,14 @@ public class Agent {
     public void concessionStrategy(int t){
         //updateConcession(t);
         //See algorithm 3 in Zheng 2015
+        if (t>100){
+            t=100;
+        }
         this.desirableUtility = 1 - (t*0.01);
         this.utility = 1-(t*0.01);
         System.out.println("Consession value =:"+this.desirableUtility);
+        //TODO
+        // Check for reservation curve
     }
 
 
@@ -224,14 +242,11 @@ public class Agent {
         weight.setAcid(acid/mod.getn_agents());
         weight.setBase(base/mod.getn_agents());
         weight.setWater(water/mod.getn_agents());
+        if(weight.getAcid() >1 || weight.getBase() >1||weight.getBase() >1){
+            System.out.println("Something weird in t="+t);
+        }
+        this.currentWeight = weight;
         return weight;
-    }
-
-    public State calculateProposal(State weight){
-        State offer = this.pointOnConcessionLine(weight);
-        this.currentOffer = offer;
-        this.prevOffer.add(offer);
-        return offer;
     }
 
     public State pointOnConcessionLine(State x){

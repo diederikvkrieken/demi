@@ -72,8 +72,9 @@ public class Mixbed extends Agent {
         double second_cor = x.getBase();
         double third_cor = x.getWater();
         State xPlusOne = new State();
-        xPlusOne.setAcid(0.5*(-(log(u))+first_cor-second_cor));
-        xPlusOne.setBase(0.5*((log(u))+first_cor+second_cor));
+        xPlusOne.setAcid(first_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setBase(second_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setWater(third_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
         return xPlusOne;
     }
 
@@ -81,9 +82,11 @@ public class Mixbed extends Agent {
     public State pointOnConcessionLine(State x){
         double first_cor = x.getAcid();
         double second_cor = x.getBase();
+        double third_cor = x.getWater();
         State xPlusOne = new State();
-        xPlusOne.setAcid(0.5*(-(log(this.utility))+first_cor-second_cor));
-        xPlusOne.setBase(0.5*((log(this.utility))-first_cor+second_cor));
+        xPlusOne.setAcid(first_cor +((log(this.utility)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setBase(second_cor +((log(this.utility)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setWater(third_cor +((log(this.utility)+3-(first_cor+second_cor+third_cor))/3));
         return xPlusOne;
     }
     Mixbed(String name){

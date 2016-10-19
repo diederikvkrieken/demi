@@ -102,8 +102,15 @@ sliceomatic(x,y,z,c)
 clear all
 x = 0:0.05:1;
 [X,Y,Z] = meshgrid(x, x, x);
-c = exp(X+Y+Z);
-sliceomatic1p0(c)
+c = exp(X+Y+Z)/exp(3);
+surf(X(:,:,21),Y(:,:,21),c(:,:,21));
+%sliceomatic1p0(c)
+%%
+clear all
+x = 0:0.05:1;
+plot(x,0.1./x)
+xlim([0 1])
+ylim([0 1])
 %%
 clear all
 [x,y,z] = meshgrid(-2:.2:2, -2:.25:2, -2:.16:2);
@@ -192,7 +199,7 @@ Z = exp(-X+Y)/exp(1);
 %Z = 0.5 * (-abs(X).^2+abs(Y).^2);
 %normZ = Z - min(Z(:));
 %normZ = normZ ./ max(normZ(:)); % *
-%contour3(X,Y,Z,50)
+contour3(X,Y,Z,50)
 xlabel('water')
 ylabel('base')
 %zlabel('utility')
@@ -230,3 +237,92 @@ sqrt((0.25-a)^2+(0.5-b)^2)
 % Ax+By+X = 0; (m,n)
 % d = Am+Bn+C / sqrt(A^2 + B^2)
 d3 = (0.25-0.5+(log(u)+1))/(sqrt(2))
+%%
+clear all
+hold off
+x = 0:0.05:1;
+[X,Y] = meshgrid(x);
+Z = exp(-X+Y)/exp(1);
+%Z = 0.5 * (-abs(X).^2+abs(Y).^2);
+%normZ = Z - min(Z(:));
+%normZ = normZ ./ max(normZ(:)); % *
+contour3(X,Y,Z,50)
+xlabel('water')
+ylabel('base')
+%zlabel('utility')
+hold on
+
+water = 0.25;
+base = 0.5;
+%scatter(water,base);
+u = 0.99;
+ylim([0 1])
+xlim([-0.5 1])
+
+plot(x, (x+(log(u)+1)));
+plot(x,-x+((log(u)+1)));
+a = 0.5*(-(log(u)+1)+water+base)
+b = 0.5*((log(u)+1)+water+base)
+points = [water, a;base, b];
+scatter(points(1,:), points(2,:))
+%bod = [0.7;0.3];
+%scatter(bod)
+%plot(bod)
+%%
+%clear all
+u = 0.99;
+z = 0.5;
+t = 0.2;
+Q1 = [z; z+(log(u)+1)];
+Q2 = [t; t+(log(u)+1)];
+P = [0.25; 0.5];
+a = 0.05;
+b = 1.04;
+X3 = [0.25,0.5;a,b];
+d2 = pdist(X3,'euclidean')
+sqrt((0.25-a)^2+(0.5-b)^2)
+% Ax+By+X = 0; (m,n)
+% d = Am+Bn+C / sqrt(A^2 + B^2)
+d3 = (0.25-0.5+(log(u)+1))/(sqrt(2))
+%%
+clear all
+hold off
+x = 0:0.05:1;
+u=0.8;
+[X,Y] = meshgrid(x);
+Z = -X-Y+(log(u)+3);
+surf(X,Y,Z)
+x = 0.25;
+y = 0.3;
+z = 0.2;
+hold on
+scatter3(x,y,z)
+a = (x*(log(u)+3))/3;
+b = (y*-(log(u)+3))/3;
+c = (z*-(log(u)+3))/3;
+scatter3(a,b,c)
+xlabel('x')
+ylabel('y')
+zlabel('z')
+%%
+clear all
+hold off
+x = 0:0.05:1;
+u=0.4;
+[X,Y] = meshgrid(x);
+Z = -X-Y +(log(u)+3);
+surf(X,Y,Z)
+x = 0.25;
+y = 0.3;
+z = 0.4;
+hold on
+T = X+Y;
+%surf(X,Y,T)
+scatter3(x,y,z)
+a = x + ((log(u)+3-(x+y+z))/(3));
+b = y + ((log(u)+3-(x+y+z))/(3));
+c = z + ((log(u)+3-(x+y+z))/(3));
+scatter3(a,b,c)
+xlabel('x')
+ylabel('y')
+zlabel('z')

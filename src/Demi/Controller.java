@@ -1,5 +1,7 @@
 package Demi;
 
+import java.io.IOException;
+
 import static java.lang.Math.abs;
 
 /**
@@ -11,7 +13,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 30;
+    int nRounds = 1000;
     public Controller(Model model){
         this.mod = model;
     }
@@ -37,6 +39,7 @@ public class Controller {
                 State proposal = agent.pointOnConcessionLine(weight);
                 System.out.println(proposal.toString());
                 mod.propose(agent, proposal, t);
+                agent.addOffer(proposal);
                 System.out.println("Proposal is: " + proposal);
             } else {
                 System.out.println("Other agent update "+agent.getName());
@@ -51,7 +54,11 @@ public class Controller {
 //                }
             }
 
-            //agent.observe(mod.getCurrentState());
+            for (Agent a :mod.getAgents()) {
+                a.setPrevOffer(mod.getRecentOffers(t));
+            }
+            //System.out.println(a.getPrevOffer());
+            //System.out.println(a.toString());
 
         }
         double maxdistance = 0;
@@ -60,7 +67,9 @@ public class Controller {
             if (distance > maxdistance){
                 maxdistance = distance;
             }
+            //System.out.println("maxdistance = "+distance+"  "+maxdistance);
         }
+        System.out.println("maxdistance = "+maxdistance);
         if (maxdistance < tolerance){
             isConverge = true;
         }
@@ -97,6 +106,11 @@ public class Controller {
 
 
         System.out.println("simulation run");
+        try {
+            mod.writeToCSV();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 //    public int checkOffers(){

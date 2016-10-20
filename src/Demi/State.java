@@ -9,6 +9,7 @@ public class State {
     private double acid;
     private double base;
     private double water;
+    private int n_issues = 3;
     //private Offer[] offer;
     private int round;
 
@@ -73,5 +74,15 @@ public class State {
 
     public void setWater(double water) {
         this.water = water;
+    }
+
+    public  String [] toStringForCSV(){
+        String [] output = new String[n_issues];
+
+        output[0] = Double.toString(acid);
+        output[1] = Double.toString(base);
+        output[2] = Double.toString(water);
+        //output[3] = Double.toString(acid);
+        return output;
     }
 }

@@ -1,7 +1,10 @@
 package Demi;
 
+import com.opencsv.CSVWriter;
 import com.sun.xml.internal.bind.v2.TODO;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -20,7 +23,7 @@ public class Model {
     private ArrayList<ArrayList<State>> offers = new ArrayList<>();
 
 
-    private State currentState;
+    //private State currentState;
 
 
 
@@ -88,9 +91,9 @@ public class Model {
         return agents;
     }
 
-    public State getCurrentState() {
-        return currentState;
-    }
+    //public State getCurrentState() {
+    //    return currentState;
+//    }
 
     public int getn_agents(){
         return this.set.getnAgents();
@@ -107,4 +110,33 @@ public class Model {
     public void newRound(int t){
         offers.add(t, new ArrayList<State>());
     }
+
+    public void writeToCSV() throws IOException {
+
+        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output.csv";
+        CSVWriter writer = null;
+
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for(ArrayList<State> each: offers){
+            for (State s:each) {
+                writer.writeNext(s.toStringForCSV());
+            }
+//            Iterator it = each.iterator();
+//            while (it.hasNext()){
+//            }
+        }
+
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//end of writeTOCSV
 }

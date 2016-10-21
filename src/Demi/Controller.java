@@ -13,7 +13,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 1000;
+    int nRounds = 10;
     public Controller(Model model){
         this.mod = model;
     }

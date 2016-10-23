@@ -13,7 +13,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 10;
+    int nRounds = 200;
     public Controller(Model model){
         this.mod = model;
     }
@@ -46,6 +46,8 @@ public class Controller {
                 State x = agent.getOffer();
                 agent.addOffer(x);
                 mod.propose(agent, x, t);
+
+                /*To-do check new offers here  */
 //                System.out.println(agent.getName());
 //                System.out.println(agent.getOffer().toString());
 //                System.out.println(agent.getPrevBestOffer(t));

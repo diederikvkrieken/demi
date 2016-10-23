@@ -48,6 +48,9 @@ public class Agent {
         this.prevOffer = prevOffer;
     }
 
+    public void addBestOffer(int i, State of){
+        prevBestOf[i] = of;
+    }
     private ArrayList<State> prevOffer = new ArrayList<State>();
     private State[] prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
     // which is the offer that provides the highest utility to Agent i among all offers
@@ -66,8 +69,7 @@ public class Agent {
     public Agent(){
         this.desirableUtility = 1;
         this.utility = 1;
-        //this.currentOffer = new State(0,0,0);
-        //belief = new State();
+        this.prevBestOf = new State[4];
     }
 
 
@@ -76,9 +78,9 @@ public class Agent {
 
     //protected Preferences preferences;
 
-    public void observe(State state){
-        //belief = state;
-    }
+//    public void observe(State state){
+//        //belief = state;
+//    }
 
 
 //    public void generateOffer(int i){
@@ -177,6 +179,7 @@ public class Agent {
         this.name = name;
         desirableUtility = 1;
         this.utility = 1;
+        this.prevBestOf = new State[4];
  //       belief = new State();
     }
 
@@ -225,6 +228,8 @@ public class Agent {
         if (this.desirableUtility < this.minimumUtility){
             this.desirableUtility = this.minimumUtility;
         }
+
+
     }
 
 
@@ -246,9 +251,12 @@ public class Agent {
             acid += offer.getAcid();
             water += offer.getWater();
         }
-        weight.setAcid(acid/mod.getn_agents());
-        weight.setBase(base/mod.getn_agents());
-        weight.setWater(water/mod.getn_agents());
+//        weight.setAcid(acid/mod.getn_agents());
+//        weight.setBase(base/mod.getn_agents());
+//        weight.setWater(water/mod.getn_agents());
+        weight.setAcid(acid/3);
+        weight.setBase(base/3);
+        weight.setWater(water/3);
         if(weight.getAcid() >1 || weight.getBase() >1||weight.getBase() >1){
             System.out.println("Something weird in t="+t);
         }
@@ -282,13 +290,17 @@ public class Agent {
 //        return t*0.01;
 //    }
 
-//    public void setPrevBestOffer(int i,State offer){
-//        this.prevBestOf[i] = offer;
-//    }
 
-//    public State getPrevBestOffer(int i){
-//        return prevBestOf[i];
-//    }
+    // Here the preffered offers of the other agents.
+    public void setPrevBestOffer(int i,State offer){
+        this.prevBestOf[i] = offer;
+    }
+
+    public State getPrevBestOffer(int i){
+        return prevBestOf[i];
+    }
+
+
 
     @Override
     public String toString() {

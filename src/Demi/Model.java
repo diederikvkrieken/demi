@@ -22,6 +22,12 @@ public class Model {
     //private ArrayList[] offers = new ArrayList[this.getn_agents()];
     private ArrayList<ArrayList<State>> offers = new ArrayList<>();
 
+    public State[] getStandingOffers() {
+        return standingOffers;
+    }
+
+    private State[] standingOffers = new State[this.getn_agents()];
+
 
     //private State currentState;
 
@@ -42,8 +48,9 @@ public class Model {
         for (Agent a:agents) {
             int ag = set.name2number(a.getName());
             offers.get(i).add(ag, set.getStartStates()[ag]);
+            standingOffers[ag] = set.getStartStates()[ag];
             a.addOffer(set.getStartStates()[ag]);
-
+            a.setPrevBestOffer(ag, set.getStartStates()[ag]);
         }
         //Each agent proposes their offer
         for (Agent a :agents) {
@@ -68,6 +75,10 @@ public class Model {
 //            System.out.println("sTATE"+test.next().toString());
 //        }
 
+    }
+
+    public State[] standingOffers(){
+        return standingOffers;
     }
 
     public ArrayList<State> getRecentOffers(int t){
@@ -106,6 +117,7 @@ public class Model {
 
     public void propose(Agent ag, State offer, int t){
         offers.get(t).add(set.name2number(ag.getName()), offer);
+        standingOffers[set.name2number(ag.getName())] = offer;
     }
     public void newRound(int t){
         offers.add(t, new ArrayList<State>());

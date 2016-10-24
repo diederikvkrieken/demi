@@ -15,6 +15,10 @@ import java.util.Iterator;
 public class Model {
 
 
+    public Settings getSet() {
+        return set;
+    }
+
     //private ArrayList<State> states;
     private Settings set = new Settings();
 
@@ -24,6 +28,14 @@ public class Model {
 
     public State[] getStandingOffers() {
         return standingOffers;
+    }
+
+    public State getStandingOffer(Agent ag){
+        return standingOffers[set.name2number(ag.getName())];
+    }
+
+    public State getStandingOffer(int i){
+        return standingOffers[i];
     }
 
     private State[] standingOffers = new State[this.getn_agents()];
@@ -50,12 +62,13 @@ public class Model {
             offers.get(i).add(ag, set.getStartStates()[ag]);
             standingOffers[ag] = set.getStartStates()[ag];
             a.addOffer(set.getStartStates()[ag]);
-            a.setPrevBestOffer(ag, set.getStartStates()[ag]);
+            a.setPrevBestOffer(set.getStartStates());
         }
         //Each agent proposes their offer
         for (Agent a :agents) {
             a.setPrevOffer(offers.get(i));
-//            System.out.println(a.getPrevOffer());
+
+            //            System.out.println(a.getPrevOffer());
             //System.out.println(a.toString());
         }
 //        System.out.println(offers.get(i).toString());
@@ -118,6 +131,10 @@ public class Model {
     public void propose(Agent ag, State offer, int t){
         offers.get(t).add(set.name2number(ag.getName()), offer);
         standingOffers[set.name2number(ag.getName())] = offer;
+    }
+
+    public int getAgentNumber(Agent ag){
+        return set.name2number(ag.getName());
     }
     public void newRound(int t){
         offers.add(t, new ArrayList<State>());

@@ -1,6 +1,8 @@
 package Demi;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Math.abs;
 
@@ -13,7 +15,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 200;
+    int nRounds = 300;
     public Controller(Model model){
         this.mod = model;
     }
@@ -32,7 +34,36 @@ public class Controller {
             if (agent.getName().equals(name)) {
                 System.out.println("Proposal by agent: " + name);
                 System.out.println("The " + name + " Concedes");
-                agent.concessionStrategy(t);
+
+                //Start reactive consession strategy
+                //First calculate the non reactive concession for t
+                agent.nonreactiveConcessionStrategy(t);
+
+                //Now calculate reactive concession for each agent
+                double deltaU[] = new double[mod.getn_agents()-1];
+                int i = 0;
+                double consession = agent.getDesirableUtility();
+                //List<Agent> Gamma = new ArrayList<Agent>();
+
+                for (Agent ag:mod.getAgents()) {
+                    //Skip own agent???
+                    // if (!ag.getName().equals(name)){}
+                    if (agent.utility(mod.getStandingOffer(ag))<= agent.getMinimumUtility()){
+                        //Gamma.add(ag);
+                        deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t-1).get(mod.getAgentNumber(ag)));
+                        i++;
+                    }
+                }
+                for (int j = 0; j <= i ; j++) {
+                    if (deltaU[j] < consession) {
+                        consession = deltaU[j];
+                    }
+                }
+
+
+                agent.setDesirableUtility(consession);
+                //mod.getSet().name2number(agent.getName());
+
                 System.out.println("The " + name + " weights");
                 State weight = agent.calculateWeight(mod, t);
                 System.out.println("The " + " weights is "+ weight.toString());
@@ -44,8 +75,13 @@ public class Controller {
             } else {
                 System.out.println("Other agent update "+agent.getName());
                 State x = agent.getOffer();
+                State of = mod.getStandingOffer(propose_agent);
                 agent.addOffer(x);
                 mod.propose(agent, x, t);
+                if (agent.utility(of) >= agent.utility(agent.getPrevBestOffer(propose_agent))){
+                    agent.setPrevBestOffer(propose_agent, of);
+                }
+
 
                 /*To-do check new offers here  */
 //                System.out.println(agent.getName());

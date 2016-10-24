@@ -51,7 +51,8 @@ public class Agent {
     public void addBestOffer(int i, State of){
         prevBestOf[i] = of;
     }
-    private ArrayList<State> prevOffer = new ArrayList<State>();
+    private ArrayList<State> prevOffer = new ArrayList<State>(); //The previous 4 offers
+
     private State[] prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
     // which is the offer that provides the highest utility to Agent i among all offers
     // made by Agent j until Agent j’s next-to-last offer
@@ -62,7 +63,16 @@ public class Agent {
     double desirableUtility;
     //utility
     double utility;
-    private double minimumUtility = 0.3;
+
+    public double getMinimumUtility() {
+        return minimumUtility;
+    }
+
+    public void setMinimumUtility(double minimumUtility) {
+        this.minimumUtility = minimumUtility;
+    }
+
+    private double minimumUtility = 0.1;
 
 
 
@@ -214,22 +224,42 @@ public class Agent {
         currentOffer = of;
     }
 
-    public void concessionStrategy(int t){
+    public double reactiveConcessionStrategy(int t, int ag, State of, State ofFirst, State ofLast){
+        double deltaUij;
+        /*Todo test whether not empty ||*/
+        if (t<10 || utility(of) > this.minimumUtility){
+            deltaUij = desirableUtility;
+        }else{
+            double deltaUij1 = utility(of) - utility(prevBestOf[ag]);
+            double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
+            deltaUij = Math.max(deltaUij1, deltaUij2);
+        }
+        return deltaUij;
+
+    }
+
+    public double getDesirableUtility() {
+        return desirableUtility;
+    }
+
+    public void setDesirableUtility(double delta) {
+        this.desirableUtility = this.desirableUtility -delta;
+    }
+
+    public void nonreactiveConcessionStrategy(int t){
         //updateConcession(t);
         //See algorithm 3 in Zheng 2015
+
         if (t>100){
             t=100;
         }
         this.desirableUtility = 1 - (t*0.01);
 //        this.utility = 1-(t*0.01);
         System.out.println("Consession value =:"+this.desirableUtility);
-        //TODO
-        // Check for reservation curve
-        if (this.desirableUtility < this.minimumUtility){
-            this.desirableUtility = this.minimumUtility;
-        }
-
-
+        //TODO Check for reservation curve
+//        if (this.desirableUtility < this.minimumUtility){
+//            this.desirableUtility = this.minimumUtility;
+//        }
     }
 
 
@@ -296,18 +326,25 @@ public class Agent {
         this.prevBestOf[i] = offer;
     }
 
+    public void setPrevBestOffer(State[] offer){
+        this.prevBestOf = offer;
+    }
+
     public State getPrevBestOffer(int i){
         return prevBestOf[i];
     }
 
+    public State[] getPrevBestOffer(){
+        return prevBestOf;
+    }
 
 
     @Override
     public String toString() {
         return "Agent{" +
                 "currentOffer=" + currentOffer +
-                ", prevOffer=" + prevOffer +
-                ", prevBestOf=" + prevBestOf +
+                ", prevOffer=" + prevOffer.toString() +
+                ", prevBestOf=" + prevBestOf.toString() +
                 ", desirableUtility=" + desirableUtility +
                 ", name='" + name + '\'' +
                 '}';

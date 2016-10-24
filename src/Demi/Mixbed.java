@@ -26,16 +26,16 @@ public class Mixbed extends Agent {
 //      5. Currently w amount of base being used for cleaning
 //      6. Currently v amount of acid being used for cleaning
 
-    private double[] a = new double[n_filters];
-    private double[] b = new double[n_filters];
-    private double[] c = new double[n_filters];
-    private double[] d = new double[n_filters];
-    private double[] e = new double[n_filters];
-    private double[] f = new double[n_filters];
-    private int[] z = new int[n_filters]; //filter being used for water cleaning, 1 or zero when not being used
-    private int[] y = new int[n_filters]; //filter being cleaned, 1 or 0 when not being used
-
-    private double x,w, v;// knowledge about the water and base and acid being used
+//    private double[] a = new double[n_filters];
+//    private double[] b = new double[n_filters];
+//    private double[] c = new double[n_filters];
+//    private double[] d = new double[n_filters];
+//    private double[] e = new double[n_filters];
+//    private double[] f = new double[n_filters];
+//    private int[] z = new int[n_filters]; //filter being used for water cleaning, 1 or zero when not being used
+//    private int[] y = new int[n_filters]; //filter being cleaned, 1 or 0 when not being used
+//
+//    private double x,w, v;// knowledge about the water and base and acid being used
 
 //    public double getUtility() {
 //        return utility;

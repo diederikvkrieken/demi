@@ -31,10 +31,12 @@ neut = total(4:4:end,:);
 % scatter3(cation(:,1),cation(:,2),cation(:,3));%, [], c, 'filled')
 % scatter3(mixbed(:,1),mixbed(:,2),mixbed(:,3));%, [], c, 'filled')
 % scatter3(neut(:,1),neut(:,2),neut(:,3));%, [], c, 'filled')
-scatter3(anion(1,1),anion(1,2),anion(1,3));%, [], c, 'filled')
-hold on
-for i =2:1:length(anion)
-    scatter3(anion(i,1),anion(i,2),anion(i,3));%, [], c, 'filled')
-    if(waitforbuttonpress)
-    end
-end
+% scatter3(anion(1,1),anion(1,2),anion(1,3));%, [], c, 'filled')
+% hold on
+% for i =2:1:length(anion)
+%     scatter3(anion(i,1),anion(i,2),anion(i,3));%, [], c, 'filled')
+%     if(waitforbuttonpress)
+%     end
+% end
+
+scatter(

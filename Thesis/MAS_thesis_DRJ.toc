@@ -46,18 +46,16 @@
 \contentsline {subsubsection}{Learning methods in Negotiation}{29}{section*.27}
 \contentsline {subsection}{\numberline {3.2.7}Negotiation in Manufacturing}{29}{subsection.3.2.7}
 \contentsline {chapter}{\numberline {4}Research Design \& Application}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Mapping of Literature on usecase}{32}{section.4.1}
-\contentsline {section}{\numberline {4.2}Demineralization of water}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}Negotiation model}{34}{section.4.3}
-\contentsline {section}{\numberline {4.4}Details of the Agents}{35}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Anion}{37}{subsection.4.4.1}
-\contentsline {subsubsection}{Utility function}{37}{section*.35}
-\contentsline {subsubsection}{Facts}{39}{section*.38}
-\contentsline {subsection}{\numberline {4.4.2}Cation}{40}{subsection.4.4.2}
-\contentsline {subsubsection}{Facts}{40}{section*.42}
-\contentsline {subsection}{\numberline {4.4.3}Mixbed}{42}{subsection.4.4.3}
-\contentsline {subsubsection}{Facts}{42}{section*.46}
-\contentsline {subsection}{\numberline {4.4.4}Neut}{44}{subsection.4.4.4}
-\contentsline {subsubsection}{Facts}{44}{section*.48}
-\contentsline {section}{\numberline {4.5}Evaluation}{44}{section.4.5}
-\contentsline {section}{\numberline {4.6}Algorithm}{45}{section.4.6}
+\contentsline {section}{\numberline {4.1}Demineralization of water}{32}{section.4.1}
+\contentsline {section}{\numberline {4.2}Negotiation model}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Details of the Agents}{34}{section.4.3}
+\contentsline {subsubsection}{Offer generation}{35}{section*.31}
+\contentsline {subsection}{\numberline {4.3.1}Anion}{35}{subsection.4.3.1}
+\contentsline {subsubsection}{Utility function}{35}{section*.33}
+\contentsline {subsection}{\numberline {4.3.2}Cation}{37}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Neut}{37}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Mixbed}{38}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Negotiations}{38}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Solution space}{41}{section.4.4}
+\contentsline {section}{\numberline {4.5}Evaluation}{43}{section.4.5}
+\contentsline {section}{\numberline {4.6}Algorithm}{43}{section.4.6}

@@ -54,6 +54,14 @@ xlabel('water')
 ylabel('base')
 zlabel('utility')
 %%
+x = 0:0.025:1;
+[X,Y] = meshgrid(x);
+Z = exp(-X+Y)./exp(1);
+contour3(X,Y,Z,50)
+xlabel('water')
+ylabel('base')
+zlabel('utility')
+%%
 
 %%%%%%%%%%%%%%% CODE FOR MIXBED %%%%%%%%%%%%%%%%%%%%%
 hold off
@@ -108,15 +116,16 @@ zlabel('utility')
 
 hold on
 
-base = 0.3;
-water = 0.3;
-scatter(base,water);
+base = 0.4;
+water = 0.7;
+point = scatter(base,water);
 u = 0.4;
 ylim([0 1])
 plot(x, (x-(log(u)+1)));
-a = 0.5*(-(log(u))+base-water);
-b = 0.5*(-(log(u))-base+water);
-scatter(a,b)
+a = 0.5*(((log(u)+1))+base+water);
+b = 0.5*(-((log(u)+1))+base+water);
+prop = scatter(a,b);
+%l = legend([point, prop],'prev proposal','Proposal by Anion');
 %bod = [0.7;0.3];
 %scatter(bod)
 %plot(bod)

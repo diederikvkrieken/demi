@@ -33,6 +33,11 @@ Rahmatollah Beheshti, Roghayeh Barmaki, and Nasser Mozayani.
 \newblock In \emph{Recent Advances in Agent-based Complex Automated
   Negotiation}, pages 107--118. Springer, 2016.
 
+\bibitem[Boyd and Vandenberghe(2004)]{boyd2004convex}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock \emph{Convex optimization}.
+\newblock Cambridge university press, 2004.
+
 \bibitem[Brandl and {BR\&L Consulting}(2008)]{brandl2008ISA}
 Dennis Brandl and {BR\&L Consulting}.
 \newblock What is isa-95? industrial best practices of manufacturing
@@ -327,13 +332,6 @@ John~P Wangermann and Robert~F Stengel.
   traffic management.
 \newblock \emph{Artificial Intelligence in Engineering}, 12\penalty0
   (3):\penalty0 177--187, 1998.
-
-\bibitem[Wong and Fang(2010)]{wong2010multi}
-TN~Wong and Fang Fang.
-\newblock A multi-agent protocol for multilateral negotiations in supply chain
-  management.
-\newblock \emph{International Journal of Production Research}, 48\penalty0
-  (1):\penalty0 271--299, 2010.
 
 \bibitem[Wooldridge(2009)]{wooldridge2009introduction}
 Michael Wooldridge.

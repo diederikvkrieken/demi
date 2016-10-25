@@ -1,15 +1,50 @@
 x = 0:0.05:1;
 [A,B,W] = meshgrid(x);
 
-u_anion = exp(-W+B)/exp(1);
-u_cation = exp(-W+A)/exp(1);
-u_neut = exp(-A-B)/exp(2);
-u_mixbed = exp(A+B+W)/exp(3);
-test = exp(A+B)/exp(2);
-surf(A,B,test)
+% u_anion = exp(-W+B)/exp(1);
+% u_cation = exp(-W+A)/exp(1);
+% u_neut = exp(-A-B)/exp(2);
+% u_mixbed = exp(A+B+W)/exp(3);
+% test = exp(A+B)/exp(2);
+% surf(A,B,test)
+
+%x=water
+x = 0:0.05:1;
+y = 0:0.05:1;
+u = 0.3;
+
+%y = base
+y_m2 = plot3(x, (-x-log(u)), zeros(length(x))); %Mixbed
+hold on
+y_a = plot3(x, (x-(log(u)+1)), zeros(length(x))); % Anion
+
+%z = acid
+z_m =  plot3(x, zeros(length(x)), (-x-log(u))); %Mixbed
+z_c = plot3(x, zeros(length(x)), (x-(log(u)+1))); % Cation
+
+%x = base, y = acid
+z_n1 = plot3(zeros(length(x)), y, (y+0.2)); %Neut
+z_n2 = plot3(zeros(length(x)), y, (y-0.2)); %Neut
+z_m = plot3(zeros(length(x)),y,-y-log(u)); %Mixbed
+
+%%
+ z_m =  surf(x, y, ones(length(x),1)*(-x-log(u))); %Mixbed
+ z_c = surf(x, y, ones(length(x),1)*(x-(log(u)+1))); % Cation
+
+ z_n1 = surf(x, y, ones(length(y),1)*(y+0.2)); %Neut
+z_n2 = surf(x, y, ones(length(y),1)*(y-0.2)); %Neut
+z_m = surf(x ,y,ones(length(y),1)*-y-log(u)); %Mixbed
+
+
+xlim([0 1])
+ylim([0 1])
+zlim([0 1])
+
 
 %%
 %Water and base
+
+%x = water, y = base 
 
 x = 0:0.05:1;
 u = 0.3;
@@ -18,6 +53,7 @@ a = area(x, (x-(log(u)+1))); % Anion
 hold on
 
 m = area(x, (-x-log(u))); %Mixbed
+
 set(gca,'Color',[0.8 0.8 0.8]);
 a.FaceColor = [1 1 1];
 m.FaceColor = [1 1 1];
@@ -27,8 +63,17 @@ l = legend([m_line, a_line],'Mixbed','Anion');
 set(l,'color','w')
 
 xlabel('water'),ylabel('base');
-ylim([0 1])
-xlim([0 1])
+% ylim([0 1])
+% xlim([0 1])
+
+%for completeness
+y = 1:0.05:1.4;
+X=1;
+%f = area(y, (1.4)*X); %Mixbed
+%f.FaceColor = [1 1 1];
+
+scatter(mixbed(:,3),mixbed(:,2));
+scatter(anion(:,3),anion(:,2));
 %%
 %Water and base
 
@@ -49,9 +94,11 @@ l = legend([m_line, c_line],'Mixbed','Cation');
 set(l,'color','w')
 
 xlabel('water'),ylabel('acid');
-ylim([0 1])
-xlim([0 1])
+% ylim([0 1])
+% xlim([0 1])
 
+scatter(mixbed(:,2),mixbed(:,3));
+scatter(cation(:,3),cation(:,2));
 %%
 %Base & Acid
 x = 0:0.05:1;
@@ -78,7 +125,9 @@ set(l,'color','w')
 xlabel('base'),ylabel('acid');
 % ylim([0 1])
 % xlim([0 1])
-c = linspace(0,1,length(neut(:,1)));
 
-scatter(neut(:,1),neut(:,2),c);
-scatter(mixbed(:,1),mixbed(:,2),c);
+
+s_n = scatter(neut(:,2),neut(:,1));
+s_m = scatter(mixbed(:,2),mixbed(:,1));
+leg = legend([s_n, s_m],'scatter neut','scatter mixbed');
+

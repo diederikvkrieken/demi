@@ -57,7 +57,9 @@ public class Agent {
             double deltaUij1 = utility(of) - utility(prevBestOf[ag]);
             double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
             deltaUij = Math.max(deltaUij1, deltaUij2);
+            deltaUij = Math.max(deltaUij, 0);
         }
+        System.out.println("delta u ij is "+deltaUij);
         return deltaUij;
 
     }
@@ -172,7 +174,11 @@ public class Agent {
     }
 
     public void setDesirableUtility(double delta) {
-        this.desirableUtility = this.desirableUtility -delta;
+        if (1-delta > minimumUtility) {
+            this.desirableUtility = 1 - delta;
+        }else{
+            this.desirableUtility = minimumUtility;
+        }
     }
 
     public String getName() {

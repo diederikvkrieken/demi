@@ -80,7 +80,7 @@ public class Cation extends Agent {
         double first_cor = x.getWater();
         double second_cor = x.getAcid();
         State xPlusOne = new State();
-        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.desirableUtility);
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility "+this.desirableUtility);
         xPlusOne.setWater(0.5*(-(log(this.desirableUtility)+1)+first_cor+second_cor));
         xPlusOne.setAcid(0.5*((log(this.desirableUtility)+1)+first_cor+second_cor));
         xPlusOne.setBase(x.getBase());

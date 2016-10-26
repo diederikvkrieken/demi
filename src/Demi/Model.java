@@ -24,6 +24,12 @@ public class Model {
     //    return currentState;
     //}
 
+    private ArrayList<Double> maxdistance =new ArrayList<>();
+
+    public void addDistance(double distance){
+        maxdistance.add(distance);
+    }
+
 
     //Get settings
     private Settings set = new Settings();
@@ -98,6 +104,30 @@ public class Model {
             for (State s:each) {
                 writer.writeNext(s.toStringForCSV());
             }
+        }
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//end of writeTOCSV
+
+    public void writeToCSVdistance() throws IOException {
+
+        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance.csv";
+        CSVWriter writer = null;
+
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for(double dist: maxdistance){
+            String[] temp = new String[1];
+            temp[0] = Double.toString(dist);
+            writer.writeNext(temp);
         }
         try {
             writer.close();

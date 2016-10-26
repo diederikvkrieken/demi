@@ -28,9 +28,9 @@ neut = total(4:4:end,:);
 
 a = scatter3(anion(:,1),anion(:,2),anion(:,3));%, [], c, 'filled')
 hold on
-b=scatter3(cation(:,1),cation(:,2),cation(:,3));%, [], c, 'filled')
-m = scatter3(mixbed(:,1),mixbed(:,2),mixbed(:,3));%, [], c, 'filled')
-n=scatter3(neut(:,1),neut(:,2),neut(:,3));%, [], c, 'filled')
+b=scatter3(cation(:,1),cation(:,2),cation(:,3), 'filled');%, [], c, 'filled')
+m = scatter3(mixbed(:,1),mixbed(:,2),mixbed(:,3), '*');%, [], c, 'filled')
+n=scatter3(neut(:,1),neut(:,2),neut(:,3), '+');%, [], c, 'filled')
 l = legend([a, b, m, n],'anion','cation', 'neut', 'mixbed');
 xlabel('acid')
 ylabel('base')
@@ -45,3 +45,17 @@ for i =2:1:length(anion)
     end
 end
 
+%%
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output_distance.csv';
+delimiter = '';
+fileID = fopen(filename);
+
+formatSpec = '%q%[^\n\r]';
+dataArray = textscan(fileID, formatSpec, 'Delimiter', delimiter,  'ReturnOnError', false);
+
+fclose(fileID);
+fclose all;
+
+distance = str2double(dataArray{1});
+clearvars filename delimiter formatSpec fileID dataArray ans;
+plot(distance)

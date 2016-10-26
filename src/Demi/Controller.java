@@ -15,7 +15,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 300;
+    int nRounds = 10000;
     public Controller(Model model){
         this.mod = model;
     }
@@ -55,6 +55,12 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        try {
+            mod.writeToCSVdistance();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void run(int t) {
@@ -77,16 +83,16 @@ public class Controller {
                 agent.nonreactiveConcessionStrategy(t);
 
                 //Now calculate reactive concession for each agent
-                double deltaU[] = new double[mod.getn_agents()-1];
+                double deltaU[] = new double[mod.getn_agents()];
                 int i = 0;
-                double concession = agent.getDesirableUtility();
+                double concession = 1 - agent.getDesirableUtility();
                 //List<Agent> Gamma = new ArrayList<Agent>();
 
                 for (Agent ag:mod.getAgents()) {
                     //Skip own agent???
                     // if (!ag.getName().equals(name)){}
+                    //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
                     if (agent.utility(mod.getStandingOffer(ag))<= agent.getMinimumUtility()){
-                        //Gamma.add(ag);
                         deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t-1).get(mod.getAgentNumber(ag)));
                         i++;
                     }
@@ -96,10 +102,8 @@ public class Controller {
                         concession = deltaU[j];
                     }
                 }
-
-
+                System.out.println("Concession: "+concession);
                 agent.setDesirableUtility(concession);
-                //mod.getSet().name2number(agent.getName());
 
                 System.out.println("The " + name + " weights");
                 State weight = agent.calculateWeight(mod, t);
@@ -128,26 +132,25 @@ public class Controller {
 //                    agent.setPrevBestOffer(t,agent.getOffer());
 //                }
             }
-
-            for (Agent a :mod.getAgents()) {
-                a.setPrevOffer(mod.getRecentOffers(t));
-            }
             //System.out.println(a.getPrevOffer());
             //System.out.println(a.toString());
 
         }
-        double maxdistance = 0;
+        for (Agent a :mod.getAgents()) {
+            a.setPrevOffer(mod.getRecentOffers(t));
+        }
+        double maxDistance = 0;
         for (Agent a:mod.getAgents()) {
             double distance = calculateDistance(a.getOffer(), a.getCurrentWeight());
-            if (distance > maxdistance){
-                maxdistance = distance;
+            if (distance > maxDistance){
+                maxDistance = distance;
             }
             //System.out.println("maxdistance = "+distance+"  "+maxdistance);
         }
-        System.out.println("maxdistance = "+maxdistance);
-        if (maxdistance < tolerance){
+        if (maxDistance < tolerance){
             isConverge = true;
         }
+        mod.addDistance(maxDistance);
     }
 
 

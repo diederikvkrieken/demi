@@ -84,6 +84,7 @@ public class Mixbed extends Agent {
         double second_cor = x.getBase();
         double third_cor = x.getWater();
         State xPlusOne = new State();
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+" 3d "+third_cor+" utility "+this.desirableUtility);
         xPlusOne.setAcid(first_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setBase(second_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setWater(third_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));

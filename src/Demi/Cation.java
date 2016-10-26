@@ -11,8 +11,8 @@ public class Cation extends Agent {
     /*
     * Cation contains 6 filters
     * */
-    int n_filters = 6;
-
+//    int n_filters = 6;
+//
 //      1. Knowledge of cation head about the sub-agents:
 //          {C1, ..., C6} can process a amount of water
 //          {C1, ..., C6} needs to be cleaned after b water
@@ -80,9 +80,9 @@ public class Cation extends Agent {
         double first_cor = x.getWater();
         double second_cor = x.getAcid();
         State xPlusOne = new State();
-        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.utility);
-        xPlusOne.setWater(0.5*(-(log(this.utility)+1)+first_cor+second_cor));
-        xPlusOne.setAcid(0.5*((log(this.utility)+1)+first_cor+second_cor));
+        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility"+this.desirableUtility);
+        xPlusOne.setWater(0.5*(-(log(this.desirableUtility)+1)+first_cor+second_cor));
+        xPlusOne.setAcid(0.5*((log(this.desirableUtility)+1)+first_cor+second_cor));
         xPlusOne.setBase(x.getBase());
         System.out.println("The point is: "+xPlusOne.toString());
 

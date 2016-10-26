@@ -15,35 +15,22 @@ import java.util.Iterator;
 public class Model {
 
 
-    public Settings getSet() {
-        return set;
-    }
-
+    //UNUSED VARIABLES
     //private ArrayList<State> states;
-    private Settings set = new Settings();
-
     //private ArrayList[] offers = new ArrayList[getn_agents()];
     //private ArrayList[] offers = new ArrayList[this.getn_agents()];
+    //private State currentState;
+    //public State getCurrentState() {
+    //    return currentState;
+    //}
+
+
+    //Get settings
+    private Settings set = new Settings();
+
     private ArrayList<ArrayList<State>> offers = new ArrayList<>();
 
-    public State[] getStandingOffers() {
-        return standingOffers;
-    }
-
-    public State getStandingOffer(Agent ag){
-        return standingOffers[set.name2number(ag.getName())];
-    }
-
-    public State getStandingOffer(int i){
-        return standingOffers[i];
-    }
-
     private State[] standingOffers = new State[this.getn_agents()];
-
-
-    //private State currentState;
-
-
 
     private Agent[] agents;
 
@@ -53,9 +40,8 @@ public class Model {
         this.agents = this.set.initializeAgents();
 
         //init states
-        //this.states = this.set.initializeStates();
         int i =0;
-        //for (int i = 0; i < this.getn_agents(); i++) {
+
         offers.add(i, new ArrayList<State>());
         for (Agent a:agents) {
             int ag = set.name2number(a.getName());
@@ -64,18 +50,13 @@ public class Model {
             a.addOffer(set.getStartStates()[ag]);
             a.setPrevBestOffer(set.getStartStates());
         }
-        //Each agent proposes their offer
+        //Each agent stores the preferred offer of the other agents
         for (Agent a :agents) {
             a.setPrevOffer(offers.get(i));
-
-            //            System.out.println(a.getPrevOffer());
-            //System.out.println(a.toString());
         }
-//        System.out.println(offers.get(i).toString());
 
-
-        //}
-
+        //CODETESTING
+        //System.out.println(offers.get(i).toString());
 
         //this.currentState = this.set.initializeFirstState();
 
@@ -90,56 +71,17 @@ public class Model {
 
     }
 
-    public State[] standingOffers(){
-        return standingOffers;
-    }
-
-    public ArrayList<State> getRecentOffers(int t){
-        return offers.get(t);
-//        for (int i = 0; i < getn_agents(); i++) {
-//
-////            if (!this.offers[i].isEmpty()) {
-////                System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
-////                //State test = (State) offers[i].get(t-1);
-////
-////                of.add((State)this.offers[i].get(t));
-////            }else{
-////                for (int j = 0; j < set.getnAgents(); j++) {
-////                    of.add(currentState);
-////                }
-////            }
-//        }
-//        return of;
-    }
-    public Agent[] getAgents() {
-        return agents;
-    }
-
-    //public State getCurrentState() {
-    //    return currentState;
-//    }
-
-    public int getn_agents(){
-        return this.set.getnAgents();
-    }
-
-    public String getnameAgents(int i){
-        return this.set.getName(i);
-    }
-
-
     public void propose(Agent ag, State offer, int t){
         offers.get(t).add(set.name2number(ag.getName()), offer);
         standingOffers[set.name2number(ag.getName())] = offer;
     }
 
-    public int getAgentNumber(Agent ag){
-        return set.name2number(ag.getName());
-    }
     public void newRound(int t){
         offers.add(t, new ArrayList<State>());
     }
 
+
+    //Write offers to csv file
     public void writeToCSV() throws IOException {
 
         String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output.csv";
@@ -156,16 +98,70 @@ public class Model {
             for (State s:each) {
                 writer.writeNext(s.toStringForCSV());
             }
-//            Iterator it = each.iterator();
-//            while (it.hasNext()){
-//            }
         }
-
-
         try {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }//end of writeTOCSV
+
+
+    //Getters & Setters
+
+    public Settings getSet() {
+        return set;
+    }
+
+    public State[] getStandingOffers() {
+        return standingOffers;
+    }
+
+    public State getStandingOffer(Agent ag){
+        return standingOffers[set.name2number(ag.getName())];
+    }
+
+    public State getStandingOffer(int i){
+        return standingOffers[i];
+    }
+
+    public State[] standingOffers(){
+        return standingOffers;
+    }
+
+    public ArrayList<State> getRecentOffers(int t){
+        return offers.get(t);
+        //CODETESTING
+//        for (int i = 0; i < getn_agents(); i++) {
+//
+////            if (!this.offers[i].isEmpty()) {
+////                System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
+////                //State test = (State) offers[i].get(t-1);
+////
+////                of.add((State)this.offers[i].get(t));
+////            }else{
+////                for (int j = 0; j < set.getnAgents(); j++) {
+////                    of.add(currentState);
+////                }
+////            }
+//        }
+//        return of;
+    }
+
+    public int getAgentNumber(Agent ag){
+        return set.name2number(ag.getName());
+    }
+
+    public Agent[] getAgents() {
+        return agents;
+    }
+
+    public int getn_agents(){
+        return this.set.getnAgents();
+    }
+
+    public String getnameAgents(int i){
+        return this.set.getName(i);
+    }
+
 }

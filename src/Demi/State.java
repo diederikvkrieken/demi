@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
+ * A State consists of acid, base, and water
  */
 public class State {
     private double acid;
@@ -44,6 +45,8 @@ public class State {
                 '}';
     }
 
+    //Getters and Setters
+
     public int getRound() {
         return round;
     }
@@ -78,11 +81,9 @@ public class State {
 
     public  String [] toStringForCSV(){
         String [] output = new String[n_issues];
-
         output[0] = Double.toString(acid);
         output[1] = Double.toString(base);
         output[2] = Double.toString(water);
-        //output[3] = Double.toString(acid);
         return output;
     }
 }

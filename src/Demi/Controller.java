@@ -20,6 +20,43 @@ public class Controller {
         this.mod = model;
     }
 
+
+    private double calculateDistance(State offer, State currentWeight) {
+        double acid = abs(offer.getAcid() - currentWeight.getAcid());
+        double base = abs(offer.getBase() - currentWeight.getBase());
+        double water = abs(offer.getWater() - currentWeight.getWater());
+        return(acid +base + water);
+    }
+//
+//        //check offers
+////        int deal = checkOffers();
+////        if (deal == 3){
+//            System.out.println("WE HAVE AN AGREEMENT");;
+////        }
+//    }
+
+
+    public void runSimulation(){
+        for (Agent a:mod.getAgents()) {
+            a.calculateWeight(mod, 0);
+        }
+        int i =1;
+        while(!isConverge && i < nRounds) {
+            System.out.println("Running Simulation " + i);
+            mod.newRound(i);
+            run(i);
+            i++;
+        }
+
+
+        System.out.println("simulation run");
+        try {
+            mod.writeToCSV();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void run(int t) {
         //Start new proposal round
         int propose_agent = t % mod.getn_agents();
@@ -35,14 +72,14 @@ public class Controller {
                 System.out.println("Proposal by agent: " + name);
                 System.out.println("The " + name + " Concedes");
 
-                //Start reactive consession strategy
+                //Start reactive concession strategy
                 //First calculate the non reactive concession for t
                 agent.nonreactiveConcessionStrategy(t);
 
                 //Now calculate reactive concession for each agent
                 double deltaU[] = new double[mod.getn_agents()-1];
                 int i = 0;
-                double consession = agent.getDesirableUtility();
+                double concession = agent.getDesirableUtility();
                 //List<Agent> Gamma = new ArrayList<Agent>();
 
                 for (Agent ag:mod.getAgents()) {
@@ -54,14 +91,14 @@ public class Controller {
                         i++;
                     }
                 }
-                for (int j = 0; j <= i ; j++) {
-                    if (deltaU[j] < consession) {
-                        consession = deltaU[j];
+                for (int j = 0; j < i ; j++) {
+                    if (deltaU[j] < concession) {
+                        concession = deltaU[j];
                     }
                 }
 
 
-                agent.setDesirableUtility(consession);
+                agent.setDesirableUtility(concession);
                 //mod.getSet().name2number(agent.getName());
 
                 System.out.println("The " + name + " weights");
@@ -113,43 +150,6 @@ public class Controller {
         }
     }
 
-    private double calculateDistance(State offer, State currentWeight) {
-        double acid = abs(offer.getAcid() - currentWeight.getAcid());
-        double base = abs(offer.getBase() - currentWeight.getBase());
-        double water = abs(offer.getWater() - currentWeight.getWater());
-        return(acid +base + water);
-    }
-//
-//        //check offers
-////        int deal = checkOffers();
-////        if (deal == 3){
-//            System.out.println("WE HAVE AN AGREEMENT");;
-////        }
-//    }
-
-
-    public void runSimulation(){
-        //until
-        for (Agent a:mod.getAgents()) {
-            a.calculateWeight(mod, 0);
-
-        }
-        int i =1;
-        while(!isConverge && i < nRounds) {
-            System.out.println("Running Simulation " + i);
-            mod.newRound(i);
-            run(i);
-            i++;
-        }
-
-
-        System.out.println("simulation run");
-        try {
-            mod.writeToCSV();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 //    public int checkOffers(){
 //        int deal = 0;

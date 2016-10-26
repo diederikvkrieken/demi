@@ -14,14 +14,6 @@ public class Settings {
     // Name is checked to see if it is the agent to check
     private String[] names = {"Anion", "Cation", "Mixbed", "Neut"};
 
-    public State[] getStartStates() {
-        return startStates;
-    }
-
-    public void setStartStates(State[] startStates) {
-        this.startStates = startStates;
-    }
-
     //What value does the first state have?
     // Order is acid base water
     // private double[] firstStateValues = {0.100, 0.120, 0.150};
@@ -46,33 +38,8 @@ public class Settings {
         agents[2] = new Mixbed(names[2]);
         agents[3] = new Neut(names[3]);
 
-//        for (int i = 0; i < nAgents; i++) {
-//            String className = getName(i);
-//            Object xyz = Class.forName(className).newInstance();
-//            //Class cl = Class.forName(this.getName(i));
-//            //agents[i] = new Agent(names[i]);
-//            agents[i] = new Anion();
-////            agents[i].addOffer(startStates[i]);
-////            agents[i].setCurrentOffer(startStates[i]);
-////            agents[i].setPrevBestOffer(startStates[i]);
-//        }
         return agents;
     }
-
-//    public ArrayList<State> initializeStates(){
-//        ArrayList<State> states = new ArrayList<State>(); // empty state list
-//        return states;
-//    }
-//
-//    public ArrayList<ArrayList<State>> initializeOffers(){
-//        ArrayList<ArrayList<State>> offers = new ArrayList<ArrayList<State>>(); // empty state list
-//        return offers;
-//    }
-//
-//    public State initializeFirstState(){
-//        State state = new State(firstStateValues[0],firstStateValues[1], firstStateValues[2]);
-//        return state;
-//    }
 
     //GETTERS & SETTERS
     public String[] getNames() {
@@ -95,4 +62,14 @@ public class Settings {
     public String number2name(int i){
         return names[i];
     }
+
+    public State[] getStartStates() {
+        return startStates;
+    }
+
+    public void setStartStates(State[] startStates) {
+        this.startStates = startStates;
+    }
+
+
 }

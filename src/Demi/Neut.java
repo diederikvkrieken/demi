@@ -69,8 +69,8 @@ public class Neut extends Agent {
         double first_cor = x.getAcid();
         double second_cor = x.getBase();
         State xPlusOne = new State();
-        xPlusOne.setAcid(0.5*(-(log(this.utility)) + first_cor - second_cor));
-        xPlusOne.setBase(0.5*((log(this.utility)) + first_cor + second_cor));
+        xPlusOne.setAcid(0.5*(-(log(this.desirableUtility)) + first_cor - second_cor));
+        xPlusOne.setBase(0.5*((log(this.desirableUtility)) + first_cor + second_cor));
         return xPlusOne;
     }
 

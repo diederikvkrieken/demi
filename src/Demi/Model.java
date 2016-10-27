@@ -86,7 +86,6 @@ public class Model {
         offers.add(t, new ArrayList<State>());
     }
 
-
     //Write offers to csv file
     public void writeToCSV() throws IOException {
 
@@ -129,6 +128,48 @@ public class Model {
             temp[0] = Double.toString(dist);
             writer.writeNext(temp);
         }
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//end of writeTOCSV
+
+
+    public void addConcession(int i, ArrayList<Double> con){
+        System.out.println(con.toString());
+        concession.add(i, con);
+    }
+    private ArrayList<ArrayList<Double>> concession = new ArrayList<>();
+
+
+
+    public void writeToCSVconcession() throws IOException {
+
+        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
+        CSVWriter writer = null;
+
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for(ArrayList<Double> each: concession){
+            Iterator it = each.iterator();
+            String[] temp = new String[4];
+            int i=0;
+            while(it.hasNext()) {
+                temp[i] = it.next().toString();
+            }
+            writer.writeNext(temp);
+        }
+//        for(double dist: maxdistance){
+//            String[] temp = new String[1];
+//            temp[0] = Double.toString(dist);
+//            writer.writeNext(temp);
+//        }
         try {
             writer.close();
         } catch (IOException e) {

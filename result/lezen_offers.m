@@ -1,5 +1,4 @@
 clear all
-hold off
 filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output.csv';
 delimiter = ',';
 fileID = fopen(filename);
@@ -35,7 +34,7 @@ l = legend([a, b, m, n],'anion','cation', 'neut', 'mixbed');
 xlabel('acid')
 ylabel('base')
 zlabel('water')
-
+hold off
 %%
 scatter3(anion(1,1),anion(1,2),anion(1,3));%, [], c, 'filled')
 hold on
@@ -59,3 +58,28 @@ fclose all;
 distance = str2double(dataArray{1});
 clearvars filename delimiter formatSpec fileID dataArray ans;
 plot(distance)
+
+%%
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output_concession.csv';
+delimiter = '';
+fileID = fopen(filename);
+
+formatSpec = '%q%[^\n\r]';
+dataArray = textscan(fileID, formatSpec, 'Delimiter', delimiter,  'ReturnOnError', false);
+
+fclose(fileID);
+fclose all;
+
+concession = str2double(dataArray{1});
+clearvars filename delimiter formatSpec fileID dataArray ans;
+anion = concession(1:4:end);
+cation = concession(2:4:end);
+mixbed = concession(3:4:end);
+neut = concession(4:4:end);
+plot(anion)
+hold on
+%%
+plot(cation)
+plot(mixbed)
+plot(neut)
+hold off

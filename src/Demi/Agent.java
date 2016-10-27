@@ -80,6 +80,21 @@ public class Agent {
 //        }
     }
 
+    public double nonreactiveConcessionStrategyReturn(int t){
+
+        if (t>100){
+            t=100;
+        }
+        this.desirableUtility = 1 - (t*0.01);
+//        this.utility = 1-(t*0.01);
+        System.out.println("Consession value =:"+this.desirableUtility);
+        //TODO Check for reservation curve
+//        if (this.desirableUtility < this.minimumUtility){
+//            this.desirableUtility = this.minimumUtility;
+//        }
+        return this.desirableUtility;
+    }
+
 
 
     //TODO Ensure only the correct weight are updated

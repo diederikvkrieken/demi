@@ -15,7 +15,7 @@ public class Controller {
     private boolean isConverge = false;
     private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 10000;
+    int nRounds = 100;
     public Controller(Model model){
         this.mod = model;
     }
@@ -61,40 +61,53 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            mod.writeToCSVconcession();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void run(int t) {
         //Start new proposal round
         int propose_agent = t % mod.getn_agents();
         String name = mod.getnameAgents(propose_agent);
+        ArrayList<Double> concessionArray = new ArrayList<>();
 
         for (Agent agent : mod.getAgents()) {
             /*
-            * Import here is to decide whether to update the current belief of the agent
-            * Feasible?
             * We decide on a simplified world where no change occurs
             * */
+
+            //IF it is the agent which is supposed to create the offer
+            //Do the thing below
             if (agent.getName().equals(name)) {
                 System.out.println("Proposal by agent: " + name);
-                System.out.println("The " + name + " Concedes");
-
                 //Start reactive concession strategy
                 //First calculate the non reactive concession for t
-                agent.nonreactiveConcessionStrategy(t);
+                //agent.nonreactiveConcessionStrategy(t);
+
+
 
                 //Now calculate reactive concession for each agent
                 double deltaU[] = new double[mod.getn_agents()];
                 int i = 0;
-                double concession = 1 - agent.getDesirableUtility();
+                double concession = agent.getDesirableUtility();
                 //List<Agent> Gamma = new ArrayList<Agent>();
 
                 for (Agent ag:mod.getAgents()) {
                     //Skip own agent???
                     // if (!ag.getName().equals(name)){}
-                    //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
-                    if (agent.utility(mod.getStandingOffer(ag))<= agent.getMinimumUtility()){
-                        deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t-1).get(mod.getAgentNumber(ag)));
+                    if (agent.getPrevBestOffer(mod.getAgentNumber(ag)) == null || agent.utility(ag.getOffer())> agent.getMinimumUtility()){
+                        deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
+                        //agent.nonreactiveConcessionStrategy(t);
+                    }else{
+                    //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
+                        if (agent.utility(mod.getStandingOffer(ag))<= agent.getMinimumUtility()){
+                            deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t-1).get(mod.getAgentNumber(ag)));
+                            i++;
+                        }
                     }
                 }
                 for (int j = 0; j < i ; j++) {
@@ -102,29 +115,39 @@ public class Controller {
                         concession = deltaU[j];
                     }
                 }
+                concessionArray.add(concession);
+
+
+                // Determining s_i
                 System.out.println("Concession: "+concession);
                 agent.setDesirableUtility(concession);
 
+                //Calculating w
                 System.out.println("The " + name + " weights");
                 State weight = agent.calculateWeight(mod, t);
                 System.out.println("The " + " weights is "+ weight.toString());
+
+                //Projection P on indifference curve
                 State proposal = agent.pointOnConcessionLine(weight);
                 System.out.println(proposal.toString());
+
+                //Propose
                 mod.propose(agent, proposal, t);
                 agent.addOffer(proposal);
                 System.out.println("Proposal is: " + proposal);
             } else {
                 System.out.println("Other agent update "+agent.getName());
+
+                //Add last offer tot the list
                 State x = agent.getOffer();
                 State of = mod.getStandingOffer(propose_agent);
                 agent.addOffer(x);
                 mod.propose(agent, x, t);
+
+                //Update last best prev offer if necessary
                 if (agent.utility(of) >= agent.utility(agent.getPrevBestOffer(propose_agent))){
                     agent.setPrevBestOffer(propose_agent, of);
                 }
-
-
-                /*To-do check new offers here  */
 //                System.out.println(agent.getName());
 //                System.out.println(agent.getOffer().toString());
 //                System.out.println(agent.getPrevBestOffer(t));
@@ -151,6 +174,8 @@ public class Controller {
             isConverge = true;
         }
         mod.addDistance(maxDistance);
+        System.out.println("Concession array: "+concessionArray.toString());
+        mod.addConcession(t-1, concessionArray);
     }
 
 

@@ -30,7 +30,7 @@ hold on
 b=scatter3(cation(:,1),cation(:,2),cation(:,3), 'filled');%, [], c, 'filled')
 m = scatter3(mixbed(:,1),mixbed(:,2),mixbed(:,3), '*');%, [], c, 'filled')
 n=scatter3(neut(:,1),neut(:,2),neut(:,3), '+');%, [], c, 'filled')
-l = legend([a, b, m, n],'anion','cation', 'neut', 'mixbed');
+l = legend([a, b, m, n],'anion','cation', 'mixbed','neut');
 xlabel('acid')
 ylabel('base')
 zlabel('water')
@@ -78,7 +78,6 @@ mixbed = concession(3:4:end);
 neut = concession(4:4:end);
 plot(anion)
 hold on
-%%
 plot(cation)
 plot(mixbed)
 plot(neut)

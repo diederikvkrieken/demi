@@ -348,7 +348,7 @@ zlabel('z')
 clear all
 hold off
 x = 0:0.05:1;
-u=0.4;
+u=1;
 [X,Y] = meshgrid(x);
 Z = -X-Y +(log(u)+3);
 surf(X,Y,Z)
@@ -363,6 +363,12 @@ a = x + ((log(u)+3-(x+y+z))/(3));
 b = y + ((log(u)+3-(x+y+z))/(3));
 c = z + ((log(u)+3-(x+y+z))/(3));
 scatter3(a,b,c)
+acid=0.8148148148148149;
+base=1.3703703703703705;
+water=0.8148148148148149;
+scatter3(acid, base, water)
 xlabel('x')
 ylabel('y')
 zlabel('z')
+
+

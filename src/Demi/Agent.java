@@ -30,7 +30,7 @@ public class Agent {
     double desirableUtility;
 
     //Reservation curve (in our model line):
-    private double minimumUtility = 0.1;
+    private double minimumUtility = 0.3;
 
     public Agent(){
         this.desirableUtility = 1;
@@ -50,16 +50,12 @@ public class Agent {
 
     public double reactiveConcessionStrategy(int t, int ag, State of, State ofFirst, State ofLast){
         double deltaUij;
-        /*Todo test whether not empty ||*/
-        if (t<10 || utility(of) > this.minimumUtility){
-            deltaUij = desirableUtility;
-        }else{
-            double deltaUij1 = utility(of) - utility(prevBestOf[ag]);
-            double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
-            deltaUij = Math.max(deltaUij1, deltaUij2);
-            deltaUij = Math.max(deltaUij, 0);
-        }
-        System.out.println("delta u ij is "+deltaUij);
+        double deltaUij1 = utility(of) - utility(prevBestOf[ag]);
+        double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
+        deltaUij = Math.max(deltaUij1, deltaUij2);
+        deltaUij = Math.max(deltaUij, 0);
+
+        System.out.println("delta 1: "+deltaUij1+" delta 2: "+deltaUij2+" delta u ij is: "+deltaUij);
         return deltaUij;
 
     }
@@ -85,14 +81,14 @@ public class Agent {
         if (t>100){
             t=100;
         }
-        this.desirableUtility = 1 - (t*0.01);
+        double concession = (t*0.01);
 //        this.utility = 1-(t*0.01);
-        System.out.println("Consession value =:"+this.desirableUtility);
+        //System.out.println("Consession value =:"+this.desirableUtility);
         //TODO Check for reservation curve
 //        if (this.desirableUtility < this.minimumUtility){
 //            this.desirableUtility = this.minimumUtility;
 //        }
-        return this.desirableUtility;
+        return concession;
     }
 
 
@@ -120,9 +116,13 @@ public class Agent {
             System.out.println("Something weird in t="+t);
         }
         this.currentWeight = weight;
-        System.out.println(weight.toString());
+        //System.out.println(weight.toString());
         return weight;
     }
+
+//    public State point(double a, double b, double c){
+//
+//    }
 
     public State pointOnConcessionLine(State x){
         //Should be overridden to be agent specific
@@ -177,6 +177,7 @@ public class Agent {
     }
 
     public State getPrevBestOffer(int i){
+        //System.out.println(name+" for agent "+i+" has prevBestOf "+prevBestOf[i]+" with utility "+ +utility(prevBestOf[i]));
         return prevBestOf[i];
     }
 

@@ -97,14 +97,34 @@ public class Anion extends Agent {
 
     @Override
     public State pointOnConcessionLine(State x){
+        //CHeck whether point is not accepted on concession line
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
-        System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+" utility "+this.desirableUtility);
-        xPlusOne.setWater(0.5*(-(log(this.desirableUtility)+1)+first_cor+second_cor));
-        xPlusOne.setBase(0.5*((log(this.desirableUtility)+1)+first_cor+second_cor));
+        System.out.println("1st Cor: " + first_cor + " 2nd " + second_cor + " utility " + this.desirableUtility);
+        double newWater = 0.5 * (-(log(this.desirableUtility) + 1) + first_cor + second_cor);
+        double newBase =0.5 * ((log(this.desirableUtility) + 1) + first_cor + second_cor);
+        System.out.println("water = "+newWater+" base = "+newBase);
+
+        //y = x +log(utility)
+        //x = y -log(utility)
+        if(newWater <0){
+            newWater = 0;
+            newBase = newWater +(log(this.desirableUtility)+1);
+        }else if (newBase <0){
+            newBase = 0;
+            newWater = newBase - (log(this.desirableUtility)+1);
+        }else if(newWater >1){
+            newWater = 1;
+            newBase = newWater +(log(this.desirableUtility)+1);
+        }else if (newBase>1){
+            newBase = 1;
+            newWater = newBase - (log(this.desirableUtility)+1);
+        }
+        xPlusOne.setWater(newWater);
+        xPlusOne.setBase(newBase);
         xPlusOne.setAcid(x.getAcid());
-        System.out.println("The point is: "+xPlusOne.toString());
+        //System.out.println("The point is: " + xPlusOne.toString());
         return xPlusOne;
     }
 

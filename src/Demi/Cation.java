@@ -81,10 +81,29 @@ public class Cation extends Agent {
         double second_cor = x.getAcid();
         State xPlusOne = new State();
         System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+"utility "+this.desirableUtility);
-        xPlusOne.setWater(0.5*(-(log(this.desirableUtility)+1)+first_cor+second_cor));
-        xPlusOne.setAcid(0.5*((log(this.desirableUtility)+1)+first_cor+second_cor));
+        double newWater = 0.5*(-(log(this.desirableUtility)+1)+first_cor+second_cor);
+        double newAcid = 0.5*((log(this.desirableUtility)+1)+first_cor+second_cor);
+        System.out.println("water = "+newWater+" Acid = "+newAcid);
+
+        //y = x +log(utility)
+        //x = y -log(utility)
+        if(newWater <0){
+            newWater = 0;
+            newAcid = newWater +(log(this.desirableUtility)+1);
+        }else if (newAcid <0){
+            newAcid = 0;
+            newWater = newAcid - (log(this.desirableUtility)+1);
+        }else if(newWater >1){
+            newWater = 1;
+            newAcid = newWater +(log(this.desirableUtility)+1);
+        }else if (newAcid>1){
+            newAcid = 1;
+            newWater = newAcid - (log(this.desirableUtility)+1);
+        }
+        xPlusOne.setWater(newWater);
+        xPlusOne.setAcid(newAcid);
         xPlusOne.setBase(x.getBase());
-        System.out.println("The point is: "+xPlusOne.toString());
+//        System.out.println("The point is: "+xPlusOne.toString());
 
         return xPlusOne;
     }

@@ -13,7 +13,7 @@ public class Controller {
 
     private Model mod;
     private boolean isConverge = false;
-    private double tolerance = 0.1;
+    private double tolerance = 0.01;
     //int n_agents=4;
     int nRounds = 100;
     public Controller(Model model){
@@ -49,7 +49,7 @@ public class Controller {
         }
 
 
-        System.out.println("simulation run");
+        System.out.println("simulation run, rounds = "+i+" isConverge = "+isConverge);
         try {
             mod.writeToCSV();
         } catch (IOException e) {
@@ -68,12 +68,15 @@ public class Controller {
         }
     }
 
+
     public void run(int t) {
         //Start new proposal round
+        /*Determine agent to propose*/
         int propose_agent = t % mod.getn_agents();
         String name = mod.getnameAgents(propose_agent);
         ArrayList<Double> concessionArray = new ArrayList<>();
 
+        /*For each agent j in agents do:*/
         for (Agent agent : mod.getAgents()) {
             /*
             * We decide on a simplified world where no change occurs
@@ -88,29 +91,40 @@ public class Controller {
                 //agent.nonreactiveConcessionStrategy(t);
 
 
-
                 //Now calculate reactive concession for each agent
                 double deltaU[] = new double[mod.getn_agents()];
                 int i = 0;
-                double concession = agent.getDesirableUtility();
+                double concession = Double.POSITIVE_INFINITY;
                 //List<Agent> Gamma = new ArrayList<Agent>();
 
-                for (Agent ag:mod.getAgents()) {
+                for (Agent ag : mod.getAgents()) {
                     //Skip own agent???
                     // if (!ag.getName().equals(name)){}
-                    if (agent.getPrevBestOffer(mod.getAgentNumber(ag)) == null || agent.utility(ag.getOffer())> agent.getMinimumUtility()){
+                    //REMOVED THE EMPTY SET CHECK.
+//                    if (agent.getPrevBestOffer(mod.getAgentNumber(ag)) == null) {
+//                        deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
+//                        i++;
+//                        System.out.println("nonreactive because set is empty");
+//                        //System.out.println(agent.getPrevBestOffer(mod.getAgentNumber(ag)));
+//
+//                    } else
+                    if (agent.utility(ag.getOffer()) >= agent.getMinimumUtility()) {
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
-                        //agent.nonreactiveConcessionStrategy(t);
-                    }else{
-                    //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
-                        if (agent.utility(mod.getStandingOffer(ag))<= agent.getMinimumUtility()){
-                            deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t-1).get(mod.getAgentNumber(ag)));
+                        System.out.println("nonreactive because offer is greater than minimum utiliy");
+                        //System.out.println("Utility of offer = " + agent.utility(ag.getOffer()));
+
+                    } else {
+                        //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
+                        //if (agent.utility(mod.getStandingOffer(ag)) <= agent.getMinimumUtility()) {
+                            deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
                             i++;
-                        }
+                            System.out.println(" reactive ");
+                        //}
                     }
                 }
-                for (int j = 0; j < i ; j++) {
+                for (int j = 0; j < mod.getn_agents(); j++) {
+                    System.out.println(deltaU[j]);
                     if (deltaU[j] < concession) {
                         concession = deltaU[j];
                     }
@@ -119,17 +133,24 @@ public class Controller {
 
 
                 // Determining s_i
-                System.out.println("Concession: "+concession);
+                System.out.println("Concession: " + concession);
                 agent.setDesirableUtility(concession);
 
                 //Calculating w
                 System.out.println("The " + name + " weights");
                 State weight = agent.calculateWeight(mod, t);
-                System.out.println("The " + " weights is "+ weight.toString());
+                System.out.println("The " + " weights is " + weight.toString());
 
+                State proposal;
+                // TODO check of weight niet in de u_i(x) valt!!
                 //Projection P on indifference curve
-                State proposal = agent.pointOnConcessionLine(weight);
-                System.out.println(proposal.toString());
+                System.out.println("agent(utility): "+agent.utility(weight)+" agent desirable = " +agent.getDesirableUtility());
+                if (agent.utility(weight) <= agent.getDesirableUtility()) {
+                    proposal = agent.pointOnConcessionLine(weight);
+                } else{
+                    proposal = weight;
+                }
+                System.out.println("Proposal is "+proposal.toString());
 
                 //Propose
                 mod.propose(agent, proposal, t);
@@ -168,13 +189,13 @@ public class Controller {
             if (distance > maxDistance){
                 maxDistance = distance;
             }
-            //System.out.println("maxdistance = "+distance+"  "+maxdistance);
+            //System.out.println("maxdistance = "+distance+"  "+maxDistance);
         }
         if (maxDistance < tolerance){
             isConverge = true;
         }
         mod.addDistance(maxDistance);
-        System.out.println("Concession array: "+concessionArray.toString());
+        //System.out.println("Concession array: "+concessionArray.toString());
         mod.addConcession(t-1, concessionArray);
     }
 

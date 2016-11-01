@@ -516,29 +516,29 @@ At the moment, it seems as if the reactive concession strategy, as described in 
 
 \section{Algorithm}
 \begin{algorithm}[h]
-	\KwData{Each agent’s utility function $u_i(x)$, 
+	\KwData{Each agent's utility function $u_i(x)$, 
 		reservation utility $ru_i$, 
 		and concession strategy $s_i(t)= 1,2,...,T$}
 	\KwResult{Negotiation Agreement}
-	initialization: Each agent proposes a preferred offer $xî_0$\;
+	initialization: Each agent proposes a preferred offer $x^i_0$\;
 	$t\leftarrow1$\;
 	Set convergence tolerance: $\delta$\;
-	\While{$t\leq T$ and Isconverge == False}
+	\While{$t\leq T$ and IsConverge == False}
 	{
-		Determine the agent to propose: i = mod(t,m)\;
-		\ForEach{$j\in {1,2,...,m}$}
+		Determine the agent to propose: i = mod(t,4)\;
+		\ForEach{$j\in {1,2,3,4}$}
 		{
 			\eIf{j == i}
 			{
 				%Agent $i$ concedes by determining $s_i(t)$\:
-				\ForEach{$k\in {1,2,...,m}$}
+				\ForEach{$k\in {1,2,3,4}$}
 				{
-					\eIf{$x^k_{[j,-1]}==\emptyset \parallel u_j(x^k_t) \geq ru_i$}{
+					\eIf{$x^k_{[j,-1]}==\emptyset \parallel u_j(x^k_t) \geq ru_j$}{
 						$\Delta u_{jk} \leftarrow \Delta u_{j0}(t) $\;
 					}{
 						$\Delta_1 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_{[j,-1]})$\;
-						$\Delta_2 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_t)-(1-u_j(x^k_{t-1}))$\;
-						$\Delta u_jk \leftarrow \max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$\;
+						$\Delta_2 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_0)-(1-u_j(x^j_{t-1}))$\;
+						$\Delta u_{jk} \leftarrow \max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$\;
 					}
 					$\Delta u_j(t)\leftarrow \min \{\min_{k\in\Gamma_t(i)}\Delta u_{jk}(t), \Delta u_{j0}(t)\}$\;	
 				}
@@ -560,7 +560,7 @@ At the moment, it seems as if the reactive concession strategy, as described in 
 			$t \leftarrow t+1$\;
 		}
 	}
-\caption{Basic algorithm structure modified from \citet{zheng2015automated}.}
+\caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to four agents.}
 \end{algorithm}
 
 \todos

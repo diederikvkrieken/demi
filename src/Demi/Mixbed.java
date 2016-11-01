@@ -57,7 +57,7 @@ public class Mixbed extends Agent {
     /*
     * Calculation from point to line
     *
-    * Indifference curve van e^(-x-y) is gelijk aan y = -x -log(utility)
+    * Indifference curve van e^(x+y+z) is gelijk aan y = -x -log(utility)
     * Oftewel 0 = -x -y -log(utility)
     * a = - 1; b = - 1; c = -1;
     * x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2}
@@ -80,6 +80,7 @@ public class Mixbed extends Agent {
 
     @Override
     public State pointOnConcessionLine(State x){
+
         double first_cor = x.getAcid();
         double second_cor = x.getBase();
         double third_cor = x.getWater();
@@ -88,6 +89,7 @@ public class Mixbed extends Agent {
         xPlusOne.setAcid(first_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setBase(second_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setWater(third_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
+        System.out.println("Our Mixbed Proposal is: "+xPlusOne.toString());
         return xPlusOne;
     }
     Mixbed(String name){

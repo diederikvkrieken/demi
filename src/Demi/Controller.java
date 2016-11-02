@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.log;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
@@ -142,7 +143,6 @@ public class Controller {
                 System.out.println("The " + " weights is " + weight.toString());
 
                 State proposal;
-                // TODO check of weight niet in de u_i(x) valt!!
                 //Projection P on indifference curve
                 System.out.println("agent(utility): "+agent.utility(weight)+" agent desirable = " +agent.getDesirableUtility());
                 if (agent.utility(weight) <= agent.getDesirableUtility()) {
@@ -150,6 +150,12 @@ public class Controller {
                 } else{
                     proposal = weight;
                 }
+
+                //TODO ensure that proposal is range [0 1]
+
+                proposal = agent.pointWithinRange(proposal);
+
+
                 System.out.println("Proposal is "+proposal.toString());
 
                 //Propose

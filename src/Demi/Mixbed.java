@@ -89,6 +89,12 @@ public class Mixbed extends Agent {
         xPlusOne.setAcid(first_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setBase(second_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setWater(third_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
+
+        if(third_cor < 0){
+            /*TODO project onto the line below*/
+
+        }
+
         System.out.println("Our Mixbed Proposal is: "+xPlusOne.toString());
         return xPlusOne;
     }

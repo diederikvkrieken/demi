@@ -101,16 +101,35 @@ public class Anion extends Agent {
         double first_cor = x.getWater();
         double second_cor = x.getBase();
         State xPlusOne = new State();
+
+        //0 = x -y +log(utility)
+        //a = 1; b = -1; c = log(u)+1
         System.out.println("1st Cor: " + first_cor + " 2nd " + second_cor + " utility " + this.desirableUtility);
+        double[] xy = lineToPoint(1,-1,log(this.desirableUtility)+1,first_cor, second_cor);
         double newWater = 0.5 * (-(log(this.desirableUtility) + 1) + first_cor + second_cor);
         double newBase =0.5 * ((log(this.desirableUtility) + 1) + first_cor + second_cor);
+
+        double newWater2 = xy[0];
+        double newBase2 = xy[1];
         System.out.println("water = "+newWater+" base = "+newBase);
+        System.out.println("water2 = "+newWater2+" base2 = "+newBase2);
+
 
         //y = x +log(utility)
         //x = y -log(utility)
-        if(newWater <0){
-            newWater = 0;
-            newBase = newWater +(log(this.desirableUtility)+1);
+
+        xPlusOne.setWater(newWater);
+        xPlusOne.setBase(newBase);
+        xPlusOne.setAcid(x.getAcid());
+        //System.out.println("The point is: " + xPlusOne.toString());
+        return xPlusOne;
+    }
+
+    @Override
+    public State pointWithinRange(State x){
+        if(x.getWater() <0){
+            x.setWater(0);
+            x.setBase(x.getWater()+log(this.desirableUtility)+1);
         }else if (newBase <0){
             newBase = 0;
             newWater = newBase - (log(this.desirableUtility)+1);
@@ -121,12 +140,9 @@ public class Anion extends Agent {
             newBase = 1;
             newWater = newBase - (log(this.desirableUtility)+1);
         }
-        xPlusOne.setWater(newWater);
-        xPlusOne.setBase(newBase);
-        xPlusOne.setAcid(x.getAcid());
-        //System.out.println("The point is: " + xPlusOne.toString());
-        return xPlusOne;
     }
+
+
 
 
     // Anion reservation function is base  = water^2

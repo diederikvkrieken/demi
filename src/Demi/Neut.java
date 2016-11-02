@@ -1,8 +1,6 @@
 package Demi;
 
-import static java.lang.Math.exp;
-import static java.lang.Math.log;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
@@ -71,13 +69,13 @@ public class Neut extends Agent {
         State xPlusOne = new State();
         System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+" utility "+this.desirableUtility);
         double newAcid = 0.5*(-(log(this.desirableUtility)) + first_cor - second_cor);
-        double newBase = 0.5*((log(this.desirableUtility)) + first_cor + second_cor);
+        double newBase = 0.5*(-(log(this.desirableUtility)) - first_cor + second_cor);
         System.out.println("Acid = "+newAcid+" base = "+newBase);
-
-
 
         //y = -x -log(utility)
         //x = -y -log(utility)
+
+        //TODO ensure to have [0 1]
         if(newAcid <0){
             newAcid = 0;
             newBase = -newAcid -log(this.desirableUtility);
@@ -91,6 +89,15 @@ public class Neut extends Agent {
             newBase = 1;
             newAcid = -newBase - log(this.desirableUtility);
         }
+
+        if (abs(newAcid)-abs(newBase) > 0.2){
+            /*TODO make reservation check*/
+            /*Greater than or larger than*/
+
+
+
+        }
+
         xPlusOne.setAcid(newAcid);
         xPlusOne.setBase(newBase);
         xPlusOne.setWater(x.getWater());

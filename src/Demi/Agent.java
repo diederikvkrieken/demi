@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.lang.Math;
 import java.util.Iterator;
 
+import static java.lang.Math.pow;
+
 /**
  * Created by diederik.van.krieken on 12-9-2016.
  */
@@ -144,6 +146,23 @@ public class Agent {
         return (utility > minimumUtility);
     }
 
+    public State pointWithinRange(State x){
+        System.out.println("THERE IS SOMETHING WRONG! THE AGENT FUNCTION IS NOT USED");
+        return x;
+    }
+
+
+    //HERE POINT ON LINE IS CALCULATED
+    //ax+by+c = 0
+    //x0, y0 is original point
+    public double[] lineToPoint(double a, double b, double c, double x, double y){
+        double[] xy = new double[2];
+        //x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2}
+        xy[0] = (((b*((b*x) - (a*y)))-a*c)/(pow(a,2)+pow(b,2)));
+        //y = \frac{a(-bx_0 + ay_0) - bc}{a^2+b^2}.</math>
+        xy[1] = (((a*(-(b*x) + (a*y)))-b*c)/(pow(a,2)+pow(b,2)));
+        return xy;
+    }
 
 
      @Override

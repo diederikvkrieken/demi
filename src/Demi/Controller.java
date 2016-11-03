@@ -14,9 +14,9 @@ public class Controller {
 
     private Model mod;
     private boolean isConverge = false;
-    private double tolerance = 0.01;
+    private double tolerance = 0.1;
     //int n_agents=4;
-    int nRounds = 100;
+    int nRounds = 1000;
     public Controller(Model model){
         this.mod = model;
     }
@@ -98,6 +98,7 @@ public class Controller {
                 double concession = Double.POSITIVE_INFINITY;
                 //List<Agent> Gamma = new ArrayList<Agent>();
 
+                System.out.println("loop");
                 for (Agent ag : mod.getAgents()) {
                     //Skip own agent???
                     // if (!ag.getName().equals(name)){}
@@ -113,14 +114,16 @@ public class Controller {
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
                         System.out.println("nonreactive because offer is greater than minimum utiliy");
-                        //System.out.println("Utility of offer = " + agent.utility(ag.getOffer()));
+                        System.out.println("Utility of offer = " + agent.utility(ag.getOffer())+" and minimum util = "+agent.getMinimumUtility());
 
                     } else {
                         //Check for Gamma: Agents for which the offer is lower than the reservation utility at t.
                         //if (agent.utility(mod.getStandingOffer(ag)) <= agent.getMinimumUtility()) {
-                            deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
-                            i++;
-                            System.out.println(" reactive ");
+                        System.out.println("reacctivee");
+                        System.out.println("agent: "+mod.getAgentNumber(ag)+" Standing "+ mod.getStandingOffer(ag)+" x0: "+ mod.getRecentOffers(0).get(mod.getAgentNumber(ag))+" Last " + mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
+                        deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
+                        i++;
+                        System.out.println(" reactive ");
                         //}
                     }
                 }
@@ -152,7 +155,6 @@ public class Controller {
                 }
 
                 //TODO ensure that proposal is range [0 1]
-
                 proposal = agent.pointWithinRange(proposal);
 
 
@@ -168,11 +170,13 @@ public class Controller {
                 //Add last offer tot the list
                 State x = agent.getOffer();
                 State of = mod.getStandingOffer(propose_agent);
+                System.out.println("standing of = "+of.toString()+" utility: "+agent.utility(of)+" prevbest + utility "+ agent.getPrevBestOffer(propose_agent)+" "+agent.utility(agent.getPrevBestOffer(propose_agent)));
                 agent.addOffer(x);
                 mod.propose(agent, x, t);
 
                 //Update last best prev offer if necessary
                 if (agent.utility(of) >= agent.utility(agent.getPrevBestOffer(propose_agent))){
+                    System.out.println("Updateprevbest!!");
                     agent.setPrevBestOffer(propose_agent, of);
                 }
 //                System.out.println(agent.getName());

@@ -32,7 +32,7 @@ public class Agent {
     double desirableUtility;
 
     //Reservation curve (in our model line):
-    private double minimumUtility = 0.3;
+    private double minimumUtility = 0.1;
 
     public Agent(){
         this.desirableUtility = 1;

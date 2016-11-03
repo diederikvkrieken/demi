@@ -50,7 +50,7 @@ public class Mixbed extends Agent {
     @Override
     public double utility(State offer){
         double value;
-        value = exp(-offer.getBase() - offer.getAcid());
+        value = exp(offer.getBase() + offer.getAcid() +offer.getWater())/exp(3);
         return value;
     }
 
@@ -90,14 +90,46 @@ public class Mixbed extends Agent {
         xPlusOne.setBase(second_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
         xPlusOne.setWater(third_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
 
-        if(third_cor < 0){
-            /*TODO project onto the line below*/
-
-        }
 
         System.out.println("Our Mixbed Proposal is: "+xPlusOne.toString());
         return xPlusOne;
     }
+
+    @Override
+    public State pointWithinRange(State x){
+        double first_cor = x.getAcid();
+        double second_cor = x.getBase();
+        double third_cor = x.getWater();
+        if(third_cor < 0){
+            /*TODO project onto the line below*/
+            third_cor = 0;
+            //lineToPoint(1, 1, log(this.desirableUtility)+3, first_cor, second_cor);
+        }else if(third_cor >1){
+            third_cor =1;
+            //lineToPoint(1, 1, -log(this.desirableUtility)+3, first_cor, second_cor);
+        }
+        if(second_cor < 0){
+            second_cor =0;
+            //lineToPoint(1, 1, log(this.desirableUtility)+3, first_cor, third_cor);
+        }else if(second_cor >1){
+            second_cor = 1;
+            //lineToPoint(1, 1, -log(this.desirableUtility)+3, first_cor, third_cor);
+        }
+        if(first_cor < 0){
+            first_cor = 0;
+            //lineToPoint(1, 1, log(this.desirableUtility)+3, first_cor, second_cor);
+        }else if(first_cor >1){
+            first_cor = 1;
+            //lineToPoint(1, 1, -log(this.desirableUtility)+3, first_cor, second_cor);
+        }
+        State newX = new State();
+        newX.setAcid(first_cor);
+        newX.setBase(second_cor);
+        newX.setWater(third_cor);
+        return newX;
+    }
+
+
     Mixbed(String name){
         super(name);
     }

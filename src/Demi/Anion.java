@@ -130,16 +130,17 @@ public class Anion extends Agent {
         if(x.getWater() <0){
             x.setWater(0);
             x.setBase(x.getWater()+log(this.desirableUtility)+1);
-        }else if (newBase <0){
-            newBase = 0;
-            newWater = newBase - (log(this.desirableUtility)+1);
-        }else if(newWater >1){
-            newWater = 1;
-            newBase = newWater +(log(this.desirableUtility)+1);
-        }else if (newBase>1){
-            newBase = 1;
-            newWater = newBase - (log(this.desirableUtility)+1);
+        }else if (x.getBase() <0){
+            x.setBase(0);
+            x.setWater(x.getBase() - (log(this.desirableUtility)+1));
+        }else if(x.getWater() >1){
+            x.setWater(1);
+            x.setBase(x.getWater() +(log(this.desirableUtility)+1));
+        }else if (x.getBase()>1){
+            x.setBase(1);
+            x.setWater(x.getBase()- (log(this.desirableUtility)+1));
         }
+        return x;
     }
 
 

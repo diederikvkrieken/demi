@@ -137,7 +137,7 @@ public class Model {
 
 
     public void addConcession(int i, ArrayList<Double> con){
-        System.out.println(con.toString());
+        System.out.println("Concession is: "+con.toString());
         concession.add(i, con);
     }
     private ArrayList<ArrayList<Double>> concession = new ArrayList<>();

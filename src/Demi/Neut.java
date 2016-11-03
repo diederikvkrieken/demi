@@ -75,33 +75,61 @@ public class Neut extends Agent {
         //y = -x -log(utility)
         //x = -y -log(utility)
 
-        //TODO ensure to have [0 1]
-        if(newAcid <0){
-            newAcid = 0;
-            newBase = -newAcid -log(this.desirableUtility);
-        }else if (newBase <0){
-            newBase = 0;
-            newAcid = -newBase - log(this.desirableUtility);
-        }else if(newAcid >1){
-            newAcid = 1;
-            newBase = -newAcid -log(this.desirableUtility);
-        }else if (newBase>1){
-            newBase = 1;
-            newAcid = -newBase - log(this.desirableUtility);
-        }
+//        //TODO ensure to have [0 1]
+//        if(newAcid <0){
+//            newAcid = 0;
+//            newBase = -newAcid -log(this.desirableUtility);
+//        }else if (newBase <0){
+//            newBase = 0;
+//            newAcid = -newBase - log(this.desirableUtility);
+//        }else if(newAcid >1){
+//            newAcid = 1;
+//            newBase = -newAcid -log(this.desirableUtility);
+//        }else if (newBase>1){
+//            newBase = 1;
+//            newAcid = -newBase - log(this.desirableUtility);
+//        }
 
-        if (abs(newAcid)-abs(newBase) > 0.2){
-            /*TODO make reservation check*/
-            /*Greater than or larger than*/
-
-
-
-        }
+//        if (abs(newAcid)-abs(newBase) > 0.2){
+//            /*TODO make reservation check*/
+//            /*Greater than or larger than*/
+//
+//
+//
+//        }
 
         xPlusOne.setAcid(newAcid);
         xPlusOne.setBase(newBase);
         xPlusOne.setWater(x.getWater());
         return xPlusOne;
+    }
+
+    @Override
+    public State pointWithinRange(State x){
+        double[] xy;
+        if (abs(x.getAcid())-abs(x.getBase()) < 0.2) {
+            xy = lineToPoint(1, -1, 0.2, x.getAcid(), x.getBase());
+            //points = [acid, a, na;base, b, nb];
+            //scatter(points(1,:), points(2,:))
+            //scatter(na, nb)
+        }
+        else if (abs(x.getAcid())-abs(x.getBase()) > 0.2) {
+            xy = lineToPoint(1, -1, -0.2, x.getAcid(), x.getBase());
+//        points = [acid, a, na;base, b, nb];
+//        scatter(points(1,:), points(2,:))
+//        scatter(na, nb)
+        }
+        else{
+            xy =new double[2];
+            xy[0] = x.getAcid();
+            xy[1] = x.getBase();
+//        points = [acid, a;base, b];
+//        scatter(points(1,:), points(2,:))
+//        end
+        }
+        x.setAcid(xy[0]);
+        x.setBase(xy[1]);
+        return x;
     }
 
     // Anion reservation function is acid = water +- 0.1

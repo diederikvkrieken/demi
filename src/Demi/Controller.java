@@ -93,7 +93,6 @@ public class Controller {
                         i++;
                         System.out.println("nonreactive because offer is greater than minimum utiliy");
                         System.out.println("Utility of offer = " + agent.utility(ag.getOffer())+" and minimum util = "+agent.getMinimumUtility());
-
                     } else {
                         //calculate reactive if offer < minimum
                         System.out.println("reacctivee");

@@ -34,6 +34,11 @@ l = legend([a, b, m, n],'anion','cation', 'mixbed','neut');
 xlabel('acid')
 ylabel('base')
 zlabel('water')
+xlim([0 1])
+ylim([0 1])
+zlim([0 1])
+last = [anion(end,:);cation(end,:);mixbed(end,:);neut(end,:)];
+scatter3(last(:,1),last(:,2),last(:,3), 'filled');%, [], c, 'filled')
 hold off
 %%
 scatter3(anion(1,1),anion(1,2),anion(1,3));%, [], c, 'filled')

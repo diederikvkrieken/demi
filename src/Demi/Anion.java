@@ -3,49 +3,13 @@ package Demi;
 import static java.lang.Math.exp;
 import static java.lang.Math.log;
 import static java.lang.Math.sqrt;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
  */
 public class Anion extends Agent {
-    /*
-    * Anions contains 6 filters
-    * */
-
-
-//   int n_filters = 6;
-//      1. Knowledge of anion head about the sub-agents:
-//          {A1, ..., A6} can process a amount of water
-//          {A1, ..., A6} needs to be cleaned after b water
-//          {A1, ..., A6} has filtered c amount of water
-//          {A1, ..., A6} needs d base to clean
-//          {A1, ..., A6} needs e time to clean
-//
-//      2. Currently x amount of water being filtered
-//      3. Currently Z \in {A1, ..., A6} filter being used for water filtering
-//      4. Currently Y \in {A1, ..., A6} filter being used for cleaning
-//      5. Currently w amount of base being used for cleaning
-
-//    private double[] a = new double[n_filters];
-//    private double[] b = new double[n_filters];
-//    private double[] c = new double[n_filters];
-//    private double[] d = new double[n_filters];
-//    private double[] e = new double[n_filters];
-//    private int[] z = new int[n_filters]; //filter being used for water cleaning, 1 or zero when not being used
-//    private int[] y = new int[n_filters]; //filter being cleaned, 1 or 0 when not being used
-//    //Using default utility funtion ax+bx
-//    private double alpha = 0.3;
-//    private double beta = -0.4;
-//
-//    private double x,w;// knowledge about the water and base being used
-
-//    public double getUtility() {
-//        return utility;
-//    }
-//
-//    public void setUtility(double utility) {
-//        this.utility = utility;
-//    }
 
     @Override
     public double utility(State offer){
@@ -53,13 +17,6 @@ public class Anion extends Agent {
         value = exp(offer.getBase() - offer.getWater())/exp(1);
         return value;
     }
-
-//    public double consessionStrategy(State offer){
-//        double value;
-//        value = -alpha / beta;
-//        this.utility = value;
-//        return value;
-//    }
 
     /*
     * Below calculates the point closest to state on the concession line.
@@ -106,13 +63,13 @@ public class Anion extends Agent {
         //a = 1; b = -1; c = log(u)+1
         System.out.println("1st Cor: " + first_cor + " 2nd " + second_cor + " utility " + this.desirableUtility);
         double[] xy = lineToPoint(1,-1,log(this.desirableUtility)+1,first_cor, second_cor);
-        double newWater = 0.5 * (-(log(this.desirableUtility) + 1) + first_cor + second_cor);
-        double newBase =0.5 * ((log(this.desirableUtility) + 1) + first_cor + second_cor);
+        //double newWater = 0.5 * (-(log(this.desirableUtility) + 1) + first_cor + second_cor);
+        //double newBase =0.5 * ((log(this.desirableUtility) + 1) + first_cor + second_cor);
 
-        double newWater2 = xy[0];
-        double newBase2 = xy[1];
-        System.out.println("water = "+newWater+" base = "+newBase);
-        System.out.println("water2 = "+newWater2+" base2 = "+newBase2);
+        double newWater = xy[0];
+        double newBase = xy[1];
+//        System.out.println("water = "+newWater+" base = "+newBase);
+//        System.out.println("water2 = "+newWater2+" base2 = "+newBase2);
 
 
         //y = x +log(utility)
@@ -120,8 +77,7 @@ public class Anion extends Agent {
 
         xPlusOne.setWater(newWater);
         xPlusOne.setBase(newBase);
-        xPlusOne.setAcid(x.getAcid());
-        //System.out.println("The point is: " + xPlusOne.toString());
+        xPlusOne.setAcid(min(max(x.getAcid(),0),1));
         return xPlusOne;
     }
 
@@ -140,25 +96,9 @@ public class Anion extends Agent {
             x.setBase(1);
             x.setWater(x.getBase()- (log(this.desirableUtility)+1));
         }
+
         return x;
     }
-
-
-
-
-    // Anion reservation function is base  = water^2
-    // So base has to be equal or less than sqrt(water)
-
-//    @Override
-//    public boolean reservationCurveCheck(State offer){
-//        double first_cor = offer.getWater();
-//        double second_cor = offer.getBase();
-//        if (second_cor <= sqrt(first_cor)) {
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
 
     Anion(String name){
         super(name);

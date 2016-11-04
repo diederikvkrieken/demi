@@ -14,24 +14,8 @@ import java.util.Iterator;
 
 public class Model {
 
-
-    //UNUSED VARIABLES
-    //private ArrayList<State> states;
-    //private ArrayList[] offers = new ArrayList[getn_agents()];
-    //private ArrayList[] offers = new ArrayList[this.getn_agents()];
-    //private State currentState;
-    //public State getCurrentState() {
-    //    return currentState;
-    //}
-
-    private ArrayList<Double> maxdistance =new ArrayList<>();
-
-    public void addDistance(double distance){
-        maxdistance.add(distance);
-    }
-
-
-    //Get settings
+    //Setup variables.
+    //Settings, States: standingOffers, offers & agents.
     private Settings set = new Settings();
 
     private ArrayList<ArrayList<State>> offers = new ArrayList<>();
@@ -53,30 +37,16 @@ public class Model {
             int ag = set.name2number(a.getName());
             offers.get(i).add(ag, set.getStartStates()[ag]);
             standingOffers[ag] = set.getStartStates()[ag];
-            a.addOffer(set.getStartStates()[ag]);
+            a.addCurrentOffer(set.getStartStates()[ag]);
             a.setPrevBestOffer(set.getStartStates());
         }
         //Each agent stores the preferred offer of the other agents
         for (Agent a :agents) {
             a.setPrevOffer(offers.get(i));
         }
-
-        //CODETESTING
-        //System.out.println(offers.get(i).toString());
-
-        //this.currentState = this.set.initializeFirstState();
-
-//        for (Agent agent : agents) {
-//            agent.belief = currentState;
-//        }
-//        Iterator test = offers.get(i).iterator();
-//        System.out.println("TEST123");
-//        while (test.hasNext()){
-//            System.out.println("sTATE"+test.next().toString());
-//        }
-
     }
 
+    // A proposal: the offer is added to the list and to the current offers
     public void propose(Agent ag, State offer, int t){
         offers.get(t).add(set.name2number(ag.getName()), offer);
         standingOffers[set.name2number(ag.getName())] = offer;
@@ -111,6 +81,13 @@ public class Model {
         }
     }//end of writeTOCSV
 
+    //Write distance to CSV file
+    //Below is for the csv write of distance
+    private ArrayList<Double> maxdistance =new ArrayList<>();
+    public void addDistance(double distance){
+        maxdistance.add(distance);
+    }
+
     public void writeToCSVdistance() throws IOException {
 
         String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance.csv";
@@ -135,14 +112,13 @@ public class Model {
         }
     }//end of writeTOCSV
 
-
+    //Write concessions to CSV file
+    //Below is for the csv write of consession
     public void addConcession(int i, ArrayList<Double> con){
         System.out.println("Concession is: "+con.toString());
         concession.add(i, con);
     }
     private ArrayList<ArrayList<Double>> concession = new ArrayList<>();
-
-
 
     public void writeToCSVconcession() throws IOException {
 
@@ -196,27 +172,8 @@ public class Model {
         return standingOffers[i];
     }
 
-    public State[] standingOffers(){
-        return standingOffers;
-    }
-
     public ArrayList<State> getRecentOffers(int t){
         return offers.get(t);
-        //CODETESTING
-//        for (int i = 0; i < getn_agents(); i++) {
-//
-////            if (!this.offers[i].isEmpty()) {
-////                System.out.println("OOFFFFEERRR: "+i+offers[i].get(t-1).getClass());
-////                //State test = (State) offers[i].get(t-1);
-////
-////                of.add((State)this.offers[i].get(t));
-////            }else{
-////                for (int j = 0; j < set.getnAgents(); j++) {
-////                    of.add(currentState);
-////                }
-////            }
-//        }
-//        return of;
     }
 
     public int getAgentNumber(Agent ag){

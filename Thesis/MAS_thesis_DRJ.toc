@@ -57,5 +57,4 @@
 \contentsline {subsection}{\numberline {4.3.4}Mixbed}{38}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Negotiations}{38}{subsection.4.3.5}
 \contentsline {section}{\numberline {4.4}Solution space}{41}{section.4.4}
-\contentsline {section}{\numberline {4.5}Evaluation}{43}{section.4.5}
-\contentsline {section}{\numberline {4.6}Algorithm}{43}{section.4.6}
+\contentsline {section}{\numberline {4.5}Algorithm}{43}{section.4.5}

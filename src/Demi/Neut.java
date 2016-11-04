@@ -10,29 +10,6 @@ public class Neut extends Agent {
     * Anions contains 6 filters
     * */
 
-//      1. Knowledge of anion head about the sub-agents:
-//          {A1, ..., A6} can process a amount of water
-//          {A1, ..., A6} needs to be cleaned after b water
-//          {A1, ..., A6} has filtered c amount of water
-//          {A1, ..., A6} needs d base to clean
-//          {A1, ..., A6} needs e time to clean
-//
-//      2. Currently x amount of water being filtered
-//      3. Currently Z \in {A1, ..., A6} filter being used for water filtering
-//      4. Currently Y \in {A1, ..., A6} filter being used for cleaning
-//      5. Currently w amount of base being used for cleaning
-
-//    private double a,b;// knowledge about the acid and base being used
-
-//    public double getUtility() {
-//        return utility;
-//    }
-//
-//    public void setUtility(double utility) {
-//        this.utility = utility;
-//    }
-//
-//    private double utility;
 
     @Override
     public double utility(State offer){
@@ -75,32 +52,9 @@ public class Neut extends Agent {
         //y = -x -log(utility)
         //x = -y -log(utility)
 
-//        //TODO ensure to have [0 1]
-//        if(newAcid <0){
-//            newAcid = 0;
-//            newBase = -newAcid -log(this.desirableUtility);
-//        }else if (newBase <0){
-//            newBase = 0;
-//            newAcid = -newBase - log(this.desirableUtility);
-//        }else if(newAcid >1){
-//            newAcid = 1;
-//            newBase = -newAcid -log(this.desirableUtility);
-//        }else if (newBase>1){
-//            newBase = 1;
-//            newAcid = -newBase - log(this.desirableUtility);
-//        }
-
-//        if (abs(newAcid)-abs(newBase) > 0.2){
-//            /*TODO make reservation check*/
-//            /*Greater than or larger than*/
-//
-//
-//
-//        }
-
         xPlusOne.setAcid(newAcid);
         xPlusOne.setBase(newBase);
-        xPlusOne.setWater(x.getWater());
+        xPlusOne.setWater(min(max(x.getWater(),0),1));
         return xPlusOne;
     }
 
@@ -109,23 +63,14 @@ public class Neut extends Agent {
         double[] xy;
         if (abs(x.getAcid())-abs(x.getBase()) < 0.2) {
             xy = lineToPoint(1, -1, 0.2, x.getAcid(), x.getBase());
-            //points = [acid, a, na;base, b, nb];
-            //scatter(points(1,:), points(2,:))
-            //scatter(na, nb)
-        }
+         }
         else if (abs(x.getAcid())-abs(x.getBase()) > 0.2) {
             xy = lineToPoint(1, -1, -0.2, x.getAcid(), x.getBase());
-//        points = [acid, a, na;base, b, nb];
-//        scatter(points(1,:), points(2,:))
-//        scatter(na, nb)
         }
         else{
             xy =new double[2];
             xy[0] = x.getAcid();
             xy[1] = x.getBase();
-//        points = [acid, a;base, b];
-//        scatter(points(1,:), points(2,:))
-//        end
         }
         x.setAcid(xy[0]);
         x.setBase(xy[1]);

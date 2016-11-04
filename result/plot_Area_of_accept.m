@@ -11,7 +11,7 @@ x = 0:0.05:1;
 %x=water
 x = 0:0.05:1;
 y = 0:0.05:1;
-u = 0.3;
+u = 0.4;
 
 %y = base
 y_m2 = plot3(x, (-x-log(u)), zeros(length(x))); %Mixbed

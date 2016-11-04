@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.3)  1 NOV 2016 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.3)  3 NOV 2016 19:31
 entering extended mode
 **MAS_thesis_DRJ.tex
 (MAS_thesis_DRJ.tex
@@ -1113,33 +1113,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
  <./img/reservationcurve_water_base.jpg> <./img/reservationcurve_water_acid.jpg
 >] [42 <./img/reservationcurve_base_acid.jpg>]
-<"img/solution mixbed neut".jpg, id=842, 1405.25pt x 1053.9375pt>
-File: "img/solution mixbed neut".jpg Graphic file (type jpg)
-
-<use "img/solution mixbed neut".jpg>
-Package pdftex.def Info: "img/solution mixbed neut".jpg used on input line 504.
-
-(pdftex.def)             Requested size: 241.49895pt x 181.1129pt.
-
-<img/scatter_of_proposals.jpg, id=843, 1405.25pt x 1053.9375pt>
-File: img/scatter_of_proposals.jpg Graphic file (type jpg)
-
-<use img/scatter_of_proposals.jpg>
-Package pdftex.def Info: img/scatter_of_proposals.jpg used on input line 511.
-(pdftex.def)             Requested size: 241.49895pt x 181.1129pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package todo Warning: Nothing \todo! I'm ignoring the \todos command on input l
-ine 566.
 
 ) [43
 
 
- <./img/solution mixbed neut.jpg> <./img/scatter_of_proposals.jpg>]
-(MAS_thesis_DRJ.bbl [44] [45
+] (MAS_thesis_DRJ.bbl [44] [45
 
 ] [46]
 Underfull \hbox (badness 5908) in paragraph at lines 280--284
@@ -1159,8 +1139,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
  (MAS_thesis_DRJ.aux (tex/literature.framework.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
-Package rerunfilecheck Info: File `MAS_thesis_DRJ.out' has not changed.
-(rerunfilecheck)             Checksum: 400AFD18800F6803021046F67A405F9B;2998.
+
+
+Package rerunfilecheck Warning: File `MAS_thesis_DRJ.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MAS_thesis_DRJ.out':
+(rerunfilecheck)             Before: 400AFD18800F6803021046F67A405F9B;2998
+(rerunfilecheck)             After:  147709A392D2A5F22C00C5AC5F595C00;2940.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  )
 (\end occurred inside a group at level 1)
@@ -1168,33 +1155,36 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23141 strings out of 493671
- 458035 string characters out of 3143854
+ 23129 strings out of 493671
+ 457681 string characters out of 3143854
  572246 words of memory out of 3000000
- 25844 multiletter control sequences out of 15000+200000
+ 25836 multiletter control sequences out of 15000+200000
  15137 words of font info for 58 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,23n,67p,2785b,17501s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on MAS_thesis_DRJ.pdf (53 pages, 2026627 bytes).
+pdfTeX warning (dest): name{section.4.6} has been referenced bu
+t does not exist, replaced by a fixed one
+
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on MAS_thesis_DRJ.pdf (53 pages, 1894508 bytes).
 PDF statistics:
- 997 PDF objects out of 1000 (max. 8388607)
- 224 named destinations out of 1000 (max. 500000)
- 467 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 989 PDF objects out of 1000 (max. 8388607)
+ 222 named destinations out of 1000 (max. 500000)
+ 457 words of extra memory for PDF output out of 10000 (max. 10000000)
 

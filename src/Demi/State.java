@@ -11,7 +11,6 @@ public class State {
     private double base;
     private double water;
     private int n_issues = 3;
-    //private Offer[] offer;
     private int round;
 
 

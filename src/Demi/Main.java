@@ -5,12 +5,15 @@ public class Main {
     public static void main(String[] args)
     {
         //Set up model, which stores agents and offers
-        Model mod = new Model();
+        for (int i = 1; i < 14; i++) {
+            Model mod = new Model(i);
 
-        //Algorithm based on Zheng etal 2015.
-        Controller ctrl = new Controller(mod);
+            //Algorithm based on Zheng etal 2015.
+            Controller ctrl = new Controller(mod);
 
-        ctrl.runSimulation();
+            ctrl.runSimulation();
+
+        }
 
     }
 

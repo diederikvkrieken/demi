@@ -8,10 +8,16 @@ import static java.lang.Math.log;
  */
 public class Mixbed extends Agent {
 
+    //set parameters
+    //sum is the sum of the variables in the utility function such that
+    // exp(a*base + b*acid +c * water)/(a+b+c)
+    // (a+b+c) == sum
+    int sum = 4;
+
     @Override
     public double utility(State offer){
         double value;
-        value = exp(offer.getBase() + offer.getAcid() +offer.getWater())/exp(3);
+        value = exp(offer.getBase() + offer.getAcid() + 2*offer.getWater())/exp(sum);
         return value;
     }
 
@@ -33,9 +39,9 @@ public class Mixbed extends Agent {
         double second_cor = x.getBase();
         double third_cor = x.getWater();
         State xPlusOne = new State();
-        xPlusOne.setAcid(first_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
-        xPlusOne.setBase(second_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
-        xPlusOne.setWater(third_cor +((log(u)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setAcid(first_cor +((log(u)+sum-(first_cor+second_cor+third_cor))/sum));
+        xPlusOne.setBase(second_cor +((log(u)+sum-(first_cor+second_cor+third_cor))/sum));
+        xPlusOne.setWater(third_cor +((log(u)+sum-(first_cor+second_cor+third_cor))/sum));
         return xPlusOne;
     }
 
@@ -47,9 +53,9 @@ public class Mixbed extends Agent {
         double third_cor = x.getWater();
         State xPlusOne = new State();
         System.out.println("1st Cor: "+first_cor+" 2nd "+second_cor+" 3d "+third_cor+" utility "+this.desirableUtility);
-        xPlusOne.setAcid(first_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
-        xPlusOne.setBase(second_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
-        xPlusOne.setWater(third_cor +((log(this.desirableUtility)+3-(first_cor+second_cor+third_cor))/3));
+        xPlusOne.setAcid(first_cor +((log(this.desirableUtility)+sum-(first_cor+second_cor+third_cor))/sum));
+        xPlusOne.setBase(second_cor +((log(this.desirableUtility)+sum-(first_cor+second_cor+third_cor))/sum));
+        xPlusOne.setWater(third_cor +((log(this.desirableUtility)+sum-(first_cor+second_cor+third_cor))/sum));
 
 
         System.out.println("Our Mixbed Proposal is: "+xPlusOne.toString());

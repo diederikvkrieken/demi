@@ -24,10 +24,35 @@ public class Model {
 
     private Agent[] agents;
 
+    private int roundnumber = 99;
+
     public Model(){
 
         //init agents
         this.agents = this.set.initializeAgents();
+
+        //init states
+        int i =0;
+
+        offers.add(i, new ArrayList<State>());
+        for (Agent a:agents) {
+            int ag = set.name2number(a.getName());
+            offers.get(i).add(ag, set.getStartStates()[ag]);
+            standingOffers[ag] = set.getStartStates()[ag];
+            a.addCurrentOffer(set.getStartStates()[ag]);
+            a.setPrevBestOffer(set.getStartStates());
+        }
+        //Each agent stores the preferred offer of the other agents
+        for (Agent a :agents) {
+            a.setPrevOffer(offers.get(i));
+        }
+    }
+
+    public Model(int round){
+
+        this.roundnumber = round;
+        //init agents
+        this.agents = this.set.initializeAgents(round);
 
         //init states
         int i =0;
@@ -59,7 +84,13 @@ public class Model {
     //Write offers to csv file
     public void writeToCSV() throws IOException {
 
-        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output.csv";
+        String temp;
+        if (this.roundnumber == 99 ){
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output.csv";
+        }else{
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_"+roundnumber+".csv";
+        }
+        String csv = temp;
         CSVWriter writer = null;
 
         try {
@@ -90,7 +121,15 @@ public class Model {
 
     public void writeToCSVdistance() throws IOException {
 
-        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance.csv";
+        String temp;
+        if (this.roundnumber == 99 ){
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance.csv";
+        }else{
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_"+roundnumber+"_distance.csv";
+        }
+        String csv = temp;
+
+//        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance.csv";
         CSVWriter writer = null;
 
         try {
@@ -101,9 +140,9 @@ public class Model {
 
 
         for(double dist: maxdistance){
-            String[] temp = new String[1];
-            temp[0] = Double.toString(dist);
-            writer.writeNext(temp);
+            String[] temp2 = new String[1];
+            temp2[0] = Double.toString(dist);
+            writer.writeNext(temp2);
         }
         try {
             writer.close();
@@ -122,7 +161,14 @@ public class Model {
 
     public void writeToCSVconcession() throws IOException {
 
-        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
+        String temp;
+        if (this.roundnumber == 99 ){
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
+        }else{
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_"+roundnumber+"_concession.csv";
+        }
+        String csv = temp;
+//        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
         CSVWriter writer = null;
 
         try {
@@ -134,12 +180,12 @@ public class Model {
 
         for(ArrayList<Double> each: concession){
             Iterator it = each.iterator();
-            String[] temp = new String[4];
+            String[] temp2 = new String[4];
             int i=0;
             while(it.hasNext()) {
-                temp[i] = it.next().toString();
+                temp2[i] = it.next().toString();
             }
-            writer.writeNext(temp);
+            writer.writeNext(temp2);
         }
 //        for(double dist: maxdistance){
 //            String[] temp = new String[1];

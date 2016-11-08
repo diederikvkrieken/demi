@@ -18,6 +18,8 @@ public class Settings {
     // Order is acid base water
     // private double[] firstStateValues = {0.100, 0.120, 0.150};
     private State[] startStates = new State[nAgents];
+    private double[] reservation = {0.05, 0.10, 0.15,0.20,0.25,0.3,0.35, 0.4,0.45,0.5,0.55,0.6, 0.65};
+
 
     public Settings(){
         //Anion
@@ -38,6 +40,20 @@ public class Settings {
         agents[2] = new Mixbed(names[2]);
         agents[3] = new Neut(names[3]);
 
+        return agents;
+    }
+
+    public Agent[] initializeAgents(int round){
+        //initialize nAgents agents
+        Agent[] agents = new Agent[nAgents];
+        agents[0] = new Anion(names[0]);
+        agents[1] = new Cation(names[1]);
+        agents[2] = new Mixbed(names[2]);
+        agents[3] = new Neut(names[3]);
+
+        for (int i = 0; i < nAgents; i++) {
+            agents[i].setMinimumUtility(reservation[round-1]);
+        }
         return agents;
     }
 

@@ -117,9 +117,9 @@ hold on
 water = 0.9;
 base = 0.3;
 %scatter(water,base);
-u = 0.3;
-ylim([-.1 1.2])
-xlim([-.1 1.2])
+u = 0.6;
+%ylim([-.1 1.2])
+%xlim([-.1 1.2])
 
 y = x +log(u)+1;
 plot(x,y)
@@ -155,6 +155,12 @@ else
     nb = b;
 end
 %legend([lijn1, lijn2, lijn3, lijn4], '1','2','3','4')
-points = [water, a, na;base, b, nb];
+points = [water, a, na;base, b, nb]
 scatter(points(1,:), points(2,:))
 hold off
+%%
+clear all
+x = 0:0.005:1;
+[X,Y,Z] = meshgrid(x);
+U = exp(X+Y+2*Z)./exp(4);
+max(max(U(:,:)))

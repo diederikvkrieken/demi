@@ -29,6 +29,7 @@ z_m = plot3(zeros(length(x)),y,-y-log(u)); %Mixbed
 
 %%
  z_m =  surf(x, y, ones(length(x),1)*(-x-log(u))); %Mixbed
+hold on
  z_c = surf(x, y, ones(length(x),1)*(x-(log(u)+1))); % Cation
 
  z_n1 = surf(x, y, ones(length(y),1)*(y+0.2)); %Neut
@@ -47,12 +48,13 @@ zlim([0 1])
 %x = water, y = base 
 
 x = 0:0.05:1;
-u = 0.3;
+u = 0.7;
 
 a = area(x, (x-(log(u)+1))); % Anion
 hold on
 
 m = area(x, (-x-log(u))); %Mixbed
+
 
 set(gca,'Color',[0.8 0.8 0.8]);
 a.FaceColor = [1 1 1];
@@ -63,15 +65,15 @@ l = legend([m_line, a_line],'Mixbed','Anion');
 set(l,'color','w')
 
 xlabel('water'),ylabel('base');
-% ylim([0 1])
-% xlim([0 1])
+ ylim([0 1])
+ xlim([0 1])
 
 %for completeness
 y = 1:0.05:1.4;
 X=1;
 %f = area(y, (1.4)*X); %Mixbed
 %f.FaceColor = [1 1 1];
-
+%%
 scatter(mixbed(:,3),mixbed(:,2));
 scatter(anion(:,3),anion(:,2));
 %%
@@ -107,6 +109,12 @@ u = 0.3;
 n1 = area(x, (x+0.2)); % Neut1
 hold on
 n2 = area(x, (x-0.2)); %Neut2
+
+% x = base
+% y = acid
+%Neut: ln(u) = -X - Y
+n3 = area(x,-x - log(u));
+
 m = area(x,-x-log(u));
 
 set(gca,'Color',[1 1 1 ]);
@@ -117,16 +125,17 @@ m.FaceColor = [1 1 1];
 
 n1_line = plot(x, (x+0.2)); %Neut
 n2_line = plot(x, (x-0.2)); %Neut
+n3_line = plot(x, -x-log(u));
 m_line = plot(x,-x-log(u)); %Mixbed
 
-l = legend([n1_line, n2_line, m_line],'Neut_1','Neut_2', 'Mixbed');
+l = legend([n1_line, n2_line,n3_line, m_line],'Neut_1','Neut_2', 'Neut_3', 'Mixbed');
 set(l,'color','w')
 
 xlabel('base'),ylabel('acid');
 % ylim([0 1])
 % xlim([0 1])
 
-
+%%
 s_n = scatter(neut(:,2),neut(:,1));
 s_m = scatter(mixbed(:,2),mixbed(:,1));
 leg = legend([s_n, s_m],'scatter neut','scatter mixbed');

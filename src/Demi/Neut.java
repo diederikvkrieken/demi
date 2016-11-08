@@ -72,8 +72,8 @@ public class Neut extends Agent {
             xy[0] = x.getAcid();
             xy[1] = x.getBase();
         }
-        x.setAcid(xy[0]);
-        x.setBase(xy[1]);
+        x.setAcid(min(max(xy[0],0),1));
+        x.setBase(min(max(xy[1],0),1));
         return x;
     }
 

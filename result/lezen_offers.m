@@ -39,7 +39,33 @@ ylim([0 1])
 zlim([0 1])
 last = [anion(end,:);cation(end,:);mixbed(end,:);neut(end,:)];
 scatter3(last(:,1),last(:,2),last(:,3), 'filled');%, [], c, 'filled')
-hold off
+%%
+%NASH SOLUTION
+x = 0:0.005:1;
+u = 0.4;
+ma =0;
+s = 0;
+for Acid = x
+    for Base = x
+        for Water =x
+            a = exp(-Water+Base)./exp(1);
+            c = exp(-Water+Acid)./exp(1);
+            m = exp(Water+Acid+Base)./exp(3);
+            n = exp(-Acid-Base);
+            if (a>u && c>u && m>u && n>u)
+                s = a +c +m +n;
+            end
+            if (s>ma)
+                ma = s;
+                ac = Acid;
+                ba = Base;
+                wa = Water;
+            end
+        end
+    end
+end
+nash = scatter3(ac,ba,wa, 'filled')
+%hold off
 %%
 scatter3(anion(1,1),anion(1,2),anion(1,3));%, [], c, 'filled')
 hold on

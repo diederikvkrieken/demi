@@ -87,7 +87,7 @@ public class Controller {
                 double concession = Double.POSITIVE_INFINITY;
 
                 for (Agent ag : mod.getAgents()) {
-                    if (agent.utility(ag.getOffer()) >= agent.getMinimumUtility()) {
+                    if (agent.utility(ag.getOffer()) >= agent.getMinimumUtility()||true) {
                         //Calculate nonreactive if offer >= minumum
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;

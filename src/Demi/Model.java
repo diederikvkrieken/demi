@@ -154,7 +154,7 @@ public class Model {
     //Write concessions to CSV file
     //Below is for the csv write of consession
     public void addConcession(int i, ArrayList<Double> con){
-        System.out.println("Concession is: "+con.toString());
+//        System.out.println("Concession is: "+con.toString());
         concession.add(i, con);
     }
     private ArrayList<ArrayList<Double>> concession = new ArrayList<>();

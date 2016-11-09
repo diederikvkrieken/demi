@@ -61,7 +61,7 @@ public class Anion extends Agent {
 
         //0 = x -y +log(utility)
         //a = 1; b = -1; c = log(u)+1
-        System.out.println("1st Cor: " + first_cor + " 2nd " + second_cor + " utility " + this.desirableUtility);
+//        System.out.println("1st Cor: " + first_cor + " 2nd " + second_cor + " utility " + this.desirableUtility);
         double[] xy = lineToPoint(1,-1,log(this.desirableUtility)+1,first_cor, second_cor);
         //double newWater = 0.5 * (-(log(this.desirableUtility) + 1) + first_cor + second_cor);
         //double newBase =0.5 * ((log(this.desirableUtility) + 1) + first_cor + second_cor);

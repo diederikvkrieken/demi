@@ -87,23 +87,23 @@ public class Controller {
                 double concession = Double.POSITIVE_INFINITY;
 
                 for (Agent ag : mod.getAgents()) {
-                    if (agent.utility(ag.getOffer()) >= agent.getMinimumUtility()||true) {
+                    if ((agent.utility(ag.getOffer()) >= agent.getMinimumUtility()||true)&&(!"Mixbed".equals(ag.getName()))) {
                         //Calculate nonreactive if offer >= minumum
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
-                        System.out.println("nonreactive because offer is greater than minimum utiliy");
-                        System.out.println("Utility of offer = " + agent.utility(ag.getOffer())+" and minimum util = "+agent.getMinimumUtility());
+//                        System.out.println("nonreactive because offer is greater than minimum utiliy");
+//                        System.out.println("Utility of offer = " + agent.utility(ag.getOffer())+" and minimum util = "+agent.getMinimumUtility());
                     } else {
                         //calculate reactive if offer < minimum
-                        System.out.println("reacctivee");
-                        System.out.println("agent: "+mod.getAgentNumber(ag)+" Standing "+ mod.getStandingOffer(ag)+" x0: "+ mod.getRecentOffers(0).get(mod.getAgentNumber(ag))+" Last " + mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
+//                        System.out.println("reacctivee");
+//                        System.out.println("agent: "+mod.getAgentNumber(ag)+" Standing "+ mod.getStandingOffer(ag)+" x0: "+ mod.getRecentOffers(0).get(mod.getAgentNumber(ag))+" Last " + mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
                         deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
                         i++;
-                        System.out.println(" reactive ");
+//                        System.out.println(" reactive ");
                     }
                 }
                 for (int j = 0; j < mod.getn_agents(); j++) {
-                    System.out.println(deltaU[j]);
+//                    System.out.println(deltaU[j]);
                     if (deltaU[j] < concession) {
                         concession = deltaU[j];
                     }
@@ -112,16 +112,16 @@ public class Controller {
 
 
                 // Determining s_i
-                System.out.println("Concession: " + concession);
+//                System.out.println("Concession: " + concession);
                 agent.setDesirableUtility(concession);
 
                 //Calculating w
                 State weight = agent.calculateWeight(mod, t);
-                System.out.println("The " + " weights is " + weight.toString());
+//                System.out.println("The " + " weights is " + weight.toString());
 
                 State proposal;
                 //Projection P on indifference curve if needed
-                System.out.println("agent(utility): "+agent.utility(weight)+" agent desirable = " +agent.getDesirableUtility());
+//                System.out.println("agent(utility): "+agent.utility(weight)+" agent desirable = " +agent.getDesirableUtility());
                 if (agent.utility(weight) <= agent.getDesirableUtility()) {
                     proposal = agent.pointOnConcessionLine(weight);
                 } else{

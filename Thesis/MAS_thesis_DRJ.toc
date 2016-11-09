@@ -31,27 +31,29 @@
 \contentsline {subsection}{\numberline {3.2.3}Holonic Systems}{17}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Task/resource allocation}{18}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Scheduling and planning}{19}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Negotiation}{20}{subsection.3.2.6}
-\contentsline {subsubsection}{Negotiation Protocol}{21}{section*.11}
-\contentsline {subsubsection}{Negotiation Strategies}{22}{section*.12}
-\contentsline {subsubsection}{Negotiation states}{22}{section*.13}
-\contentsline {subsubsection}{Evaluating /equilibrium solutions}{23}{section*.14}
-\contentsline {subsubsection}{Principled Negotiation}{24}{section*.17}
-\contentsline {subsubsection}{Hierarchy and Voting}{24}{section*.18}
-\contentsline {subsubsection}{Mapping of negotiation protocols}{24}{section*.19}
-\contentsline {subsubsection}{Single-Issue}{25}{section*.22}
-\contentsline {subsubsection}{Multi-Issue}{26}{section*.23}
-\contentsline {subsubsection}{Multi-lateral}{27}{section*.25}
-\contentsline {subsubsection}{Heuristic methods in negotiation}{28}{section*.26}
-\contentsline {subsubsection}{Learning methods in Negotiation}{29}{section*.27}
-\contentsline {subsection}{\numberline {3.2.7}Negotiation in Manufacturing}{29}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}Negotiation}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Negotiation Protocol}{21}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Negotiation Strategies}{22}{subsection.3.3.2}
+\contentsline {subsubsection}{Concession Strategy}{22}{section*.11}
+\contentsline {subsection}{\numberline {3.3.3}Negotiation States}{23}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Evaluating /equilibrium solutions}{23}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Principled Negotiation}{24}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Hierarchy and Voting}{24}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}Mapping of negotiation protocols}{25}{subsection.3.3.7}
+\contentsline {subsubsection}{Single-Issue}{25}{section*.16}
+\contentsline {subsubsection}{Multi-Issue}{26}{section*.17}
+\contentsline {subsubsection}{Multi-lateral}{27}{section*.19}
+\contentsline {subsubsection}{Heuristic methods in negotiation}{28}{section*.20}
+\contentsline {subsubsection}{Learning methods in Negotiation}{29}{section*.21}
+\contentsline {section}{\numberline {3.4}Negotiation in Manufacturing}{29}{section.3.4}
 \contentsline {chapter}{\numberline {4}Research Design \& Application}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Demineralization of water}{32}{section.4.1}
 \contentsline {section}{\numberline {4.2}Negotiation model}{33}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Reactive concession strategy}{34}{subsection.4.2.1}
 \contentsline {section}{\numberline {4.3}Details of the Agents}{34}{section.4.3}
-\contentsline {subsubsection}{Offer generation}{35}{section*.31}
+\contentsline {subsubsection}{Offer generation}{35}{section*.25}
 \contentsline {subsection}{\numberline {4.3.1}Anion}{35}{subsection.4.3.1}
-\contentsline {subsubsection}{Utility function}{35}{section*.33}
+\contentsline {subsubsection}{Utility function}{35}{section*.27}
 \contentsline {subsection}{\numberline {4.3.2}Cation}{37}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Neut}{37}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Mixbed}{38}{subsection.4.3.4}
@@ -60,11 +62,18 @@
 \contentsline {section}{\numberline {4.5}Algorithm}{43}{section.4.5}
 \contentsline {section}{\numberline {4.6}What does result mean? 0.6, 0.4, 0.8 eg}{43}{section.4.6}
 \contentsline {chapter}{\numberline {5}Simulation comparison \& evaluations}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Evaluation}{46}{section.5.1}
-\contentsline {section}{\numberline {5.2}Further research.}{46}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Holonistic agents}{46}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Utility function}{47}{subsection.5.2.2}
-\contentsline {subsubsection}{Reservation curve}{47}{section*.47}
-\contentsline {chapter}{\numberline {6}conclusion and further work}{50}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{50}{section.6.1}
-\contentsline {section}{\numberline {6.2}Further Work}{50}{section.6.2}
+\contentsline {section}{\numberline {5.1}Parameters}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Nash Solution}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Nonreactive concession strategy}{46}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Reactive Concession strategy}{46}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Reservation curve}{46}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Threshold}{46}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Reactive vs nonreactive}{46}{section.5.2}
+\contentsline {chapter}{\numberline {6}conclusion and further work}{48}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{48}{section.6.1}
+\contentsline {section}{\numberline {6.2}Further Work}{48}{section.6.2}
+\contentsline {section}{\numberline {6.3}Evaluation}{48}{section.6.3}
+\contentsline {section}{\numberline {6.4}Further research.}{48}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Holonistic agents}{48}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Utility function}{49}{subsection.6.4.2}
+\contentsline {subsubsection}{Reservation curve}{49}{section*.42}

@@ -207,7 +207,7 @@ Each agent is part of a heterogeneous system and processes its own information a
 
 %\section{Agent Technologies}
 \
-\subsection{Negotiation}
+\section{Negotiation}
 \label{sec:negotiation}
 Often discussed above is the negotiation of the agents in a multi-agent system. This branch of research, also called automated negotiation, is studied by Artificial Intelligence and Economics \citep{jennings2001automated}. Concepts from fields such as decision theory and game theory can provide standards to be used in the design of appropriate negotiation and interaction environments \citep{jennings2001automated}. It is used to reach an agreement that meets the constraints of two or more parties in the presence conflicting interests. And thus is a basic means of getting what you want from others \citep{fisher1987getting}. It is back and forth communications designed to reach an agreement when you and the other side have some interests that are shared, and others that are opposed. Agents reason rationally and strategically. An agent's objective is to maximize the expected value of its own payoff. 
 
@@ -225,21 +225,32 @@ Negotiation is done by exchanging messages among agents. Since the process invol
 
 Negotiation domains, can be divided into task orientated domains (TODs), state orientated domains (SODs) and worth orientated domains (WODs). TODs are the simplest and an agent's activity is defined in terms of the set of tasks it has to achieve. It is assumed that all resources are available, the benefit of negotiation is the redistribution of tasks amongst a group of agents which results in a more efficient task order. A typical example is mail delivery where an agent may carry another agent's mail at little extra cost. It is sertain that the states come closer to a Pareto optimal solution as all agents can proceed with their original task list and be no worse off. SODs deal with problem where agents wish to change their environment from an initial state to some goal state. The classic AI Blocks World problem is a good example. There is the possibility of conflict and dead end, since the agents may have different goals, and it is not feasible to try and satisfy these goals all for all agents. In this situation, agents must be able to make concessions. WODs are domains where agents attach a worth to each potential state. This allows much more flexible goals to be set and allows concessions to be made on these goals. An example would be agents in an marketplace where the goal for a seller may be to obtain the highest price for x within time y. There is again the possibility of conflict and deadlock, but now within a more complicated bargaining environment \citep{anumba2003negotiation, fatima2014negotiation} .
 
-\subsubsection{Negotiation Protocol}
+\subsection{Negotiation Protocol}
 Negotiation Protocol is the set of rules that govern the interaction and defines who are the actors of the negotiation, the states that characterize a trade (for example, when a negotiation has begins or ends), the events that determine the change of actors’ status, and messages that can be sent by the actors in a particular state. This however is no easy task, since there is no one size fits all solution. Some attempts have been made, by \citet{marsa2014problems} for example, and a collection of design rules which allow, given a particular negotiation problem, to choose the most appropriate protocol to address it. However, these problems are only derivable when (1) the negotiation domain, including the issues and possible issue values, (2) a scenario utility histogram, which defines the distribution of contracts in utility space, and (3) several structural parameters that specify the topography (e.g. ruggedness) of each agent's utility function are known. In the design of the system, this will be discussed.
 
-The most important protocol is that of the alternating offers protocol. It is based on a divisible pie, discrete or continuous, and is the most widely studied among game-theorist as well as MAS researchers \citep{fatima2014principles}. Other examples is the contract net protocol and the bargaining protocol. 
+The most important protocol is that of the alternating-offers protocol \citep{rubinstein1982perfect} \todo[Rubenstein uitleggen]{Rubenstein uitleggen}. It is based on a divisible pie, discrete or continuous, and is the most widely studied among game-theorist as well as MAS researchers \citep{fatima2014principles}. Other examples is the contract net protocol and the bargaining protocol. 
 
 A typical negotiation protocol is very similar to that of our negotiations in our everyday life and work. Thus, a negotiation typically proceeds over a series of rounds, with one or more proposals being made at each round. It also includes the rules that impose the constraints on the rules and the rule that shows when a deal has been struck \citep{fatima2014principles}. Different negotiation mechanisms need to be developed to suit the different application environments of MAS. Unlike the negotiations between human beings which involve more complex human interactions than simple technical issues, the negotiation mechanisms between agents are rule-based or case-based. Yet, the human negotiation approaches and theories, which mainly include game theory and behaviour theory, provide sound bases for the negotiations between agents. 
 
 Another common protocol is the monotonic concession protocol. It is a proposal which has also been adapted for multi-lateral negotiation in \citep{endriss2006monotonic}.
 
-\subsubsection{Negotiation Strategies}
+
+
+\subsection{Negotiation Strategies}
 The strategy can be defined formally as an apparatus which allows the agent to determine the content of the action that it will perform consistently with the protocol. In general, for a given set of negotiation protocol there are many strategies compatible with it, each of which can determine a different action. This means that a strategy can work well with a given protocol, but does not work with others. So, the choice of strategy depends on the protocol in use and by the trading scenario \citep{di2015multi}.
 
 Often these strategies are private, meaning that not all the agents can see what the strategy of an agent is \citep{fatima2004agenda}. Example of a strategy is the Zeuthen strategy which results in the outcomes being equivalent to the Nash bargaining solution. 
 
-\subsubsection{Negotiation states}
+\subsubsection{Concession Strategy}
+\label{sec:concessionstrat}
+\todo[Hier concession uitleggen]{Concession uitleggen!!}
+
+\citet{endriss2006monotonic} devines 7 different concession strategies, to increase utility. 
+
+\citet{wu2009efficient} describes 4, for resources allocaiton. 
+
+
+\subsection{Negotiation States}
 An agent’s information state describes the information it has about the negotiation game. There are two possibilities, states with complete information and those of incomplete information. The first category is basic and most common. In these games the players are assumed to know all the information about the rules of the game and the players their preferences. However, in the incomplete category, information may be lacking about a variety of factors in the problem \citep{fatima2004agenda}. %\Todo{What is the implication of this?}
 
 %Since there is no one negotiation protocol that clearly outperforms all others in all scenarios, we need to be able to decide which protocol is most suited for each particular problem. The goal of our work is to meet this challenge by defining a “negotiation handbook”, that is, a collection of design rules which allow us, given a particular negotiation problem, to choose the most appropriate protocol to address it. \cite{marsa2014problems}
@@ -268,7 +279,7 @@ An agent’s information state describes the information it has about the negoti
 
 % Since there is no one negotiation protocol that clearly outperforms all others in all scenarios, we need to be able to decide which protocol is most suited for each particular problem. The goal of our work is to meet this challenge by defining a “negotiation handbook”, that is, a collection of design rules which allow us, given a particular negotiation problem, to choose the most appropriate protocol to address it. \cite{marsa2014problems}
 
-\subsubsection{Evaluating /equilibrium solutions}
+\subsection{Evaluating /equilibrium solutions}
 When evaluating the dilemmas of a negotiation between agents essential is the Pareto-Frontier. Visualized in figure \ref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. 
 \begin{figure}
 	\centering
@@ -287,7 +298,7 @@ The Nash equilibrium is the best reply to the other players strategies. This mea
 \end{figure}
 
 
-\subsubsection{Principled Negotiation}
+\subsection{Principled Negotiation}
 An example of a common method for negotiation is principled negotiation. This method developed by \citet{fisher1987getting} was founded on the idea that negotiators could reach better agreements by finding favourable agreements. By focussing on interests not positions and using objective criteria, an agreement is more likely to be reached. This method has successfully been deployed in a Multi-Agent System for air traffic management~\citep{wangermann1998principled}. Emphasised is the fact that it is important to agree on objective criteria for assessing options~\citep{fisher1987getting}. If an agreement can be reached using this criteria, it is more likely that it is rational. Furthermore it is useful for systems in which no agent has global knowledge of the system. 
 
 The purpose of this type of negotiation is to help to reach agreement without jeopardizing the business relations. It was created by \citet{fisher1987getting} and they refer to this kind of agreement as a wise agreement. Wise agreement is agreement that meets the interests of both parties to the extent possible, is long lasting, and also considers the interests of the larger society. The basis of this negotiation principle is to separate the relationship issues from the problem issues, to focus on interests not on positions, while trying to be creative in developing solutions.
@@ -324,12 +335,12 @@ The purpose of this type of negotiation is to help to reach agreement without je
 %Contract net protocol is a form of cooperative distributed problem solving that will be discussed in the scheduling section (Section~\ref{sec:AIscheduling}).
 %\subsubsection{Framework}
 %An overview of these different methods is in Fatima et al.~\cite{fatima2014principles}. Unfortunately this book is still lacking. 
-\subsubsection{Hierarchy and Voting}
+\subsection{Hierarchy and Voting}
 Voting is a form of group decision making. The agents participating in the voting will take into account their own preferences as well as those of others when making decision about how to vote. This will often have a strategic flavour. By aiming to rank or order the candidates, a group decision can be made.
 
 Another option are auctions, a popular mechanism to reach an agreement within the allocation of resources to agents. Examples include English auctions, Dutch auctions, Vickrey auctions and First-price sealed-bid auctions \citep{wooldridge2009introduction}. Interaction between a large number of low-level agents results in a complex system behaviour which is difficult to understand, to control and to predict. Structuring the agents in a hierarchy is the appropriate solution to tackle this complexity \citep{van1998reference}.
 
-\subsubsection{Mapping of negotiation protocols}
+\subsection{Mapping of negotiation protocols}
 An attempt at the visualization of the different negotiation techniques is strived at. Three variables are decided on. Single- vs Multi-Issue negotiation; bi- vs multi-lateral negotiation, and; perfect vs imperfect negotiation.  
 \begin{figure}[h]
 	\centering
@@ -420,7 +431,7 @@ When dealing with heuristic methods for negotiation, learning methods can be imp
 \label{fig:negotiationlearning}
 \end{figure}
 Based on the research conducted on heuristic methods and \citet{jennings2001automated}, it can be concluded that the optimal research in learning in heuristic methods is not yet known. They are often used however to decide on the optimal counter bid in \citet{beheshti2014homan}. They show that efficient learning algorithms based on an statistical ranking algorithm and linear regression, all with linear time complexities. These characteristics allow our method to be used in real-world applications. 
-\subsection{Negotiation in Manufacturing}
+\section{Negotiation in Manufacturing}
 There are many applications of agent based solutions in the manufacturing world \citep{monostori2006agent}. In these negotiations an overwhelming aspects is realised in the creation of intelligent individual agents, and less on the overall intelligence of the system. Often ignored is the specific negotiation method in these systems. This is where the problem lays, since conflicting interest, essential in the optimal decision making are left out. An example where these conflicting interest are well implemented is in \citet{zheng2014cloud}. A cloud consumer usually prefers a high reliability, whereas a cloud provider may only guarantee a less than maximum reliability in order to reduce costs and maximize profits. If such a conflict occurs, a Service Level Agreement cannot be reached without negotiation. Automated negotiation occurs, when software agents negotiate on behalf of their human counterparts. However no learning occurs. 
 
 %Many negotiation solutions have been ``invented'' but little has been truly applied in the manufacturing world \citep{leitao2009agent}. 

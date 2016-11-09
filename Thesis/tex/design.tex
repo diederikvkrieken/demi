@@ -52,7 +52,7 @@ So overall we have 4 kinds of filters, the anions, the cations, the mixbed and t
 
 
 \section{Negotiation model}
-
+\label{sec:design:negmod}
 \todo{RubinStein!!1}
 These 4 rational agents, $M = \{1,2,3, 4\}$, partition 3 issues $N=\{1,2,3\}$: the water that has to be delivered at the end of the process, and the base and acid for cleaning.  This can be simplified to a buyer seller negotiation.
 
@@ -60,7 +60,7 @@ Anion wants to buy as much base as possible, while the minimum amount of water. 
 
 The above abstractly is translated to an unit interval $[0, 1]$ in $\mathbb{R}$. Since we have $3$ issues, the unit hypercube $[0, 1]^3$ in  $\mathbb{R}^3$. This results in a possible negotiation domain $\Omega = [0,1]$ per issue.
 
-The utility function for each agent $u_i(x)$ is convex, and normalized between $[0, 1]^3$. Each agent has a reservation utility $ru_i$. Any offer below this reservation utility is unacceptrable. This means that the set of feasible offers is $A = \{ x\in [0,1]^3 \mid u_i(x)\geq ru_i\}$. Since the function is convex, $A$ is also. The solution lies in the intersection of feasible offers, $\mathbb{Z} \cap^M_{i=1}A^i$.
+The utility function for each agent $u_i(x)$ is convex, and normalized between $[0, 1]^3$. Each agent has a reservation utility $ru_i$. Any offer below this reservation utility is unacceptable. This means that the set of feasible offers is $A = \{ x\in [0,1]^3 \mid u_i(x)\geq ru_i\}$. Since the function is convex, $A$ is also. The solution lies in the intersection of feasible offers, $\mathbb{Z} \cap^M_{i=1}A^i$.
 
 The protocol used is that of the alternating offer protocol as described in \cref{sec:negotiation}. The agent will propose in a fixed sequence, where the new offer is based on all previous offers given in the previous round. If all agents accept an current offer the negotiation ends. The overall protocol is based on \citet{zheng2015automated}. 
 	%The protocol is based on the method as proposed by \citet{wu2009efficient}. Here an multilateral multi-issue method for negotiation about the allocation of resources is given. 
@@ -68,7 +68,7 @@ The protocol used is that of the alternating offer protocol as described in \cre
 %Since the agents have no knowledge regarding the states of the other agents, 
 It is a difficult task to determine whether the solution is a proper one, since the agents only have knowledge of their own utility function which is private. 
 
-The negotiation takes place in rounds $n\in \mathbb{N} $. $\mathbf{x}_i \in (0,1)^3$ denotes a bid of agent $i \in N$ in a round and $x_{i,j}\in \mathbf{x}_i$  denote the amount of issue $j \in M$.
+The negotiation takes place in rounds $n\in \mathbb{N} $. $\mathbf{x}_i \in (0,1)^3$ denotes a bid of agent $i \in N$ in a round and $x_{i,j}\in \mathbf{x}_i$  denote the amount of issue $j \in M$. 
 
 %Using BDI in each agent, the anion will know which filter to use when, and when to clean them. This intelligence can be learned. There is a limit on the amount of water, base or acid.
 
@@ -93,7 +93,9 @@ The negotiation takes place in rounds $n\in \mathbb{N} $. $\mathbf{x}_i \in (0,1
 	\label{fig:agent-plant}
 \end{figure}
 
-
+\subsection{Reactive concession strategy}
+\label{sec:reactiveconcessionstr}
+\todo[explain reactive concession!!]{Explain reactive Concession!}
 
 \section{Details of the Agents}
 Each agent has its own characteristics on which the system will run. As shown in the introduction the agents gave difference preferences regarding the allocation of the resources. An offer has a different utility for each agent. 
@@ -500,6 +502,7 @@ The reservation for this negotiations have been discussed before. The visualizat
 
 
 \section{Algorithm}
+\todo[show example of solution algorithm]{show solution algorithm}
 \begin{algorithm}[h]
 	\KwData{Each agent's utility function $u_i(x)$, 
 		reservation utility $ru_i$, 
@@ -546,8 +549,10 @@ The reservation for this negotiations have been discussed before. The visualizat
 		}
 	}
 \caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to four agents.}
+\label{al:algorithm1}
 \end{algorithm}
 
 \section{What does result mean? 0.6, 0.4, 0.8 eg}
 Means that of the total amount of resources available, the allocation will be devided among 2. 
+\todo[What does result mean?!]{What does the outcome mean?}
 

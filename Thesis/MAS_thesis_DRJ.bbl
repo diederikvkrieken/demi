@@ -1,4 +1,4 @@
-\begin{thebibliography}{55}
+\begin{thebibliography}{56}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -255,6 +255,12 @@ M~Rosa, V~Miranda, M~Matos, G~Sheble, and AM~Silva.
   schedule discussions.
 \newblock In \emph{Intelligent System Applications to Power Systems, 2009.
   ISAP'09. 15th International Conference on}, pages 1--7. IEEE, 2009.
+
+\bibitem[Rubinstein(1982)]{rubinstein1982perfect}
+Ariel Rubinstein.
+\newblock Perfect equilibrium in a bargaining model.
+\newblock \emph{Econometrica: Journal of the Econometric Society}, pages
+  97--109, 1982.
 
 \bibitem[Schramm and Morais(2013)]{schramm2013bilateral}
 Fernando Schramm and Danielle~Costa Morais.

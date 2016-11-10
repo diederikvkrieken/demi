@@ -3,7 +3,7 @@ load('C:\Users\Diederik\IdeaProjects\demi\result\nashproduct.mat')
 nash = nash_product;
 reservation = [0.05, 0.10, 0.15,0.20,0.25,0.3,0.35, 0.4,0.45,0.5,0.55,0.6, 0.65];
 for i = 1:1:13
-filename = strcat('C:\Users\Diederik\IdeaProjects\demi\result\nonreactive 0.05 to 0.6 mixbedrea\output_',int2str(i),'.csv');
+filename = strcat('C:\Users\Diederik\IdeaProjects\demi\result\reactive 0.05 to 0.6\output_',int2str(i),'.csv');
 delimiter = ',';
 fileID = fopen(filename);
 

@@ -207,6 +207,8 @@ The mixbed is where the final cleaning occurs. It is also the agent responsible 
 \] 
 where W is water ([0,1]), B is base [0,1] and A is acid [0,1].
 
+\todo[Verschillende waarden van W!!]{Verschillende waarden van w toevoegen.}
+
 The reservation curve is given as $0 = A+B+W - (\ln(u)+3)  $. The projection of a point to this linear plane is calculated as follows:
 \[
 x = \frac{x_0 + (\ln(u)+3) - (x_0, y_0, z_0)}{3}
@@ -502,7 +504,13 @@ The reservation for this negotiations have been discussed before. The visualizat
 
 
 \section{Algorithm}
+The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. 
+
+Afterwards, depending on the concession protocol, their desired utility decreases, meaning that the proposal creeps towards the solution space. 
+
 \todo[show example of solution algorithm]{show solution algorithm}
+
+\todo[Visualize algorithm results]{Visualize algorithm results.}
 \begin{algorithm}[h]
 	\KwData{Each agent's utility function $u_i(x)$, 
 		reservation utility $ru_i$, 
@@ -555,4 +563,6 @@ The reservation for this negotiations have been discussed before. The visualizat
 \section{What does result mean? 0.6, 0.4, 0.8 eg}
 Means that of the total amount of resources available, the allocation will be devided among 2. 
 \todo[What does result mean?!]{What does the outcome mean?}
+
+Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production.
 

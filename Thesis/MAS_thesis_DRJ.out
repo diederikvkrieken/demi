@@ -23,30 +23,30 @@
 \BOOKMARK [2][-]{subsection.3.1.4}{Real-time Monitoring}{section.3.1}% 23
 \BOOKMARK [1][-]{section.3.2}{Agent Solutions}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.2.1}{Object-oriented programming}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.2}{Multi-Agent Systems}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.3}{Holonic Systems}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.4}{Task/resource allocation}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.5}{Scheduling and planning}{section.3.2}% 29
-\BOOKMARK [1][-]{section.3.3}{Negotiation}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.1}{Negotiation Protocol}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.2}{Negotiation Strategies}{section.3.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.3}{Negotiation States}{section.3.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.4}{Evaluating /equilibrium solutions}{section.3.3}% 34
-\BOOKMARK [2][-]{subsection.3.3.5}{Principled Negotiation}{section.3.3}% 35
-\BOOKMARK [2][-]{subsection.3.3.6}{Hierarchy and Voting}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.7}{Mapping of negotiation protocols}{section.3.3}% 37
-\BOOKMARK [1][-]{section.3.4}{Negotiation in Manufacturing}{chapter.3}% 38
-\BOOKMARK [0][-]{chapter.4}{Research Design \046 Application}{}% 39
-\BOOKMARK [1][-]{section.4.1}{Demineralization of water}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.2}{Negotiation model}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.2.1}{Reactive concession strategy}{section.4.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.2}{Convex}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.3}{Multi-Agent Systems}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.4}{Holonic Systems}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.5}{Task/resource allocation}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.6}{Scheduling and planning}{section.3.2}% 30
+\BOOKMARK [1][-]{section.3.3}{Negotiation}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.1}{Negotiation Protocol}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.2}{Negotiation Strategies}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.3}{Negotiation States}{section.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.4}{Evaluating /equilibrium solutions}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.5}{Principled Negotiation}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.6}{Hierarchy and Voting}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.7}{Mapping of negotiation protocols}{section.3.3}% 38
+\BOOKMARK [1][-]{section.3.4}{Negotiation in Manufacturing}{chapter.3}% 39
+\BOOKMARK [0][-]{chapter.4}{Research Design \046 Application}{}% 40
+\BOOKMARK [1][-]{section.4.1}{Demineralization of water}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.2}{Negotiation model}{chapter.4}% 42
 \BOOKMARK [1][-]{section.4.3}{Details of the Agents}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.3.1}{Anion}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.2}{Cation}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.3}{Neut}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.4}{Mixbed}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.5}{Negotiations}{section.4.3}% 48
-\BOOKMARK [1][-]{section.4.4}{Solution space}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.3.1}{Reactive concession strategy}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.2}{Anion}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.3}{Cation}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.4}{Neut}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.5}{Mixbed}{section.4.3}% 48
+\BOOKMARK [1][-]{section.4.4}{Negotiations among the agents}{chapter.4}% 49
 \BOOKMARK [1][-]{section.4.5}{Algorithm}{chapter.4}% 50
 \BOOKMARK [1][-]{section.4.6}{What does result mean? 0.6, 0.4, 0.8 eg}{chapter.4}% 51
 \BOOKMARK [0][-]{chapter.5}{Simulation comparison \046 evaluations}{}% 52

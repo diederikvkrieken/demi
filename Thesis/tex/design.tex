@@ -43,7 +43,7 @@ As discussed in the introduction, the usecase for which a Multi-Agent system for
 	\caption{An overview of a water demineralization plant. We simplify the many anion and cation filters to a single anion and cation filter. The same for the mixbed filter.}
 	\label{fig:demi-plant}
 \end{figure}
-\todo[Make letters larger]{Make letters larger}
+\todo[Todo Make letters larger]{Make letters larger}
 Minerals are removed from water by multiple production steps. The most common method, which is implemented in the plant described, is to first remove the positively charged minerals in so-called anions. After this the negative charged ions are removed within a cation filter. To ensure that all ions are removed, a final combined ``mixbed'' is used. Here a combination of an anion filter and a cation filter removes the residues.
 
 These filters have to be cleaned every few hours to ensure that proper demineralization occurs. For cleaning, acid and base are used. By filtering the anion with base, the ions that have been retrieved in the filtering are flushed. The residue, still of a base composition, is stored in a storage tank where the combination of the base and acids from the filters is neutralized. This storage tank is called the ``Neut'' as short.
@@ -102,7 +102,7 @@ Since the utility decreases each round, the set of feasible offers increases as 
 \subsection{Reactive concession strategy}
 \label{sec:reactiveconcessionstr}
 The reactive concession protocol as described by \citet{zheng2015automated} is a specific concession strategy to determine the amount of utility to concede. The nonreactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),\\ ..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does an concession according to the nonreactive concession strategy. However if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
-%\todo[explain reactive concession!!]{Explain reactive Concession!}
+%\todo[Todo explain reactive concession!!]{Explain reactive Concession!}
 
 
 \subsubsection{Offer generation}
@@ -520,7 +520,7 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 	\label{fig:searchforsolution}
 \end{figure}
 
-%\todo[Visualize algorithm results]{Visualize algorithm results.}
+%\todo[Todo Visualize algorithm results]{Visualize algorithm results.}
 \begin{algorithm}[h]
 	\KwData{Each agent's utility function $u_i(x)$, 
 		reservation utility $ru_i$, 
@@ -572,7 +572,7 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 \clearpage
 \section{What does result mean? 0.6, 0.4, 0.8 eg}
 Means that of the total amount of resources available, the allocation will be devided among 2. 
-\todo[What does result mean?!]{What does the outcome mean?}
+\todo[Todo What does result mean?!]{What does the outcome mean?}
 
 Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production.
 

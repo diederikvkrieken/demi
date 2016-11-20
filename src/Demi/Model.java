@@ -157,6 +157,7 @@ public class Model {
 //        System.out.println("Concession is: "+con.toString());
         concession.add(i, con);
     }
+
     private ArrayList<ArrayList<Double>> concession = new ArrayList<>();
 
     public void writeToCSVconcession() throws IOException {
@@ -184,6 +185,7 @@ public class Model {
             int i=0;
             while(it.hasNext()) {
                 temp2[i] = it.next().toString();
+                i++;
             }
             writer.writeNext(temp2);
         }
@@ -199,6 +201,103 @@ public class Model {
         }
     }//end of writeTOCSV
 
+
+
+    public void addDistanceAvg(int i, ArrayList<Double> dis){
+        distance_avg.add(i,dis);
+    }
+    private ArrayList<ArrayList<Double>> distance_avg = new ArrayList<>();
+
+
+    public void writeToCSVDistanceAvg() throws IOException {
+
+        String temp;
+        if (this.roundnumber == 99 ){
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_distance_avg.csv";
+        }else{
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_"+roundnumber+"_distance_avg.csv";
+        }
+        String csv = temp;
+//        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
+        CSVWriter writer = null;
+
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for(ArrayList<Double> each: distance_avg){
+            Iterator it = each.iterator();
+            String[] temp2 = new String[4];
+            int i=0;
+            while(it.hasNext()) {
+                temp2[i] = it.next().toString();
+                i++;
+            }
+            writer.writeNext(temp2);
+        }
+
+//        for(double dist: maxdistance){
+//            String[] temp = new String[1];
+//            temp[0] = Double.toString(dist);
+//            writer.writeNext(temp);
+//        }
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//end of writeTOCSV
+
+    public void addDesire(int i, ArrayList<Double> dis){
+        desire.add(i,dis);
+    }
+    private ArrayList<ArrayList<Double>> desire = new ArrayList<>();
+
+
+    public void writeToCSVDesire() throws IOException {
+
+        String temp;
+        if (this.roundnumber == 99 ){
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_desire.csv";
+        }else{
+            temp = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_"+roundnumber+"_desire.csv";
+        }
+        String csv = temp;
+//        String csv = "C:\\Users\\Diederik\\IdeaProjects\\demi\\result\\output_concession.csv";
+        CSVWriter writer = null;
+
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for(ArrayList<Double> each: desire){
+            Iterator it = each.iterator();
+            String[] temp2 = new String[4];
+            int i=0;
+            while(it.hasNext()) {
+                temp2[i] = it.next().toString();
+                i++;
+            }
+            writer.writeNext(temp2);
+        }
+
+//        for(double dist: maxdistance){
+//            String[] temp = new String[1];
+//            temp[0] = Double.toString(dist);
+//            writer.writeNext(temp);
+//        }
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//end of writeTOCSV
 
     //Getters & Setters
 

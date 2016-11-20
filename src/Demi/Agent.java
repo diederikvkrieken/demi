@@ -89,6 +89,10 @@ public class Agent {
             System.out.println("Something weird in t="+t);
         }
         this.currentWeight = weight;
+        if( this.getName().equals("Cation")){
+            System.out.println(weight.toString());
+            System.out.println(this.desirableUtility);
+        }
         return weight;
     }
 
@@ -168,8 +172,8 @@ public class Agent {
     }
 
     public void setDesirableUtility(double delta) {
-        if (1-delta > minimumUtility) {
-            this.desirableUtility = 1 - delta;
+        if (this.desirableUtility-delta > minimumUtility) {
+            this.desirableUtility = this.desirableUtility  - delta;
         }else{
             this.desirableUtility = minimumUtility;
         }

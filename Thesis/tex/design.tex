@@ -8,7 +8,7 @@ As explained in the literature, a negotiation problem can be characterized by a 
 
 For the scope of this work, we assume a multi-attribute negotiation domain, where a deal or solution to the problem is defined as the set of attributes (issues), and each one of them can be in a certain range.
 
-The coding will be done in Java from scratch. Multiple open-source systems are available, including Jadex, which is perfect for communication research in a Multi-Agent System~\citep{kravari2015survey}. However since most of these systems are very comprehensive, little adjustments which are necessary for our research are not conceivable.
+The coding will be done in Java from scratch. Multiple open-source systems are available, including Jadex, which is perfect for communication research in a Multi-Agent System \citep{kravari2015survey}. However since most of these systems are very comprehensive, little adjustments which are necessary for our research are not conceivable.
 
 %\section{Mapping of Literature on usecase}
 %	\begin{tabular}{p{2cm}|p{2cm}|p{2cm} l l |p{3cm}}
@@ -294,6 +294,86 @@ All in all, there are three kinds of sub-negotiations. These are shown in \Cref{
 	\label{fig:agent-plant-water}
 \end{figure}
 
+So although there is a multi-issue negotiation, the only agent that has interest in all three issues is the mixbed. This means that if an agent proposes 0.7 acid to the anion, the anion will not consider this part of the offer, as in since it can not project this to its' indifference curve. This means that the anions new proposal will also include 0.7 anion, and the adjusted values to the other issues.
+
+\clearpage
+\section{Algorithm}
+The algorithm, as programmed in Java is implemented using different objects. This was originally described in \Cref{ch:literature} as the optimal way to implement agents. The model consist of 4 different agents, which in turn can either be an anion, cation, mixbed or neut with their own characteristics.
+
+The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a nonreactive strategy is easily applied when changing \Cref{al:start} to $\text{if} true$.
+
+Afterwards, depending on the concession protocol, their desired utility decreases, meaning that the proposal creeps towards the solution space as can be seen in \Cref{fig:searchforsolution}. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/searchforsolution}
+	\caption{An example run of the agents searching for the solution. It is clearly seen that the agents start with their proposal in the corners, their optimal offers, and slowly make concessions towards eachother.}
+	\label{fig:searchforsolution}
+\end{figure}
+
+%\todo[Todo Visualize algorithm results]{Visualize algorithm results.}
+\begin{algorithm}[h]
+	\KwData{Each agent's utility function $u_i(x)$, 
+		reservation utility $ru_i$, 
+		and concession strategy $s_i(t)= 1,2,...,T$}
+	\KwResult{Negotiation Agreement}
+	initialization: Each agent proposes a preferred offer $x^i_0$\;
+	$t\leftarrow1$\;
+	Set convergence tolerance: $\delta$\;
+	\While{$t\leq T$ and IsConverge == False}
+	{
+		Determine the agent to propose: i = mod(t,4)\;
+		\ForEach{$j\in {1,2,3,4}$}
+		{
+			\eIf{j == i}
+			{
+				%Agent $i$ concedes by determining $s_i(t)$\:
+				\ForEach{$k\in {1,2,3,4}$}
+				{
+					\eIf{$x^k_{[j,-1]}==\emptyset \parallel u_j(x^k_t) \geq ru_j$  \nllabel{al:start}}{
+						$\Delta u_{jk} \leftarrow \Delta u_{j0}(t) $\;
+					}{
+						$\Delta_1 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_{[j,-1]})$\;
+						$\Delta_2 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_0)-(1-u_j(x^j_{t-1}))$\;
+						$\Delta u_{jk} \leftarrow \max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$\;
+					}
+					$\Delta u_j(t)\leftarrow \min \{\min_{k\in\Gamma_t(i)}\Delta u_{jk}(t), \Delta u_{j0}(t)\}$ \nllabel{al:end}\;	
+				}
+				Agent $i$ concedes by determining $s_i(t)\leftarrow s_i(t-1)-\Delta u_j(t)$\;
+				Agent $i$ calculates: $w_{t-1}\leftarrow \frac{1}{m}\sum_{j=1}^{m}x^j_{t-1}$\;
+				Agent $i$ proposes $P_{A^i_t}[w_{t-1}]$\;
+			}{
+				$x^j_i \leftarrow x^j_{t-1}$\;
+				\If{$u_j(x^i)_{t-1}\geq u_j(x^i_{[j,-1]})$}{
+					$x^i_{[j,-1]}(t) \leftarrow x^i_{t-1}(t-1)$\;
+				}
+				$x^j_{[i,-1]}(t) \leftarrow x^j_{[i,-1]}(t-1)$\;
+			}
+		}
+		\eIf{$\max_{ j \in {1,2,...,m}} \parallel x^j_t-w_{t-1} \parallel < \delta$ }
+		{
+			IsConverge $\leftarrow $ True\;
+		}{
+			$t \leftarrow t+1$\;
+		}
+	}
+\caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to four agents.}
+\label{al:algorithm1}
+\end{algorithm}
+\clearpage
+\section{What does result mean? 0.6, 0.4, 0.8 eg}
+Means that of the total amount of resources available, the allocation will be devided among 2. 
+\todo[Todo What does result mean?!]{What does the outcome mean?}
+
+Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production.
+
+If water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
+ 
+\section{Proof of convergence}
+If there is an intersect of the agreement zone it must be that the agents will find this.
+This is already proven in the Zeuten strategy, which shows that no agreement is always worse than a bad agreement. In infinite time this will happen. 
+\todo[Zeuten Strategy]{Zeuten Strategy}
+
+
 %\clearpage
 %\section{Solution space}
 %Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agents. Each agent has 2 or three subjects 
@@ -505,76 +585,3 @@ All in all, there are three kinds of sub-negotiations. These are shown in \Cref{
 %\label{fig:rcurveofcation}
 %\caption{An illustrative sketch reservation curve of the offer space for the cation}
 %\end{figure}
-
-\clearpage
-\section{Algorithm}
-The algorithm, as programmed in Java is implemented using different objects. This was originally described in \Cref{ch:literature} as the optimal way to implement agents. The model consist of 4 different agents, which in turn can either be an anion, cation, mixbed or neut with their own characteristics.
-
-The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a nonreactive strategy is easily applied when changing \Cref{al:start} to $\text{if} true$.
-
-Afterwards, depending on the concession protocol, their desired utility decreases, meaning that the proposal creeps towards the solution space as can be seen in \Cref{fig:searchforsolution}. 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/searchforsolution}
-	\caption{An example run of the agents searching for the solution. It is clearly seen that the agents start with their proposal in the corners, their optimal offers, and slowly make concessions towards eachother.}
-	\label{fig:searchforsolution}
-\end{figure}
-
-%\todo[Todo Visualize algorithm results]{Visualize algorithm results.}
-\begin{algorithm}[h]
-	\KwData{Each agent's utility function $u_i(x)$, 
-		reservation utility $ru_i$, 
-		and concession strategy $s_i(t)= 1,2,...,T$}
-	\KwResult{Negotiation Agreement}
-	initialization: Each agent proposes a preferred offer $x^i_0$\;
-	$t\leftarrow1$\;
-	Set convergence tolerance: $\delta$\;
-	\While{$t\leq T$ and IsConverge == False}
-	{
-		Determine the agent to propose: i = mod(t,4)\;
-		\ForEach{$j\in {1,2,3,4}$}
-		{
-			\eIf{j == i}
-			{
-				%Agent $i$ concedes by determining $s_i(t)$\:
-				\ForEach{$k\in {1,2,3,4}$}
-				{
-					\eIf{$x^k_{[j,-1]}==\emptyset \parallel u_j(x^k_t) \geq ru_j$  \nllabel{al:start}}{
-						$\Delta u_{jk} \leftarrow \Delta u_{j0}(t) $\;
-					}{
-						$\Delta_1 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_{[j,-1]})$\;
-						$\Delta_2 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_0)-(1-u_j(x^j_{t-1}))$\;
-						$\Delta u_{jk} \leftarrow \max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$\;
-					}
-					$\Delta u_j(t)\leftarrow \min \{\min_{k\in\Gamma_t(i)}\Delta u_{jk}(t), \Delta u_{j0}(t)\}$ \nllabel{al:end}\;	
-				}
-				Agent $i$ concedes by determining $s_i(t)\leftarrow s_i(t-1)-\Delta u_j(t)$\;
-				Agent $i$ calculates: $w_{t-1}\leftarrow \frac{1}{m}\sum_{j=1}^{m}x^j_{t-1}$\;
-				Agent $i$ proposes $P_{A^i_t}[w_{t-1}]$\;
-			}{
-				$x^j_i \leftarrow x^j_{t-1}$\;
-				\If{$u_j(x^i)_{t-1}\geq u_j(x^i_{[j,-1]})$}{
-					$x^i_{[j,-1]}(t) \leftarrow x^i_{t-1}(t-1)$\;
-				}
-				$x^j_{[i,-1]}(t) \leftarrow x^j_{[i,-1]}(t-1)$\;
-			}
-		}
-		\eIf{$\max_{ j \in {1,2,...,m}} \parallel x^j_t-w_{t-1} \parallel < \delta$ }
-		{
-			IsConverge $\leftarrow $ True\;
-		}{
-			$t \leftarrow t+1$\;
-		}
-	}
-\caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to four agents.}
-\label{al:algorithm1}
-\end{algorithm}
-\clearpage
-\section{What does result mean? 0.6, 0.4, 0.8 eg}
-Means that of the total amount of resources available, the allocation will be devided among 2. 
-\todo[Todo What does result mean?!]{What does the outcome mean?}
-
-Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production.
-
-If water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
- 

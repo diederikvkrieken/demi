@@ -15,7 +15,7 @@ public class Controller {
     private Model mod;
     private boolean isConverge = false;
     private double tolerance = 0.05;
-    int nRounds = 1000;
+    int nRounds = 200;
     public Controller(Model model){
         this.mod = model;
     }
@@ -59,6 +59,18 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        try {
+            mod.writeToCSVDistanceAvg();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            mod.writeToCSVDesire();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -68,6 +80,9 @@ public class Controller {
         int propose_agent = t % mod.getn_agents();
         String name = mod.getnameAgents(propose_agent);
         ArrayList<Double> concessionArray = new ArrayList<>();
+        ArrayList<Double> distanceAvgArray = new ArrayList<>();
+        ArrayList<Double> desireArray = new ArrayList<>();
+
 
         /*For each agent j in agents do:*/
         for (Agent agent : mod.getAgents()) {
@@ -87,7 +102,7 @@ public class Controller {
                 double concession = Double.POSITIVE_INFINITY;
 
                 for (Agent ag : mod.getAgents()) {
-                    if ((agent.utility(ag.getOffer()) >= agent.getMinimumUtility()||true)&&(!"Mixbed".equals(ag.getName()))) {
+                    if ((agent.utility(ag.getOffer()) >= agent.getMinimumUtility())||true){//&&ag.getName().equals("Mixbed")) {
                         //Calculate nonreactive if offer >= minumum
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
@@ -108,8 +123,6 @@ public class Controller {
                         concession = deltaU[j];
                     }
                 }
-                concessionArray.add(concession);
-
 
                 // Determining s_i
 //                System.out.println("Concession: " + concession);
@@ -137,6 +150,10 @@ public class Controller {
                 //Propose
                 mod.propose(agent, proposal, t);
                 agent.addCurrentOffer(proposal);
+
+                desireArray.add(agent.getDesirableUtility());
+                concessionArray.add(concession);
+
             } else {
                 System.out.println("Other agent update "+agent.getName());
 
@@ -150,6 +167,7 @@ public class Controller {
                 if (agent.utility(of) >= agent.utility(agent.getPrevBestOffer(propose_agent))){
                     agent.setPrevBestOffer(propose_agent, of);
                 }
+                desireArray.add(agent.getDesirableUtility());
             }
         }
         //Update the offer list for the agents
@@ -160,6 +178,7 @@ public class Controller {
         double maxDistance = 0;
         for (Agent a:mod.getAgents()) {
             double distance = calculateDistance(a.getOffer(), a.getCurrentWeight());
+            distanceAvgArray.add(distance);
             if (distance > maxDistance){
                 maxDistance = distance;
             }
@@ -171,5 +190,8 @@ public class Controller {
         //For CSV file
         mod.addDistance(maxDistance);
         mod.addConcession(t-1, concessionArray);
+        mod.addDistanceAvg(t-1, distanceAvgArray);
+        mod.addDesire(t-1, desireArray);
+        System.out.println(distanceAvgArray);
     }
 }

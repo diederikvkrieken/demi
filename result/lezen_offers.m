@@ -91,7 +91,7 @@ clearvars filename delimiter formatSpec fileID dataArray ans;
 plot(distance)
 
 %%
-filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output_concession.csv';
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\reactive 0.05 to 0.6\output_4_concession.csv';
 delimiter = '';
 fileID = fopen(filename);
 

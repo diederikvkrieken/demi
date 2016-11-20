@@ -131,7 +131,10 @@ Agent-oriented programming is a method often used to implement a multi-agent sys
 
 \subsection{Convex}
 \label{sec:convex}
+A convex set is a region such that, for every pair of points within the region, every point on the straight line segment that joins the pair of points is also within the region. %For example, a solid cube is a convex set, but anything that is hollow or has an indent, for example, a crescent shape, is not convex.
+The boundary of a convex set is always a convex curve. And the real-valued function defined on an interval is called a convex function if any two points on the graph of the function lies above or on the graph, in a Euclidean space (or more generally a vector space) of at least two dimensions. Equivalently, a function is convex if its epigraph (the set of points on or above the graph of the function) is a convex set. Well-known examples of convex functions include the quadratic function $x^{2}$ and the exponential function $e^{x} $for any real number $x$.
 
+Convex functions play an important role in many areas of mathematics. They are especially important in the study of optimization problems where they are distinguished by a number of convenient properties. For instance, a (strictly) convex function on an open set has no more than one minimum. Even in infinite-dimensional spaces convex functions continue to be convex. Furthermore, convex functions are optimal when dealing with multiple convex sets, since the intersect will always be convex as well meaning that the properties of the new sets will 
 \subsection{Multi-Agent Systems}
 
 Some terms used in the literature for data collection apparatus that aggregate the data are ``Smart Objects'', ``Intelligent Gateways'', ``Collaborative Network'', ``Wireless Sensor Network'' and ``Industrial Agents''. Most of these can be viewed as Multi-Agent Systems (MAS) where the sensors communicate with one another as decentralized intelligent agents for independent action performance depending on the context, circumstances or environments (sensor input) of the situation. From such MAS, Ambient Intelligence  is conceivable: real-time decentralized decision making based on real-time data acquisition, analytics and negotiations. An example structure can be seen in Figure~\ref{fig:MAS_example}.
@@ -231,7 +234,7 @@ Negotiation domains, can be divided into task orientated domains (TODs), state o
 \subsection{Negotiation Protocol}
 Negotiation Protocol is the set of rules that govern the interaction and defines who are the actors of the negotiation, the states that characterize a trade (for example, when a negotiation has begins or ends), the events that determine the change of actors’ status, and messages that can be sent by the actors in a particular state. This however is no easy task, since there is no one size fits all solution. Some attempts have been made, by \citet{marsa2014problems} for example, and a collection of design rules which allow, given a particular negotiation problem, to choose the most appropriate protocol to address it. However, these problems are only derivable when (1) the negotiation domain, including the issues and possible issue values, (2) a scenario utility histogram, which defines the distribution of contracts in utility space, and (3) several structural parameters that specify the topography (e.g. ruggedness) of each agent's utility function are known. In the design of the system, this will be discussed.
 
-The most important protocol is that of the alternating-offers protocol \citep{rubinstein1982perfect} \todo[Todo Rubenstein uitleggen]{Rubenstein uitleggen}. It is based on a divisible pie, discrete or continuous, and is the most widely studied among game-theorist as well as MAS researchers \citep{fatima2014principles}. Other examples is the contract net protocol and the bargaining protocol. 
+The most important protocol is that of the alternating-offers protocol \citep{rubinstein1982perfect} \todo[Todo stein uitleggen]{Rubenstein uitleggen}. It is based on a divisible pie, discrete or continuous, and is the most widely studied among game-theorist as well as MAS researchers \citep{fatima2014principles}. Other examples is the contract net protocol and the bargaining protocol. 
 
 A typical negotiation protocol is very similar to that of our negotiations in our everyday life and work. Thus, a negotiation typically proceeds over a series of rounds, with one or more proposals being made at each round. It also includes the rules that impose the constraints on the rules and the rule that shows when a deal has been struck \citep{fatima2014principles}. Different negotiation mechanisms need to be developed to suit the different application environments of MAS. Unlike the negotiations between human beings which involve more complex human interactions than simple technical issues, the negotiation mechanisms between agents are rule-based or case-based. Yet, the human negotiation approaches and theories, which mainly include game theory and behaviour theory, provide sound bases for the negotiations between agents. 
 
@@ -248,6 +251,12 @@ Often these strategies are private, meaning that not all the agents can see what
 \label{sec:concessionstrat}
 \todo[Todo Hier concession uitleggen]{Concession uitleggen!!}
 
+Using the monotonic concession protocol, negotiation is guaranteed to end
+(with or without agreement) after a finite number of rounds. Since the set of possible
+deals is finite, the agents cannot negotiate indefinitely: either the agents will
+reach agreement, or a round will occur in which neither agent concedes. However,
+the protocol does not guarantee that agreement will be reached quickly. Since th
+
 \citet{endriss2006monotonic} devines 7 different concession strategies, to increase utility. 
 
 \citet{wu2009efficient} describes 4, for resources allocaiton. 
@@ -256,6 +265,36 @@ Often these strategies are private, meaning that not all the agents can see what
 \citet{endriss2006monotonic} A concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
 
 \citet{endriss2006monotonic} Here some concession protocols are shown, \todo[Todo explain monotonic multilateral concession protocols]{explain the multilateral concession protocols} however, since we are dealing with private information, this is not usefull. 
+
+
+\todo[Zeuthen!!]{Zeuthen}
+
+So far, we have said nothing about how negotiation participants might or should
+behave when using the monotonic concession protocol. On examining the protocol,
+it seems there are three key questions to be answered as follows.
+• What should an agent's first proposal be?
+any given round, who should concede?
+If an agent concedes, then how much should it concede?
+The first question is straightforward enough to answer: an agent's first proposal
+should be its most preferred deal.
+With respect to the second question, the idea of the Zeuthen strategy is to
+measure an agent's willingness to risk conflict. Intuitively, an agent will be more
+willing to risk conflict if the difference in utility between its current proposal and
+the conflict deal is low.
+In contrast, if the difference between the agent's current proposal and the conflict
+deal is high, then the agent has more to lose from conflict and is therefore
+less willing to risk conflict - and thus should be more willing to concede.
+Agent r's willingness to risk conflict at round t, denoted risk\, is measured in
+the following way (Rosenschein and Zlotkin, 1994, p. 43):
+
+
+The next question to answer is how much should be conceded? The simple
+answer to this question is just enough. If an agent does not concede enough, then
+on the next round, the balance of risk will indicate that it still has most to lose
+from conflict, and so should concede again. This is clearly inefficient. On the other
+hand, if an agent concedes too much, then it 'wastes' some of its utility. Thus an
+agent should make the smallest concession necessary to change the balance of
+risk - so that on the next round, the other agent will concede.
 
 
 \subsection{Negotiation States}
@@ -288,24 +327,44 @@ An agent’s information state describes the information it has about the negoti
 % Since there is no one negotiation protocol that clearly outperforms all others in all scenarios, we need to be able to decide which protocol is most suited for each particular problem. The goal of our work is to meet this challenge by defining a “negotiation handbook”, that is, a collection of design rules which allow us, given a particular negotiation problem, to choose the most appropriate protocol to address it. \cite{marsa2014problems}
 
 \subsection{Evaluating /equilibrium solutions}
-When evaluating the dilemmas of a negotiation between agents essential is the Pareto-Frontier. Visualized in figure \ref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. 
+When evaluating the dilemmas of a negotiation between agents, it is essential to know the Pareto-Frontier. Visualized in figure \ref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, lie all the possible agreements, which are all offers, that are acceptable by both agent. An offer is Pareto optimal if the agents can not choose an new offer for which at least one agent has a higher utility, while the other agents have the same utility. In the figure these are shown as $A$ and $B$. Each other offer for these agents decreases at least the utility of one of the agents. Offers $C$ and $D$ are not Pareto optimal since both offers can be improved for at least one agent. The line of points in which an improvement of utility for one agent necessarily means a decrease in utility for the other agent is the Pareto-Frontier. 
+
+Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ denoted as issue $j\in N$, than an offer $x = \{x_1, ..., x_j\}$ is Pareto optimal if the outcome of negotiation $x$ has no feasible allocation $x'$ such that $u_i(x')\geq u_i(x) \forall \text{agents} i \in M$. 
+
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{img/parito_optimal}
+	\includegraphics[width=0.7\linewidth]{img/parito_optimal.png}
 	\caption{An example of Pareto optimal. Locations A and B are optimal, since no improvement, without loss for the agents, is possible. C and D are not optimal. From \citet{fatima2014principles}.}
 	\label{fig:paritooptimal}
 \end{figure}
 
 The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and shown in figure \ref{fig:majorcategoriesofgametheory}. 
-
+\todo[Explain nash formally here!]{Explaing Nash Formally}
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{img/major_categories_of_game_theory}
 	\caption{The four types of games in game theory from \citet{trappey2013multi}.}
 	\label{fig:majorcategoriesofgametheory}
 \end{figure}
+The most common Nash equilibrium and probably most widely known is that of the prisoners dilemma:
+There are two subjects of a crime, agent $i$ and $j$. However, the evidence is not very convincing and therefore the prisoners are interrogated separately. If both confess, they get three years of prison. If both do not confess, they get a lighter sentence of 1 year. Finally, if one of them confesses to the crime and the other does not, the confessor will be freed, and the other will be jailed for five years.
+This can be visualized in a normal form pay-off matrix. It is common to refer to confessing as defection, and not confessing as cooperating.
+\begin{table}
 
+\begin{tabular}{|c|c|c|c|}
+	\hline 
+		&  				& $i$ 			&  \\ 
+	$A$ 	&				& defect (confess) 	& cooperate ($\not$ confess) \\ 
+		& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
+		& cooperate($\not$ confess) 	&  (-5, 0)				& (-1,-1) \\ 
+	\hline 
+\end{tabular} \label{tab:nashprison} \caption{The prisoners dilemma}
+\end{table}
+For agent $i$ it is obvious to reason as follows. Suppose agent $j$ cooperates. Then the best response is to defect. Suppose the agent $j$ defects. Then the best response is to defect. In other words, defection for agent $i$ is the best response to all possible strategies of the player j. This makes defection the dominant strategy for agent $i$. Since both agents reason the same way, the agent will both defect which results in the Nash equilibria (defect, defect).
 
+In general, that two strategies $s_1$ and $s_2$ are in Nash equilibrium if: under the assumption that agent $i$ plays $s_i$, agent $j$ can do no better than play $s_2$, and under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_l$. Thus strategies $s_i$ and $s_j$ for agents $i$ and $j$ form a Nash equilibrium if they are the best response to each other  \cite{wooldridge2009introduction}. 
+
+Important to note here is that in the prisoners dilemma, the Nash equilibrium is the only solution which is not Pareto optimum.  THe optimal social solutions, which is if both agents do not confess, is different from the Nash equilibrium.  Furthermore, it should be stated that not every interaction scenario has a Nash equilibrium and some interaction scenarios have more than one Nash equilibrium. 
 \subsection{Principled Negotiation}
 An example of a common method for negotiation is principled negotiation. This method developed by \citet{fisher1987getting} was founded on the idea that negotiators could reach better agreements by finding favourable agreements. By focussing on interests not positions and using objective criteria, an agreement is more likely to be reached. This method has successfully been deployed in a Multi-Agent System for air traffic management~\citep{wangermann1998principled}. Emphasised is the fact that it is important to agree on objective criteria for assessing options~\citep{fisher1987getting}. If an agreement can be reached using this criteria, it is more likely that it is rational. Furthermore it is useful for systems in which no agent has global knowledge of the system. 
 

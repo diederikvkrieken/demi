@@ -1,4 +1,4 @@
-\begin{thebibliography}{56}
+\begin{thebibliography}{63}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -65,6 +65,13 @@ Dario Di~Nocera.
 \newblock \emph{Multi-agent automated negotiation for management of services in
   smart cities}.
 \newblock PhD thesis, 2015.
+
+\bibitem[Duffie and Prabhu(1994)]{duffie1994real}
+Neil~A Duffie and Vittaldas~V Prabhu.
+\newblock Real-time distributed scheduling of heterarchical manufacturing
+  systems.
+\newblock \emph{Journal of Manufacturing Systems}, 13\penalty0 (2):\penalty0
+  94--107, 1994.
 
 \bibitem[Endriss(2006)]{endriss2006monotonic}
 Ulle Endriss.
@@ -181,6 +188,12 @@ Paulo Leitao, Stamatis Karnouskos, Luis Ribeiro, Jay Lee, Thomas Strasser, and
 \newblock \emph{Proceedings of the IEEE}, 104\penalty0 (5):\penalty0
   1086--1101, 2016.
 
+\bibitem[Lensberg(1988)]{lensberg1988stability}
+Terje Lensberg.
+\newblock Stability and the nash solution.
+\newblock \emph{Journal of Economic Theory}, 45\penalty0 (2):\penalty0
+  330--341, 1988.
+
 \bibitem[Marsa-Maestre et~al.(2014)Marsa-Maestre, Klein, Jonker, and
   Aydo{\u{g}}an]{marsa2014problems}
 Ivan Marsa-Maestre, Mark Klein, Catholijn~M Jonker, and Reyhan Aydo{\u{g}}an.
@@ -207,6 +220,22 @@ Alexandre Muller, Adolfo~Crespo Marquez, and Beno{\^\i}t Iung.
 \newblock On the concept of e-maintenance: Review and current research.
 \newblock \emph{Reliability Engineering \& System Safety}, 93\penalty0
   (8):\penalty0 1165--1187, 2008.
+
+\bibitem[Nash~Jr(1950)]{nash1950bargaining}
+John~F Nash~Jr.
+\newblock The bargaining problem.
+\newblock \emph{Econometrica: Journal of the Econometric Society}, pages
+  155--162, 1950.
+
+\bibitem[Palmer et~al.(2003)Palmer, Kirschenbaum, Murton, Zajac, Kovacina, and
+  Vaidyanathan]{palmer2003decentralized}
+Daniel Palmer, Marc Kirschenbaum, Jon Murton, Kelly Zajac, M~Kovacina, and Ravi
+  Vaidyanathan.
+\newblock Decentralized cooperative auction for multiple agent task allocation
+  using synchronized random number generators.
+\newblock In \emph{Intelligent Robots and Systems, 2003.(IROS 2003).
+  Proceedings. 2003 IEEE/RSJ International Conference on}, volume~2, pages
+  1963--1968. IEEE, 2003.
 
 \bibitem[Parunak(1999)]{parunak1999industrial}
 H~Van~Dyke Parunak.
@@ -256,6 +285,18 @@ M~Rosa, V~Miranda, M~Matos, G~Sheble, and AM~Silva.
 \newblock In \emph{Intelligent System Applications to Power Systems, 2009.
   ISAP'09. 15th International Conference on}, pages 1--7. IEEE, 2009.
 
+\bibitem[Rosenschein and Zlotkin(1994)]{rosenschein1994rules}
+Jeffrey~S Rosenschein and Gilad Zlotkin.
+\newblock \emph{Rules of encounter: designing conventions for automated
+  negotiation among computers}.
+\newblock MIT press, 1994.
+
+\bibitem[Roth(1977)]{roth1977individual}
+Alvin~E Roth.
+\newblock Individual rationality and nash's solution to the bargaining problem.
+\newblock \emph{Mathematics of Operations Research}, 2\penalty0 (1):\penalty0
+  64--65, 1977.
+
 \bibitem[Rubinstein(1982)]{rubinstein1982perfect}
 Ariel Rubinstein.
 \newblock Perfect equilibrium in a bargaining model.
@@ -268,6 +309,13 @@ Fernando Schramm and Danielle~Costa Morais.
   chain of construction industry.
 \newblock \emph{Pesquisa Operacional}, 33\penalty0 (3):\penalty0 491--512,
   2013.
+
+\bibitem[Sharif and Huynh(2012)]{sharif2012yard}
+Omor Sharif and Nathan Huynh.
+\newblock Yard crane scheduling at container terminals: A comparative study of
+  centralized and decentralized approaches.
+\newblock \emph{Maritime economics \& logistics}, 14\penalty0 (2):\penalty0
+  139--161, 2012.
 
 \bibitem[Shen et~al.(2003)Shen, Norrie, and Barth{\`e}s]{shen2003multi}
 Weiming Shen, Douglas~H Norrie, and Jean-Paul Barth{\`e}s.

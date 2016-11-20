@@ -245,56 +245,44 @@ Another common protocol is the monotonic concession protocol. It is a proposal w
 \subsection{Negotiation Strategies}
 The strategy can be defined formally as an apparatus which allows the agent to determine the content of the action that it will perform consistently with the protocol. In general, for a given set of negotiation protocol there are many strategies compatible with it, each of which can determine a different action. This means that a strategy can work well with a given protocol, but does not work with others. So, the choice of strategy depends on the protocol in use and by the trading scenario \citep{di2015multi}.
 
-Often these strategies are private, meaning that not all the agents can see what the strategy of an agent is \citep{fatima2004agenda}. Example of a strategy is the Zeuthen strategy which results in the outcomes being equivalent to the Nash bargaining solution. 
+Often these strategies are private, meaning that not all the agents can see what the strategy of an agent is \citep{fatima2004agenda}. 
 
 \subsubsection{Concession Strategy}
 \label{sec:concessionstrat}
 \todo[Todo Hier concession uitleggen]{Concession uitleggen!!}
+When negotiating it is essential for the agents to concess. Initially each of the agents involved makes a proposal that has the highest utility to itself. If no concessions are made, the agents will never reach an agreement. By making concessions on the utility, a proposal towards the agents agreement-zone can be made, which is essential in finding an agreement. Furthermore as put by \citet{endriss2006monotonic}: a concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
 
-Using the monotonic concession protocol, negotiation is guaranteed to end
-(with or without agreement) after a finite number of rounds. Since the set of possible
-deals is finite, the agents cannot negotiate indefinitely: either the agents will
-reach agreement, or a round will occur in which neither agent concedes. However,
-the protocol does not guarantee that agreement will be reached quickly. Since th
+There are multiple strategies when dealing with how to concede. Most of these are on or another way of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal there are 2 options. Either the agent refuses to make a concession and stick to proposal or it Make a concession and propose a new deal that is preferable to the other agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \cite{endriss2006monotonic}.
 
-\citet{endriss2006monotonic} devines 7 different concession strategies, to increase utility. 
+%Using the monotonic concession protocol, negotiation is guaranteed to end (with or without agreement) after a finite number of rounds. Since the set of possible deals is finite, the agents cannot negotiate indefinitely: either the agents will reach agreement, or a round will occur in which neither agent concedes. However, the protocol does not guarantee that agreement will be reached quickly. Since th
 
-\citet{wu2009efficient} describes 4, for resources allocaiton. 
+An alternative is the one-step protocol \cite{rosenschein1994rules} simplifies this matter. Here, each agent is allowed to make a single offer, and the proposal that yields the higher product of all the utilities of the agents accepted. The best strategy that agents can follow in this protocol is to propose the agreement that is best for themselves amongst those with maximal product of utilities. Essential however is that the utilities of the other agents must be known to ensure that the maximal product of utilities is calculated.
 
+There are multiple options when dealing with concession to a multilateral negotiation \citep{endriss2006monotonic}. Most of these have a relation to social welfare concepts, meaning that the agents will together try to maximize the utility of all the agents. This means however that the utilities of the other agents must be know since, it is not possible to discover the group maximum using private utilities.
 
-\citet{endriss2006monotonic} A concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
+Four concession strategies are given by \citet{wu2009efficient}: An \textit{amount of utility} meaning that an agent concedes a fixed amount utility per time. \textit{Fraction of utility}, which means that an agent concedes a fraction of the desired utility. \textit{Fraction of the difference} which means that the agent concedes a fixed fraction of the change in current desired utility and a reference point. And finally a \textit{fraction of remains} which is a fixed fraction of the issues that no agreement has been made on yet. They found very little difference between the performances (distance from Pareto-optimum) of the concession strategies, although the fixed step was the quickest. 
 
-\citet{endriss2006monotonic} Here some concession protocols are shown, \todo[Todo explain monotonic multilateral concession protocols]{explain the multilateral concession protocols} however, since we are dealing with private information, this is not usefull. 
+When dealing with private utility functions matter change completely. There is no way knowing whether the other agents has conceded. A solution to this is proposed by \citet{zheng2015automated} using the reactive concession protocol.
 
+\paragraph{Reactive Concession protocol}
+The reactive concession protocol as proposed by \citet{zheng2015automated} tries to solve the problem that occurs when dealing with private functions and ensuring that there is not one agent that does not stall its concessions. \citet{zheng2015automated} show that by having an agent concider its own utility change resulting from another agents' offer, it can concede accordingly. There are two cases. If the change in utility that the other agetns' offer caused has resulted in an higher utility than the reservation utility, the agent will respond with the non-reactive concession strategy. 
 
-\todo[Zeuthen!!]{Zeuthen}
-
-So far, we have said nothing about how negotiation participants might or should
-behave when using the monotonic concession protocol. On examining the protocol,
-it seems there are three key questions to be answered as follows.
-• What should an agent's first proposal be?
-any given round, who should concede?
-If an agent concedes, then how much should it concede?
-The first question is straightforward enough to answer: an agent's first proposal
-should be its most preferred deal.
-With respect to the second question, the idea of the Zeuthen strategy is to
-measure an agent's willingness to risk conflict. Intuitively, an agent will be more
-willing to risk conflict if the difference in utility between its current proposal and
-the conflict deal is low.
-In contrast, if the difference between the agent's current proposal and the conflict
-deal is high, then the agent has more to lose from conflict and is therefore
-less willing to risk conflict - and thus should be more willing to concede.
-Agent r's willingness to risk conflict at round t, denoted risk\, is measured in
-the following way (Rosenschein and Zlotkin, 1994, p. 43):
+However, if the utility is lower than the reservation utility, the agent will concede by an amount based on the change the agent perceives. By checking the last best offer, the agent checks for the marginal perceived change of utility and the total perceived change from the original offer. This gives two values, of which the maximum will be the agents' concession.
 
 
-The next question to answer is how much should be conceded? The simple
-answer to this question is just enough. If an agent does not concede enough, then
-on the next round, the balance of risk will indicate that it still has most to lose
-from conflict, and so should concede again. This is clearly inefficient. On the other
-hand, if an agent concedes too much, then it 'wastes' some of its utility. Thus an
-agent should make the smallest concession necessary to change the balance of
-risk - so that on the next round, the other agent will concede.
+%So far, we have said nothing about how negotiation participants might or should behave when using the monotonic concession protocol. On examining the protocol, it seems there are three key questions to be answered as follows. • What should an agent's first proposal be? any given round, who should concede? If an agent concedes, then how much should it concede? The first question is straightforward enough to answer: an agent's first proposal should be its most preferred deal. With respect to the second question, the idea of the Zeuthen strategy is to measure an agent's willingness to risk conflict. Intuitively, an agent will be more willing to risk conflict if the difference in utility between its current proposal and the conflict deal is low. In contrast, if the difference between the agent's current proposal and the conflict deal is high, then the agent has more to lose from conflict and is therefore less willing to risk conflict - and thus should be more willing to concede. Agent r's willingness to risk conflict at round t, denoted risk\, is measured in the following way (Rosenschein and Zlotkin, 1994, p. 43):
+
+
+%The next question to answer is how much should be conceded? The simple answer to this question is just enough. If an agent does not concede enough, then on the next round, the balance of risk will indicate that it still has most to lose from conflict, and so should concede again. This is clearly inefficient. On the other hand, if an agent concedes too much, then it 'wastes' some of its utility. Thus an agent should make the smallest concession necessary to change the balance of risk - so that on the next round, the other agent will concede.
+
+
+
+
+
+
+
+%Example of a strategy is the Zeuthen strategy which results in the outcomes being equivalent to the Nash bargaining solution. %
+
 
 
 \subsection{Negotiation States}
@@ -339,7 +327,6 @@ Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ deno
 \end{figure}
 
 The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and shown in figure \ref{fig:majorcategoriesofgametheory}. 
-\todo[Explain nash formally here!]{Explaing Nash Formally}
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{img/major_categories_of_game_theory}
@@ -354,15 +341,15 @@ This can be visualized in a normal form pay-off matrix. It is common to refer to
 \begin{tabular}{|c|c|c|c|}
 	\hline 
 		&  				& $i$ 			&  \\ 
-	$A$ 	&				& defect (confess) 	& cooperate ($\not$ confess) \\ 
+	$A$ 	&				& defect (confess) 	& cooperate ($\neg$ confess) \\ 
 		& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
-		& cooperate($\not$ confess) 	&  (-5, 0)				& (-1,-1) \\ 
+		& cooperate($\neg $ confess) 	&  (-5, 0)				& (-1,-1) \\ 
 	\hline 
 \end{tabular} \label{tab:nashprison} \caption{The prisoners dilemma}
 \end{table}
 For agent $i$ it is obvious to reason as follows. Suppose agent $j$ cooperates. Then the best response is to defect. Suppose the agent $j$ defects. Then the best response is to defect. In other words, defection for agent $i$ is the best response to all possible strategies of the player j. This makes defection the dominant strategy for agent $i$. Since both agents reason the same way, the agent will both defect which results in the Nash equilibria (defect, defect).
 
-In general, that two strategies $s_1$ and $s_2$ are in Nash equilibrium if: under the assumption that agent $i$ plays $s_i$, agent $j$ can do no better than play $s_2$, and under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_l$. Thus strategies $s_i$ and $s_j$ for agents $i$ and $j$ form a Nash equilibrium if they are the best response to each other  \cite{wooldridge2009introduction}. 
+In general, that two strategies $s_1$ and $s_2$ are in Nash equilibrium if: under the assumption that agent $i$ plays $s_i$, agent $j$ can do no better than play $s_2$, and under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_l$. Thus strategies $s_i$ and $s_j$ for agents $i$ and $j$ form a Nash equilibrium if they are the best response to each other  \citep{wooldridge2009introduction}. 
 
 Important to note here is that in the prisoners dilemma, the Nash equilibrium is the only solution which is not Pareto optimum.  THe optimal social solutions, which is if both agents do not confess, is different from the Nash equilibrium.  Furthermore, it should be stated that not every interaction scenario has a Nash equilibrium and some interaction scenarios have more than one Nash equilibrium. 
 \subsection{Principled Negotiation}
@@ -468,6 +455,8 @@ Since the contract net protocol has the uncertainty of matches being stable, the
  
 If the game is imperfect two sided matching does not work, and a proposal based protocol is the right fit \citep{rahwan2003argumentation}.
 
+\todo[Example of the three agents and three resources]{Example of the Three agents and three resources, }
+
 
 %\subsubsection{Reasoning about ones interest}
 %Interest-based negotiation (IBN) is a form of argumentation-based negotiation in which agents exchange (1) information about their underlying goals; and (2) alternative ways to achieve these goals \cite{rahwan2009formal}. 
@@ -546,4 +535,3 @@ The last option, an application of multilateral heuristic learning, is the best 
 
 
 %approximate-optimale oplossingen terwijl je de optimale oplossing niet weet lijkt een leuke uitdaging
-\include{tex/literature.framework}

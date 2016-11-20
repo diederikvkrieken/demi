@@ -101,8 +101,8 @@ Since the utility decreases each round, the set of feasible offers increases as 
 
 \subsection{Reactive concession strategy}
 \label{sec:reactiveconcessionstr}
-The reactive concession protocol as described by \citet{zheng2015automated} is a specific concession strategy to determine the amount of utility to concede. The nonreactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),\\ ..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does an concession according to the nonreactive concession strategy. However if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
-%\todo[Todo explain reactive concession!!]{Explain reactive Concession!}
+The reactive concession protocol as described by \citet{zheng2015automated}, and also shown in \Cref{sec:concessionstrat}, is a specific concession strategy to determine the amount of utility to concede. The non-reactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does an concession according to the non-reactive concession strategy. However if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
+\todo[Todo explain reactive concession!!]{Explain reactive Concession!}
 
 
 \subsubsection{Offer generation}
@@ -147,15 +147,29 @@ The reservation curve can be set as the curve where the utility $= 0.3$ e.g.. Th
 %At first a simple linear utiltiy function will be used: the less water, the higher the utility. Also, the more base, the higher the utility. This has a limit, depending on the reservation function as shown in \Cref{fig:anionreservationfunction}.
 
 If the indifference line is know, a projection on this line is possible. 
-At $t$, the agent $i$ (anion) has the required utility $s^i_t$. Suppose $s^i_t = 0.4$ This means that there is an indifference curve $0 = B - W - (\ln(0.4)+1)$. Suppose that offer $x(t-1)$ contains an offer for base 0.4 and water 0.7 (we can disregard the acid offer in this example, since the Anion has an indifference for the amount of acid used). 
+At $t$, the agent $i$ (anion) has the required utility $s^i_t$. Suppose $s^i_t = 0.4$ This means that there is an indifference curve $0 = B - W - (\ln(0.4)+1)$. Suppose that offer $x(t-1)$ contains an offer for base $0.4 \text{ and water } 0.7$ (we can disregard the acid offer in this example, since the Anion has an indifference for the amount of acid used). 
 
-A projection to the indifference curve of the Anion is achieved with the following formulae. Given the information above, $x_0 = 0.4 \text{ and } y_0 = 0.7$. Furthermore, $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$, $\texttt{a} = 1, \texttt{b} = -1, \texttt{c} = -(\ln(0.4)+1)$
+A projection to the indifference curve of the Anion is achieved with the following formulae. It has been thoroughly proven that if function is written as, $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$,the distance is calculated as follows:
 
-\[(ax+by+c=0, (x_0, y_0)) = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}. \]
+\[\text{distance}(ax+by+c=0, (x_0, y_0)) = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}. \]
 
+From this we get the point of the line, which is the line with the minimal distance:
 \[x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2} \text{ and } y = \frac{a(-bx_0 + ay_0) - bc}{a^2+b^2}\]
 
+This has been proven multiple times, for example by algebaric proof by finding the line that is perpendicular to the original line, and b/-a (the negative reciprocal) by letting it pass trough the point ($x_0, y_0$). We find that the distance is indeed as shown above, with the minimal distance point $x \text{ and }y$.
+
+The above is important since \citet{zheng2015automated} has proven that if the projection is the point with the shortest minimum Eucilidean distance, the algorithm will converge for any concession strategy!
+
+So given the situation above, we have the function $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$ where $\texttt{a} = 1, \texttt{b} = -1, \texttt{c} = -(\ln(0.4)+1)$. Given the information above, $x_0 = 0.4 \text{ and } y_0 = 0.7$ this gives us the solution of the new $x=\frac{2.1 + \ln(0.4)}{2} \text{and} y = \frac{2.1 - \ln(0.4)}{2}$, which is on the indifference curve of the anion for an utility of 0.4.
 The above is visualized in \Cref{fig:projectionanionexample}.
+
+The projection is formally written as $P_A[x]$, which is the projection of point $x$ on set $A$. 
+
+Important to note is that if the utility of the new point is larger that the desired utility, (the point is above the indifference curve), the proposal will not be accepted.
+
+The advantage of using a linear indifference curve is that we don't have to deal with an minimization function ($P_A[x] = \arg \min_{\forall q \in A} ||q-x||$) which increases speed dramatically.
+
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/projection_anion_example}
@@ -220,6 +234,7 @@ y = \frac{y_0 + (\ln(u)+3) - (x_0, y_0, z_0)}{3}
 \[
 z = \frac{z_0 + (\ln(u)+3) - (x_0, y_0, z_0)}{3}
 \]
+This is proven 
 
 Important to note her is that the ratio of water to the base and acid is disputed. Since only a residue of ions have to be removed, the amount of water desired can be much hire compared to the amount of acid and base used. This is solved with the introduction of a variable $l$ with which to multiply the amount of water. 
 
@@ -300,7 +315,7 @@ So although there is a multi-issue negotiation, the only agent that has interest
 \section{Algorithm}
 The algorithm, as programmed in Java is implemented using different objects. This was originally described in \Cref{ch:literature} as the optimal way to implement agents. The model consist of 4 different agents, which in turn can either be an anion, cation, mixbed or neut with their own characteristics.
 
-The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a nonreactive strategy is easily applied when changing \Cref{al:start} to $\text{if} true$.
+The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a non-reactive strategy is easily applied when changing \Cref{al:start} to $\text{if} true$.
 
 Afterwards, depending on the concession protocol, their desired utility decreases, meaning that the proposal creeps towards the solution space as can be seen in \Cref{fig:searchforsolution}. 
 \begin{figure}[h]
@@ -364,9 +379,13 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 Means that of the total amount of resources available, the allocation will be devided among 2. 
 \todo[Todo What does result mean?!]{What does the outcome mean?}
 
-Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production.
+Allocate the total possible to the agents. e.g. the final offer is 0.7 water, meaning that the anion and cation produce 0.7 of the total possible water production. 
 
 If water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
+
+The allocation of the base to the anion and mixbed is dependent on de water $l$. This is a fixed seperation. Lets say the group agree to 0.6 usage of base. If $l$ is set to $1$, we allocate as much base to the mixbed as the anion (0.3 each). However if $l$ is set to 10, this means that the mixbed will receive 1/11th of the base while the anion receives 10/11th. 
+
+
  
 \section{Proof of convergence}
 If there is an intersect of the agreement zone it must be that the agents will find this.

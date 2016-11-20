@@ -146,21 +146,23 @@ dist_nonrea_mixbed10(i) = pdist([na2;average_nonrea_mixbed10]);
 end
 %%
 figure
-plot(reservation, dist_rea, '--')
+%plot(reservation, dist_rea, '--')
 hold on
-plot(reservation, dist_nonrea)
+%plot(reservation, dist_nonrea)
 plot(reservation, dist_rea_mixbed10, '-.')
+hold on
 plot(reservation, dist_nonrea_mixbed10, ':')
-legend('reactive','non reactive', 'reactive with mixbed water 10', 'nonreactive with mixbed water 10')
+%legend('reactive','non reactive', 'reactive with mixbed water 10', 'nonreactive with mixbed water 10')
+legend('reactive with mixbed water 10', 'nonreactive with mixbed water 10')
 xlabel('reservation curve value')
 ylabel('distance from nash solution')
 
 %%
 for i=1:13
-[n(i,1),~] = size(reactive_distance_mixbed2{i}); 
-[n(i,2),~] = size(nonreactive_distance_mixbed2{i}); 
-m(i,1) = min(reactive_distance_mixbed2{i}(:));
-m(i,2) = min(nonreactive_distance_mixbed2{i}(:));
+[n(i,1),~] = size(reactive_distance_mixbed10{i}); 
+[n(i,2),~] = size(nonreactive_distance_mixbed10{i}); 
+m(i,1) = min(reactive_distance_mixbed10{i}(:));
+m(i,2) = min(nonreactive_distance_mixbed10{i}(:));
 end
 tabel10 = [reservation; m(:,1)';n(:,1)';m(:,2)';n(:,2)'];
 tabel10 = tabel10';

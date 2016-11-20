@@ -1,44 +1,18 @@
-\chapter{conclusion and further work}
+\chapter{Conclusion and Further Work}
 \section{Conclusion}
-\section{Further Work}
+In this thesis we have given an overview of agent solutions used in the manufatcturing world. We found that a gap lies in the ``real'' negotiation, which excludes the use of auctions and or contract net protocol. 
+
+By using the alternating offer protocol it is checked whether an optimal solution can be found. 
+
+At the moment, it seems as if the reactive concession strategy, as described in \citet{zheng2015automated} still has some difficulties. This can be clearly seen in \Cref{fig:reactivevsnon-reactive}. 
+
 \section{Evaluation}
+Although the alternating offer has been used, it is not usable at al yet at a real case. The largest difficulty lies in the realistic portrayal of the utility function. The requirement for a convex utility function makes it even more difficult. However, if only the non-reactive strategy was used, it should be possible to use a non-convex function.
 
+\section{Further research}
+A lot of further research could be done on the alternating offer protocol to be used in manufacturing world. The agents could be improved to allow reasoning, using an holonic structure for example. Furthermore other strategies can be used, while the utility functions can be changed as well. Extra negotiation could be applied using bilateral negotiations, and to finalize heuristic learning methods can be applied.
 
-\section{Further research.}
-At the moment, it seems as if the reactive concession strategy, as described in \citet{zheng2015automated} still has some difficulties. This can be clearly seen in \Cref{fig:solution-mixbed-neut}. 
-
-
-\begin{enumerate}
-	\item Holonic
-
-\item
-Onderhandelen van allocatie van proposal.
-\item
-Concessie strategien die toegevoegd kunnen worden
-\item
-Future-future: Learning methods -> alternatief voor convexe functies
-
-\end{enumerate}
-
-Further neg
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{"img/solution mixbed neut"}
-%	\caption{The current search for a solution for the mixbed agent and the neut agent. They do not find a solution in the solution space.}
-%	\label{fig:solution-mixbed-neut}
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{img/scatter_of_proposals}
-%	\caption{A scatter plot of the proposals of the agents.}
-%	\label{fig:scatterofproposals}
-%\end{figure}
-
-
-
-
-\subsection{Holonistic agents}
+\subsection{Holonic agents}
 
 This structure is that of a holon as can be seen in figure~\cref{fig:holonexample}. As shown in the literature it is based on PROSA by \citet{van1998reference}.
 \begin{figure}
@@ -90,11 +64,12 @@ The following facts and rules are part of the Anion.
 	\label{fig:anion-head-sub}
 	
 \end{figure}
-
+The use of these holons could allow an agent to reason about the environment, and act upon it accordingly.
 
 \subsection{Utility function}
+The requirement of a convex function forced the use of a specific, and highly theoretical function. This could be perfected using more expert input.
 \subsubsection{Reservation curve}
-
+We have used a linear reservation curve for simplicity, since this eliminated the minimization that would have been necessary if a truly curved function was used. An example is shown in \Cref{fig:anionreservationfunction}.
 \begin{figure}
 	\centering
 	\begin{tikzpicture}[domain=0.15:4]
@@ -107,9 +82,10 @@ The following facts and rules are part of the Anion.
 	\caption{The reservation function for the Anion filter: the more water is filtered and given, the more base it requires.}
 \end{figure}
 
-\todo[What to do if more water is required?]{Say we have a situation where water production is required. Reservation utility of mixbed to 0.1, rest to 0.3.
-	When is there no solution?}
-
-\todo[further research]{Further research }
-
+\subsection{Continue negotiation after group agreement}
+After the group has an agreement, the agents now allocate the resource as predefined (see \Cref{sec:design:mean}). This could be optimized to bilateral negotiation between the Mixbed and Anion for example.
+\subsection{Extra concession strategies}
+The many concession strategies, as shown in \Cref{sec:concessionstrat} allow for many strategies to be used. Further research could include using fraction, which was suggested as a good solution by \citet{wu2009efficient}. 
+\subsection{Heuristic learning methods}
+As shown in \Cref{sec:lit:learn}, heuristic learning methods can also be used to learn the desired utility function. This has not been done since the requirement of a convex utility functions forced the usage of predefined functions.
 \todos

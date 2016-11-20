@@ -376,6 +376,7 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 \end{algorithm}
 \clearpage
 \section{What does result mean? 0.6, 0.4, 0.8 eg}
+\label{sec:design:mean}
 Means that of the total amount of resources available, the allocation will be devided among 2. 
 \todo[Todo What does result mean?!]{What does the outcome mean?}
 
@@ -383,14 +384,17 @@ Allocate the total possible to the agents. e.g. the final offer is 0.7 water, me
 
 If water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
 
-The allocation of the base to the anion and mixbed is dependent on de water $l$. This is a fixed seperation. Lets say the group agree to 0.6 usage of base. If $l$ is set to $1$, we allocate as much base to the mixbed as the anion (0.3 each). However if $l$ is set to 10, this means that the mixbed will receive 1/11th of the base while the anion receives 10/11th. 
+The allocation of the base to the anion and mixbed is dependent on de water $l$. This is a fixed separation. Let's say the group agree to 0.6 usage of base. If $l$ is set to $1$, we allocate as much base to the mixbed as the anion (0.3 each). However, if $l$ is set to 10, this means that the mixbed will receive 1/11th of the base while the anion receives 10/11th. 
 
+Another possiblity is that the reservation funtion of the mixbed could be higher than the others. 
 
  
 \section{Proof of convergence}
-If there is an intersect of the agreement zone it must be that the agents will find this.
+If there is an intersect of the agreement zone, the agents will find this.
 This is already proven in the Zeuten strategy, which shows that no agreement is always worse than a bad agreement. In infinite time this will happen. 
 \todo[Zeuten Strategy]{Zeuten Strategy}
+
+Furthermore, we have shown that the projection gives us the point closest to the agreement-set of an agent. Since it was proven by \citet{zheng2015automated} that if $x$ is projected on to the agreement-set  ($P_A[x]$), this also can be said of the projection on the linear line with the method used. 
 
 
 %\clearpage

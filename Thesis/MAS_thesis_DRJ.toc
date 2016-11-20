@@ -71,24 +71,29 @@
 \contentsline {chapter}{\numberline {5}Simulation comparison \& evaluations}{51}{chapter.5}
 \contentsline {section}{\numberline {5.1}Parameters}{51}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Nash Bargaining Solution}{51}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}non-reactive concession strategy}{52}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Non-reactive concession strategy}{52}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Reactive Concession strategy}{52}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Reservation curve}{53}{subsection.5.1.4}
 \contentsline {subsection}{\numberline {5.1.5}Distance}{53}{subsection.5.1.5}
 \contentsline {subsubsection}{Threshold \& maximum number of rounds}{53}{section*.38}
 \contentsline {section}{\numberline {5.2}Reactive concession compared to non-reactive}{54}{section.5.2}
 \contentsline {section}{\numberline {5.3}Reactive mixbed vs non-reactive }{55}{section.5.3}
-\contentsline {section}{\numberline {5.4}Double water requirement mixbed}{55}{section.5.4}
-\contentsline {section}{\numberline {5.5}mixbed10}{57}{section.5.5}
-\contentsline {section}{\numberline {5.6}Discussion}{57}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}reactive vs non-reactive}{57}{subsection.5.6.1}
-\contentsline {subsubsection}{Situation at the 0.2 ru}{58}{section*.46}
-\contentsline {subsection}{\numberline {5.6.2}reactive mixbed vs non-reactive}{58}{subsection.5.6.2}
-\contentsline {chapter}{\numberline {6}conclusion and further work}{59}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{59}{section.6.1}
-\contentsline {section}{\numberline {6.2}Further Work}{59}{section.6.2}
-\contentsline {section}{\numberline {6.3}Evaluation}{59}{section.6.3}
-\contentsline {section}{\numberline {6.4}Further research.}{59}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Holonistic agents}{59}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Utility function}{60}{subsection.6.4.2}
-\contentsline {subsubsection}{Reservation curve}{60}{section*.49}
+\contentsline {section}{\numberline {5.4}Changing the $l$ value for the mixbed}{55}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Mixbed 2 water}{56}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Mixbed 10 water}{56}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Discussion}{60}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}reactive vs non-reactive}{60}{subsection.5.5.1}
+\contentsline {subsubsection}{Situation at the 0.2 ru}{60}{section*.47}
+\contentsline {paragraph}{The solution space}{60}{section*.50}
+\contentsline {section}{\numberline {5.6}Solution space}{60}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}reactive mixbed vs non-reactive}{60}{subsection.5.6.1}
+\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{64}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{64}{section.6.1}
+\contentsline {section}{\numberline {6.2}Evaluation}{64}{section.6.2}
+\contentsline {section}{\numberline {6.3}Further research}{65}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Holonic agents}{65}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Utility function}{66}{subsection.6.3.2}
+\contentsline {subsubsection}{Reservation curve}{66}{section*.56}
+\contentsline {subsection}{\numberline {6.3.3}Continue negotiation after group agreement}{66}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Extra concession strategies}{67}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Heuristic learning methods}{67}{subsection.6.3.5}

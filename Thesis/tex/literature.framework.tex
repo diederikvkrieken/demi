@@ -1,0 +1,90 @@
+
+\newpage
+\section{Framework}
+A framework to compare a centralized vs a decentralised solution is discussed here. Essential in the difference between these two possible solution spaces is the location of the processing power for the calculations. Centralised solutions have a single control unit where the information flows to, while decentralized solutions do not have this structure.
+
+A popular comparison, discussed in \citet{parunak1999industrial}, is that of the original Roman army structures. Decisions where made at the top and dripped down, while the information stream went up. This method, has been deployed into most companies. Due to the fact that something can be computed on a single computer, and be optimized on this single program, an optimal can be found.
+
+However, the increasing complexity of computer and information systems, combined with the increasing complexity of their applications, exceed the level of conventional centralized computing. This is due to the processing of huge amounts of data, or data that origin from (geographically) distinct locations. To solve such difficulties computers have to act more as agents where each agent can solve part, or decides on part of the problem. This is where agent-based architectures are an ideal fit to such an organizational structure.
+
+To push the decision making to the lowest level, excessive layers of management can be absolute. This allows for, sometimes, easier to understand and developing of problems, especially if the problem being solved is itself distributed.
+
+By using principles of decomposition which is a classical optimization (reformulation) method \citet{sharif2012yard} presents a comparative study of two contrasting approaches for modelling the yard crane scheduling problem: centralized and decentralized. It seeks to assess their relative performances and factors that affect their performances. They conclude that a centralized approach outperforms the decentralized approach by 16.5 \% on average, due to having complete and accurate information about future truck arrivals. However, since the decentralized under performs the centralized, the decentralized approach can dynamically adapt to real-time dynamic changes, making it better suited for real-life operations. 
+
+To optimize these different types of resources allocation problems, there are different kinds of allocation problems, for which different solutions are feasible. The purpose here is to find what characteristics are optimal to use a centralized vs a decentralized solution.
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.7\linewidth]{img/yard_compare_ca_da}
+%\caption{}
+%\label{fig:yardcomparecada}
+%\end{figure}
+
+
+
+% The increasing complexity of computer and information systems goes together with an increasing complexity of their applications. These often exceed the level of conventional, centralized computing because they require, for instance, the processing of huge amounts of data, or of data that arises at geographically distinct locations. To cope with such applications, computers have to act more as \individuals" or agents, rather than just \parts."
+
+%centralized solutions are generally more efficient: anything that can be computed in a distributed system can be moved to a single computer and optimized to be at least as efficient. However, distributed computations are sometimes easier to understand and easier to develop, especially when the problem being solved is itself distributed. Distribution can lead to computational algorithms that might not have been discovered with a centralized approach. There are also times when a centralized approach is impossible, because the systems and data belong to independent organizations that want to keep their information private and secure for competitive reasons.
+
+
+\subsection{Size and modularity}
+A \Todo{Framework weghalen} critical aspect of the possibility to determine whether a centralized or decentralised solutions is preferred is the search space size of the problem. The size of the problem is seen as the number of resources that have to be allocated.  If a clear structure is conceivable and a clear population is in place a centralized solution is feasible. This is due to the global overview . 
+
+%Since a centralized solutions are highly sensitive to the size and complexity and require performing the computation in advance, they lack the dynamically needed in real-life situations. The decentralized Approach dont require computation time required in advance and can use disaggregated, handle large and complex problems
+
+%\subsection{Modularity}
+In a decentralized structure, individual models are decoupled from one another, errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. This can be seen in figure~\ref{fig:modularitydecentral-changeability}. It shows however the importance of having a clear modular problem. 
+
+%As Figure 9.1 suggests, in a system with a single thread of control, changes to a single module can cause later modules, those it invokes, to malfunction. Decentralization decouples the individual modules from one another, so that errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. (The original version of this  
+gure was created by Seiichi Yaskawa of Yaskawa Electric Corporation, Tokyo, Japan, and is used with his kind permission.)
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/modularity+decentral-changeability}
+\caption{Comparison of a conventional control thread and an agent based, from \citet{parunak1999industrial}.}
+\label{fig:modularitydecentral-changeability}
+\end{figure}
+
+
+
+\subsection{Dynamicity (Time Scale/Changeability)}
+In a centralized solution, the continuous monitoring of the state of the environment and typically the lack of complex decisions, a quick reaction to changes is possible. A high dynamical is the result. 
+
+Unfortunately, it is difficult to achieve real-time scheduling in traditional manufacturing systems because the scheduling algorithms used are executed on a single, centralized computer that becomes a computation \citep{duffie1994real}.
+\subsection{Solution Quality}
+Since agent-based approaches are distributed, they do not have a global view of the entire state of a system. A lot can reached through communication and negotiation, but for a truly optimal solution, an entire view is necassary. For example,  \citep{palmer2003decentralized} shows that this algorithm is not intended to find the optimal solution; it finds a good solution with less computation. 
+
+In the centralized approach the assumption of a complete information on supply and demand is made. This requires rescheduling to adapt with changes. 
+
+In the decentralized approach, no assumptions on the are necessary. 
+%Adaptability
+%Centralized Approach
+%Assumes complete information on supply and demand
+%Requires rescheduling to adapt with changes
+%Decentralized Approach
+%No assumptions on the arrival-time of trucks
+%Monitor changes continuously, adapt rapidly
+
+
+\subsection{Complexity}
+Requirments are Simple relations. %However when changing relations are  %Changing relations a
+
+
+
+\begin{tabular}{p{2cm}|p{3cm}|p{3cm}|p{3cm}}
+	& Centralised Solution & Decentralised Solution & Building Blocks\\
+	\hline \hline
+	Size / Modularity & Small;  No sub-problems & Large; Ill-Structured; Easily dividable; Independent Modules & Population; Holonicicity; \# of resources: (decision variables, parameters \& constraints)\\
+	\hline
+	Time scale / Changeability & Days - Weeks; Not subject to a lot of change & Real-time - Hour; Changeability  & Adaptive Capability ; Degree of Re- and Pro-activeness\\
+	\hline
+	Solution quality & Perfect & (sub-)Optimal & Object and Solution Space\\
+	\hline
+	Complexity & Simple & Complex & Interaction between the set of elements; Communication
+\end{tabular}
+%\cite{pujolle2006autonomic}
+%To achieve the autonomic-oriented architecture, we propose to select the appropriate control mechanisms among: 
+%- adaptive: the agent adapts its actions according to the incoming events and to its vision of the current system state. The approach we propose is adaptive as the agent adapts the current control mechanisms and the actions undertaken when a certain event occurs. The actions the control mechanism executes may become no longer valid and must therefore be replaced by other actions. These new actions are indeed more suitable to the current observed state;
+%- distribution: each agent is responsible for a local control. There is no centralization of the information collected by the different agents, and the decisions the agent performs are in no way based on global parameters. This feature is very important as this avoids having bottlenecks around a central control entity;
+%- local: the agent executes actions on the elements of the node it belongs to. These actions depend on local parameters. However, the agent can use information sent by its neighbours to adapt the activated control mechanisms;
+%- scalable: the proposed approach is scalable because it is based on a multi-agent system which scales well with the growing size of the controlled network. In order to adaptively control a new node, one has to integrate an agent (or a group of agents) in this node to perform the control. 

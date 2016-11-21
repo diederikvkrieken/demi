@@ -24,7 +24,7 @@ The traditional automation pyramid, is very similar to the multiple layers in th
 By creating an overview of the different layers in the manufacturing process, an understanding of how this can be solved with agent solutions can be given. 	
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{img/ansi-isa-95}[h]
+\includegraphics[width=0.9\linewidth]{img/ansi-isa-95}[h]
 \caption{The manufacturing levels as described and defined by ANSI for the ISA-95 levels \citep{brandl2008ISA}. }
 \label{fig:ansi-isa-95}
 \end{figure}
@@ -132,7 +132,7 @@ The boundary of a convex set is always a convex curve. A function is called a co
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{img/convex}
+%	\includegraphics[width=0.7\linewidth]{img/convex}
 	\caption{Two sets. The left is convex, while the right, kidney shaped is not, as indicated with the line outside the set. From \citep{boyd2004convex}}
 	\label{fig:convex}
 \end{figure}
@@ -331,7 +331,7 @@ Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ deno
 The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and shown in \Cref{fig:majorcategoriesofgametheory}. 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{img/major_categories_of_game_theory}[h]
+	\includegraphics[width=0.9\linewidth]{img/major_categories_of_game_theory}[h]
 	\caption{The four types of games in game theory from \citet{trappey2013multi}.}
 	\label{fig:majorcategoriesofgametheory}
 \end{figure}
@@ -391,7 +391,7 @@ An example of a common method for negotiation is principled negotiation. This me
 %Contract net protocol is a form of cooperative distributed problem solving that will be discussed in the scheduling section (\Cref{sec:AIscheduling}).
 %\subsubsection{Framework}
 %An overview of these different methods is in Fatima et al.~\cite{fatima2014principles}. Unfortunately this book is still lacking. 
-\subsection{Negotation using a mediator}
+\subsection{Negotiation using a mediator}
 A mediator can be used when negotiating, like is used in typical hierarchy, voting, and auction based negotiations. 
 
 Voting is a form of group decision making. The agents participating in the voting will take into account their own preferences as well as those of others when making decision about how to vote. This will often have a strategic flavour. By aiming to rank or order the candidates, a group decision can be made.
@@ -405,7 +405,7 @@ An attempt at the visualization of the different negotiation techniques is striv
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/mapping_nego}
-	\caption{Current Negotiation overview}
+	\caption{Overview of the negotiation protocols used, and researched in the literature. In this research a multilateral, multi-issue }
 	\label{fig:mapping_nego}
 \end{figure}
 
@@ -505,13 +505,13 @@ There are many applications of agent based solutions in the manufacturing world 
 
 Rockwell Automation uses agents in its automation processes and is one of the industrial leaders in the implementation of agent based solutions \citep{vrba2011rockwell}. One of their future insights in the requirements of agent based solutions is to enhance the capabilities of agents for expressing and exchanging knowledge, and as a consequence, to increase the flexibility of control systems. In order to correctly do so, better insights in the negotiation is needed.
 
-Overall, nearly all factory scheduling negotiations use some form of these market-based approaches \citep{monostori2006agent} to implement the solutions. Different version of the contract net protocol were used or other auction based methods. The problem with these methods is that no reasoning about another's interest and desires is achievable. If this is known, more efficient and better systems can be achieved. It is however shown in \citet{bruccoleri2005production} that the agent based approach using market auctions out performs the centralized mixed integer programming solution. This system uses bilateral simultaneous negotiation on the medium level of the production plant. It is however a form of auctions, where the agents simultaneously bid towards the goal. If this system already outperforms a centralized system, a non-auction based method might outperform even better.
+Overall, nearly all factory scheduling negotiations use some form of these market-based approaches \citep{monostori2006agent} to implement the solutions. Different version of the contract net protocol were used or other auction based methods. The problem with these methods is that no reasoning about another's interest and desires is achievable. If this is known, more efficient and better systems can be achieved. It is however shown in \citep{bruccoleri2005production} that the agent based approach using market auctions out performs the centralized mixed integer programming solution. This system uses bilateral simultaneous negotiation on the medium level of the production plant. It is however a form of auctions, where the agents simultaneously bid towards the goal. If this system already outperforms a centralized system, a non-auction based method might outperform even better.
 
 Other examples of negotiation in a Multi-Agent System have been deployed in Smart Grids for optimal energy delivery \citep{pipattanasomporn2009multi}, the collaborative design of light industrial buildings \citep{anumba2003negotiation}, negotiation in an electronic market of water rights, and for example in the scheduling of Agile software development \citep{rabelo1999multi}.
 
 From the above, in comparison with the knowledge obtained, there are two gaps. Firstly, little multi-issue multi-lateral strategic (game theory wise) application have been implemented. An example from the theory is \citet{wu2009efficient} where a Pareto-optimal-search method for three-agent multilateral negotiation is developed. This however has not been implemented in any real usecase, and would be very interesting to implement. The other gap in the literature is the research into the optimal learning methods for heuristic methods. In \citet{de2015automated} a wireless surveillance sensor networks is optimized using heuristic learning methods. This is limited to a bilateral negotiation protocol with a mediator, where negotiating agents (two access providers, each of them controlling a fraction of the access points in the scenario) negotiate. No multilateral application has been attempted. An attempt at generalizing multilateral heuristic learning has been made in \citet{beheshti2014homan}, but this has not been applied to a real use case yet. 
 
-From these knowledge gaps we try to determine whether it is possible to build a multi-issue, multi-lateral negotiation.
+From these knowledge gaps we try to determine whether it is possible to build a multi-issue, multi-lateral negotiation where the utility functions are private. Since it is unknown to the agent whether an concession is made by the other agents, we compare the reactive concession strategy by \citet{zheng2015automated} to a typical non-reactive concession strategy.
 %So, in future, more concrete work should be done to validate more globally the decision-making support system and to find the most appropriated architecture ensuring “a form” of hierarchy (to optimise the global performances) and of co-operation (to be locally more reactive). It can lead (a) to evolve towards benchmarking, will not thus limit “to evaluate” only the protocol of negotiation we presented but also some of its derivatives and other types of negotiations, (b) to “automatise” the utility function of each expert (automated human expert) based on techniques such Bayesian Network, Fuzzy Logic,…to reduce the complexity of each decision (and to help the expert to develop his proposal), and (c) to use formal proofs to prove the global behaviour properties of the e-maintenance architecture (dynamics of the agent interaction and of the result emergence).  \cite{yu2003multi}
 
 %In \cite{harjunkoski2009integration} it is stated that  Even if it is today technically possible to connect every single device within a control system into an plant-wide MES system, it would make very little sense to integrate these e.g. with the scheduling. This is due to traditional view of a centralized system for planning. What this fails to see is the positive effect it would have if 

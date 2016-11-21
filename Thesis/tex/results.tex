@@ -41,7 +41,7 @@ As shown in the algorithm, there is a threshold required to decide on the value 
 
 Since the non-reactive concession give a maximum of 100 rounds until zero is reached, 200 seems as an overkill. However, since we are dealing with the combination of different concession strategies, it is useful to check whether a solution is found afterwards. This since there might change something in the proposals due to the reactive concession method. If the non-reactive method were to be changed, it would be important to change the number of rounds as well. 
 
-\section{Reactive concession compared to non-reactive}
+\section{Reactive concession strategy compared to the non-reactive concession strategy}
 When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:reactivevsnon-reactive}, it is obvious that the Nash limit indeed lies at $ru_i = 0.3182$. However, unexpectedly, the non-reactive strategy consequently finds the solution closer to the optimal Nash Bargaining Solution then the reactive strategy.  Nash lies at acid 0.571, base 0.571, water 0.714.
 
 \begin{figure}[h]
@@ -109,7 +109,7 @@ In the comparison of the Nash Bargaining Solution, in \Cref{fig:reactivevsnon-re
 	\label{fig:reactivevsnon-reactivevsnon-reactivemxbrea}
 \end{figure}
 
-The table of the distance and number of rounds is very repetitive. Exactly the same, although the end solution, which is the average of all offers, is close to the Nash solution. It does not find the solution within the 200 rounds however.
+The table of the distance and number of rounds is very repetitive. Exactly the same, although the end solution, which is the average of all offers, is close to the Nash solution. It does not find the solution within the 200 rounds. Interstingly though, this final average solution is close to the Nash optimum. So although the other agents use their non-reactive concession strategy, the Mixbed agent remains to 
 
 \npdecimalsign{.}
 \nprounddigits{4}
@@ -135,7 +135,7 @@ The table of the distance and number of rounds is very repetitive. Exactly the s
 	0.65&1.18691980311553 & 199\\
 	\hline
 \end{tabular} 
-\caption{The distance in the final proposal and number of rounds of a simulation. This is where only the mixbed makes reactive concessions, and the other agents make non-reactive concessions.}
+\caption{The distance in the final proposal and number of rounds of a simulation. This is where only the Mixbed makes reactive concessions, and the other agents make non-reactive concessions. }
 \label{tab:reactivevsnon-reactivevsmixbedrea}
 \end{table}
 \npnoround

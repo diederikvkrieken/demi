@@ -32,8 +32,8 @@
 \contentsline {subsection}{\numberline {3.2.4}Holonic Systems}{18}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Task/resource allocation}{19}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Scheduling and planning}{19}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Framework}{21}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Size and modularity}{22}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.3}Framework}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Size and modularity}{21}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Dynamicity (Time Scale/Changeability)}{22}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Solution Quality}{22}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Complexity}{23}{subsection.3.3.4}
@@ -45,7 +45,7 @@
 \contentsline {subsection}{\numberline {3.4.3}Negotiation States}{27}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Evaluating /equilibrium solutions}{27}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}Principled Negotiation}{29}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Negotation using a mediator}{30}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.6}Negotiation using a mediator}{30}{subsection.3.4.6}
 \contentsline {subsection}{\numberline {3.4.7}Mapping of negotiation protocols}{30}{subsection.3.4.7}
 \contentsline {subsubsection}{Single-Issue}{30}{section*.19}
 \contentsline {subsubsection}{Multi-Issue}{32}{section*.20}
@@ -78,7 +78,7 @@
 \contentsline {subsection}{\numberline {5.1.4}Reservation curve}{54}{subsection.5.1.4}
 \contentsline {subsection}{\numberline {5.1.5}Distance}{54}{subsection.5.1.5}
 \contentsline {subsubsection}{Threshold \& maximum number of rounds}{54}{section*.38}
-\contentsline {section}{\numberline {5.2}Reactive concession compared to non-reactive}{55}{section.5.2}
+\contentsline {section}{\numberline {5.2}Reactive concession strategy compared to the non-reactive concession strategy}{55}{section.5.2}
 \contentsline {section}{\numberline {5.3}Reactive mixbed vs non-reactive }{56}{section.5.3}
 \contentsline {section}{\numberline {5.4}Changing the $l$ value for the mixbed}{56}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Mixbed 2 water}{57}{subsection.5.4.1}

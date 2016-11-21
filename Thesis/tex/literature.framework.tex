@@ -1,10 +1,9 @@
-\newpage
 \section{Framework}
-A framework to compare a centralized vs a decentralised solution is discussed here. Essential in the difference between these two possible solution spaces is the location of the processing power for the calculations. Centralised solutions have a single control unit where the information flows to, while decentralized solutions do not have this structure.
+When looking at the traditional pyramid, which is fully centralized, it seems difficult, if not impossible to translate this to a decentralized solution. And as such it should be possible to determine whether a centralized or decentralized solution, using a MAS or holonic system, should be implemented at a business process. As such a framework to compare a centralized vs a decentralised solution is discussed here. Essential in the difference between these two possible solution spaces is the location of the processing power for the calculations. Centralised solutions have a single control unit where the information flows to, while decentralized solutions do not have this structure.
 
 A popular comparison, discussed in \citet{parunak1999industrial}, is that of the original Roman army structures. Decisions where made at the top and dripped down, while the information stream went up. This method, has been deployed into most companies. Due to the fact that something can be computed on a single computer, and be optimized on this single program, an optimal can be found.
 
-However, the increasing complexity of computer and information systems, combined with the increasing complexity of their applications, exceed the level of conventional centralized computing. This is due to the processing of huge amounts of data, or data that origin from (geographically) distinct locations. To solve such difficulties computers have to act more as agents where each agent can solve part, or decides on part of the problem. This is where agent-based architectures are an ideal fit to such an organizational structure.
+However, the increasing complexity of computer and information systems, combined with the increasing complexity of their applications, exceed the level of conventional centralized computing. This is due to the processing of huge amounts of data, or data that origin from different locations. To solve such difficulties computers have to act more like agents where each agent can solve part, or decides on part of the problem. This is where agent-based architectures are an ideal fit to such an organizational structure.
 
 To push the decision making to the lowest level, excessive layers of management can be absolute. This allows for, sometimes, easier to understand and developing of problems, especially if the problem being solved is itself distributed.
 
@@ -27,20 +26,19 @@ To optimize these different types of resources allocation problems, there are di
 
 
 \subsection{Size and modularity}
-A \Todo{Framework weghalen} critical aspect of the possibility to determine whether a centralized or decentralised solutions is preferred is the search space size of the problem. The size of the problem is seen as the number of resources that have to be allocated.  If a clear structure is conceivable and a clear population is in place a centralized solution is feasible. This is due to the global overview . 
+A critical aspect of the possibility to determine whether a centralized or decentralised solutions is preferred is the search space size of the problem. The size of the problem is seen as the number of resources or task that have to be allocated.  If a clear structure is conceivable and a clear population is in place a centralized solution is infeasible. This is due to the global overview. However, the high sensitivity to size and complexity makes a centralized solution impracticable.
 
 %Since a centralized solutions are highly sensitive to the size and complexity and require performing the computation in advance, they lack the dynamically needed in real-life situations. The decentralized Approach dont require computation time required in advance and can use disaggregated, handle large and complex problems
 
 %\subsection{Modularity}
-In a decentralized structure, individual models are decoupled from one another, errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. This can be seen in figure~\ref{fig:modularitydecentral-changeability}. It shows however the importance of having a clear modular problem. 
+In a decentralized structure, individual models are decoupled from one another, errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. This can be seen in \Cref{fig:modularitydecentral-changeability}. It shows however the importance of having a clear modular problem. 
 
-%As Figure 9.1 suggests, in a system with a single thread of control, changes to a single module can cause later modules, those it invokes, to malfunction. Decentralization decouples the individual modules from one another, so that errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. (The original version of this  
-gure was created by Seiichi Yaskawa of Yaskawa Electric Corporation, Tokyo, Japan, and is used with his kind permission.)
+%As Figure 9.1 suggests, in a system with a single thread of control, changes to a single module can cause later modules, those it invokes, to malfunction. Decentralization decouples the individual modules from one another, so that errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. (The original version of this gure was created by Seiichi Yaskawa of Yaskawa Electric Corporation, Tokyo, Japan, and is used with his kind permission.)
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{img/modularity+decentral-changeability}
-\caption{Comparison of a conventional control thread and an agent based, from \citet{parunak1999industrial}.}
+\caption{Comparison of a conventional control thread and an agent based, from \citep{parunak1999industrial}.}
 \label{fig:modularitydecentral-changeability}
 \end{figure}
 
@@ -53,9 +51,7 @@ Unfortunately, it is difficult to achieve real-time scheduling in traditional ma
 \subsection{Solution Quality}
 Since agent-based approaches are distributed, they do not have a global view of the entire state of a system. A lot can reached through communication and negotiation, but for a truly optimal solution, an entire view is necassary. For example,  \citep{palmer2003decentralized} shows that this algorithm is not intended to find the optimal solution; it finds a good solution with less computation. 
 
-In the centralized approach the assumption of a complete information on supply and demand is made. This requires rescheduling to adapt with changes. 
-
-In the decentralized approach, no assumptions on the are necessary. 
+In the centralized approach the assumption of a complete information on supply and demand is made. This requires rescheduling to adapt with changes. In the decentralized approach, no assumptions on the complete information is necessary. 
 %Adaptability
 %Centralized Approach
 %Assumes complete information on supply and demand
@@ -73,7 +69,7 @@ Requirments are Simple relations. %However when changing relations are  %Changin
 \begin{tabular}{p{2cm}|p{3cm}|p{3cm}|p{3cm}}
 	& Centralised Solution & Decentralised Solution & Building Blocks\\
 	\hline \hline
-	Size / Modularity & Small;  No sub-problems & Large; Ill-Structured; Easily dividable; Independent Modules & Population; Holonicicity; \# of resources: (decision variables, parameters \& constraints)\\
+	Size / Modularity & Small; No sub-problems & Large; Ill-Structured; Easily dividable; Independent Modules & Population; Holonic; \# of resources: (decision variables, parameters \& constraints)\\
 	\hline
 	Time scale / Changeability & Days - Weeks; Not subject to a lot of change & Real-time - Hour; Changeability  & Adaptive Capability ; Degree of Re- and Pro-activeness\\
 	\hline
@@ -81,7 +77,8 @@ Requirments are Simple relations. %However when changing relations are  %Changin
 	\hline
 	Complexity & Simple & Complex & Interaction between the set of elements; Communication
 \end{tabular}
-%\cite{pujolle2006autonomic}
+
+\citep{pujolle2006autonomic}
 %To achieve the autonomic-oriented architecture, we propose to select the appropriate control mechanisms among: 
 %- adaptive: the agent adapts its actions according to the incoming events and to its vision of the current system state. The approach we propose is adaptive as the agent adapts the current control mechanisms and the actions undertaken when a certain event occurs. The actions the control mechanism executes may become no longer valid and must therefore be replaced by other actions. These new actions are indeed more suitable to the current observed state;
 %- distribution: each agent is responsible for a local control. There is no centralization of the information collected by the different agents, and the decisions the agent performs are in no way based on global parameters. This feature is very important as this avoids having bottlenecks around a central control entity;

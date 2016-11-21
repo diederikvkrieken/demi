@@ -5,7 +5,7 @@ This thesis is written as part of the Master Artificial Intelligence at the Univ
    
 \section{Introduction in Production, AI and the use case environment}
 
-Currently there is a lot of research being conducted in Artificial Intelligence (AI) and how to apply this in business. One field of interest, which is researched in this thesis, is the combination of Multi-Agents Systems in Production using Negotiation.
+Currently a lot of research is conducted in Artificial Intelligence (AI) and how to apply this in business. One field of interest, which is researched in this thesis, is the usage of a Multi-Agents System in Production \& Manufacturing using Negotiation.
 
 \subsection{Production and Manufacturing}
 Production is the process of converting inputs into outputs. It is one of the economic pillars on which the economic markets are driven. By creating extra value from basic commodities, a (perceived) contribution to the well-being of individuals is conceivable. Manufacturing is a specific subsidiary of production, and is the process of converting (raw) material into semi and/or finished end products by using various processes, machines and energy. Thus, every type of manufacturing can be production, but not every type of production is manufacturing. The production and manufacturing industry is and will be one of the wealth generators of the world economy \citep{monostori2006agent}, and is characterised by the production of commodities that have value and contribute to the well-being of individuals.
@@ -13,21 +13,21 @@ Production is the process of converting inputs into outputs. It is one of the ec
 
 In the industrial production world, a 4th revolution is going on, which enables the world to think about new production processes. The First Industrial Revolution was the use of steam power to mechanize production. In the second revolution, the use of electric power allowed for assembly lines, resulting in mass production. The third revolution used electronics and information technology to automate production. Now a fourth industrial revolution, also called Industry 4.0\footnote{This revolution has multiple terms in multiple countries. For example, Industrie 4.0 in Germany, Smart Manufacturing or Smart Industry in the Netherlands, or the Industrial Internet Consortium in the U.S.A. In this thesis the term Industry 4.0 will be used.}, is building on the third, and is called the digital revolution. It is characterized by a fusion of technologies that is blurring the lines between the physical and digital \citep{leitao2016smart}.
 
-Throughout this thesis, the terms' production and manufacturing will be used interchangeably. This does not mean that the terms are interchangeable in general, since in the industry there is a difference. However, for this research, due to the similarity in the sense of the processes, no separation is needed. This is supported by the exchangeability of the terms in the literature. 
+Throughout this thesis, the terms' production and manufacturing will be used interchangeably. This does not mean that the terms are interchangeable in general, since in the industry there is a difference. However, for this research, due to the similarity in the sense of the processes, no separation is required. This is supported by the exchangeability of the terms in the literature. 
 
 \subsection{Artificial Intelligence}
-The research will be based on an intelligent Multi-Agent System (MAS) which would consist of sensors, and processors which act and react on their environment in both a physical as in an IT way. For the intelligent agents it would be possible, by understanding the system, and by negotiating, to come up with a (near-) optimal production planning, taking in consideration possible maintenance and downtime, based on real-time data acquisition, analysis, negotiations and decentralized autonomous decision making. Such intelligence is an example of a typical MAS where artificial intelligence may include methodical, functional, and procedural approaches, algorithmic search and/or reinforcement learning. 
+The research will be based on an intelligent Multi-Agent System (MAS) which would consist of agents which act and react on their environment in both a physical as in an IT way. For the intelligent agents it would be possible, by understanding the system, and by negotiating, to come up with a (near-) optimal production planning and/or resource allocation, taking in consideration possible maintenance and downtime, based on real-time data acquisition, analysis, negotiations and decentralized autonomous decision making. Such intelligence is an example of a typical MAS where artificial intelligence may include methodical, functional, and procedural approaches, algorithmic search and/or reinforcement learning. 
 
 \subsection{Ecosystem of the case study}
 \label{sec:intro_ecosystem}
-In this thesis a new model will be constructed based on negotiation in an intelligent Multi-Agent System. An application of this new model is tested and modelled based on a plant that creates de-mineralized water. By removing all the ions from common water, de-mineralized water is obtained. This water is used for many processes, and has many applications. In this plant specifically it is used for the steam turbines, which generate electricity. By burning the by-product, heat is generated, which creates steam to power the turbines. 
+In this thesis a new model will be constructed based on negotiation in an intelligent Multi-Agent System. An application of this new model is tested and modelled based on a plant that creates de-mineralized water. By removing all the ions from common water, de-mineralized water is obtained. This water is used for multiple processes and applications. In this plant specifically it is used for the steam turbines, which generate electricity. By burning the by-product, heat is generated, which creates steam to power the turbines. 
 
-Minerals are removed from water by multiple production steps. Most common, and as is implemented in the plant described, is to first remove the positively charged minerals in so called anions. After this, the negative charged ions are removed within a cation filter. To ensure that all ions are removed, a final combined ``mixbed'' is used. Here a combination of an anion and cation filter removes the residues.
+Minerals are removed from water in multiple production steps. Most common, and as is implemented in the plant described, is to first remove the positively charged minerals in so called anions. After this, the negative charged ions are removed with a cation filter. To ensure that all ions are removed, a final combined ``Mixbed'' is used. Here a combination of an anion and cation filter removes the residues.
 
-These filters have to be cleaned every few hours to ensure that proper demineralization occurs. By optimizing the production planning, real-time predicting where cleaning is necessary is possible, resulting in minimal waste.
+These filters have to be cleaned every few hours to ensure that proper demineralization occurs. By optimizing the production planning and/or resource allocation, real-time usage of the cleaning resources is possible, including the optimal location, resulting in minimal waste.
 
 \section{Thesis outline}
-In Chapter 2 an overview of the problem is given. Chapter 3 will explain the literature regarding manufacturing and negotiation. This also includes an overview of the methods. From this a framework is concluded with, which is used to design and implement our model, the foundation of Chapter 3. In Chapter 4 the model is tested and evaluated by simulation. From this we can conclude and generalize for further use as described in Chapter 5.
+In Chapter 2 an overview of the problem is given. Chapter 3 will explain the literature regarding manufacturing and negotiation. This also includes an overview of the methods. From this a framework is concluded with, after which a knowledge gap is determined. This knowledge gap, focussing on negotiation, is used to design and implement our model, the foundation of Chapter 4. In Chapter 5 the model is tested and evaluated. From this we can conclude and detect further use as described in Chapter 6.
 \begin{enumerate}
 	
 	\item
@@ -39,19 +39,9 @@ In Chapter 2 an overview of the problem is given. Chapter 3 will explain the lit
 	\item
 	Design \& Computational Implementation
 	\item
-	Simulation comparison incl evaluations
-%	\begin{enumerate}
-%		\item 
-%		Real world use
-%%		\begin{enumerate}
-%%			\item
-%%			Technical requirements
-%%			\item
-%%			Roadmap of Decentralized control system (DCS) 2.0 
-%%		\end{enumerate}
-%	\end{enumerate}
+	Simulation comparison \& Evaluation
 	\item
-	Discussion \& Conclusions
+	Conclusions, Discussion \& Further work
 \end{enumerate}
 
 %Outline scriptie

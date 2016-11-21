@@ -1,4 +1,4 @@
-\begin{thebibliography}{63}
+\begin{thebibliography}{65}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,7 +13,8 @@ Fahmida Abedin, Kuo-Ming Chao, and Nick Godwin.
 
 \bibitem[Anumba et~al.(2003)Anumba, Ren, Thorpe, Ugwu, and
   Newnham]{anumba2003negotiation}
-CJ~Anumba, Z~Ren, A~Thorpe, OO~Ugwu, and L~Newnham.
+Chimay~J Anumba, Zhaomin Ren, A~Thorpe, Oneugbu~Okoronkwo Ugwu, and Leonard
+  Newnham.
 \newblock Negotiation within a multi-agent system for the collaborative design
   of light industrial buildings.
 \newblock \emph{Advances in Engineering Software}, 34\penalty0 (7):\penalty0
@@ -35,7 +36,7 @@ Rahmatollah Beheshti, Roghayeh Barmaki, and Nasser Mozayani.
 
 \bibitem[Boyd and Vandenberghe(2004)]{boyd2004convex}
 Stephen Boyd and Lieven Vandenberghe.
-\newblock \emph{Convex optimization}.
+\newblock \emph{Convex Optimization}.
 \newblock Cambridge university press, 2004.
 
 \bibitem[Brandl and {BR\&L Consulting}(2008)]{brandl2008ISA}
@@ -46,11 +47,21 @@ Dennis Brandl and {BR\&L Consulting}.
 
 \bibitem[Bruccoleri et~al.(2005)Bruccoleri, Nigro, Perrone, Renna, and
   La~Diega]{bruccoleri2005production}
-M~Bruccoleri, G~Lo Nigro, G~Perrone, P~Renna, and S~Noto La~Diega.
+Manfredi Bruccoleri, G~Lo Nigro, Giovanni Perrone, Paolo Renna, and S~Noto
+  La~Diega.
 \newblock Production planning in reconfigurable enterprises and reconfigurable
   production systems.
 \newblock \emph{CIRP Annals-Manufacturing Technology}, 54\penalty0
   (1):\penalty0 433--436, 2005.
+
+\bibitem[da~Rosa et~al.(2009)da~Rosa, Miranda, Matos, Sheble, and
+  da~Silva]{rosa2009intelligent}
+Mauro~A da~Rosa, Vladimiro Miranda, Manuel~A Matos, Gerald~B Sheble, and
+  Armando~ML da~Silva.
+\newblock Intelligent agent-based environment to coordinate maintenance
+  schedule discussions.
+\newblock In \emph{Intelligent System Applications to Power Systems, 2009.
+  ISAP'09. 15th International Conference on}, pages 1--7. IEEE, 2009.
 
 \bibitem[de~la Hoz et~al.(2015)de~la Hoz, Gimenez-Guzman, Marsa-Maestre, and
   Orden]{de2015automated}
@@ -62,9 +73,9 @@ Enrique de~la Hoz, Jose~Manuel Gimenez-Guzman, Ivan Marsa-Maestre, and David
 
 \bibitem[Di~Nocera(2015)]{di2015multi}
 Dario Di~Nocera.
-\newblock \emph{Multi-agent automated negotiation for management of services in
-  smart cities}.
-\newblock PhD thesis, 2015.
+\newblock \emph{Multi-agent Automated Negotiation for Management of Services in
+  Smart Cities}.
+\newblock PhD thesis, Universit{\`a} degli Studi di Napoli Federico II, 2015.
 
 \bibitem[Duffie and Prabhu(1994)]{duffie1994real}
 Neil~A Duffie and Vittaldas~V Prabhu.
@@ -76,8 +87,8 @@ Neil~A Duffie and Vittaldas~V Prabhu.
 \bibitem[Endriss(2006)]{endriss2006monotonic}
 Ulle Endriss.
 \newblock Monotonic concession protocols for multilateral negotiation.
-\newblock In \emph{Proceedings of the fifth international joint conference on
-  Autonomous agents and multiagent systems}, pages 392--399. ACM, 2006.
+\newblock In \emph{Proceedings of the Fifth International Joint Conference on
+  Autonomous Agents and Multiagent Systems}, pages 392--399. ACM, 2006.
 
 \bibitem[Engell and Harjunkoski(2012)]{engell2012optimal}
 Sebastian Engell and Iiro Harjunkoski.
@@ -120,8 +131,8 @@ Roger Fisher, William Ury, and Bruce Patton.
 \bibitem[Giret(2005)]{giret2005multi}
 Adriana Giret.
 \newblock A multi agent methodology for holonic manufacturing systems.
-\newblock In \emph{Proceedings of the fourth international joint conference on
-  Autonomous agents and multiagent systems}, pages 1375--1375. ACM, 2005.
+\newblock In \emph{Proceedings of the Fourth International Joint Conference on
+  Autonomous Agents and Multiagent Systems}, pages 1375--1375. ACM, 2005.
 
 \bibitem[Harjunkoski et~al.(2009)Harjunkoski, Nystr{\"o}m, and
   Horch]{harjunkoski2009integration}
@@ -135,11 +146,17 @@ Alan Hevner and Samir Chatterjee.
 \newblock \emph{Design Science Research in Information Systems}.
 \newblock Springer, 2010.
 
+\bibitem[Hromkovi{\v{c}}(2013)]{hromkovivc2013algorithmics}
+Juraj Hromkovi{\v{c}}.
+\newblock \emph{Algorithmics for hard problems: introduction to combinatorial
+  optimization, randomization, approximation, and heuristics}.
+\newblock Springer Science \& Business Media, 2013.
+
 \bibitem[Jennings et~al.(2001)Jennings, Faratin, Lomuscio, Parsons, Wooldridge,
   and Sierra]{jennings2001automated}
 Nicholas~R Jennings, Peyman Faratin, Alessio~R Lomuscio, Simon Parsons,
   Michael~J Wooldridge, and Carles Sierra.
-\newblock Automated negotiation: prospects, methods and challenges.
+\newblock Automated negotiation: Prospects, methods and challenges.
 \newblock \emph{Group Decision and Negotiation}, 10\penalty0 (2):\penalty0
   199--215, 2001.
 
@@ -151,7 +168,7 @@ Kurt Konolige and Nils~J Nilsson.
 \bibitem[Kraus et~al.(1995)Kraus, Wilkenfeld, and Zlotkin]{kraus1995multiagent}
 Sarit Kraus, Jonathan Wilkenfeld, and Gilad Zlotkin.
 \newblock Multiagent negotiation under time constraints.
-\newblock \emph{Artificial intelligence}, 75\penalty0 (2):\penalty0 297--345,
+\newblock \emph{Artificial Intelligence}, 75\penalty0 (2):\penalty0 297--345,
   1995.
 
 \bibitem[Kravari and Bassiliades(2015)]{kravari2015survey}
@@ -180,10 +197,10 @@ Paulo Leit{\~a}o, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, and Pavel Vrba.
 \newblock \emph{IEEE Transactions on Industrial Informatics}, 9\penalty0
   (4):\penalty0 2360--2372, 2013.
 
-\bibitem[Leitao et~al.(2016)Leitao, Karnouskos, Ribeiro, Lee, Strasser, and
-  Colombo]{leitao2016smart}
-Paulo Leitao, Stamatis Karnouskos, Luis Ribeiro, Jay Lee, Thomas Strasser, and
-  Armando~W Colombo.
+\bibitem[Leit{\~a}o et~al.(2016)Leit{\~a}o, Karnouskos, Ribeiro, Lee, Strasser,
+  and Colombo]{leitao2016smart}
+Paulo Leit{\~a}o, Stamatis Karnouskos, Luis Ribeiro, Jay Lee, Thomas Strasser,
+  and Armando~W Colombo.
 \newblock Smart agents in industrial cyber--physical systems.
 \newblock \emph{Proceedings of the IEEE}, 104\penalty0 (5):\penalty0
   1086--1101, 2016.
@@ -194,6 +211,12 @@ Terje Lensberg.
 \newblock \emph{Journal of Economic Theory}, 45\penalty0 (2):\penalty0
   330--341, 1988.
 
+\bibitem[Mahar and Bhatia(2012)]{mahar2012agent}
+Sapna Mahar and Pradeep~K Bhatia.
+\newblock Agent oriented software development.
+\newblock \emph{International Journal of Software Engineering Research and
+  Practices}, 1\penalty0 (4):\penalty0 17--23, 2012.
+
 \bibitem[Marsa-Maestre et~al.(2014)Marsa-Maestre, Klein, Jonker, and
   Aydo{\u{g}}an]{marsa2014problems}
 Ivan Marsa-Maestre, Mark Klein, Catholijn~M Jonker, and Reyhan Aydo{\u{g}}an.
@@ -202,8 +225,9 @@ Ivan Marsa-Maestre, Mark Klein, Catholijn~M Jonker, and Reyhan Aydo{\u{g}}an.
 
 \bibitem[Monostori et~al.(2016)Monostori, Kadar, Bauernhansl, Kondoh, Kumar,
   Reinhart, Sauer, Schuh, Sihn, and Ueda]{monostori2016cyber}
-L.~Monostori, B.~Kadar, T.~Bauernhansl, S.~Kondoh, S.~Kumar, G.~Reinhart,
-  O.~Sauer, G.~Schuh, W.~Sihn, and K.~Ueda.
+Laslo Monostori, Botond Kadar, Thomas Bauernhansl, Shinsuke Kondoh, Soundar
+  Kumar, Gunther Reinhart, Olaf Sauer, G\:{u}nther Schuh, Wilfried Sihn, and
+  Kenichi Ueda.
 \newblock Cyber-physical systems in manufacturing.
 \newblock \emph{CIRP Annals -- Manufacturing Technology}, 65\penalty0
   (2):\penalty0 621--641, 2016.
@@ -239,23 +263,28 @@ Daniel Palmer, Marc Kirschenbaum, Jon Murton, Kelly Zajac, M~Kovacina, and Ravi
 
 \bibitem[Parunak(1999)]{parunak1999industrial}
 H~Van~Dyke Parunak.
-\newblock Industrial and practical applications of dai.
-\newblock \emph{Multiagent systems: a modern approach to distributed artificial
-  intelligence}, pages 337--421, 1999.
+\newblock Industrial and practical applications of {DAI}.
+\newblock \emph{Multiagent Systems: A Modern Approach to Distributed Artificial
+  Intelligence}, pages 337--421, 1999.
 
 \bibitem[Pinedo(2005)]{pinedo2005planning}
 Michael Pinedo.
-\newblock \emph{Planning and scheduling in manufacturing and services},
-  volume~24.
-\newblock Springer, 2005.
+\newblock \emph{Planning and Scheduling in Manufacturing and Services}.
+\newblock Springer, New York, NY, 2005.
 
 \bibitem[Pipattanasomporn et~al.(2009)Pipattanasomporn, Feroze, and
   Rahman]{pipattanasomporn2009multi}
-Manisa Pipattanasomporn, Hassan Feroze, and S~Rahman.
+Manisa Pipattanasomporn, Hassan Feroze, and Saifur Rahman.
 \newblock Multi-agent systems in a distributed smart grid: Design and
   implementation.
 \newblock In \emph{Power Systems Conference and Exposition, 2009. PSCE'09.
   IEEE/PES}, pages 1--8. IEEE, 2009.
+
+\bibitem[Pujolle(2006)]{pujolle2006autonomic}
+Guy Pujolle.
+\newblock An autonomic-oriented architecture for the internet of things.
+\newblock In \emph{Modern Computing, 2006. JVA'06. IEEE John Vincent Atanasoff
+  2006 International Symposium on}, pages 163--168. IEEE, 2006.
 
 \bibitem[Rabelo et~al.(1999)Rabelo, Camarinha-Matos, and
   Afsarmanesh]{rabelo1999multi}
@@ -272,24 +301,10 @@ Iyad Rahwan, Sarvapali~D Ramchurn, Nicholas~R Jennings, Peter Mcburney, Simon
 \newblock \emph{The Knowledge Engineering Review}, 18\penalty0 (04):\penalty0
   343--375, 2003.
 
-\bibitem[Rao et~al.(1995)Rao, Georgeff, et~al.]{rao1995bdi}
-Anand~S Rao, Michael~P Georgeff, et~al.
-\newblock Bdi agents: From theory to practice.
+\bibitem[Rao and Georgeff(1995)]{rao1995bdi}
+Anand~S Rao and Michael~P Georgeff.
+\newblock {BDI} agents: From theory to practice.
 \newblock In \emph{ICMAS}, volume~95, pages 312--319, 1995.
-
-\bibitem[Rosa et~al.(2009)Rosa, Miranda, Matos, Sheble, and
-  Silva]{rosa2009intelligent}
-M~Rosa, V~Miranda, M~Matos, G~Sheble, and AM~Silva.
-\newblock Intelligent agent-based environment to coordinate maintenance
-  schedule discussions.
-\newblock In \emph{Intelligent System Applications to Power Systems, 2009.
-  ISAP'09. 15th International Conference on}, pages 1--7. IEEE, 2009.
-
-\bibitem[Rosenschein and Zlotkin(1994)]{rosenschein1994rules}
-Jeffrey~S Rosenschein and Gilad Zlotkin.
-\newblock \emph{Rules of encounter: designing conventions for automated
-  negotiation among computers}.
-\newblock MIT press, 1994.
 
 \bibitem[Roth(1977)]{roth1977individual}
 Alvin~E Roth.
@@ -314,7 +329,7 @@ Fernando Schramm and Danielle~Costa Morais.
 Omor Sharif and Nathan Huynh.
 \newblock Yard crane scheduling at container terminals: A comparative study of
   centralized and decentralized approaches.
-\newblock \emph{Maritime economics \& logistics}, 14\penalty0 (2):\penalty0
+\newblock \emph{Maritime Economics \& Logistics}, 14\penalty0 (2):\penalty0
   139--161, 2012.
 
 \bibitem[Shen et~al.(2003)Shen, Norrie, and Barth{\`e}s]{shen2003multi}
@@ -326,7 +341,7 @@ Weiming Shen, Douglas~H Norrie, and Jean-Paul Barth{\`e}s.
 \bibitem[Shoham(1993)]{shoham1993agent}
 Yoav Shoham.
 \newblock Agent-oriented programming.
-\newblock \emph{Artificial intelligence}, 60\penalty0 (1):\penalty0 51--92,
+\newblock \emph{Artificial Intelligence}, 60\penalty0 (1):\penalty0 51--92,
   1993.
 
 \bibitem[Slaughter et~al.(2015)Slaughter, Bean, and
@@ -337,9 +352,9 @@ Andrew Slaughter, Gregory Bean, and Anshu Mittal.
   \url{http://dupress.com/articles/internet-of-things-iot-in-oil-and-gas-industry/}.
 
 \bibitem[Smith(1980)]{smith1980communication}
-R~Smith.
+Reid~G Smith.
 \newblock Communication and control in problem solver.
-\newblock \emph{IEEE Transactions on computers}, 29\penalty0 (12):\penalty0
+\newblock \emph{IEEE Transactions on Computers}, 29\penalty0 (12):\penalty0
   1104--1113, 1980.
 
 \bibitem[Trappey et~al.(2013)Trappey, Trappey, and Ni]{trappey2013multi}
@@ -354,7 +369,7 @@ Amy~JC Trappey, Charles~V Trappey, and Wei-Chun Ni.
 Hendrik Van~Brussel, Jo~Wyns, Paul Valckenaers, Luc Bongaerts, and Patrick
   Peeters.
 \newblock Reference architecture for holonic manufacturing systems: Prosa.
-\newblock \emph{Computers in industry}, 37\penalty0 (3):\penalty0 255--274,
+\newblock \emph{Computers in Industry}, 37\penalty0 (3):\penalty0 255--274,
   1998.
 
 \bibitem[Vermaak and Kinyua(2007)]{vermaak2007multi}
@@ -371,9 +386,9 @@ Meritxell Vinyals, Juan~A Rodriguez-Aguilar, and Jesus Cerquides.
 \newblock \emph{The Computer Journal}, 54\penalty0 (3):\penalty0 455--470,
   2011.
 
-\bibitem[Vrba et~al.(2011)Vrba, Tich{\`y}, Ma{\v{r}}{\'\i}k, Hall, Staron,
+\bibitem[Vrba et~al.(2011)Vrba, Tich{\'y}, Ma{\v{r}}{\'\i}k, Hall, Staron,
   Maturana, and Kadera]{vrba2011rockwell}
-Pavel Vrba, Pavel Tich{\`y}, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, Kenwood~H Hall,
+Pavel Vrba, Pavel Tich{\'y}, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, Kenwood~H Hall,
   Raymond~J Staron, Francisco~P Maturana, and Petr Kadera.
 \newblock Rockwell automation's holonic and multiagent control systems
   compendium.
@@ -382,7 +397,7 @@ Pavel Vrba, Pavel Tich{\`y}, Vladim{\'\i}r Ma{\v{r}}{\'\i}k, Kenwood~H Hall,
 
 \bibitem[Wangermann and Stengel(1998)]{wangermann1998principled}
 John~P Wangermann and Robert~F Stengel.
-\newblock Principled negotiation between intelligent agents: a model for air
+\newblock Principled negotiation between intelligent agents: A model for air
   traffic management.
 \newblock \emph{Artificial Intelligence in Engineering}, 12\penalty0
   (3):\penalty0 177--187, 1998.
@@ -394,7 +409,7 @@ Michael Wooldridge.
 
 \bibitem[Wu et~al.(2009)Wu, de~Weerdt, and La~Poutr{\'e}]{wu2009efficient}
 Mengxiao Wu, Mathijs de~Weerdt, and Han La~Poutr{\'e}.
-\newblock Efficient methods for multi-agent multi-issue negotiation: allocating
+\newblock Efficient methods for multi-agent multi-issue negotiation: Allocating
   resources.
 \newblock In \emph{International Conference on Principles and Practice of
   Multi-Agent Systems}, pages 97--112. Springer, 2009.
@@ -406,12 +421,13 @@ Ren Yu, Benoit Iung, and Herv{\'e} Panetto.
 \newblock \emph{Engineering Applications of Artificial Intelligence},
   16\penalty0 (4):\penalty0 321--333, 2003.
 
-\bibitem[Zheng et~al.(2015)Zheng, Chakraborty, Dai, and
-  Sycara]{zheng2015automated}
-Ronghuo Zheng, Nilanjan Chakraborty, Tinglong Dai, and Katia Sycara.
+\bibitem[Zheng et~al.(2016)Zheng, Dai, Sycara, and
+  Chakraborty]{zheng2015automated}
+Ronghuo Zheng, Tinglong Dai, Katia Sycara, and Nilanjan Chakraborty.
 \newblock Automated multilateral negotiation on multiple issues with private
   information.
-\newblock \emph{Available at SSRN 2677729}, 2015.
+\newblock \emph{INFORMS Journal on Computing}, 28\penalty0 (4):\penalty0
+  612--628, 2016.
 
 \bibitem[Zheng et~al.(2014)Zheng, Martin, Brohman, and Da~Xu]{zheng2014cloud}
 Xianrong Zheng, Patrick Martin, Kathryn Brohman, and Li~Da~Xu.
@@ -421,7 +437,7 @@ Xianrong Zheng, Patrick Martin, Kathryn Brohman, and Li~Da~Xu.
   (2):\penalty0 1506--1515, 2014.
 
 \bibitem[Zhou et~al.(2004)Zhou, Fox, Lee, and Nee]{zhou2004bus}
-R~Zhou, B~Fox, HP~Lee, and AYC Nee.
+Rong Zhou, Bud Fox, Heow~Pueh Lee, and Andrew~YC Nee.
 \newblock Bus maintenance scheduling using multi-agent systems.
 \newblock \emph{Engineering Applications of Artificial Intelligence},
   17\penalty0 (6):\penalty0 623--630, 2004.

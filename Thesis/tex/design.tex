@@ -101,13 +101,22 @@ Since the utility decreases each round, the set of feasible offers increases as 
 
 \subsection{Reactive concession strategy}
 \label{sec:reactiveconcessionstr}
-The reactive concession protocol as described by \citet{zheng2015automated}, and also shown in \Cref{sec:concessionstrat}, is a specific concession strategy to determine the amount of utility to concede. The non-reactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. 
+The reactive concession protocol as described by \citet{zheng2015automated}, and also shown in \Cref{sec:concessionstrat}, is a specific concession strategy to determine the amount of utility to concede. The non-reactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. The nonreactive concession made at time $t$ is $\Delta u_{i0} = s^0_i(1)-s^0_i(t-1)$.
 
-There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does an concession according to the non-reactive concession strategy. However if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
+There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does a concession according to the non-reactive concession strategy as calculated above. 
 
-\todo[Uitwerken van reactive concession wiskundig zoals in Zheng]{Uitwerken van reactive concession wiskunde zoals in Zheng}
 
-The convex requirement makes it obvious why the reactive concession can be used. If a nonconvex utility function was to be used, it could not havev been determined wether an agent concedes if it moves. 
+ However, if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
+ 
+ The perceived change of utility for agent $i$ from agent $j$ is defined as the difference between the utility of the current offer and that of the previous best offer: $u_i(x^j_t)-u_i(x^j_{[,-1]})$.
+ 
+ The total perceived change since the beginning of negotiation is equal tot the difference between the utility of the current offer and that of the first offer: $u_i(x^j_t)-u_i(x^j_0)$. Since we only want to concede compared to our own concessions, we subtract this perceived change from our change: $(1-u_i(x^i(t-1))$.
+ 
+ The maximum of these function is the amount the agent is willing to concede per agent: $\max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$
+
+This value is determined for each agent, whom then takes the minimum amount of all these values, to determine its concession $\min \{\displaystyle \min_{k\in 1, 2, 3, 4}\Delta u_{jk}(t), \Delta u_{j0}(t)\}$.
+
+The convex requirement makes it obvious why the reactive concession can be used. If a non-convex utility function was to be used, it could not have been determined whether an agent concedes if it moves. 
 
 
 
@@ -238,6 +247,7 @@ The reservation curve, however, is a little different. It consists of two functi
 			\caption{The neut reservation curve of the Neut. The requirement of the acid and base staying near each other is achieved.}
 			\label{fig:neutreservationcurve}
 	\end{figure}
+\clearpage
 \subsection{Mixbed}
 
 The Mixbed is where the final cleaning occurs. It is also the agent responsible for the end water delivery. Since it consists of a mixture of anion and base, it has three issues about it has desires. This is realized with the function below:
@@ -396,7 +406,7 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 			\eIf{j == i}
 			{
 				%Agent $i$ concedes by determining $s_i(t)$\:
-				$\Delta u_{j0} = s_j(t)-s_j(t-1)$\;
+				$\Delta u_{j0} = s^0_j(t)-s^0_j(t-1)$\;
 				\ForEach{$k\in {1,2,3,4}$}
 				{
 					\eIf{$u_j(x^k_t) \geq ru_j$  \nllabel{al:start}}{

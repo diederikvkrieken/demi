@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.3)  22 NOV 2016 13:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.3)  22 NOV 2016 15:03
 entering extended mode
 **MAS_thesis_DRJ.tex
 (MAS_thesis_DRJ.tex
@@ -814,27 +814,27 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count159
 )
 (MAS_thesis_DRJ.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
 
 isodate: babel.sty has been loaded
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 88.
+Package hyperref Info: Link coloring OFF on input line 89.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -843,9 +843,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count160
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 89.
+LaTeX Info: Redefining \pageref on input line 89.
+LaTeX Info: Redefining \nameref on input line 89.
 
 (MAS_thesis_DRJ.out) (MAS_thesis_DRJ.out)
 \@outlinefile=\write5
@@ -865,11 +865,11 @@ ABD: EveryShipout initializing macros
 \makeMPintoPDFobject=\count166
 \everyMPtoPDFconversion=\toks40
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 92.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -922,7 +922,7 @@ Overfull \hbox (0.99133pt too wide) in paragraph at lines 9--10
  []
 
 [5] [6]
-<./img/InformationSystemResearchFramework.jpg, id=526, 384.9582pt x 266.9172pt>
+<./img/InformationSystemResearchFramework.jpg, id=525, 384.9582pt x 266.9172pt>
 File: ./img/InformationSystemResearchFramework.jpg Graphic file (type jpg)
 <use ./img/InformationSystemResearchFramework.jpg>
 Package pdftex.def Info: ./img/InformationSystemResearchFramework.jpg used on i
@@ -934,7 +934,7 @@ Chapter 3.
 [10
 
 ]
-<"img/traditional automation pyramid1".png, id=564, 758.835pt x 376.40625pt>
+<"img/traditional automation pyramid1".png, id=563, 758.835pt x 376.40625pt>
 File: "img/traditional automation pyramid1".png Graphic file (type png)
 
 <use "img/traditional automation pyramid1".png>
@@ -942,7 +942,7 @@ Package pdftex.def Info: "img/traditional automation pyramid1".png used on inpu
 t line 17.
 (pdftex.def)             Requested size: 310.4979pt x 154.01741pt.
 
-<img/ansi-isa-95.png, id=571, 723.45282pt x 518.6878pt>
+<img/ansi-isa-95.png, id=570, 723.45282pt x 518.6878pt>
 File: img/ansi-isa-95.png Graphic file (type png)
 
 <use img/ansi-isa-95.png>
@@ -950,7 +950,7 @@ Package pdftex.def Info: img/ansi-isa-95.png used on input line 27.
 (pdftex.def)             Requested size: 310.4979pt x 222.61194pt.
  [11 <./img/traditional automation pyramid1.png (PNG copy)>] [12 <./img/ansi-is
 a-95.png (PNG copy)>]
-<img/process_structure.jpg, id=604, 356.8731pt x 225.76381pt>
+<img/process_structure.jpg, id=603, 356.8731pt x 225.76381pt>
 File: img/process_structure.jpg Graphic file (type jpg)
 
 <use img/process_structure.jpg>
@@ -961,13 +961,13 @@ Package pdftex.def Info: img/process_structure.jpg used on input line 55.
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ’ in font cmr10!
- <img/convex.png, id=653, 234.27525pt x 87.02513pt>
+ <img/convex.png, id=652, 234.27525pt x 87.02513pt>
 File: img/convex.png Graphic file (type png)
  <use img/convex.png>
 Package pdftex.def Info: img/convex.png used on input line 135.
 (pdftex.def)             Requested size: 241.49895pt x 89.71123pt.
 
-[16] <./img/MAS_example.png, id=671, 566.86781pt x 492.33937pt>
+[16] <./img/MAS_example.png, id=670, 566.86781pt x 492.33937pt>
 File: ./img/MAS_example.png Graphic file (type png)
 
 <use ./img/MAS_example.png>
@@ -978,7 +978,7 @@ Package pdftex.def Info: ./img/MAS_example.png used on input line 148.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17 <./img/convex.png (PNG copy)>]
-<img/holonic_manufacturing.png, id=703, 288.3272pt x 165.61874pt>
+<img/holonic_manufacturing.png, id=702, 288.3272pt x 165.61874pt>
 File: img/holonic_manufacturing.png Graphic file (type png)
 
 <use img/holonic_manufacturing.png>
@@ -993,7 +993,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
 
 (tex/literature.framework.tex [20] [21]
-<img/modularity+decentral-changeability.png, id=768, 671.50874pt x 307.90031pt>
+<img/modularity+decentral-changeability.png, id=763, 671.50874pt x 307.90031pt>
 File: img/modularity+decentral-changeability.png Graphic file (type png)
 <use img/modularity+decentral-changeability.png>
 Package pdftex.def Info: img/modularity+decentral-changeability.png used on inp
@@ -1100,14 +1100,14 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-<img/parito_optimal.png, id=878, 295.85532pt x 252.945pt>
+<img/parito_optimal.png, id=873, 295.85532pt x 252.945pt>
 File: img/parito_optimal.png Graphic file (type png)
 
 <use img/parito_optimal.png>
 Package pdftex.def Info: img/parito_optimal.png used on input line 324.
 (pdftex.def)             Requested size: 241.49895pt x 206.47835pt.
  [28 <./img/parito_optimal.png (PNG copy)>]
-<img/major_categories_of_game_theory.png, id=889, 509.65407pt x 104.64093pt>
+<img/major_categories_of_game_theory.png, id=884, 509.65407pt x 104.64093pt>
 File: img/major_categories_of_game_theory.png Graphic file (type png)
 
 <use img/major_categories_of_game_theory.png>
@@ -1115,40 +1115,40 @@ Package pdftex.def Info: img/major_categories_of_game_theory.png used on input
 line 337.
 (pdftex.def)             Requested size: 310.4979pt x 63.75262pt.
  [29 <./img/major_categories_of_game_theory.png (PNG copy)>]
-Overfull \hbox (5.75067pt too wide) in paragraph at lines 402--403
+Overfull \hbox (5.75067pt too wide) in paragraph at lines 403--404
 \OT1/cmr/m/n/10 auc-tions, Vick-rey auc-tions and First-price sealed-bid auc-ti
 ons ([]Wooldridge[], []2009[]).
  []
 
-<img/mapping_nego.png, id=914, 437.4744pt x 379.1766pt>
+<img/mapping_nego.png, id=909, 437.4744pt x 379.1766pt>
 File: img/mapping_nego.png Graphic file (type png)
 
 <use img/mapping_nego.png>
-Package pdftex.def Info: img/mapping_nego.png used on input line 410.
+Package pdftex.def Info: img/mapping_nego.png used on input line 411.
 (pdftex.def)             Requested size: 241.49895pt x 209.31728pt.
  [30]
-<img/mapping_nego2.png, id=921, 774.2526pt x 378.6948pt>
+<img/mapping_nego2.png, id=916, 774.2526pt x 378.6948pt>
 File: img/mapping_nego2.png Graphic file (type png)
 
 <use img/mapping_nego2.png>
-Package pdftex.def Info: img/mapping_nego2.png used on input line 418.
+Package pdftex.def Info: img/mapping_nego2.png used on input line 419.
 (pdftex.def)             Requested size: 310.4979pt x 151.86238pt.
  [31 <./img/mapping_nego.png> <./img/mapping_nego2.png>] [32] <img/multi-latera
-l.png, id=946, 300.3722pt x 101.62968pt>
+l.png, id=941, 300.3722pt x 101.62968pt>
 File: img/multi-lateral.png Graphic file (type png)
 
 <use img/multi-lateral.png>
-Package pdftex.def Info: img/multi-lateral.png used on input line 440.
+Package pdftex.def Info: img/multi-lateral.png used on input line 441.
 (pdftex.def)             Requested size: 241.49895pt x 81.71324pt.
  [33 <./img/multi-lateral.png (PNG copy)>]
-<img/negotiation_learning.png, id=983, 464.4853pt x 329.73187pt>
+<img/negotiation_learning.png, id=978, 464.4853pt x 329.73187pt>
 File: img/negotiation_learning.png Graphic file (type png)
 
 <use img/negotiation_learning.png>
-Package pdftex.def Info: img/negotiation_learning.png used on input line 499.
+Package pdftex.def Info: img/negotiation_learning.png used on input line 500.
 (pdftex.def)             Requested size: 241.49895pt x 171.44142pt.
  [34] [35 <./img/negotiation_learning.png (PNG copy)>]
-Overfull \hbox (0.63953pt too wide) in paragraph at lines 511--512
+Overfull \hbox (0.63953pt too wide) in paragraph at lines 512--513
 []\OT1/cmr/m/n/10 Overall, nearly all fac-tory schedul-ing ne-go-ti-a-tions use
  some form of these market-
  []
@@ -1163,37 +1163,33 @@ ap-plied is a de-mineralized
 
 [37
 
-] <img/demi-plant.png, id=1056, 523.9575pt x 483.30562pt>
+] <img/demi-plant.png, id=1051, 523.9575pt x 483.30562pt>
 File: img/demi-plant.png Graphic file (type png)
 
 <use img/demi-plant.png>
 Package pdftex.def Info: img/demi-plant.png used on input line 42.
 (pdftex.def)             Requested size: 345.0pt x 318.23785pt.
  [38 <./img/demi-plant.png (PNG copy)>] [39] [40]
-[41] <img/Anion_utility.jpg, id=1102, 1405.25pt x 1053.9375pt>
+[41] <img/Anion_utility.jpg, id=1093, 1405.25pt x 1053.9375pt>
 File: img/Anion_utility.jpg Graphic file (type jpg)
 
 <use img/Anion_utility.jpg>
-Package pdftex.def Info: img/Anion_utility.jpg used on input line 129.
+Package pdftex.def Info: img/Anion_utility.jpg used on input line 138.
 (pdftex.def)             Requested size: 241.49895pt x 181.1129pt.
-
-<img/Anion_utility_contour.jpg, id=1105, 1405.25pt x 1053.9375pt>
+ [42 <./img/Anion_utility.jpg>]
+<img/Anion_utility_contour.jpg, id=1104, 1405.25pt x 1053.9375pt>
 File: img/Anion_utility_contour.jpg Graphic file (type jpg)
 
 <use img/Anion_utility_contour.jpg>
-Package pdftex.def Info: img/Anion_utility_contour.jpg used on input line 147.
+Package pdftex.def Info: img/Anion_utility_contour.jpg used on input line 156.
 (pdftex.def)             Requested size: 241.49895pt x 181.1129pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[42 <./img/Anion_utility.jpg>] [43 <./img/Anion_utility_contour.jpg>]
-<img/projection_anion_example.jpg, id=1122, 1403.2425pt x 1053.9375pt>
+ [43 <./img/Anion_utility_contour.jpg>]
+<img/projection_anion_example.jpg, id=1114, 1403.2425pt x 1053.9375pt>
 File: img/projection_anion_example.jpg Graphic file (type jpg)
 
 <use img/projection_anion_example.jpg>
-Package pdftex.def Info: img/projection_anion_example.jpg used on input line 17
-5.
+Package pdftex.def Info: img/projection_anion_example.jpg used on input line 18
+4.
 (pdftex.def)             Requested size: 241.49895pt x 181.37021pt.
  [44 <./img/projection_anion_example.jpg>]
 Missing character: There is no [ in font nullfont!
@@ -1212,7 +1208,11 @@ Missing character: There is no 3 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 9 in font nullfont!
 Missing character: There is no ] in font nullfont!
- [45]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45] [46]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1222,169 +1222,182 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[46] [47] [48]
-<img/reservationcurve_base_acid.jpg, id=1152, 1405.25pt x 1053.9375pt>
+[47
+
+] [48] [49]
+<img/reservationcurve_base_acid.jpg, id=1148, 1405.25pt x 1053.9375pt>
 File: img/reservationcurve_base_acid.jpg Graphic file (type jpg)
 
 <use img/reservationcurve_base_acid.jpg>
 Package pdftex.def Info: img/reservationcurve_base_acid.jpg used on input line 
-343.
+353.
 (pdftex.def)             Requested size: 137.9979pt x 103.48619pt.
 
-<img/reservationcurve_water_acid.jpg, id=1153, 1405.25pt x 1053.9375pt>
+<img/reservationcurve_water_acid.jpg, id=1149, 1405.25pt x 1053.9375pt>
 File: img/reservationcurve_water_acid.jpg Graphic file (type jpg)
 
 <use img/reservationcurve_water_acid.jpg>
 Package pdftex.def Info: img/reservationcurve_water_acid.jpg used on input line
- 351.
+ 361.
 (pdftex.def)             Requested size: 137.9979pt x 103.48619pt.
 
-<img/reservationcurve_water_base.jpg, id=1154, 1405.25pt x 1053.9375pt>
+<img/reservationcurve_water_base.jpg, id=1150, 1405.25pt x 1053.9375pt>
 File: img/reservationcurve_water_base.jpg Graphic file (type jpg)
 
 <use img/reservationcurve_water_base.jpg>
 Package pdftex.def Info: img/reservationcurve_water_base.jpg used on input line
- 360.
+ 370.
 (pdftex.def)             Requested size: 137.9979pt x 103.48619pt.
- [49
+ [50
 
  <./img/reservationcurve_base_acid.jpg> <./img/reservationcurve_water_acid.jpg>
- <./img/reservationcurve_water_base.jpg>] <img/searchforsolution.png, id=1164, 
+ <./img/reservationcurve_water_base.jpg>] <img/searchforsolution.png, id=1160, 
 373.99725pt x 316.18124pt>
 File: img/searchforsolution.png Graphic file (type png)
 
 <use img/searchforsolution.png>
-Package pdftex.def Info: img/searchforsolution.png used on input line 376.
+Package pdftex.def Info: img/searchforsolution.png used on input line 386.
 (pdftex.def)             Requested size: 241.49895pt x 204.16933pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[50
+[51
 
- <./img/searchforsolution.png (PNG copy)>] [51]) (tex/results.tex [52
+ <./img/searchforsolution.png (PNG copy)>] [52]) (tex/results.tex [53
 
 ]
 Chapter 5.
-[53
+[54
 
-] [54] [55]
-<img/reactivevsnonreactive.png, id=1264, 421.575pt x 316.18124pt>
+] [55] [56]
+<img/reactivevsnonreactive.png, id=1261, 421.575pt x 316.18124pt>
 File: img/reactivevsnonreactive.png Graphic file (type png)
 
 <use img/reactivevsnonreactive.png>
-Package pdftex.def Info: img/reactivevsnonreactive.png used on input line 49.
+Package pdftex.def Info: img/reactivevsnonreactive.png used on input line 51.
 (pdftex.def)             Requested size: 310.4979pt x 232.87527pt.
-Package numprint Info: No number in tabular cell on input line 61.
-Package numprint Info: No number in tabular cell on input line 61.
+Package numprint Info: No number in tabular cell on input line 63.
+Package numprint Info: No number in tabular cell on input line 63.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[56 <./img/reactivevsnonreactive.png (PNG copy)>] [57]
-<img/reactivevsnonreactivevsMixbedrea.jpg, id=1277, 1405.25pt x 1053.9375pt>
+[57 <./img/reactivevsnonreactive.png (PNG copy)>] [58]
+<img/reactivevsnonreactivevsMixbedrea.jpg, id=1274, 1405.25pt x 1053.9375pt>
 File: img/reactivevsnonreactivevsMixbedrea.jpg Graphic file (type jpg)
 
 <use img/reactivevsnonreactivevsMixbedrea.jpg>
 Package pdftex.def Info: img/reactivevsnonreactivevsMixbedrea.jpg used on input
- line 93.
+ line 95.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
-Package numprint Info: No number in tabular cell on input line 105.
+Package numprint Info: No number in tabular cell on input line 107.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[58
+[59
 
- <./img/reactivevsnonreactivevsMixbedrea.jpg>] [59]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
-
+ <./img/reactivevsnonreactivevsMixbedrea.jpg>] [60]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
+(hyperref)                removing `math shift' on input line 130.
 
-<img/reactivevsnonreactiveMixbed2.png, id=1289, 421.575pt x 316.18124pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 130.
+
+<img/reactivevsnonreactiveMixbed2.png, id=1287, 421.575pt x 316.18124pt>
 File: img/reactivevsnonreactiveMixbed2.png Graphic file (type png)
 
 <use img/reactivevsnonreactiveMixbed2.png>
 Package pdftex.def Info: img/reactivevsnonreactiveMixbed2.png used on input lin
-e 136.
+e 138.
 (pdftex.def)             Requested size: 241.49895pt x 181.12737pt.
-Package numprint Info: No number in tabular cell on input line 150.
-Package numprint Info: No number in tabular cell on input line 150.
- [60
+Package numprint Info: No number in tabular cell on input line 152.
+Package numprint Info: No number in tabular cell on input line 152.
+ [61
 
  <./img/reactivevsnonreactiveMixbed2.png (PNG copy)>]
-<img/reactivevsnonreactive_Mixbed10.png, id=1297, 421.575pt x 316.18124pt>
+<img/reactivevsnonreactive_Mixbed10.png, id=1294, 421.575pt x 316.18124pt>
 File: img/reactivevsnonreactive_Mixbed10.png Graphic file (type png)
 
 <use img/reactivevsnonreactive_Mixbed10.png>
 Package pdftex.def Info: img/reactivevsnonreactive_Mixbed10.png used on input l
-ine 179.
+ine 181.
 (pdftex.def)             Requested size: 241.49895pt x 181.12737pt.
-Package numprint Info: No number in tabular cell on input line 192.
-Package numprint Info: No number in tabular cell on input line 192.
+Package numprint Info: No number in tabular cell on input line 194.
+Package numprint Info: No number in tabular cell on input line 194.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61 <./img/reactivevsnonreactive_Mixbed10.png (PNG copy)>] [62]
-<img/reactive_4_plot.png, id=1314, 365.26462pt x 342.68025pt>
+[62 <./img/reactivevsnonreactive_Mixbed10.png (PNG copy)>] [63]
+<img/reactive_4_plot.png, id=1311, 365.26462pt x 342.68025pt>
 File: img/reactive_4_plot.png Graphic file (type png)
 
 <use img/reactive_4_plot.png>
-Package pdftex.def Info: img/reactive_4_plot.png used on input line 238.
+Package pdftex.def Info: img/reactive_4_plot.png used on input line 240.
 (pdftex.def)             Requested size: 241.49895pt x 226.57228pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/desiredutility_reactive_4.jpg, id=1315, 1405.25pt x 1053.9375pt>
+<img/desiredutility_reactive_4.jpg, id=1312, 1405.25pt x 1053.9375pt>
 File: img/desiredutility_reactive_4.jpg Graphic file (type jpg)
 
 <use img/desiredutility_reactive_4.jpg>
 Package pdftex.def Info: img/desiredutility_reactive_4.jpg used on input line 2
-47.
+49.
 (pdftex.def)             Requested size: 241.49895pt x 181.1129pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[63
+[64
 
-] [64 <./img/reactive_4_plot.png (PNG copy)> <./img/desiredutility_reactive_4.j
+] [65 <./img/reactive_4_plot.png (PNG copy)> <./img/desiredutility_reactive_4.j
 pg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 265.
+(hyperref)                removing `math shift' on input line 262.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 265.
+(hyperref)                removing `math shift' on input line 262.
 
-) (tex/conclusion.tex [65
+) (tex/conclusion.tex [66
 
 ]
 Chapter 6.
-[66
+[67
 
-] <img/holon_example.png, id=1342, 556.32843pt x 233.37187pt>
+] <img/holon_example.png, id=1339, 556.32843pt x 233.37187pt>
 File: img/holon_example.png Graphic file (type png)
 
 <use img/holon_example.png>
-Package pdftex.def Info: img/holon_example.png used on input line 28.
+Package pdftex.def Info: img/holon_example.png used on input line 29.
 (pdftex.def)             Requested size: 241.49895pt x 101.30583pt.
- [67 <./img/holon_example.png (PNG copy)>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[68]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
- [68]
-[69]) [70
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
 
-] (MAS_thesis_DRJ.bbl [71
 
-] [72] [73]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[69 <./img/holon_example.png (PNG copy)>] [70]) [71
+
+] (MAS_thesis_DRJ.bbl
+[72
+
+] [73] [74]
 Underfull \hbox (badness 5908) in paragraph at lines 367--371
 []\OT1/cmr/m/n/10 Andrew Slaugh-ter, Gre-gory Bean, and An-shu Mit-tal.  Con-ne
 cted
@@ -1396,28 +1409,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 367--371
 ress . com / articles /$
  []
 
-[74]) [75]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
+[75]) [76]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
  (MAS_thesis_DRJ.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
 Package rerunfilecheck Info: File `MAS_thesis_DRJ.out' has not changed.
-(rerunfilecheck)             Checksum: 7C6BB3EBF46DDAA62A2AC4F063737A8B;6196.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 110.
+(rerunfilecheck)             Checksum: 512377828090A52E23CE6493403059BB;6156.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 24134 strings out of 493671
- 475753 string characters out of 3143854
- 592417 words of memory out of 3000000
- 26681 multiletter control sequences out of 15000+200000
+ 24121 strings out of 493671
+ 475631 string characters out of 3143854
+ 592426 words of memory out of 3000000
+ 26672 multiletter control sequences out of 15000+200000
  16075 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,24n,69p,2785b,17311s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,24n,69p,2785b,17309s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Progr
@@ -1427,20 +1440,19 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
 s/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on MAS_thesis_DRJ.pdf (82 pages, 2690311 bytes).
+cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MAS_thesis_DRJ.pdf (83 pages, 2686380 bytes).
 PDF statistics:
- 1551 PDF objects out of 1728 (max. 8388607)
- 360 named destinations out of 1000 (max. 500000)
+ 1544 PDF objects out of 1728 (max. 8388607)
+ 356 named destinations out of 1000 (max. 500000)
  830 words of extra memory for PDF output out of 10000 (max. 10000000)
 

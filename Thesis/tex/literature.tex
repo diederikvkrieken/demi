@@ -345,9 +345,9 @@ This can be visualized in a normal form pay-off matrix. It is common to refer to
 
 \begin{tabular}{|c|c|c|c|}
 	\hline 
-		&  				& $i$ 			&  \\ 
-	$A$ 	&				& defect (confess) 	& cooperate ($\neg$ confess) \\ 
-		& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
+		&  				& \multicolumn{2}{c}{Agent $i$}\\ 
+	 	&				& defect (confess) 	& cooperate ($\neg$ confess) \\ 
+	$Agent j$	& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
 		& cooperate($\neg $ confess) 	&  (-5, 0)				& (-1,-1) \\ 
 	\hline 
 \end{tabular} \label{tab:nashprison} \caption{The prisoners dilemma}
@@ -358,6 +358,7 @@ In general, that two strategies $s_1$ and $s_2$ are in Nash equilibrium if: unde
 
 Important to note here is that in the prisoners dilemma, the Nash equilibrium is the only solution which is not Pareto optimum.  THe optimal social solutions, which is if both agents do not confess, is different from the Nash equilibrium.  Furthermore, it should be stated that not every interaction scenario has a Nash equilibrium and some interaction scenarios have more than one Nash equilibrium. 
 \subsection{Principled Negotiation}
+\label{sec:principlednegotiation}
 An example of a common method for negotiation is principled negotiation. This method developed by \citet{fisher1987getting} was founded on the idea that negotiators could reach better agreements by finding favourable agreements. By focussing on interests not positions and using objective criteria, an agreement is more likely to be reached. This method has successfully been deployed in a Multi-Agent System for air traffic management \citep{wangermann1998principled}. \citet{fisher1987getting} emphasize the fact that it is important to agree on objective criteria for assessing options \citep{fisher1987getting}. If an agreement can be reached using this criterion, it is more likely that it is rational. Furthermore, principled negotiation is useful for systems in which no agent has global knowledge of the system. 
 
 %The purpose of this type of negotiation is to help to reach agreement without jeopardizing the business relations. It was created by \citet{fisher1987getting} and they refer to this kind of agreement as a wise agreement. Wise agreement is agreement that meets the interests of both parties to the extent possible, is long lasting, and also considers the interests of the larger society. The basis of this negotiation principle is to separate the relationship issues from the problem issues, to focus on interests not on positions, while trying to be creative in developing solutions.
@@ -515,6 +516,8 @@ Other examples of negotiation in a Multi-Agent System have been deployed in Smar
 From the above, in comparison with the knowledge obtained, there are two gaps. Firstly, little multi-issue multi-lateral strategic (game theory wise) application have been implemented. An example from the theory is \citet{wu2009efficient} where a Pareto-optimal-search method for three-agent multilateral negotiation is developed. This however has not been implemented in any real usecase, and would be very interesting to implement. The other gap in the literature is the research into the optimal learning methods for heuristic methods. In \citet{de2015automated} a wireless surveillance sensor networks is optimized using heuristic learning methods. This is limited to a bilateral negotiation protocol with a mediator, where negotiating agents (two access providers, each of them controlling a fraction of the access points in the scenario) negotiate. No multilateral application has been attempted. An attempt at generalizing multilateral heuristic learning has been made in \citet{beheshti2014homan}, but this has not been applied to a real use case yet. 
 
 From these knowledge gaps we try to determine whether it is possible to build a multi-issue, multi-lateral negotiation where the utility functions are private. Since it is unknown to the agent whether an concession is made by the other agents, we compare the reactive concession strategy by \citet{zheng2015automated} to a typical non-reactive concession strategy.
+
+The option of having a private utility function allows many more applications than since it allows for negotiations between competitors. This is in line with the optimized principled negotiation, as discussed.
 %So, in future, more concrete work should be done to validate more globally the decision-making support system and to find the most appropriated architecture ensuring “a form” of hierarchy (to optimise the global performances) and of co-operation (to be locally more reactive). It can lead (a) to evolve towards benchmarking, will not thus limit “to evaluate” only the protocol of negotiation we presented but also some of its derivatives and other types of negotiations, (b) to “automatise” the utility function of each expert (automated human expert) based on techniques such Bayesian Network, Fuzzy Logic,…to reduce the complexity of each decision (and to help the expert to develop his proposal), and (c) to use formal proofs to prove the global behaviour properties of the e-maintenance architecture (dynamics of the agent interaction and of the result emergence).  \cite{yu2003multi}
 
 %In \cite{harjunkoski2009integration} it is stated that  Even if it is today technically possible to connect every single device within a control system into an plant-wide MES system, it would make very little sense to integrate these e.g. with the scheduling. This is due to traditional view of a centralized system for planning. What this fails to see is the positive effect it would have if 

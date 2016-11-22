@@ -19,7 +19,7 @@ Using the non-linear COUENNE program \citep{belotti2013mixed} implemented in GAM
 \subsection{Non-reactive concession strategy}
 As explained in \Cref{sec:concessionstrat} the concession strategy determines whether a solution will be found. If no concession is made during the negotiation, and the agent stay on their initial utility, no agreement can be made. In this result the non-reactive strategy is used as a base line to compare to other methods. As described, there are many methods, and a weak concession is used in here, since the utility functions of the other agents are unknown. The non-reactive concession strategy used is $s_i(t) = \max \{s_0(t) - t * 0.01, ru_i\}$. This monotonic decreasing concession is a linear function until the reservation value. Described by \cite{wu2009efficient}, it is an \textit{amount of utility}, where Agent $ i \in N$ concedes a fixed amount utility $au$. They found that it was well performing, and has the advantage of ending after a known number of rounds. Since the utility functions are private, utilitarian concessions are not possible \citep{endriss2006monotonic}. 
 
-This means that the minimum utility value is reached after 100 rounds, if only the non-reactive concession strategy is used. Then each agent makes $\frac{100}{4 \text{agents}} = 25 \text{proposals}$. Since we combine it with the reactive concession strategy, it is possible for the agents to negotiate for more rounds.
+This means that the minimum utility value is reached after 100 rounds, if only the non-reactive concession strategy is used. Then each agent makes $\frac{100}{4 \text{agents}} = 25 \text{ proposals}$. Since we combine it with the reactive concession strategy, it is possible for the agents to negotiate for more rounds.
 
 \subsection{Reactive Concession strategy}
 The reactive concession strategy (see \Cref{sec:reactiveconcessionstr} for an explanation) is compared to the non-reactive concession strategy. Similar to \citet{zheng2015automated}, however here different reservation utilities are checked, while comparing the reactive to non-reactive strategy.
@@ -41,7 +41,9 @@ As shown in the algorithm, there is a threshold required to decide on the value 
 
 Since the non-reactive concession give a maximum of 100 rounds until zero is reached, 200 seems as an overkill. However, since we are dealing with the combination of different concession strategies, it is useful to check whether a solution is found afterwards. This since there might change something in the proposals due to the reactive concession method. If the non-reactive method were to be changed, it would be important to change the number of rounds as well. 
 
-\section{Reactive concession strategy compared to the non-reactive concession strategy}
+So if the number of rounds is equal to 199, no agreement has been made.
+
+\section{Reactive compared to the non-reactive concession strategy}
 When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:reactivevsnon-reactive}, it is obvious that the Nash limit indeed lies at $ru_i = 0.3182$. However, unexpectedly, the non-reactive strategy consequently finds the solution closer to the optimal Nash Bargaining Solution then the reactive strategy. For completeness, the Nash solution lies at acid $= 0.571$, base $= 0.571$, water $= 0.714$.
 
 \begin{figure}[h]
@@ -80,7 +82,7 @@ When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:
 \end{table}
 \npnoround
 
-It can be seen that the non-reactive concession strategy halts after less rounds than the reactive concession strategy, which means that it is faster. The reactive concession strategy has a larger distance than the threshold, which means that there is no real agreement, since the distance is larger than 0.05. However, when looking at the distance from the reactive concession, it is zero, which means that the average is exactly the same as the proposals. Interestingly when looking at the distance from the optimal solution, \Cref{fig:reactivevsnon-reactive}, it is very large. This unexpected result will be discussed later. 
+It can be seen that the non-reactive concession strategy halts after less rounds than the reactive concession strategy, which means that it is faster. The reactive concession strategy has a larger distance than the threshold, which means that there is no agreement, since the distance is larger than 0.05, and the number of rounds is 199. However, when looking at the distance from the reactive concession, it is zero, which means that the average is exactly the same as the proposals. Interestingly when looking at the distance from the optimal solution, \Cref{fig:reactivevsnon-reactive}, it is very large. This unexpected result will be discussed later. 
 \clearpage
 \section{Reactive Mixbed vs non-reactive }
 Although the reactive concession strategy performed worse when compared to the non-reactive concession strategy, a comparison to is made when only the Mixbed agent uses the reactive strategy. The Mixbed agent is the most important agent since it ``produces'' the final demi water product, the most important resource of the production line.
@@ -171,7 +173,7 @@ It is interesting to note that the new original end proposal is a lot nearer to 
 
 
 \subsection{Mixbed ratio 10:1:1}
-When using a ratio of 10:1:1 we have a max $ru_i = 0.274$. The Nash solution lies at acid = 0.647, base = 0.647, water =0.941. The large increase to the water demand makes this an interesting solution. It is very interesting to note that although the reservation minimum lies at $0.274$, the algorithm still finds a solution very close to the Nash optimum when the reservation utility is 0.3. 
+When using a ratio of 10:1:1 we have a maximal reservation curve of: $ru_i = 0.274$. The Nash solution lies at acid $= 0.647$, base $= 0.647$, and water $=0.941$. The large increase to the water demand makes this an interesting solution. It is very interesting to note that although the reservation minimum lies at $0.274$, the algorithm still finds a solution very close to the Nash optimum when the reservation utility is 0.3. 
 %\section{All}
 
 \begin{figure}[h]
@@ -220,7 +222,7 @@ When using a ratio of 10:1:1 we have a max $ru_i = 0.274$. The Nash solution lie
 \clearpage
 \section{Evaluation}
 Since some unexpected results are seen, some possible explanations are given.
-\subsection{Reactive concession strategy compared to the non-reactive concession strategy}
+\subsection{Reactive compared to the non-reactive concession strategy}
 It is interesting that the reactive concession strategy does not find a solution although there is an agreement-zone. 
 A possible solution is that the answer can not be found as is stated by \citet{zheng2015automated} as Lemma 2. ``If Agent $i$ deliberately stops conceding before reaching the agent's own reservation utility from time period t onward, and all other agents use the reactive concession strategy the negotiation will stall; i.e. other agents will reactively stop conceding and there will be no agreement if $\Delta_j < s_j(t)-u_j(x^*_{ru_i}) \text{ and } u_j(x^*_{s_i(t)})<ru_j$''.
 
@@ -236,7 +238,7 @@ Looking at the proposals, \Cref{fig:reactive4plot}, it is clearly seen that in t
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/reactive_4_plot}
-	\caption{The proposals made by the 4 agents. We see that the Mixbed and neut ``stall'' in de finding of the solution.}
+	\caption{The proposals made by the 4 agents. We see that the Mixbed and neut ``stall'' in de finding of the solution. Only towards the end do they start conceding.}
 	\label{fig:reactive4plot}
 \end{figure}
 
@@ -253,16 +255,13 @@ The stalling of the Neut and Mixbed can also clearly be seen when looking at the
 
 \clearpage
 \subsection{Reactive Mixbed compared to non-reactive other agents}
-When we look at the solution which is found when only the Mixbed makes reactive concessions, we see that this is the a lot more optimal than when all the agents 
+When we look at the solution which is found when only the Mixbed makes reactive concessions, we see that this is a lot more optimal than when all the agents use the reactive concession strategy. 
 
-
-
-Nash solution lies in 0 water with 1 base and 1 acid. This is close to the start of Mixbed in 1.1.1. 
-
-This is however the result of the stalling of the Mixbed. and not the result of the solution being found. This is obvious when looking at the table. Although the reservation curve changes in the offers, the Mixbed does not move. This can also been seen in the proposal figure
-
+When this usecase is to be implemented in the real situation, using the reactive Mixbed is a realistic option. 
 
 \subsection{Different values for $l$}
 When looking at the different values of $l$, we see the exact same pattern as we saw in the original reactive vs non-reactive. So although the Nash solution moves, we still get an sub-optimal solution, where the non-reactive method outperforms the reactive method on distance to Nash, average and rounds necessary.
+
+This means that the usage of ratios for the Mixbed are a very realistic solution to solve the problem of desire, when a sudden increase of output is necessary. This also solves the realistic problem of the Mixbed requiring a lot less cleaning than the anion and cation.
 
 

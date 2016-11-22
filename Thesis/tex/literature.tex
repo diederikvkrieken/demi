@@ -5,7 +5,7 @@ The manufacturing industry is and will be one of the wealth generators of the wo
 
 The so-called agent-based computation is a solution for many of the problems that arise from this new trend. By having autonomous agents, who can address changes adaptively and are distributed in nature, intelligent solutions are available \citep{monostori2006agent}.
 
-In this literature review, an overview of the manufacturing processes and current agent technologies/solutions are given. Using such a decentralized agent solution is only optimal when certain process and hardware-wise requirements, are realised on the manufacturing side. We will conclude with an overview of the framework. After the framework is concluded with, we will give an overview of negotiation solutions in agent systems. From this we find an new approach to design a Multi-Agent System for a business process.
+In this literature review, an overview of the manufacturing processes and current agent technologies/solutions are given. Using such a decentralized agent solution is only optimal when certain process and design requirements are realised on the manufacturing side. We will derive a framework on which to decide a centralized or a decentralized system. After the framework is concluded with, we will give an overview of negotiation solutions in agent systems. From this we find an new approach to design a Multi-Agent System for a business process.
 
 \section{Manufacturing processes}
 %Overview of manufacturing. Asset management, process control incl predictive maintenance and planningxx	, Programmable logic controller, real time control
@@ -34,7 +34,7 @@ By creating an overview of the different layers in the manufacturing process, an
 
 
 \subsection{Asset management}
-On the top of the ANSI structure is the overview of the manufacturing process, also known as Asset Management, and is the broad overview of the administration of assets. This includes the design, construction, use, maintenance, repair, disposal and recycling of assets. For most corporations and enterprises, the focus lies on the operational aspects of the assets, due to the fact that asset failures result in production or service delays. Therefore, insufficient asset management on one side results in loss of the asset itself, and on the other side loss due to productions delays and loss of service \citep{trappey2013multi}.  A lot is currently being researched, for example by \citet{leitao2009agent}, on asset management, and especially the condition monitoring and prediction are in focus. This is due to the shift from reactive repair work to real-time condition monitoring, prediction, diagnostics and pre-scheduled maintenance. Also, traditional asset management approaches are poorly suited for current equipment failure solutions. %\Todo{Onderhoud + inspecction. Gebruik woord ``Asset Integrity''}
+On the top of the ANSI structure is the overview of the manufacturing process, also known as Asset Management, and is the broad overview of the administration of assets. This includes the design, construction, use, maintenance, repair, disposal and recycling of assets. For most corporations and enterprises, the focus lies on the operational aspects of the assets, due to the fact that asset failures result in production or service delays. Therefore, insufficient asset management on one side results in loss of the asset itself, and on the other side loss due to productions delays and loss of service \citep{trappey2013multi}.  A lot is currently being researched, for example by \citet{leitao2009agent}, on asset management, and especially the condition monitoring and prediction are a well researched. This is due to the shift from reactive repair work to real-time condition monitoring, prediction, diagnostics and pre-scheduled maintenance. Also, traditional asset management approaches are poorly suited for current equipment failure solutions. %\Todo{Onderhoud + inspecction. Gebruik woord ``Asset Integrity''}
 	
 Traditional manufacturing control systems are unable to be sufficiently responsive, flexible, robust and reconfigurable due to the fact that they are built upon a centralised and hierarchical control structures. These are optimal for perfect optimization, but weakly responsive to change. Another consequence of this structure is that a single failure can shut down an entire system \citep{leitao2009agent}. This requires a change to decentralized asset management, demanding for new process control methods.
 	
@@ -62,7 +62,7 @@ Important when controlling a process is to optimize the planning. The forms of d
 
 An important aspect of the planning is the allocation of resources. One can optimize the production process, but without the correct resources at the right location at the right time, the optimization is limited. It is a crucial aspect of planning, that is often done manually in large production plants due to the often unexpected and complex decision-making processes \citep{pinedo2005planning}. By automating the resource allocation, a part of the overall planning can be automated.
 
-Another large difficultie when planning, is that of ensuring that the assets are always operational, or have (as short as possible) planned downtime. This is achieved with predictive maintenance.
+Another large difficulty when planning, is that of ensuring that the assets are always operational, or have (as short as possible) planned downtime. This is achieved with predictive maintenance.
 %Planning and scheduling are forms of decision-making that are used on a regular basis in many manufacturing and service industries. Decision-making processes play an important role in procurement and production,in transportation and distribution,and in information processing and communication. The planning and scheduling functions in a company rely on mathematical techniques and heuristic methods that allocate limited resources to the activities to be done. This allocation of resources has to be done in such a way that the company optimizes its objectives and achieves its goals. Resources may be machines in a workshop,runways at an airport,crews at a construction site,or processing units in a computing environment. Activities may be operations in a workshop,take-offs and landings at an airport,stages in a construction project,or computer programs that have to be executed. Each activity may have a priority level,an earliest possible starting time and/or a due date. Objectives can take many different forms,such as minimizing the time to complete all activities,minimizing the number of activities that are completed after the committed due dates,and so on.
 %
 %Generic manufacturing environment and the role of its planning and scheduling function. Orders that are released in a manufacturing setting have to be translated into jobs with associated due dates. These jobs often have to be processed on the machines in a workcenter in a given order or sequence. The processing of jobs may sometimes be delayed if certain machines are busy. Preemptions may occur when high priority jobs are released which have to be processed at once. Unexpected events on the shopfloor,such as machine breakdowns or longer-than-expected processing times,also have to be taken into account,since they may have a major impact on the schedules. Developing,in such an environment,a detailed schedule of the tasks to be performed helps maintain efficiency and control of operations. 
@@ -119,7 +119,7 @@ The new requirements in production ask for new manufacturing planning. This requ
 
 Object-oriented programming (OOP) is a programming method based on the concept of ``objects'', which may contain data and code. For example an object can be a variable, a data structure, or a function, or a combination of these. The code that an object contains can be seen as the behaviour of the object, and as such it is easily interchangeable with an agent, since a method in OOP is a activity associated with an object. An object is made up of data and behaviour, which form the interface that an object presents to the outside world, and thus very similar to an agent \citep{shoham1993agent}. 
 
-Agent-oriented programming is a method often used to implement a multi-agent system, see \citet{mahar2012agent} for a thorough overview. In such a system anthropomorphic ideas, like beliefs, desires are used to model the objects, and thus called agents \citep{shoham1993agent}.% Import to note is that based on agent-based programming, see \citet{mahar2012agent} for a thorough overview, 
+Agent-oriented programming is a method often used to implement a multi-agent system, see \citep{mahar2012agent} for a thorough overview. In such a system anthropomorphic ideas, like beliefs, desires are used to model the objects, and thus called agents \citep{shoham1993agent}.% Import to note is that based on agent-based programming, see \citet{mahar2012agent} for a thorough overview, 
 
 % 
 
@@ -132,13 +132,13 @@ The boundary of a convex set is always a convex curve. A function is called a co
 
 \begin{figure}
 	\centering
-%	\includegraphics[width=0.7\linewidth]{img/convex}
+	\includegraphics[width=0.7\linewidth]{img/convex}
 	\caption{Two sets. The left is convex, while the right, kidney shaped is not, as indicated with the line outside the set. From \citep{boyd2004convex}}
 	\label{fig:convex}
 \end{figure}
 
 
-Convex functions play an important role in multiple areas of mathematics. They are especially important in optimization problems where they are distinguished by a number of convenient properties. For instance, a convex function on has no more than one minimum. Even in n-dimensional spaces convex functions continue to be convex. Furthermore, convex functions are optimal when dealing with multiple convex sets, since the intersect will always be convex as well meaning that the properties of the new sets will contain the same properties  \citep{boyd2004convex}. 
+Convex functions play an important role in multiple areas of mathematics. They are especially important in optimization problems since they have some convenient properties. For instance, a convex function has no more than one minimum. Even in n-dimensional spaces convex functions continue to be convex. Furthermore, convex functions are optimal when dealing with multiple convex sets, since the intersect will always be convex as well meaning that the properties of the new sets will contain the same properties  \citep{boyd2004convex}. 
 \subsection{Multi-Agent Systems}
 
 Some terms used in the literature for data collection apparatus that aggregate the data are ``Smart Objects'', ``Intelligent Gateways'', ``Collaborative Network'', ``Wireless Sensor Network'' and ``Industrial Agents''. Most of these can be viewed as Multi-Agent Systems (MAS) where the sensors communicate with one another as decentralized intelligent agents for independent action performance depending on the context, circumstances or environments (sensor input) of the situation. From such MAS, Ambient Intelligence  is conceivable: real-time decentralized decision making based on real-time data acquisition, analytics and negotiations. An example structure can be seen in \Cref{fig:MAS_example}.
@@ -163,14 +163,14 @@ Another way of looking at agents, and more convenient in the manufacturing world
 \label{fig:holonicmanufacturing}
 \end{figure}
 
-The concept of holon is based on the idea that complex systems will evolve from simple systems rapidly if there are stable intermediate forms, than if there are not. This means that the resulting complex systems will be traditionally pyramid. However, although it is easy to identify sub-wholes or parts,they do not really exist anywhere, making it decentralized \citep{van1998reference}.
+The concept of holon is based on the idea that complex systems will evolve from simple systems rapidly if there are stable intermediate forms, than if there are not. This means that the resulting complex systems will be traditionally pyramid. However, although it is easy to identify sub-wholes or parts, they do not really exist anywhere, making it decentralized \citep{van1998reference}.
 
 \subsection{Task/resource allocation}
 An example of resource allocation is when a set of agents shares a joint resource. Such a resource can be anything from indefinitely renewed continuous or discrete theoretical resource. By limiting the use of the resource to one agent at the time, negotiation is necessary to ensure that all the agents can use the resource. Usually and often crucial is the preference of the agents. Since the agents have different preferences regarding the resource, it is possible and feasible to divide the resource and create a schedule describing who has access to the resource and when \citep{fatima2014principles}. 
 
 The same principle applies to task allocation, where the agents want to achieve a common goal. To achieve this goal quickly the agents most divide different task, which overlap, and reach an agreement on the optimal planning. 
 
-\todo[Voorbeeld van resource allocation]{Voorbeeld van resource allocation}
+The most common example of resource allocation is that of a pie. How should the pie be divided among the agents? Many strategies are derived for this issue. Another example could be the allocation of energy. Which processor gets how much energy? These resources can be continuous or discrete.
 
 See \Cref{sec:negotiation} for the difference in the task or resource allocation when dealing with negotiation.
 
@@ -214,7 +214,7 @@ Each agent is part of a heterogeneous system and processes its own information a
 %\section{Agent Technologies}
 
 \input{./tex/literature.framework.tex}
-
+\clearpage
 \section{Negotiation}
 \label{sec:negotiation}
 Often discussed above is the negotiation of the agents in a multi-agent system. This branch of research, also called automated negotiation, is studied by Artificial Intelligence and Economics \citep{jennings2001automated}. Concepts from fields such as decision theory and game theory are used in the design of appropriate negotiation and interaction environments \citep{jennings2001automated}. It is used to reach an agreement that meets the constraints of two or more parties in the presence conflicting interests. And thus is a basic means of getting what you want from others \citep{fisher1987getting}. It is back and forth communications designed to reach an agreement when you and the other side have some interests that are shared, and others that are opposed. Agents reason rationally and strategically. An agent's objective is to maximize the expected value of its own payoff. 
@@ -227,7 +227,7 @@ The four components of a negotiation model are~\citep{fatima2004agenda}:
 	\item The negotiation equilibrium.
 \end{enumerate}
 
-Since negotiating situations occur when there is a conflict of interest, the first step will be to detect such a conflict. Agents will use communication channels and try to eliminate the conflicts. Conflicts may be about limited available resources, or may be a conflict between the beliefs of some agents. In the first case, optimization is the result, whereas, in the second case, one of the agents will have to change its beliefs \citep{shen2003multi}. Often it is seen as maximizing the quality of the result. Two types of optimization are possible, one, the agents can try to achieve Pareto optimality, meaning that the outcome maximizes the product of the agents' utilities, or they try to reach a Nash equilibrium, meaning an stable state in the system, both which will be discussed in the evaluation of the model \Cref{ch:eval}).
+Since negotiating situations occur when there is a conflict of interest, the first step will be to detect such a conflict. Agents will use communication channels and try to eliminate the conflicts. Conflicts may be about limited available resources, or may be a conflict between the beliefs of some agents. In the first case, optimization is the result, whereas, in the second case, one of the agents will have to change its beliefs \citep{shen2003multi}. Often it is seen as maximizing the quality of the result. Two types of optimization are possible, one, the agents can try to achieve Pareto optimality, meaning that the outcome maximizes the product of the agents' utilities, or they try to reach a Nash equilibrium, meaning an stable state in the system, both which will be discussed in the evaluation of the model \Cref{ch:eval}.
 
 Negotiation is done by exchanging messages among agents. Since the process involves several messages, a discussion will take place in which each agent's belief and goals will be an important factor. These depend on the global situation. Clearly, to be able to negotiate, agents must be able to reason. Thus, negotiation is restricted to cognitive agents. Automated negotiation is essentially a distributed search in the space of potential agreements between the different negotiators represented by autonomous agents, which involves the exchange of relevant information and aims to find an agreement that is acceptable to all participants.
 
@@ -254,9 +254,9 @@ Often these strategies are private, meaning that not all the agents can see what
 
 \subsubsection{Concession Strategy}
 \label{sec:concessionstrat}
-When negotiating it is essential for the agents to make concessions, only in TODs it is unnecessary as explained. Initially each of the agents involved makes a proposal that has the highest utility to itself. If no concessions are made, the agents will never reach an agreement. By making concessions on the utility, a proposal towards the agents agreement-zone can be made, which is essential in finding an agreement. Furthermore, as put by \citet{endriss2006monotonic}: a concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
+When negotiating it is essential for the agents to make concessions, only in TODs it is unnecessary, as explained. Initially each of the agents involved makes a proposal that has the highest utility to itself. If no concessions are made, the agents will never reach an agreement. By making concessions on the utility, a proposal towards the agents agreement-zone can be made, which is essential in finding an agreement. Furthermore, as put by \citet{endriss2006monotonic}: a concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
 
-There are multiple strategies when dealing with how to concede. Most of these are on or another way of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal, there are 2 options. Either the agent refuses to make a concession and stick to proposal or it makes a concession and propose a new deal that is preferable to the other agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \cite{endriss2006monotonic}.
+There are multiple strategies when dealing with how to concede. Most of these are one way or another of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal, there are two options. Either the agent refuses to make a concession and stick to proposal or it makes a concession and propose a new deal that is preferable to the other agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \cite{endriss2006monotonic}.
 
 %Using the monotonic concession protocol, negotiation is guaranteed to end (with or without agreement) after a finite number of rounds. Since the set of possible deals is finite, the agents cannot negotiate indefinitely: either the agents will reach agreement, or a round will occur in which neither agent concedes. However, the protocol does not guarantee that agreement will be reached quickly. Since th
 
@@ -317,9 +317,7 @@ An agent’s information state describes the information it has about the negoti
 % Since there is no one negotiation protocol that clearly outperforms all others in all scenarios, we need to be able to decide which protocol is most suited for each particular problem. The goal of our work is to meet this challenge by defining a “negotiation handbook”, that is, a collection of design rules which allow us, given a particular negotiation problem, to choose the most appropriate protocol to address it. \cite{marsa2014problems}
 
 \subsection{Evaluating /equilibrium solutions}
-When evaluating the dilemmas of a negotiation between agents, it is essential to determine the Pareto-Frontier. Visualized in \Cref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, lie all the possible agreements, which are all offers, that are acceptable by both agent. An offer is Pareto optimal if the agents can not choose an new offer for which at least one agent has a higher utility, while the other agents have the same utility. In the figure these are shown as $A$ and $B$. Each other offer for these agents decreases at least the utility of one of the agents. Offers $C$ and $D$ are not Pareto optimal since both offers can be improved for at least one agent. The line of points in which an improvement of utility for one agent necessarily means a decrease in utility for the other agent is the Pareto-Frontier. 
-
-Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ denoted as issue $j\in N$, than an offer $x = \{x_1, ..., x_j\}$ is Pareto optimal if the outcome of negotiation $x$ has no feasible allocation $x'$ such that $u_i(x')> u_i(x) \exists i \in M$, while $u_i(x')\geq u_i(x) \forall i \in M$. 
+When evaluating the dilemmas of a negotiation between agents, it is essential to determine the Pareto-Frontier. Visualized in \Cref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, lie all the possible agreements, which are all offers, that are acceptable by both agents.
 
 \begin{figure}[h]
 	\centering
@@ -328,8 +326,13 @@ Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ deno
 	\label{fig:paritooptimal}
 \end{figure}
 
+An offer is Pareto optimal if the agents can not choose an new offer for which at least one agent has a higher utility, while the other agents have the same utility. In the figure these are shown as $A$ and $B$. Each other offer for these agents decreases at least the utility of one of the agents. Offers $C$ and $D$ are not Pareto optimal since both offers can be improved for at least one agent. The line of points in which an improvement of utility for one agent necessarily means a decrease in utility for the other agent is the Pareto-Frontier. 
+
+Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ denoted as issue $j\in N$, than an offer $x = \{x_1, ..., x_j\}$ is Pareto optimal if the outcome of negotiation $x$ has no feasible allocation $x'$ such that $u_i(x')> u_i(x) \exists i \in M$, while $u_i(x')\geq u_i(x) \forall i \in M$. 
+
 The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and shown in \Cref{fig:majorcategoriesofgametheory}. 
-\begin{figure}
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/major_categories_of_game_theory}[h]
 	\caption{The four types of games in game theory from \citet{trappey2013multi}.}
@@ -338,7 +341,7 @@ The Nash equilibrium is the best reply to the other players strategies. This mea
 The most common Nash equilibrium and probably most widely known is that of the prisoners dilemma:
 There are two subjects of a crime, agent $i$ and $j$. However, the evidence is not very convincing and therefore the prisoners are interrogated separately. If both confess, they get three years of prison. If both do not confess, they get a lighter sentence of 1 year. Finally, if one of them confesses to the crime and the other does not, the confessor will be freed, and the other will be jailed for five years.
 This can be visualized in a normal form pay-off matrix. It is common to refer to confessing as defection, and not confessing as cooperating.
-\begin{table}
+\begin{table}[h]
 
 \begin{tabular}{|c|c|c|c|}
 	\hline 
@@ -405,7 +408,7 @@ An attempt at the visualization of the different negotiation techniques is striv
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/mapping_nego}
-	\caption{Overview of the negotiation protocols used, and researched in the literature. In this research a multilateral, multi-issue }
+	\caption{Overview of the negotiation protocols used, and researched in the literature. The usage of an proposal based protocol for a multilateral multi-issue situation is missing in the manufacturing literature.}
 	\label{fig:mapping_nego}
 \end{figure}
 
@@ -413,7 +416,7 @@ An attempt at the visualization of the different negotiation techniques is striv
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/mapping_nego2}
-	\caption{Current Negotiation overview}
+	\caption{For completeness, the same figure as in \Cref{fig:mapping_nego}, but with the display of the imperfect information protocols.}
 	\label{fig:mapping_nego2}
 \end{figure}
 

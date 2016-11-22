@@ -1,5 +1,6 @@
 clear all
-filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output.csv';
+%filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output.csv';
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\nonreactive 0.05 to 0.6 mixbedrea\output_1.csv';
 delimiter = ',';
 fileID = fopen(filename);
 
@@ -91,7 +92,7 @@ clearvars filename delimiter formatSpec fileID dataArray ans;
 plot(distance)
 
 %%
-filename = 'C:\Users\Diederik\IdeaProjects\demi\result\reactive 0.05 to 0.6\output_4_concession.csv';
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\nonreactive 0.05 to 0.6 mixbedrea\output_4_concession.csv';
 delimiter = '';
 fileID = fopen(filename);
 

@@ -1,13 +1,13 @@
 \section{Framework}
 When looking at the traditional pyramid, which is fully centralized, it seems difficult, if not impossible to translate this to a decentralized solution. And as such it should be possible to determine whether a centralized or decentralized solution, using a MAS or holonic system, should be implemented at a business process. As such a framework to compare a centralized vs a decentralised solution is discussed here. Essential in the difference between these two possible solution spaces is the location of the processing power for the calculations. Centralised solutions have a single control unit where the information flows to, while decentralized solutions do not have this structure.
 
-A popular comparison, discussed in \citet{parunak1999industrial}, is that of the original Roman army structures. Decisions where made at the top and dripped down, while the information stream went up. This method, has been deployed into most companies. Due to the fact that something can be computed on a single computer, and be optimized on this single program, an optimal can be found.
+A popular comparison, discussed by \citet{parunak1999industrial}, is that of the original Roman army structures. Decisions where made at the top and dripped down, while the information stream went up. This method, has been deployed into most companies. Due to the fact that something can be computed on a single computer, and be optimized on this single program, an optimal can be found.
 
 However, the increasing complexity of computer and information systems, combined with the increasing complexity of their applications, exceed the level of conventional centralized computing. This is due to the processing of huge amounts of data, or data that origin from different locations. To solve such difficulties computers have to act more like agents where each agent can solve part, or decides on part of the problem. This is where agent-based architectures are an ideal fit to such an organizational structure.
 
 To push the decision making to the lowest level, excessive layers of management can be absolute. This allows for, sometimes, easier to understand and developing of problems, especially if the problem being solved is itself distributed.
 
-By using principles of decomposition which is a classical optimization (reformulation) method \citet{sharif2012yard} presents a comparative study of two contrasting approaches for modelling the yard crane scheduling problem: centralized and decentralized. It seeks to assess their relative performances and factors that affect their performances. They conclude that a centralized approach outperforms the decentralized approach by 16.5 \% on average, due to having complete and accurate information about future truck arrivals. However, since the decentralized under performs the centralized, the decentralized approach can dynamically adapt to real-time dynamic changes, making it better suited for real-life operations. 
+By using principles of decomposition which is a classical optimization (reformulation) method \citep{sharif2012yard} presents a comparative study of two contrasting approaches for modelling the yard crane scheduling problem: centralized and decentralized. It seeks to assess their relative performances and factors that affect their performances. They conclude that a centralized approach outperforms the decentralized approach by 16.5 \% on average, due to having complete and accurate information about future truck arrivals. However, since the decentralized under performs the centralized, the decentralized approach can dynamically adapt to real-time dynamic changes, making it better suited for real-life operations. 
 
 To optimize these different types of resources allocation problems, there are different kinds of allocation problems, for which different solutions are feasible. The purpose here is to find what characteristics are optimal to use a centralized vs a decentralized solution.
 
@@ -47,7 +47,7 @@ In a decentralized structure, individual models are decoupled from one another, 
 \subsection{Dynamicity (Time Scale/Changeability)}
 In a centralized solution, the continuous monitoring of the state of the environment and typically the lack of complex decisions, a quick reaction to changes is possible. A high dynamical is the result. 
 
-Unfortunately, it is difficult to achieve real-time scheduling in traditional manufacturing systems because the scheduling algorithms used are executed on a single, centralized computer that becomes computational very diffcult \citep{duffie1994real}.
+Unfortunately, it is difficult to achieve real-time scheduling in traditional manufacturing systems because the scheduling algorithms used are executed on a single, centralized computer that becomes computational incredibly difficult \citep{duffie1994real}.
 \subsection{Solution Quality}
 Since agent-based approaches are distributed, they do not have a global view of the entire state of a system. A lot can reached through communication and negotiation, but for a truly optimal solution, an entire view is necessary For example,  \citep{palmer2003decentralized} shows that this algorithm is not intended to find the optimal solution; it finds a good solution with less computation. 
 
@@ -64,14 +64,13 @@ New advances however, like this research have tried to find an optimal centraliz
 
 
 \subsection{Complexity}
-Requirements are Simple relations. %However when changing relations are  %Changing relations a
+Since an agent can execute actions only on its own surounding, it is dependent on its local parameters. However, the agent can use information sent by its neighbours to adapt \citep{pujolle2006autonomic}. This interaction between the elements makes the complexity of a solution many times higher and more difficult than a centralized solution.
 
-
-
+\subsection{Framework overview}
 \begin{tabular}{p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}}
 	& Centralised Solution & Decentralised Solution & Building Blocks\\
 	\hline \hline
-	Size / Modularity & Small; No sub-problems & Large; Ill-Structured; Easily dividable; Independent Modules & Population; Holonic; \# of resources: (decision variables, parameters \& constraints)\\
+	Size / Modularity & Small; No sub-problems & Large; Ill-Structured; Easily dividable; Independent Modules & Population; Holonic; number of resources: (decision variables, parameters \& constraints)\\
 	\hline
 	Time scale / Changeability & Days - Weeks; Not subject to a lot of change & Real-time - Hour; Changeability  & Adaptive Capability ; Degree of Re- and Pro-activeness\\
 	\hline
@@ -80,7 +79,6 @@ Requirements are Simple relations. %However when changing relations are  %Changi
 	Complexity & Simple & Complex & Interaction between the set of elements; Communication
 \end{tabular}
 
-\citep{pujolle2006autonomic}
 %To achieve the autonomic-oriented architecture, we propose to select the appropriate control mechanisms among: 
 %- adaptive: the agent adapts its actions according to the incoming events and to its vision of the current system state. The approach we propose is adaptive as the agent adapts the current control mechanisms and the actions undertaken when a certain event occurs. The actions the control mechanism executes may become no longer valid and must therefore be replaced by other actions. These new actions are indeed more suitable to the current observed state;
 %- distribution: each agent is responsible for a local control. There is no centralization of the information collected by the different agents, and the decisions the agent performs are in no way based on global parameters. This feature is very important as this avoids having bottlenecks around a central control entity;

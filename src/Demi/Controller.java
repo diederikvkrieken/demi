@@ -97,12 +97,12 @@ public class Controller {
 
                 //Start reactive concession strategy
                 //Now calculate reactive concession for each agent
-                double deltaU[] = new double[mod.getn_agents()];
+                double deltaU[] = new double[mod.getn_agents()+1];
                 int i = 0;
                 double concession = Double.POSITIVE_INFINITY;
 
                 for (Agent ag : mod.getAgents()) {
-                    if ((agent.utility(ag.getOffer()) >= agent.getMinimumUtility())||true){//&&ag.getName().equals("Mixbed")) {
+                    if ((agent.utility(ag.getOffer()) >= agent.getMinimumUtility())||(!ag.getName().equals("Mixbed"))) {
                         //Calculate nonreactive if offer >= minumum
                         deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                         i++;
@@ -117,6 +117,7 @@ public class Controller {
 //                        System.out.println(" reactive ");
                     }
                 }
+                deltaU[i] = agent.nonreactiveConcessionStrategyReturn(t);
                 for (int j = 0; j < mod.getn_agents(); j++) {
 //                    System.out.println(deltaU[j]);
                     if (deltaU[j] < concession) {

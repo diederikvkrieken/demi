@@ -33,30 +33,30 @@
 \BOOKMARK [2][-]{subsection.3.3.2}{Dynamicity \(Time Scale/Changeability\)}{section.3.3}% 33
 \BOOKMARK [2][-]{subsection.3.3.3}{Solution Quality}{section.3.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.4}{Complexity}{section.3.3}% 35
-\BOOKMARK [1][-]{section.3.4}{Negotiation}{chapter.3}% 36
-\BOOKMARK [2][-]{subsection.3.4.1}{Negotiation Protocol}{section.3.4}% 37
-\BOOKMARK [2][-]{subsection.3.4.2}{Negotiation Strategies}{section.3.4}% 38
-\BOOKMARK [2][-]{subsection.3.4.3}{Negotiation States}{section.3.4}% 39
-\BOOKMARK [2][-]{subsection.3.4.4}{Evaluating /equilibrium solutions}{section.3.4}% 40
-\BOOKMARK [2][-]{subsection.3.4.5}{Principled Negotiation}{section.3.4}% 41
-\BOOKMARK [2][-]{subsection.3.4.6}{Negotiation using a mediator}{section.3.4}% 42
-\BOOKMARK [2][-]{subsection.3.4.7}{Mapping of negotiation protocols}{section.3.4}% 43
-\BOOKMARK [1][-]{section.3.5}{Negotiation in Manufacturing}{chapter.3}% 44
-\BOOKMARK [0][-]{chapter.4}{Research Design \046 Application}{}% 45
-\BOOKMARK [1][-]{section.4.1}{Mapping of Literature on usecase}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.2}{Mapping of Negotiation}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.3}{Demineralization of water}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.4}{Negotiation model}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.5}{Details of the Agents}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.5.1}{Reactive concession strategy}{section.4.5}% 51
-\BOOKMARK [2][-]{subsection.4.5.2}{Anion}{section.4.5}% 52
-\BOOKMARK [2][-]{subsection.4.5.3}{Cation}{section.4.5}% 53
-\BOOKMARK [2][-]{subsection.4.5.4}{Neut}{section.4.5}% 54
-\BOOKMARK [2][-]{subsection.4.5.5}{Mixbed}{section.4.5}% 55
-\BOOKMARK [1][-]{section.4.6}{Negotiations among the agents}{chapter.4}% 56
-\BOOKMARK [1][-]{section.4.7}{Algorithm}{chapter.4}% 57
-\BOOKMARK [1][-]{section.4.8}{Result interpretation}{chapter.4}% 58
-\BOOKMARK [1][-]{section.4.9}{Proof of convergence}{chapter.4}% 59
+\BOOKMARK [2][-]{subsection.3.3.5}{Framework overview}{section.3.3}% 36
+\BOOKMARK [1][-]{section.3.4}{Negotiation}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.4.1}{Negotiation Protocol}{section.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.4.2}{Negotiation Strategies}{section.3.4}% 39
+\BOOKMARK [2][-]{subsection.3.4.3}{Negotiation States}{section.3.4}% 40
+\BOOKMARK [2][-]{subsection.3.4.4}{Evaluating /equilibrium solutions}{section.3.4}% 41
+\BOOKMARK [2][-]{subsection.3.4.5}{Principled Negotiation}{section.3.4}% 42
+\BOOKMARK [2][-]{subsection.3.4.6}{Negotiation using a mediator}{section.3.4}% 43
+\BOOKMARK [2][-]{subsection.3.4.7}{Mapping of negotiation protocols}{section.3.4}% 44
+\BOOKMARK [1][-]{section.3.5}{Negotiation in Manufacturing}{chapter.3}% 45
+\BOOKMARK [0][-]{chapter.4}{Research Design \046 Application}{}% 46
+\BOOKMARK [1][-]{section.4.1}{Demineralization of water}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.2}{Negotiation model}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.3}{Details of the Agents}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.3.1}{Reactive concession strategy}{section.4.3}% 50
+\BOOKMARK [2][-]{subsection.4.3.2}{Anion}{section.4.3}% 51
+\BOOKMARK [2][-]{subsection.4.3.3}{Cation}{section.4.3}% 52
+\BOOKMARK [2][-]{subsection.4.3.4}{Neut}{section.4.3}% 53
+\BOOKMARK [2][-]{subsection.4.3.5}{Mixbed}{section.4.3}% 54
+\BOOKMARK [1][-]{section.4.4}{Negotiations among the agents}{chapter.4}% 55
+\BOOKMARK [2][-]{subsection.4.4.1}{The solution space}{section.4.4}% 56
+\BOOKMARK [1][-]{section.4.5}{Algorithm}{chapter.4}% 57
+\BOOKMARK [1][-]{section.4.6}{Result interpretation}{chapter.4}% 58
+\BOOKMARK [1][-]{section.4.7}{Proof of convergence}{chapter.4}% 59
 \BOOKMARK [0][-]{chapter.5}{Simulation comparison \046 evaluations}{}% 60
 \BOOKMARK [1][-]{section.5.1}{Parameters}{chapter.5}% 61
 \BOOKMARK [2][-]{subsection.5.1.1}{Nash Bargaining Solution}{section.5.1}% 62
@@ -65,14 +65,14 @@
 \BOOKMARK [2][-]{subsection.5.1.4}{Reservation curve}{section.5.1}% 65
 \BOOKMARK [2][-]{subsection.5.1.5}{Distance}{section.5.1}% 66
 \BOOKMARK [1][-]{section.5.2}{Reactive concession strategy compared to the non-reactive concession strategy}{chapter.5}% 67
-\BOOKMARK [1][-]{section.5.3}{Reactive mixbed vs non-reactive }{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.4}{Changing the l value for the mixbed}{chapter.5}% 69
-\BOOKMARK [2][-]{subsection.5.4.1}{Mixbed 2 water}{section.5.4}% 70
-\BOOKMARK [2][-]{subsection.5.4.2}{Mixbed 10 water}{section.5.4}% 71
-\BOOKMARK [1][-]{section.5.5}{Discussion}{chapter.5}% 72
-\BOOKMARK [2][-]{subsection.5.5.1}{reactive vs non-reactive}{section.5.5}% 73
-\BOOKMARK [1][-]{section.5.6}{Solution space}{chapter.5}% 74
-\BOOKMARK [2][-]{subsection.5.6.1}{reactive mixbed vs non-reactive}{section.5.6}% 75
+\BOOKMARK [1][-]{section.5.3}{Reactive Mixbed vs non-reactive }{chapter.5}% 68
+\BOOKMARK [1][-]{section.5.4}{Changing the l value for the Mixbed}{chapter.5}% 69
+\BOOKMARK [2][-]{subsection.5.4.1}{Mixbed ratio 2:1:1}{section.5.4}% 70
+\BOOKMARK [2][-]{subsection.5.4.2}{Mixbed ratio 10:1:1}{section.5.4}% 71
+\BOOKMARK [1][-]{section.5.5}{Evaluation}{chapter.5}% 72
+\BOOKMARK [2][-]{subsection.5.5.1}{Reactive concession strategy compared to the non-reactive concession strategy}{section.5.5}% 73
+\BOOKMARK [2][-]{subsection.5.5.2}{Reactive Mixbed compared to non-reactive other agents}{section.5.5}% 74
+\BOOKMARK [2][-]{subsection.5.5.3}{Different values for l}{section.5.5}% 75
 \BOOKMARK [0][-]{chapter.6}{Conclusion and Further Work}{}% 76
 \BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 77
 \BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 78

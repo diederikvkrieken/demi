@@ -32,70 +32,69 @@
 \contentsline {subsection}{\numberline {3.2.4}Holonic Systems}{18}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Task/resource allocation}{19}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Scheduling and planning}{19}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Framework}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Size and modularity}{21}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.3}Framework}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Size and modularity}{22}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Dynamicity (Time Scale/Changeability)}{22}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Solution Quality}{22}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Complexity}{23}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Negotiation}{23}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Framework overview}{23}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Negotiation}{24}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Negotiation Protocol}{25}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Negotiation Strategies}{26}{subsection.3.4.2}
 \contentsline {subsubsection}{Concession Strategy}{26}{section*.12}
 \contentsline {paragraph}{Reactive Concession protocol}{27}{section*.13}
-\contentsline {subsection}{\numberline {3.4.3}Negotiation States}{27}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Evaluating /equilibrium solutions}{27}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Principled Negotiation}{29}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.3}Negotiation States}{28}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Evaluating /equilibrium solutions}{28}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Principled Negotiation}{30}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}Negotiation using a mediator}{30}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Mapping of negotiation protocols}{30}{subsection.3.4.7}
-\contentsline {subsubsection}{Single-Issue}{30}{section*.19}
+\contentsline {subsection}{\numberline {3.4.7}Mapping of negotiation protocols}{31}{subsection.3.4.7}
+\contentsline {subsubsection}{Single-Issue}{32}{section*.19}
 \contentsline {subsubsection}{Multi-Issue}{32}{section*.20}
 \contentsline {subsubsection}{Multi-lateral}{33}{section*.22}
-\contentsline {subsubsection}{Heuristic methods in negotiation}{33}{section*.23}
-\contentsline {subsubsection}{Learning methods in Negotiation}{34}{section*.24}
+\contentsline {subsubsection}{Heuristic methods in negotiation}{34}{section*.23}
+\contentsline {subsubsection}{Learning methods in Negotiation}{35}{section*.24}
 \contentsline {section}{\numberline {3.5}Negotiation in Manufacturing}{35}{section.3.5}
 \contentsline {chapter}{\numberline {4}Research Design \& Application}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Mapping of Literature on usecase}{38}{section.4.1}
-\contentsline {section}{\numberline {4.2}Mapping of Negotiation}{38}{section.4.2}
-\contentsline {section}{\numberline {4.3}Demineralization of water}{38}{section.4.3}
-\contentsline {section}{\numberline {4.4}Negotiation model}{40}{section.4.4}
-\contentsline {section}{\numberline {4.5}Details of the Agents}{41}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Reactive concession strategy}{41}{subsection.4.5.1}
-\contentsline {subsubsection}{Offer generation}{42}{section*.28}
-\contentsline {subsection}{\numberline {4.5.2}Anion}{42}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.1}Demineralization of water}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}Negotiation model}{39}{section.4.2}
+\contentsline {section}{\numberline {4.3}Details of the Agents}{40}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Reactive concession strategy}{41}{subsection.4.3.1}
+\contentsline {subsubsection}{Offer generation}{41}{section*.28}
+\contentsline {subsection}{\numberline {4.3.2}Anion}{42}{subsection.4.3.2}
 \contentsline {subsubsection}{Utility function}{42}{section*.30}
-\contentsline {subsection}{\numberline {4.5.3}Cation}{44}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Neut}{45}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Mixbed}{46}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Negotiations among the agents}{46}{section.4.6}
-\contentsline {section}{\numberline {4.7}Algorithm}{49}{section.4.7}
-\contentsline {section}{\numberline {4.8}Result interpretation}{51}{section.4.8}
-\contentsline {section}{\numberline {4.9}Proof of convergence}{51}{section.4.9}
-\contentsline {chapter}{\numberline {5}Simulation comparison \& evaluations}{52}{chapter.5}
-\contentsline {section}{\numberline {5.1}Parameters}{52}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Nash Bargaining Solution}{52}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Non-reactive concession strategy}{53}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Reactive Concession strategy}{53}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Reservation curve}{54}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Distance}{54}{subsection.5.1.5}
-\contentsline {subsubsection}{Threshold \& maximum number of rounds}{54}{section*.38}
-\contentsline {section}{\numberline {5.2}Reactive concession strategy compared to the non-reactive concession strategy}{55}{section.5.2}
-\contentsline {section}{\numberline {5.3}Reactive mixbed vs non-reactive }{56}{section.5.3}
-\contentsline {section}{\numberline {5.4}Changing the $l$ value for the mixbed}{56}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Mixbed 2 water}{57}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Mixbed 10 water}{57}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Discussion}{61}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}reactive vs non-reactive}{61}{subsection.5.5.1}
-\contentsline {subsubsection}{Situation at the 0.2 ru}{61}{section*.47}
-\contentsline {paragraph}{The solution space}{61}{section*.50}
-\contentsline {section}{\numberline {5.6}Solution space}{61}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}reactive mixbed vs non-reactive}{61}{subsection.5.6.1}
-\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{65}{section.6.1}
-\contentsline {section}{\numberline {6.2}Discussion}{65}{section.6.2}
-\contentsline {section}{\numberline {6.3}Further research}{66}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Holonic agents}{66}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Utility function}{67}{subsection.6.3.2}
-\contentsline {subsubsection}{Reservation curve}{67}{section*.56}
-\contentsline {subsection}{\numberline {6.3.3}Continue negotiation after group agreement}{67}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Extra concession strategies}{68}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Heuristic learning methods}{68}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {4.3.3}Cation}{44}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Neut}{45}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Mixbed}{45}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Negotiations among the agents}{46}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}The solution space}{49}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Algorithm}{50}{section.4.5}
+\contentsline {section}{\numberline {4.6}Result interpretation}{52}{section.4.6}
+\contentsline {section}{\numberline {4.7}Proof of convergence}{52}{section.4.7}
+\contentsline {chapter}{\numberline {5}Simulation comparison \& evaluations}{53}{chapter.5}
+\contentsline {section}{\numberline {5.1}Parameters}{53}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Nash Bargaining Solution}{53}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Non-reactive concession strategy}{54}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Reactive Concession strategy}{54}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Reservation curve}{55}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Distance}{55}{subsection.5.1.5}
+\contentsline {subsubsection}{Threshold \& maximum number of rounds}{55}{section*.40}
+\contentsline {section}{\numberline {5.2}Reactive concession strategy compared to the non-reactive concession strategy}{56}{section.5.2}
+\contentsline {section}{\numberline {5.3}Reactive Mixbed vs non-reactive }{58}{section.5.3}
+\contentsline {section}{\numberline {5.4}Changing the $l$ value for the Mixbed}{60}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Mixbed ratio 2:1:1}{60}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Mixbed ratio 10:1:1}{60}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Evaluation}{63}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Reactive concession strategy compared to the non-reactive concession strategy}{63}{subsection.5.5.1}
+\contentsline {subsubsection}{Situation at the 0.2 ru}{63}{section*.49}
+\contentsline {subsection}{\numberline {5.5.2}Reactive Mixbed compared to non-reactive other agents}{65}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Different values for $l$}{65}{subsection.5.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{66}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{66}{section.6.1}
+\contentsline {section}{\numberline {6.2}Discussion}{66}{section.6.2}
+\contentsline {section}{\numberline {6.3}Further research}{67}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Holonic agents}{67}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Utility function}{68}{subsection.6.3.2}
+\contentsline {subsubsection}{Reservation curve}{69}{section*.54}
+\contentsline {subsection}{\numberline {6.3.3}Continue negotiation after group agreement}{69}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Extra concession strategies}{69}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Heuristic learning methods}{69}{subsection.6.3.5}

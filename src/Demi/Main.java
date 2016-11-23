@@ -16,10 +16,11 @@ public class Main {
         */
         for (int i = 1; i <= 13; i++) {
             //Model mod = new Model();
-            Model mod = new Model(i, 1);
+            Model mod = new Model(i, water_ratio);
             //Algorithm based on Zheng etal 2015.
             Controller ctrl = new Controller(mod);
             ctrl.runSimulation();
+            ctrl.runSimulation(method);
         }
 
     }

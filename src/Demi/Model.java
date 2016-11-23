@@ -48,11 +48,11 @@ public class Model {
         }
     }
 
-    public Model(int round, int method){
+    public Model(int round, int water_ratio){
 
         this.roundnumber = round;
         //init agents
-        this.agents = this.set.initializeAgents(round);
+        this.agents = this.set.initializeAgents(round, water_ratio);
 
         //init states
         int i =0;

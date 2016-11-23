@@ -57,6 +57,20 @@ public class Settings {
         return agents;
     }
 
+    public Agent[] initializeAgents(int round, int water_ratio){
+        //initialize nAgents agents
+        Agent[] agents = new Agent[nAgents];
+        agents[0] = new Anion(names[0]);
+        agents[1] = new Cation(names[1]);
+        agents[2] = new Mixbed(names[2], water_ratio);
+        agents[3] = new Neut(names[3]);
+
+        for (int i = 0; i < nAgents; i++) {
+            agents[i].setMinimumUtility(reservation[round-1]);
+        }
+        return agents;
+    }
+
     //GETTERS & SETTERS
     public String[] getNames() {
         return names;

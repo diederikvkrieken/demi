@@ -15,7 +15,7 @@ public class Controller {
     private Model mod;
     private boolean isConverge = false;
     private double tolerance = 0.05;
-    int nRounds = 200;
+    private int nRounds = 200;
     public Controller(Model model){
         this.mod = model;
     }
@@ -28,6 +28,9 @@ public class Controller {
         return(acid +base + water);
     }
 
+    public void runSimulation(int method){
+
+    }
 
     public void runSimulation(){
         int i =1;

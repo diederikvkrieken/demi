@@ -12,12 +12,14 @@ public class Mixbed extends Agent {
     //sum is the sum of the variables in the utility function such that
     // exp(a*base + b*acid +c * water)/(a+b+c)
     // (a+b+c) == sum
-    int sum = 3;
 
+    int water_ratio = 1;
+
+    int sum = 2+water_ratio;
     @Override
     public double utility(State offer){
         double value;
-        value = exp(offer.getBase() + offer.getAcid() + offer.getWater())/exp(sum);
+        value = exp(offer.getBase() + offer.getAcid() + water_ratio*offer.getWater())/exp(sum);
         return value;
     }
 
@@ -98,6 +100,11 @@ public class Mixbed extends Agent {
 
     Mixbed(String name){
         super(name);
+    }
+
+    Mixbed(String name, int ratio){
+        super(name);
+        this.water_ratio = ratio;
     }
 
 }

@@ -107,4 +107,9 @@ public class Mixbed extends Agent {
         this.water_ratio = ratio;
     }
 
+
+    int getWater_ratio(){
+        return this.water_ratio;
+    }
+
 }

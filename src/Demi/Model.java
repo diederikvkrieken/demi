@@ -1,7 +1,6 @@
 package Demi;
 
 import com.opencsv.CSVWriter;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,40 +23,33 @@ public class Model {
 
     private Agent[] agents;
 
+    //IF single situation is run, only single file, check with roundnummer.
+    // Roundnumber stands for the reservation utility used.
+    // These are stored in the settings.
     private int roundnumber = 99;
 
     public Model(){
-
         //init agents
         this.agents = this.set.initializeAgents();
-
         //init states
-        int i =0;
-
-        offers.add(i, new ArrayList<State>());
-        for (Agent a:agents) {
-            int ag = set.name2number(a.getName());
-            offers.get(i).add(ag, set.getStartStates()[ag]);
-            standingOffers[ag] = set.getStartStates()[ag];
-            a.addCurrentOffer(set.getStartStates()[ag]);
-            a.setPrevBestOffer(set.getStartStates());
-        }
-        //Each agent stores the preferred offer of the other agents
-        for (Agent a :agents) {
-            a.setPrevOffer(offers.get(i));
-        }
+        initializeStates();
     }
 
     public Model(int round, int water_ratio){
-
         this.roundnumber = round;
         //init agents
         this.agents = this.set.initializeAgents(round, water_ratio);
-
         //init states
-        int i =0;
+        initializeStates();
+    }
 
-        offers.add(i, new ArrayList<State>());
+
+    //initialize states in model
+    private void initializeStates(){
+        int i =0;
+        offers.add(i, new ArrayList<>());
+        //For each agent get the preferred initial state
+        //and add these to each agents knowledge
         for (Agent a:agents) {
             int ag = set.name2number(a.getName());
             offers.get(i).add(ag, set.getStartStates()[ag]);
@@ -72,17 +64,17 @@ public class Model {
     }
 
     // A proposal: the offer is added to the list and to the current offers
-    public void propose(Agent ag, State offer, int t){
+    void propose(Agent ag, State offer, int t){
         offers.get(t).add(set.name2number(ag.getName()), offer);
         standingOffers[set.name2number(ag.getName())] = offer;
     }
 
-    public void newRound(int t){
-        offers.add(t, new ArrayList<State>());
+    void newRound(int t){
+        offers.add(t, new ArrayList<>());
     }
 
     //Write offers to csv file
-    public void writeToCSV() throws IOException {
+    void writeToCSV() throws IOException {
 
         String temp;
         if (this.roundnumber == 99 ){
@@ -99,7 +91,6 @@ public class Model {
             e.printStackTrace();
         }
 
-
         for(ArrayList<State> each: offers){
             for (State s:each) {
                 writer.writeNext(s.toStringForCSV());
@@ -115,11 +106,11 @@ public class Model {
     //Write distance to CSV file
     //Below is for the csv write of distance
     private ArrayList<Double> maxdistance =new ArrayList<>();
-    public void addDistance(double distance){
+    void addDistance(double distance){
         maxdistance.add(distance);
     }
 
-    public void writeToCSVdistance() throws IOException {
+    void writeToCSVDistance() throws IOException {
 
         String temp;
         if (this.roundnumber == 99 ){
@@ -152,15 +143,14 @@ public class Model {
     }//end of writeTOCSV
 
     //Write concessions to CSV file
-    //Below is for the csv write of consession
-    public void addConcession(int i, ArrayList<Double> con){
-//        System.out.println("Concession is: "+con.toString());
+    //Below is for the csv write of concession
+    void addConcession(int i, ArrayList<Double> con){
         concession.add(i, con);
     }
 
     private ArrayList<ArrayList<Double>> concession = new ArrayList<>();
 
-    public void writeToCSVconcession() throws IOException {
+    void writeToCSVconcession() throws IOException {
 
         String temp;
         if (this.roundnumber == 99 ){

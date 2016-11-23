@@ -2,10 +2,8 @@ package Demi;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import static java.lang.Math.abs;
-import static java.lang.Math.log;
 
 /**
  * Created by diederik.van.krieken on 13-9-2016.
@@ -29,11 +27,22 @@ public class Controller {
     }
 
     public void runSimulation(int method){
-
+        int i =1;
+        //For each agent, calculate the average of the
+        for (Agent a:mod.getAgents()) {
+            a.calculateWeight(mod, i);
+        }
+        while(!isConverge && i < nRounds) {
+            System.out.println("Round #: "+i);
+            mod.newRound(i);
+            run(method);
+            i++;
+        }
     }
 
     public void runSimulation(){
         int i =1;
+        //Each agent calculate their average weight.
         for (Agent a:mod.getAgents()) {
             a.calculateWeight(mod, i);
         }
@@ -53,7 +62,7 @@ public class Controller {
         }
 
         try {
-            mod.writeToCSVdistance();
+            mod.writeToCSVDistance();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,8 +105,6 @@ public class Controller {
             //IF it is the agent which is supposed to create the offer
             if (agent.getName().equals(name)) {
                 System.out.println("Proposal by agent: " + name);
-
-
                 //Start reactive concession strategy
                 //Now calculate reactive concession for each agent
                 double deltaU[] = new double[mod.getn_agents()+1];
@@ -113,7 +120,7 @@ public class Controller {
 //                        System.out.println("Utility of offer = " + agent.utility(ag.getOffer())+" and minimum util = "+agent.getMinimumUtility());
                     } else {
                         //calculate reactive if offer < minimum
-//                        System.out.println("reacctivee");
+//                        System.out.println("reactive");
 //                        System.out.println("agent: "+mod.getAgentNumber(ag)+" Standing "+ mod.getStandingOffer(ag)+" x0: "+ mod.getRecentOffers(0).get(mod.getAgentNumber(ag))+" Last " + mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
                         deltaU[i] = agent.reactiveConcessionStrategy(t, mod.getAgentNumber(ag), mod.getStandingOffer(ag), mod.getRecentOffers(0).get(mod.getAgentNumber(ag)), mod.getRecentOffers(t - 1).get(mod.getAgentNumber(agent)));
                         i++;
@@ -159,7 +166,7 @@ public class Controller {
                 concessionArray.add(concession);
 
             } else {
-                System.out.println("Other agent update "+agent.getName());
+                System.out.println("\t Other agent update "+agent.getName());
 
                 //Add last offer tot the new list
                 State x = agent.getOffer();
@@ -191,11 +198,14 @@ public class Controller {
             isConverge = true;
         }
 
+//        Agent at =  mod.getAgents()[2];
+//        int wa = ((Mixbed)at).getWater_ratio();
+//        System.out.println("Mixbed "+wa);
+
         //For CSV file
         mod.addDistance(maxDistance);
         mod.addConcession(t-1, concessionArray);
         mod.addDistanceAvg(t-1, distanceAvgArray);
         mod.addDesire(t-1, desireArray);
-        System.out.println(distanceAvgArray);
     }
 }

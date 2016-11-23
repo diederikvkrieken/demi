@@ -14,13 +14,13 @@ public class Settings {
     // Name is checked to see if it is the agent to check
     private String[] names = {"Anion", "Cation", "Mixbed", "Neut"};
 
-    //What value does the first state have?
     // Order is acid base water
-    // private double[] firstStateValues = {0.100, 0.120, 0.150};
     private State[] startStates = new State[nAgents];
+
+    //Reseration curve values.
     private double[] reservation = {0.05, 0.10, 0.15,0.20,0.25,0.3,0.35, 0.4,0.45,0.5,0.55,0.6, 0.65};
 
-
+    //Set the states for which the agents have the highest utility.
     public Settings(){
         //Anion
         startStates[0] = new State(0,1,0);

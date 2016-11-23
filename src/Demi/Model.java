@@ -48,7 +48,7 @@ public class Model {
         }
     }
 
-    public Model(int round){
+    public Model(int round, int method){
 
         this.roundnumber = round;
         //init agents

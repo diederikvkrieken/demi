@@ -3,8 +3,13 @@ package Demi;
 import static java.lang.Math.*;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
+ * The Neut agent, has the utility function -Acid - Base
+ * Given a state, has its own utility,
+ * And point to indifference curve function
+ * Ensures that the new offer is [0,1]
  */
+
 public class Neut extends Agent {
     /*
     * Anions contains 6 filters

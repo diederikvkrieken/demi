@@ -4,8 +4,14 @@ import static java.lang.Math.exp;
 import static java.lang.Math.log;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
+ * The anion agent, has the utility function (l) Water + Acid + Base
+ * The l stands for the ratio water vs base/acid
+ * Given a state, has its own utility,
+ * And point to indifference plane
+ * Ensures that the new offer is [0,1] ^3
  */
+
 public class Mixbed extends Agent {
 
     //set parameters
@@ -13,9 +19,9 @@ public class Mixbed extends Agent {
     // exp(a*base + b*acid +c * water)/(a+b+c)
     // (a+b+c) == sum
 
-    int water_ratio = 1;
+    private int water_ratio = 1;
 
-    int sum = 2+water_ratio;
+    private int sum = 2+water_ratio;
     @Override
     public double utility(State offer){
         double value;
@@ -70,7 +76,6 @@ public class Mixbed extends Agent {
         double second_cor = x.getBase();
         double third_cor = x.getWater();
         if(third_cor < 0){
-            /*TODO project onto the line below*/
             third_cor = 0;
             //lineToPoint(1, 1, log(this.desirableUtility)+3, first_cor, second_cor);
         }else if(third_cor >1){
@@ -107,9 +112,7 @@ public class Mixbed extends Agent {
         this.water_ratio = ratio;
     }
 
-
     int getWater_ratio(){
         return this.water_ratio;
     }
-
 }

@@ -1,11 +1,12 @@
 package Demi;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.lang.reflect.*;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
+ * Setting file contains the settings for the initialization of the Agents,
+ * And their preferred offers.
+ * The names equal the class names
  */
 public class Settings {
 
@@ -17,11 +18,16 @@ public class Settings {
     // Order is acid base water
     private State[] startStates = new State[nAgents];
 
-    //Reseration curve values.
+    String getReservationString() {
+        String st = "0.05 to 0.6";
+        return st;
+    }
+
+    //Reservation curve values.
     private double[] reservation = {0.05, 0.10, 0.15,0.20,0.25,0.3,0.35, 0.4,0.45,0.5,0.55,0.6, 0.65};
 
     //Set the states for which the agents have the highest utility.
-    public Settings(){
+    Settings(){
         //Anion
         startStates[0] = new State(0,1,0);
         //Cation
@@ -32,7 +38,7 @@ public class Settings {
         startStates[3] = new State(0,0,0);
     }
 
-    public Agent[] initializeAgents(){
+    Agent[] initializeAgents(){
         //initialize nAgents agents
         Agent[] agents = new Agent[nAgents];
         agents[0] = new Anion(names[0]);
@@ -57,7 +63,7 @@ public class Settings {
         return agents;
     }
 
-    public Agent[] initializeAgents(int round, int water_ratio){
+    Agent[] initializeAgents(int round, int water_ratio){
         //initialize nAgents agents
         Agent[] agents = new Agent[nAgents];
         agents[0] = new Anion(names[0]);
@@ -76,15 +82,15 @@ public class Settings {
         return names;
     }
 
-    public String getName(int i){
+    String getName(int i){
         return names[i];
     }
 
-    public int getnAgents() {
+    int getNAgents() {
         return nAgents;
     }
 
-    public int name2number(String name){
+    int name2number(String name){
         int number = Arrays.asList(names).indexOf(name);
         return number;
     }
@@ -93,12 +99,8 @@ public class Settings {
         return names[i];
     }
 
-    public State[] getStartStates() {
+    State[] getStartStates() {
         return startStates;
-    }
-
-    public void setStartStates(State[] startStates) {
-        this.startStates = startStates;
     }
 
 

@@ -7,7 +7,11 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
+ * The anion agent, has the utility function -Water + Base
+ * Given a state, has its own utility,
+ * And point to indifference curve function
+ * Ensures that the new offer is [0,1]
  */
 public class Anion extends Agent {
 

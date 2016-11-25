@@ -4,8 +4,13 @@ import static java.lang.Math.*;
 import static java.lang.Math.max;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
+ * The cation agent, has the utility function -Water + Acid
+ * Given a state, has its own utility,
+ * And point to indifference curve function
+ * Ensures that the new offer is [0,1]
  */
+
 public class Cation extends Agent {
 
     @Override

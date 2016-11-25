@@ -1,7 +1,5 @@
 package Demi;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.util.ArrayList;
 import java.lang.Math;
 import java.util.Iterator;
@@ -9,13 +7,15 @@ import java.util.Iterator;
 import static java.lang.Math.pow;
 
 /**
- * Created by diederik.van.krieken on 12-9-2016.
+ * Created by Diederik van Krieken on 12-9-2016.
+ * The agents have their own Utility and their projection function
+ * Anion, Cation, Mixbed & Neut extend the Agent Class
  */
 public class Agent {
 
     private State currentOffer; //x^j_t
     private State currentWeight; // w_{t-1}
-    private ArrayList<State> prevOffer = new ArrayList<State>(); //The previous 4 offers
+    private ArrayList<State> prevOffer = new ArrayList<>(); //The previous 4 offers
 
     private State[] prevBestOf; //Let xj [i,−1](t) be Agent j’s next-to-last best offer,
     // which is the offer that provides the highest utility to Agent i among all offers
@@ -23,7 +23,7 @@ public class Agent {
     // (i.e., not including Agent j’s standing offer) in period t.
 
     //desirableUtility = the monotonically decreasing concession strategy
-    //current desired utililty.
+    //current desired utility.
     double desirableUtility;
 
     //Reservation curve (in our model line):
@@ -35,7 +35,7 @@ public class Agent {
         this.prevBestOf = new State[4];
     }
 
-    protected String name;
+    private String name;
 
     public Agent(String name) {
         this.name = name;
@@ -44,20 +44,19 @@ public class Agent {
     }
 
 
-    public double reactiveConcessionStrategy(int t, int ag, State of, State ofFirst, State ofLast){
+    // The reactive concession strategy as proven by Zheng.
+    double reactiveConcessionStrategy(int t, int ag, State of, State ofFirst, State ofLast){
         double deltaUij;
         double deltaUij1 = utility(of) - utility(prevBestOf[ag]);
         double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
         deltaUij = Math.max(deltaUij1, deltaUij2);
         deltaUij = Math.max(deltaUij, 0);
-
-//        System.out.println("delta 1: "+deltaUij1+" delta 2: "+deltaUij2+" delta u ij is: "+deltaUij);
         return deltaUij;
 
     }
 
-     public double nonreactiveConcessionStrategyReturn(int t){
-
+    // The monotonic concession strategy. Amount fixed
+     double nonreactiveConcessionStrategyReturn(int t){
         if (t>100){
             t=100;
         }
@@ -65,23 +64,25 @@ public class Agent {
         return concession;
     }
 
-    public State calculateWeight(Model mod, int t){
+    // The weight of all the offers of the agents
+    // We have a normalized weight value, meaning that the sum of the offers is divided by the number of agents
+    // A possible extension could be a more specific weight function
+    State calculateWeight(Model mod, int t){
         State weight = new State();
         double base =0;
         double acid = 0;
         double water = 0;
         Iterator<State> it = prevOffer.iterator();
-//        Iterator<State> it = mod.getRecentOffers(t-1).iterator();
         while (it.hasNext()){
             State offer = it.next();
             base += offer.getBase();
             acid += offer.getAcid();
             water += offer.getWater();
         }
-        weight.setAcid(acid/mod.getn_agents());
-        weight.setBase(base/mod.getn_agents());
-        weight.setWater(water/mod.getn_agents());
-        //TODO Ensure only the correct weight are updated?
+        weight.setAcid(acid/mod.getN_agents());
+        weight.setBase(base/mod.getN_agents());
+        weight.setWater(water/mod.getN_agents());
+        //Possible extension Ensure only the correct weight are updated?
 //        weight.setAcid(acid/3);
 //        weight.setBase(base/3);
 //        weight.setWater(water/3);
@@ -89,10 +90,6 @@ public class Agent {
             System.out.println("Something weird in t="+t);
         }
         this.currentWeight = weight;
-        if( this.getName().equals("Cation")){
-            System.out.println(weight.toString());
-            System.out.println(this.desirableUtility);
-        }
         return weight;
     }
 
@@ -118,7 +115,7 @@ public class Agent {
     //HERE POINT ON LINE IS CALCULATED
     //ax+by+c = 0
     //x0, y0 is original point
-    public double[] lineToPoint(double a, double b, double c, double x, double y){
+    double[] lineToPoint(double a, double b, double c, double x, double y){
         double[] xy = new double[2];
         //x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2}
         xy[0] = (((b*((b*x) - (a*y)))-a*c)/(pow(a,2)+pow(b,2)));
@@ -141,7 +138,7 @@ public class Agent {
 
     //GETTERS & SETTERS
 
-    public State getCurrentWeight() {
+    State getCurrentWeight() {
         return currentWeight;
     }
 
@@ -149,16 +146,15 @@ public class Agent {
         this.currentWeight = currentWeight;
     }
 
-    // Here the preffered offers of the other agents.
-    public void setPrevBestOffer(int i,State offer){
+    void setPrevBestOffer(int i,State offer){
         this.prevBestOf[i] = offer;
     }
 
-    public void setPrevBestOffer(State[] offer){
+    void setPrevBestOffer(State[] offer){
         this.prevBestOf = offer;
     }
 
-    public State getPrevBestOffer(int i){
+    State getPrevBestOffer(int i){
         //System.out.println(name+" for agent "+i+" has prevBestOf "+prevBestOf[i]+" with utility "+ +utility(prevBestOf[i]));
         return prevBestOf[i];
     }
@@ -167,11 +163,11 @@ public class Agent {
         return prevBestOf;
     }
 
-    public double getDesirableUtility() {
+    double getDesirableUtility() {
         return desirableUtility;
     }
 
-    public void setDesirableUtility(double delta) {
+    void setDesirableUtility(double delta) {
         if (this.desirableUtility-delta > minimumUtility) {
             this.desirableUtility = this.desirableUtility  - delta;
         }else{
@@ -179,7 +175,7 @@ public class Agent {
         }
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -191,15 +187,15 @@ public class Agent {
         return currentOffer;
     }
 
-    public void addCurrentOffer(State of){
+    void addCurrentOffer(State of){
         currentOffer = of;
     }
 
-    public double getMinimumUtility() {
+    double getMinimumUtility() {
         return minimumUtility;
     }
 
-    public void setMinimumUtility(double minimumUtility) {
+    void setMinimumUtility(double minimumUtility) {
         this.minimumUtility = minimumUtility;
     }
 
@@ -207,7 +203,7 @@ public class Agent {
         return prevOffer;
     }
 
-    public void setPrevOffer(ArrayList<State> prevOffer) {
+    void setPrevOffer(ArrayList<State> prevOffer) {
         this.prevOffer = prevOffer;
     }
 }

@@ -92,9 +92,9 @@
 \contentsline {section}{\numberline {6.1}Conclusion}{67}{section.6.1}
 \contentsline {section}{\numberline {6.2}Discussion}{68}{section.6.2}
 \contentsline {section}{\numberline {6.3}Further research}{68}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Holonic agents}{68}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Utility function}{69}{subsection.6.3.2}
-\contentsline {subsubsection}{Reservation curve}{69}{section*.54}
+\contentsline {subsection}{\numberline {6.3.1}Holonic agents}{69}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Utility function}{70}{subsection.6.3.2}
+\contentsline {subsubsection}{Reservation curve}{70}{section*.54}
 \contentsline {subsection}{\numberline {6.3.3}Continue negotiation after group agreement}{71}{subsection.6.3.3}
 \contentsline {subsection}{\numberline {6.3.4}Extra concession strategies}{71}{subsection.6.3.4}
 \contentsline {subsection}{\numberline {6.3.5}Heuristic learning methods}{71}{subsection.6.3.5}

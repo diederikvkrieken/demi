@@ -3,7 +3,7 @@ package Demi;
 import java.util.Arrays;
 
 /**
- * Created by diederik.van.krieken on 13-9-2016.
+ * Created by Diederik van Krieken on 13-9-2016.
  * A State consists of acid, base, and water
  */
 public class State {
@@ -14,14 +14,14 @@ public class State {
     private int round;
 
 
-    public State(){
+    State(){
         this.base = 0;
         this.acid = 0;
         this.water = 0;
 
     }
 
-    public State (double a, double b, double w){
+    State (double a, double b, double w){
         this.acid = a;
         this.base = b;
         this.water = w;
@@ -78,7 +78,7 @@ public class State {
         this.water = water;
     }
 
-    public  String [] toStringForCSV(){
+    String [] toStringForCSV(){
         String [] output = new String[n_issues];
         output[0] = Double.toString(acid);
         output[1] = Double.toString(base);

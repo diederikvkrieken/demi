@@ -7,7 +7,7 @@ The so-called agent-based computation is a solution for many of the problems tha
 
 In this literature review, an overview of the manufacturing processes and current agent technologies/solutions are given. Using such a decentralized agent solution is only optimal when certain process and design requirements are realised on the manufacturing side. We will derive a framework on which to decide a centralized or a decentralized system. After the framework is concluded with, we will give an overview of negotiation solutions in agent systems. From this we find an new approach to design a Multi-Agent System for a business process.
 
-\section{Manufacturing processes}
+\section{Manufacturing Processes}
 %Overview of manufacturing. Asset management, process control incl predictive maintenance and planningxx	, Programmable logic controller, real time control
 	
 A new paradigm shift in the discrete manufacturing world requires a production that is competitive but also sustainable. Most of these solutions lie in the field of Cyber-Physical systems. A Cyber-Physical entity is one that integrates its hardware with a cyber-representation as a virtual representation. By doing so, it combines two worlds: the embedded systems and the software worlds. By doing so it breaks the traditional automation pyramid, and introduces a new more decentralized way of function \citep{leitao2016smart}. This is also visualized in \Cref{fig:traditional-automation-pyramid1}. %By making these systems intelligent, and connecting the design principles, the current lacking of industrial can be fully leveraged.
@@ -33,7 +33,7 @@ By creating an overview of the different layers in the manufacturing process, an
 %	The term scheduling is also used in various contexts and can be closely interlinked with lots of related optimization problems, such as maintenance planning, energy and inventory optimization, cutting-stock problems in the paper mills, etc. Furthermore, the time horizon largely depends on whether the focus is on short-term, mid-term or long-term scheduling or planning \citep{pinedo2005planning}. However, in this review the term planning will be used interchangeable with scheduling.	
 
 
-\subsection{Asset management}
+\subsection{Asset Management}
 On the top of the ANSI structure is the overview of the manufacturing process, also known as Asset Management, and is the broad overview of the administration of assets. This includes the design, construction, use, maintenance, repair, disposal and recycling of assets. For most corporations and enterprises, the focus lies on the operational aspects of the assets, due to the fact that asset failures result in production or service delays. Therefore, insufficient asset management on one side results in loss of the asset itself, and on the other side loss due to productions delays and loss of service \citep{trappey2013multi}.  A lot is currently being researched, for example by \citet{leitao2009agent}, on asset management, and especially the condition monitoring and prediction are a well researched. This is due to the shift from reactive repair work to real-time condition monitoring, prediction, diagnostics and pre-scheduled maintenance. Also, traditional asset management approaches are poorly suited for current equipment failure solutions. %\Todo{Onderhoud + inspecction. Gebruik woord ``Asset Integrity''}
 	
 Traditional manufacturing control systems are unable to be sufficiently responsive, flexible, robust and reconfigurable due to the fact that they are built upon a centralised and hierarchical control structures. These are optimal for perfect optimization, but weakly responsive to change. Another consequence of this structure is that a single failure can shut down an entire system \citep{leitao2009agent}. This requires a change to decentralized asset management, demanding for new process control methods.
@@ -43,7 +43,7 @@ Traditional manufacturing control systems are unable to be sufficiently responsi
 Generally, researchers use agent-based technology to represent real world situations through the use of a computational simulation process, where agents can interact with each other to find a common goal. Typically, in these environments, agents have conflicting goals. In such circumstances, they will negotiate with each other in order to resolve conflicts \citep{rosa2009intelligent}. These methods will be described in \Cref{sec:negotiation}.
 		
 	
-\subsection{Process control}
+\subsection{Process Control}
 One level lower is the order of process control, where there are three different processing methods: discrete, batch and continuous. Each process can be defined in terms of one or more of these methods. A discrete process method is when the production results in separate pieces. These are for example created in Industrial Robotic Solutions. Each robot produces a separate product in the manufacturing process. It is one of the most used manufacturing production application.
 
 Batch production is when specific quantities of the materials have to be combined in particular ways. These are typically food productions. An example is the beer production. In a specific batch, the ingredients are combined, and after a period we have our required product. The last process method is continuous production. This type of control is required if the variables are smooth and uninterrupted in time. The process of the creation of de-mineralized water is a continuous process. The water continuously flows through the system and finalizes in the required product with no interruptions. 
@@ -98,7 +98,7 @@ Currently a lot of research is conducted on this new form of maintenance \citep{
 \subsection{Real-time Monitoring}
 To ensure that processes are running accordingly and continuous planning is applied, real-time monitoring is required. Essential in implementing a real-time plan or schedule is that it has to be generated in seconds. This may be the case if rescheduling is required multiple times a day because of schedule changes. This can be done in two ways. The first way is to review the overall processes and functions performed on the data in real time through graphical charts and bars on a dashboard. This however requires manual input again, or an algorithm that comprehends the all the data. The second method is by implementing a programmable logic controller. By automating the industrial electromechanical processes, in a predictable and repeating sequence by use of a logic ladder, a real-time controller is achievable. However, when using a programmable logic controller, the decision process is done on a very low level, and optimization is difficult.
 
-\section*{Manufacturing with agents}
+\section*{Manufacturing with Agents}
 When dealing with multiple processes, production and manufacturing wise, and have to keep real-time track of the assets with sensors, the most common solution lies in agent solutions \citep{leitao2013past, monostori2016cyber}. This is often easier said than done. In the following section, an introduction in agent-solutions will be given with a focus on manufacturing.
 %
 %
@@ -113,11 +113,11 @@ When dealing with multiple processes, production and manufacturing wise, and hav
 \newpage
 \section{Agent Solutions}
 %Overview, OOP, MAS, Holonic, Negotiation, Planning/Resource allocation, Negotiation in Manufacturing -> framework. 
-The new requirements in production ask for new manufacturing planning. This requires a new planning method, which is best implemented using distributed, decentralized structures \citep{parunak1999industrial}. The basis of a distributed method lies in Object-oriented programming (OOP) and Multi-Agent structures. Using these structures in combination with communication, planning can be optimized. This structure is also similar to that of the ANSI. We have a high level object which can consist of multiple lower level objects. First some terms have to be discussed, after which we can link the manufacturing processes to the agent based solutions.
+The new requirements in production ask for new manufacturing planning. This requires a new planning method, which is best implemented using distributed, decentralized structures \citep{parunak1999industrial}. The basis of a distributed method lies in Object-Oriented Programming (OOP) and Multi-Agent structures. Using these structures in combination with communication, planning can be optimized. This structure is also similar to that of the ANSI. We have a high level object which can consist of multiple lower level objects. First some terms have to be discussed, after which we can link the manufacturing processes to the agent based solutions.
 
-\subsection{Object-oriented programming}
+\subsection{Object-Oriented Programming}
 
-Object-oriented programming (OOP) is a programming method based on the concept of ``objects'', which may contain data and code. For example an object can be a variable, a data structure, or a function, or a combination of these. The code that an object contains can be seen as the behaviour of the object, and as such it is easily interchangeable with an agent, since a method in OOP is a activity associated with an object. An object is made up of data and behaviour, which form the interface that an object presents to the outside world, and thus very similar to an agent \citep{shoham1993agent}. 
+Object-Oriented Programming (OOP) is a programming method based on the concept of ``objects'', which may contain data and code. For example an object can be a variable, a data structure, or a function, or a combination of these. The code that an object contains can be seen as the behaviour of the object, and as such it is easily interchangeable with an agent, since a method in OOP is a activity associated with an object. An object is made up of data and behaviour, which form the interface that an object presents to the outside world, and thus very similar to an agent \citep{shoham1993agent}. 
 
 Agent-oriented programming is a method often used to implement a multi-agent system, see \citep{mahar2012agent} for a thorough overview. In such a system anthropomorphic ideas, like beliefs, desires are used to model the objects, and thus called agents \citep{shoham1993agent}.% Import to note is that based on agent-based programming, see \citet{mahar2012agent} for a thorough overview, 
 
@@ -165,7 +165,7 @@ Another way of looking at agents, and more convenient in the manufacturing world
 
 The concept of holon is based on the idea that complex systems will evolve from simple systems rapidly if there are stable intermediate forms, than if there are not. This means that the resulting complex systems will be traditionally pyramid. However, although it is easy to identify sub-wholes or parts, they do not really exist anywhere, making it decentralized \citep{van1998reference}.
 
-\subsection{Task/resource allocation}
+\subsection{Task and Resource Allocation}
 An example of resource allocation is when a set of agents shares a joint resource. Such a resource can be anything from indefinitely renewed continuous or discrete theoretical resource. By limiting the use of the resource to one agent at the time, negotiation is necessary to ensure that all the agents can use the resource. Usually and often crucial is the preference of the agents. Since the agents have different preferences regarding the resource, it is possible and feasible to divide the resource and create a schedule describing who has access to the resource and when \citep{fatima2014principles}. 
 
 The same principle applies to task allocation, where the agents want to achieve a common goal. To achieve this goal quickly the agents most divide different task, which overlap, and reach an agreement on the optimal planning. 
@@ -187,7 +187,7 @@ See \Cref{sec:negotiation} for the difference in the task or resource allocation
 % fipa FIPA Agent Communication specifications deal with Agent Communication Language (ACL) messages, message exchange interaction protocols, speech act theory-based  communicative acts and content language representations.
 \label{sec:resourceallocation}
 %Such an agents has b firstly beliefs that agent have information about their environment with may be incomplete or in correct; secondly goals, that agent will try to achieve; thirdly actions that agent perform and the effects of those actions; finally ongoing interaction that how agent interact with each other's and their environment over time. For this reason the state of an agent is called its mental state. The mental state of agents is described formally in an extension of standard epistemic logics: besides temporal the knowledge and belief operators
-\subsection{Scheduling and planning}
+\subsection{Scheduling and Planning}
 Since most Process Planning and Scheduling (PPS) problems are NP-hard problems, many MAS have also been deployed to ``solve'' such problems in reasonable time. NP-hard (nondeterministic polynomial) problems are those problems which are at least as hard as the hardest problems in NP \citep{hromkovivc2013algorithmics}. This means that it is possible to reduce the problems in NP to the original problem in polynomial time. Using the decentralized global optimization approach a (sub-optimal) solution can be found. This solution would be found faster than when using an (mixed) integer program~\citep{feng2014multi}. It does however depend on the practical application of the system to see whether it is an NP-hard problem. Furthermore, this does not guarantee an optimal solution, rather that a reasonable solution will be found in reasonable time.
 
 Real-world scheduling problems are usually complex and involve many approaches to find sub-optimal rather than optimal solutions using reasonable computing resources. This is often done using a mathematical programming approach. \citet{zhou2004bus}, tries to solve this using a MAS to heuristically solve the bus maintenance scheduling problem. It is shown that with equal optimality and less computing time without constraint violation it is comparable to the work of a mathematical programming approach.
@@ -316,7 +316,7 @@ An agent’s information state describes the information it has about the negoti
 
 % Since there is no one negotiation protocol that clearly outperforms all others in all scenarios, we need to be able to decide which protocol is most suited for each particular problem. The goal of our work is to meet this challenge by defining a “negotiation handbook”, that is, a collection of design rules which allow us, given a particular negotiation problem, to choose the most appropriate protocol to address it. \cite{marsa2014problems}
 
-\subsection{Evaluating /equilibrium solutions}
+\subsection{Evaluation and Equilibrium Solutions}
 When evaluating the dilemmas of a negotiation between agents, it is essential to determine the Pareto-Frontier. Visualized in \Cref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, lie all the possible agreements, which are all offers, that are acceptable by both agents.
 
 \begin{figure}[h]
@@ -334,7 +334,7 @@ The Nash equilibrium is the best reply to the other players strategies. This mea
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/major_categories_of_game_theory}[h]
+	\includegraphics[width=0.9\linewidth]{img/major_categories_of_game_theory}
 	\caption{The four types of games in game theory from \citet{trappey2013multi}.}
 	\label{fig:majorcategoriesofgametheory}
 \end{figure}
@@ -395,7 +395,7 @@ An example of a common method for negotiation is principled negotiation. This me
 %Contract net protocol is a form of cooperative distributed problem solving that will be discussed in the scheduling section (\Cref{sec:AIscheduling}).
 %\subsubsection{Framework}
 %An overview of these different methods is in Fatima et al.~\cite{fatima2014principles}. Unfortunately this book is still lacking. 
-\subsection{Negotiation using a mediator}
+\subsection{Negotiation using a Mediator}
 A mediator can be used when negotiating, like is used in typical hierarchy, voting, and auction based negotiations. 
 
 Voting is a form of group decision making. The agents participating in the voting will take into account their own preferences as well as those of others when making decision about how to vote. This will often have a strategic flavour. By aiming to rank or order the candidates, a group decision can be made.
@@ -404,7 +404,7 @@ Another option are auctions, a popular mechanism to reach an agreement within th
 
 However, in mediated negotiation, the agents have no desire to make concessions, and an (sub-)optimal solution can not be guaranteed.
 
-\subsection{Mapping of negotiation protocols}
+\subsection{Mapping of Negotiation Protocols}
 An attempt at the visualization of the different negotiation techniques is strived at. Three variables are decided on. Single- vs Multi-Issue negotiation; bi- vs multi-lateral negotiation, and; perfect vs imperfect information negotiation.  
 \begin{figure}[h]
 	\centering
@@ -457,7 +457,7 @@ When looking at single issue negotiation, depending on whether the negotiation h
 
 % First, in a multi-attribute negotiation the preference of an agent over multiple issues can be complex. A traditional way to deal with this is to characterize the preference with a utility function (a mathematical formula) and agents make decisions based on this utility function. However, it is not trivial for a human to construct such a utility function over multiple issues, especially when preference over one issue is impacted by the values of other issues; thus, preference elicitation may take a long time or sometimes be intractable. Second, in a multi-attribute negotiation the solution space is n-dimensional (n>1) rather than a single dimensional line as in a single-attribute negotiation. This makes the negotiation strategy in multi-attribute negotiations complex: because the space is ndimensional, every time an agent plans to concede, she needs to first decide the direction of concession. Apparently there are many choices on the concession direction she can take: to concede on issue 1, …, n or different combinations of the issues. Specifically, the decision on the concession direction may also depend on the opponent’s preference because conceding on the issue more important to the opponent can make the offer more acceptable. Finally, to decide how much to concede is now more complicated because the direction can impact the amount as well. So the burden of computation and reasoning for the negotiation strategy is higher in a multi-attribute negotiation than in a single-attribute negotiation. Third, as mentioned above, in multi-attribute negotiations there exist “Win-Win” situations. For rational agents, they should not “leave extra money on the table”. In other words, the ideal result for the system is to realize a Pareto-optimal (or Pareto-efficient) solution. A Pareto-optimal solution is one which can not be improved further without sacrificing someone’s utility, i.e. if there is another solution from which one of the agents can get more than from this Pareto-optimal solution, then the other agent must get less by that other solution. We say a multi-attribute negotiation model is efficient when agents will reach a Pareto-optimal agreement in the negotiation, if there exists a zone of agreement. \cite{lai2004literature}
 
-\subsubsection{Multi-lateral}
+\subsubsection{Multilateral}
 \label{sec:lit:neg:multilateral}
 The most common used method for multilateral negotiations are contract based methods, most popular being the contract net protocol. Contract net protocol by \citet{smith1980communication} is based on the principle that agents, each with a distinct expertise, can solve sub problems that are required to solve the global problem. This form of cooperative distributed problem solving is based on the assumption that agents in a system implicitly share a common goal, and thus that there is no potential for conflict between them.
 
@@ -476,7 +476,7 @@ If the game is imperfect two sided matching does not work, and a proposal based 
 %Interest-based negotiation (IBN) is a form of argumentation-based negotiation in which agents exchange (1) information about their underlying goals; and (2) alternative ways to achieve these goals \cite{rahwan2009formal}. 
 
 
-\subsubsection{Heuristic methods in negotiation}
+\subsubsection{Heuristic methods in Negotiation}
 \label{sec:lit:learn}
 Most of the negotiation in manufacturing can be seen as multi-lateral multi-issue negotiation. Three important distinctions are to be made, based on \citet{lai2004literature}. 
 \begin{enumerate}

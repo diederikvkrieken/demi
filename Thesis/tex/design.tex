@@ -34,7 +34,7 @@ The coding will be done in Java from scratch. Multiple open-source systems are a
 %As can be seen, negotiation is in the two highest. We focus on this.
 %\todo[uitleggen negotiation]{uitleggen negotiation}
 
-\section{Demineralization of water}
+\section{Demineralization of Water}
 As discussed in the introduction, the usecase for which a Multi-Agent system for production will be implemented is a water demineralization plant. An application of this new model will be applied to a large plant that creates de-mineralized water. By removing all the ions from common water, de-mineralized water is obtained. This water is used for many processes and has many applications. In this plant specifically, it is used for the steam turbines, which generate electricity. By burning the by-product, heat is generated, which creates steam to power the turbines. 
 
 \begin{figure}[h]
@@ -99,7 +99,7 @@ When the negotiations start, each agent will attempt to obtain as much utility a
 
 Since the utility decreases each round, the set of feasible offers increases as well. This means that at time $t$, agent $i$ has the convex set $A^i_t = \{x\in [0,1]^3 \mid u_i(x) \geq s_i(t)   \}$ as possible offers. Since $s_i(t)$ is monotonically decreasing, this means that $\forall t, A^i_1\subseteq A^i_2 \subseteq ... \subseteq A^i$. In this model, we use the amount of utility monotonic concession protocol as described in \Cref{sec:concessionstrat}, since it performs well, and has the advantage of finding a solution in a specific time.
 
-\subsection{Reactive concession strategy}
+\subsection{Reactive Concession Strategy}
 \label{sec:reactiveconcessionstr}
 The reactive concession protocol as described by \citet{zheng2015automated}, and also shown in \Cref{sec:concessionstrat}, is a specific concession strategy to determine the amount of utility to concede. The non-reactive concession follows a predefined concession strategy $s_i^0(1), s_i^0(2),...,s_i^0(T)$, where $T$ is the maximum amount of rounds. The reactive concession, ($s_i(1), s_i(2),..., s_i(T)$), amount is determined by each agent by the utility change resulting from other agents' offers. The nonreactive concession made at time $t$ is $\Delta u_{i0} = s^0_i(1)-s^0_i(t-1)$.
 
@@ -120,7 +120,7 @@ The convex requirement makes it obvious why the reactive concession can be used.
 
 
 
-\subsubsection{Offer generation}
+\subsubsection{Offer Generation}
 When an agent $j$ has offered $x_j\in[0,1]^3$, the next agent $i$ will either accept the offer $x^j_t$, or create a new offer $x^j_{t+1}$. 
 
 To create the new offer, the agent $i$ will first calculate the weight of all the offers by other agents ($j$). This is done by $\sum_{j=1}^{m} a^{i,j}_t x^j_t $ where $\sum_{j=1}^{m}a^{i,j}_t = 1$. For simplicity, we set the $a^{i,j}_t = \frac{1}{m} = \frac{1}{4}$. 
@@ -140,7 +140,7 @@ The anion is the first filter where the untreated water will arrive. It needs ba
 	\label{fig:anionutility}
 \end{figure}
 
-\subsubsection{Utility function}
+\subsubsection{Utility Function}
 %As described in \citet{wong2010multi}, it is possible by combining the input into the utiltiy function of the agent. This is shown in \Cref{fig:wongutiltiyneuralnetwork}. 
 The utility function for the anion filter is set up as follows:
 
@@ -282,7 +282,7 @@ The normalisation is still required, which is carried over to the projection to 
 x = \frac{x_0 + (\ln(u)+12) - (x_0, y_0, z_0)}{12}
 \]
 %These are shown in \Cref{fig:mixreservationfunction1, fig:mixreservationfunction2}.
-\section{Negotiations among the agents}
+\section{Negotiations among the Agents}
 All in all, there are three kinds of sub-negotiations. These are shown in \Cref{fig:agent-plant-base,,fig:agent-plant-acid,,fig:agent-plant-water}.
 
 \begin{figure}[h]
@@ -344,7 +344,7 @@ All in all, there are three kinds of sub-negotiations. These are shown in \Cref{
 
 So although there is a multi-issue negotiation, the only agent that has interest in all three issues is the Mixbed. This means that if an agent proposes 0.7 acid to the anion, the anion will not consider this part of the offer, as in since it can not project this to its' indifference curve. This means that the anions new proposal will also include 0.7 anion, and the adjusted values to the other issues.
 \clearpage
-\subsection{The solution space}
+\subsection{The Solution Space}
 Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agents.
 \begin{figure}[h]
 	\centering
@@ -441,13 +441,13 @@ Afterwards, depending on the concession protocol, their desired utility decrease
 \label{al:algorithm1}
 \end{algorithm}
 \clearpage
-\section{Result interpretation}
+\section{Result Interpretation}
 \label{sec:design:mean}
 The outcome of the negotiation has to be translated to a value. We know the maximum production. Thus, 0.5 water means for example that 0.5 of the maximum water will be produced by the anion, cation and Mixbed. When an outcome of 0.7 for the acid is negotiated, this means that 0.7 of the possible acid has to be divided over the cation and Mixbed. We then devide this amount equally over the cation and Mixbed. However, if the Mixbed's water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
 
 Thus, the allocation of the base to the anion and Mixbed is dependent on de water $l$. This is a fixed separation. Let's say the group agree to 0.6 usage of base. If $l$ is set to $1$, we allocate as much base to the Mixbed as the anion (0.3 each). However, if $l$ is set to 10, this means that the Mixbed will receive 1/11th of the base while the anion receives 10/11th. 
 
-\section{Proof of convergence}
+\section{Proof of Convergence}
 If there is an intersect of the agreement zone, the agents will find this.
 This is already proven in the Zeuthen strategy \citep{rosenschein1994rules}, which shows that no agreement is always worse than a bad agreement. In infinite time this will happen. 
 

@@ -106,7 +106,7 @@ The reactive concession protocol as described by \citet{zheng2015automated}, and
 There are two options for an agent to concede. Either the change in utility that the other agents' caused is above the reservation function. In this case, an agent does a concession according to the non-reactive concession strategy as calculated above. 
 
 
- However, if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}.
+ However, if the change is below the reservation function the agents concedes by an amount based on the change the agent perceives in its own utility. This is shown in \Cref{al:algorithm1},  \Cref{al:start} to \Cref{al:end}. \todo[Add pagenumber]{Add pagenumber} \Cpageref{al:algorithm1}
  
  The perceived change of utility for agent $i$ from agent $j$ is defined as the difference between the utility of the current offer and that of the previous best offer: $u_i(x^j_t)-u_i(x^j_{[,-1]})$.
  
@@ -124,6 +124,8 @@ The convex requirement makes it obvious why the reactive concession can be used.
 When an agent $j$ has offered $x_j\in[0,1]^3$, the next agent $i$ will either accept the offer $x^j_t$, or create a new offer $x^j_{t+1}$. 
 
 To create the new offer, the agent $i$ will first calculate the weight of all the offers by other agents ($j$). This is done by $\sum_{j=1}^{m} a^{i,j}_t x^j_t $ where $\sum_{j=1}^{m}a^{i,j}_t = 1$. For simplicity, we set the $a^{i,j}_t = \frac{1}{m} = \frac{1}{4}$. 
+\todo[Maken hier meer van?]{Waarom niet $\frac{1}{3}$}
+
 This weighted average of the offers is projected by on the border of its feasible offer set $A^i_t$, thus we get $x^j_{t+1}$. This boundary, or indifference curve, is the set of points for which the utility is equal to the desired utility of agent $j$. The projection can be done using convex projection techniques as explained by \citet{boyd2004convex}. In this method, a linear indifference curve will always be obtained, making convex projection calculations unnecessary. This will be done to ensure a high speed run-time, since the state of the world will change quickly.
 
 

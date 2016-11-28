@@ -39,16 +39,17 @@
 \contentsline {subsection}{\numberline {3.3.4}Complexity}{23}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Framework overview}{23}{subsection.3.3.5}
 \contentsline {section}{\numberline {3.4}Negotiation}{24}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Negotiation Protocol}{25}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Negotiation Strategies}{26}{subsection.3.4.2}
-\contentsline {subsubsection}{Concession Strategy}{26}{section*.12}
-\contentsline {paragraph}{Reactive Concession protocol}{27}{section*.13}
-\contentsline {subsection}{\numberline {3.4.3}Negotiation States}{28}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Evaluation and Equilibrium Solutions}{28}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Principled Negotiation}{30}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Negotiation using a Mediator}{30}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Mapping of Negotiation Protocols}{31}{subsection.3.4.7}
-\contentsline {subsubsection}{Single-Issue}{32}{section*.19}
+\contentsline {subsection}{\numberline {3.4.1}TODs, WODs, and SODs}{25}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Negotiation Protocol}{25}{subsection.3.4.2}
+\contentsline {subsubsection}{Reactive Concession Protocol}{26}{section*.12}
+\contentsline {subsection}{\numberline {3.4.3}Negotiation Strategies}{27}{subsection.3.4.3}
+\contentsline {subsubsection}{Concession Strategy}{27}{section*.13}
+\contentsline {subsection}{\numberline {3.4.4}Negotiation States}{28}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Evaluation and Equilibrium Solutions}{28}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Principled Negotiation}{30}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Negotiation using a Mediator}{30}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}Mapping of Negotiation Protocols}{31}{subsection.3.4.8}
+\contentsline {subsubsection}{Single-Issue}{31}{section*.19}
 \contentsline {subsubsection}{Multi-Issue}{32}{section*.20}
 \contentsline {subsubsection}{Multilateral}{33}{section*.22}
 \contentsline {subsubsection}{Heuristic methods in Negotiation}{34}{section*.23}

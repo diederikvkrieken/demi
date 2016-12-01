@@ -155,6 +155,8 @@ public class Controller {
                 State of = mod.getStandingOffer(propose_agent);
                 agent.addCurrentOffer(x);
                 mod.propose(agent, x, t);
+                //update the weighted average
+                agent.calculateWeight(mod, t);
 
                 //Update last best prev offer if necessary
                 if (agent.utility(of) >= agent.utility(agent.getPrevBestOffer(propose_agent))){

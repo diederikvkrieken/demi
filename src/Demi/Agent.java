@@ -51,8 +51,8 @@ public class Agent {
         double deltaUij2 = utility(of) - utility(ofFirst) - (1-utility(ofLast));
         deltaUij = Math.max(deltaUij1, deltaUij2);
         deltaUij = Math.max(deltaUij, 0);
+        //System.out.println("max "+ deltaUij + " delta 1 " + deltaUij1 +" delta 2 "+deltaUij2);
         return deltaUij;
-
     }
 
     // The monotonic concession strategy. Amount fixed
@@ -72,13 +72,18 @@ public class Agent {
         double base =0;
         double acid = 0;
         double water = 0;
-        Iterator<State> it = prevOffer.iterator();
-        while (it.hasNext()){
-            State offer = it.next();
-            base += offer.getBase();
-            acid += offer.getAcid();
-            water += offer.getWater();
+        for (State state : mod.getStandingOffers()) {
+            base += state.getBase();
+            acid += state.getAcid();
+            water += state.getWater();
         }
+//        Iterator<State> it = prevOffer.iterator();
+//        while (it.hasNext()){
+//            State offer = it.next();
+//            base += offer.getBase();
+//            acid += offer.getAcid();
+//            water += offer.getWater();
+//        }
         weight.setAcid(acid/mod.getN_agents());
         weight.setBase(base/mod.getN_agents());
         weight.setWater(water/mod.getN_agents());

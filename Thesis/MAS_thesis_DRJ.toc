@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {1.1.2}Artificial Intelligence}{2}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Ecosystem of the Case Study}{2}{subsection.1.1.3}
 \contentsline {section}{\numberline {1.2}Thesis outline}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}Problem Definition \& Research Goal}{4}{chapter.2}
+\contentsline {chapter}{\numberline {2}Problem Definition and Research Goal}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problem Analysis}{4}{section.2.1}
 \contentsline {section}{\numberline {2.2}Area of Application}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Relevance}{5}{section.2.3}
@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {2.6}Research Process}{8}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Evaluation Method}{8}{subsection.2.6.1}
 \contentsline {section}{\numberline {2.7}Research Questions}{8}{section.2.7}
-\contentsline {chapter}{\numberline {3}Literature Study \& Theoretical framework}{10}{chapter.3}
+\contentsline {chapter}{\numberline {3}Literature Study and Theoretical framework}{10}{chapter.3}
 \contentsline {section}{\numberline {3.1}Manufacturing Processes}{11}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Asset Management}{11}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Process Control}{13}{subsection.3.1.2}
@@ -55,7 +55,7 @@
 \contentsline {subsubsection}{Heuristic methods in Negotiation}{34}{section*.23}
 \contentsline {subsubsection}{Learning methods in Negotiation}{35}{section*.24}
 \contentsline {section}{\numberline {3.5}Negotiation in Manufacturing}{35}{section.3.5}
-\contentsline {chapter}{\numberline {4}Research Design \& Application}{37}{chapter.4}
+\contentsline {chapter}{\numberline {4}Research Design and Application}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Demineralization of Water}{38}{section.4.1}
 \contentsline {section}{\numberline {4.2}Negotiation model}{39}{section.4.2}
 \contentsline {section}{\numberline {4.3}Details of the Agents}{40}{section.4.3}
@@ -71,7 +71,7 @@
 \contentsline {section}{\numberline {4.5}Algorithm}{51}{section.4.5}
 \contentsline {section}{\numberline {4.6}Result Interpretation}{53}{section.4.6}
 \contentsline {section}{\numberline {4.7}Proof of Convergence}{53}{section.4.7}
-\contentsline {chapter}{\numberline {5}Simulation Comparison \& Evaluations}{54}{chapter.5}
+\contentsline {chapter}{\numberline {5}Simulation Comparison and Evaluations}{54}{chapter.5}
 \contentsline {section}{\numberline {5.1}Parameters}{54}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Nash Bargaining Solution}{54}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Non-Reactive Concession Strategy}{55}{subsection.5.1.2}

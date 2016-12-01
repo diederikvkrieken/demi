@@ -1,4 +1,4 @@
-\chapter{Simulation Comparison \& Evaluations}
+\chapter{Simulation Comparison and Evaluations}
 \label{ch:eval}
 In the previous chapter we have described our model, with the reactive concession strategy. Here the reactive concession strategy is compared to a non-reactive concession strategy. Furthermore, different values for the reservation utility are checked, and different values for the Mixbed agent water requirements are compared. 
 
@@ -224,7 +224,7 @@ When using a ratio of 10:1:1 we have a maximal reservation curve of: $ru_i = 0.2
 Since some unexpected results are seen, some possible explanations are given.
 \subsection{Reactive compared to the non-reactive concession strategy}
 It is interesting that the reactive concession strategy does not find a solution although there is an agreement-zone. 
-A possible solution is that the answer can not be found as is stated by \citet{zheng2015automated} as Lemma 2. ``If Agent $i$ deliberately stops conceding before reaching the agent's own reservation utility from time period t onward, and all other agents use the reactive concession strategy the negotiation will stall; i.e. other agents will reactively stop conceding and there will be no agreement if $\Delta_j < s_j(t)-u_j(x^*_{ru_i}) \text{ and } u_j(x^*_{s_i(t)})<ru_j$''.
+A possible solution is that the answer cannot be found as is stated by \citet{zheng2015automated} as Lemma 2. ``If Agent $i$ deliberately stops conceding before reaching the agent's own reservation utility from time period t onward, and all other agents use the reactive concession strategy the negotiation will stall; i.e. other agents will reactively stop conceding and there will be no agreement if $\Delta_j < s_j(t)-u_j(x^*_{ru_i}) \text{ and } u_j(x^*_{s_i(t)})<ru_j$''.
 
 As discussed, we see that the reactive concession strategy takes more rounds to find  This can be simply attributed to fact that the concession made each round is the $\displaystyle \min\{ \min_{j \in m}\Delta u_{ij} \delta u_i\}$, meaning that it is the minimum of the reactive and non-reactive concession. Thus, the concession will always smaller or equal to the non-reactive concession, and thus it will take longer to find a solution.
 

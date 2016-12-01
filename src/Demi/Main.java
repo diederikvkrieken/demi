@@ -17,9 +17,9 @@ public class Main {
         //Set up model, which stores agents and offers
 
         //Settings, 1 for normal reactive, 2 for nonreactive, 3 for only mixbed reactive
-        int method = 1;
+        int method = 2;
         //Setting for Mixbed water $l$, no value results in 1.
-        int water_ratio = 10;
+        int water_ratio = 1;
 
         /*Run the model multiple times for different reservation curve values
         * These are set in the Settings File

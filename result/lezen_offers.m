@@ -1,6 +1,6 @@
 clear all
 %filename = 'C:\Users\Diederik\IdeaProjects\demi\result\output.csv';
-filename = 'C:\Users\Diederik\IdeaProjects\demi\result\nonreactive 0.05 to 0.6 mixbedrea\output_1.csv';
+filename = 'C:\Users\Diederik\IdeaProjects\demi\result\reactive 0.05 to 0.6\output_1.csv';
 delimiter = ',';
 fileID = fopen(filename);
 

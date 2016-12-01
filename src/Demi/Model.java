@@ -106,8 +106,8 @@ public class Model {
     void writeToCSV(int method) throws IOException{
 
         String fileFolder;
-        //fileFolder = "C:\\Users\\\\Diederik\\IdeaProjects\\demi\\result\\";
-        fileFolder = "C:\\Users\\\\diederik.van.krieken\\IdeaProjects\\demi-neg\\result\\";
+        fileFolder = "C:\\Users\\\\Diederik\\IdeaProjects\\demi\\result\\";
+        //fileFolder = "C:\\Users\\\\diederik.van.krieken\\IdeaProjects\\demi-neg\\result\\";
         System.out.println("Printing!!!");
         if (method == 1){
             fileFolder = fileFolder + "reactive "+set.getReservationString();

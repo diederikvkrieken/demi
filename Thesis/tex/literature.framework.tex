@@ -28,10 +28,41 @@ To optimize these different types of resources allocation problems, there are di
 \subsection{Size and modularity}
 A critical aspect of the possibility to determine whether a centralized or decentralised solutions is preferred is the search space size of the problem. The size of the problem is seen as the number of resources or task that have to be allocated.  If a clear structure is conceivable and a clear population is in place a centralized solution is infeasible. This is due to the global overview. However, the high sensitivity to size and complexity makes a centralized solution impracticable.
 
+
 %Since a centralized solutions are highly sensitive to the size and complexity and require performing the computation in advance, they lack the dynamically needed in real-life situations. The decentralized Approach dont require computation time required in advance and can use disaggregated, handle large and complex problems
 
 %\subsection{Modularity}
 In a decentralized structure, individual models are decoupled from one another, errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. This can be seen in \Cref{fig:modularitydecentral-changeability}. It shows however the importance of having a clear modular problem. 
+
+\todo[ge copy past!]{Ge copy paste!}
+Distributed Problem Solving
+Imagine a multiagent system inhabited by several agents with different
+problem solving capabilities. A particular complex problem may not be
+solvable by any single agent, but possibly by several agents together.
+• Problem decomposition: Decompose the original problem into
+smaller subproblems, that can each be handled by a single agent.
+• Solving each subproblem: Each agent solves the problems
+assigned to them. Agents may share information during this stage.
+• Solution synthesis: Integrate the solutions to the subproblems to
+arrive at a solution of the overall problem.
+In this strand of work people generally assume that agents are
+cooperative and benevolent . . . Negotiation as a Metaphor for Distributed Problem
+Solving
+
+Centralised vs. Distributed Approaches
+So far we have concentrated on auctions as mechanisms for solving
+resource allocation problems. But what if we cannot find someone who
+could act as the auctioneer?
+• The associated tasks may be too hard computationally for the
+agent supposed to assume the role of auctioneer.
+• There may be no agent that enjoys the trust of the others.
+• The system infrastructure may be truly distributed and it may
+simply be unnatural to model the problem in a centralised manner.
+• The goods may be owned by different agents to begin with
+(that is, we may have to take an initial allocation into account).
+• Agents and goods may enter or leave the system dynamically.
+Auctions are centralised mechanisms. All of the above are good
+reasons to consider distributed negotiation schemes as well .
 
 %As Figure 9.1 suggests, in a system with a single thread of control, changes to a single module can cause later modules, those it invokes, to malfunction. Decentralization decouples the individual modules from one another, so that errors in one module impact only those modules that interact with it, leaving the rest of the system unaffected. (The original version of this gure was created by Seiichi Yaskawa of Yaskawa Electric Corporation, Tokyo, Japan, and is used with his kind permission.)
 

@@ -23,6 +23,20 @@ public class Neut extends Agent {
         return value;
     }
 
+    // Utility if a resource has to be ignored.
+    // i = 1 is acid, 2 is base, 3 = water
+    public double utility(State offer, int i){
+        double value;
+        if (i == 1){
+            value = exp(-offer.getBase() - 0);
+        }else if (i ==2 ){
+            value = exp( 0 - -offer.getAcid());
+        }else {
+            value = exp(-offer.getBase() - offer.getAcid());
+        }
+        return value;
+    }
+
     /*
     * Calculation from point to line
     *

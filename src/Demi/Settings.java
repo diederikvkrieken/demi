@@ -27,15 +27,16 @@ public class Settings {
     private double[] reservation = {0.05, 0.10, 0.15,0.20,0.25,0.3,0.35, 0.4,0.45,0.5,0.55,0.6, 0.65};
 
     //Set the states for which the agents have the highest utility.
+    // Order, acid, base, water
     Settings(){
         //Anion
-        startStates[0] = new State(0,1,0);
+        startStates[0] = new State(0.5,1,0);
         //Cation
-        startStates[1] = new State(1,0,0);
+        startStates[1] = new State(1,0.5,0);
         //Mixbed
         startStates[2] = new State(1,1,1);
         //Neut
-        startStates[3] = new State(0,0,0);
+        startStates[3] = new State(0,0,0.5);
     }
 
     Agent[] initializeAgents(){

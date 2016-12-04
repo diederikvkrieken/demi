@@ -91,6 +91,11 @@ public class Agent {
 //        weight.setAcid(acid/3);
 //        weight.setBase(base/3);
 //        weight.setWater(water/3);
+
+        if (this.getName().equals("Anion")){
+            System.out.println(weight.getAcid());
+            System.out.println(this.currentOffer.getAcid());
+        }
         if(weight.getAcid() >1 || weight.getBase() >1||weight.getBase() >1){
             System.out.println("Something weird in t="+t);
         }

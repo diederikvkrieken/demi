@@ -205,6 +205,7 @@ Often these strategies are private, meaning that not all the agents can see what
 When negotiating, it is essential for the agents to make concessions, only in TODs it is unnecessary, as explained. Initially each of the agents involved makes a proposal that has the highest utility to itself. If no concessions are made, the agents will never reach an agreement. By making concessions on the utility, a proposal towards the agents agreement-zone can be made, which is essential in finding an agreement. Furthermore, as put by \citet{endriss2006monotonic}: a concession should always be minimal with respect to the utility loss incurred by the agent making the concession.
 
 \begin{definition*}[Reservation curve and Agreement zone]
+	\label{def:rev:agree}
 	When an agent has an utility, it usually has a minimum value to which is will concede. This curve of all points that have the minimum utility vallue is called the reservation curve. 
 	
 	Multiple agents have different reservation curves.
@@ -212,31 +213,31 @@ When negotiating, it is essential for the agents to make concessions, only in TO
 		
 \end{definition*}
 
-\begin{figure}
-		\begin{tikzpicture}
-	\coordinate (v1) at (0,0) {};
-	\node (v2) at (0,5) {};
-	\node (v3) at (5,0) {};
-	\node (v4) at (2.5,2.5) {Agreement-zone}
-	\draw[->]  (v1) -- (v2) node[left] {Issue 1};
-	\draw[->]  (v1) -- (v3) node[below] {Issue 2}; 
-		\draw[name path = C] (5,1) .. controls (3,1) and (1,3) .. (1,5) node[right] {Reservation Curves};
-	\draw[clip, name path = B] (0,4) .. controls (2,4) and (4,2) .. (4,0) ;
-	\begin{pgfonlayer}{bg}
-	\fill [gray!50,
-	intersection segments={
-		of=B and C,
-		sequence={L2--R2}
-	}];
-	\end{pgfonlayer}
-	
-	\end{tikzpicture}
-\end{figure}
-When dealing with how to concede, there are multiple strategies. Most of these are one version or another of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal, there are two options. Either the agent refuses to make a concession and sticks to the previous proposal or it makes a concession and proposes a new deal that is less preferable to the agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \citep{endriss2006monotonic}.
+%\begin{figure}
+%		\begin{tikzpicture}
+%	\coordinate (v1) at (0,0) {};
+%	\node (v2) at (0,5) {};
+%	\node (v3) at (5,0) {};
+%	\node (v4) at (2.5,2.5) {Agreement-zone}
+%	\draw[->]  (v1) -- (v2) node[left] {Issue 1};
+%	\draw[->]  (v1) -- (v3) node[below] {Issue 2}; 
+%	\draw[name path = C] (5,1) .. controls (3,1) and (1,3) .. (1,5) node[right] {Reservation Curves};
+%%	\draw[clip, name path = B] (0,4) .. controls (2,4) and (4,2) .. (4,0) ;
+%%	\begin{pgfonlayer}{bg}
+%%	\fill [gray!50,
+%%	intersection segments={
+%%		of=B and C,
+%%		sequence={L2--R2}
+%%	}];
+%%	\end{pgfonlayer}
+%	
+%	\end{tikzpicture}
+%\end{figure}
+When dealing the requirement of conceding, there are multiple strategies. Most of these are one version or another of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal, there are two options. Either the agent refuses to make a concession and sticks to the previous proposal or it makes a concession and proposes a new deal that is less preferable to the agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \citep{endriss2006monotonic}.
 
 %Using the monotonic concession protocol, negotiation is guaranteed to end (with or without agreement) after a finite number of rounds. Since the set of possible deals is finite, the agents cannot negotiate indefinitely: either the agents will reach agreement, or a round will occur in which neither agent concedes. However, the protocol does not guarantee that agreement will be reached quickly. Since th
 
-There are multiple options when dealing with concession to a multilateral negotiation \citep{endriss2006monotonic}. Most of these have a relation to social welfare concepts, meaning that the agents will together try to maximize the utility of all the agents. This means however that the utilities of the other agents must be know since, it is not possible to discover the group maximum using private utilities.
+There are multiple options when dealing with concession to a multilateral negotiation \citep{endriss2006monotonic}. Most of these have a relation to social welfare concepts, meaning that the agents will together try to maximize the utility of all the agents. This means however that the utilities of the other agents must be known since it is not possible to discover the group maximum using private utilities.
 
 Four concession strategies are given by \citet{wu2009efficient}: 
 \begin{description}
@@ -249,95 +250,62 @@ Four concession strategies are given by \citet{wu2009efficient}:
 \begin{definition*}[Social welfare]
 	
 \end{definition*}
-When dealing with private utility functions matter change completely. There is no way knowing whether the other agents has conceded. A solution to this is proposed by \citet{zheng2015automated} using the reactive concession protocol.
+When dealing with private utility functions matters change completely. There is no way of knowing whether the other agents have conceded. A solution to this is proposed by \citet{zheng2015automated} using the reactive concession protocol.
 
 \subsubsection{Reactive Concession Protocol}
-The reactive concession protocol as proposed by \citet{zheng2015automated} tries to solve the problem that occurs when dealing with private functions and ensuring that there is not one agent that does not stall its concessions. \citet{zheng2015automated} show that by having an agent concider its own utility change resulting from another agents' offer, it can concede accordingly. There are two cases. If the change in utility that the other agetns' offer caused has resulted in an higher utility than the reservation utility, the agent will respond with the non-reactive concession strategy. 
+The reactive concession protocol as proposed by \citet{zheng2015automated} tries to solve the problem that occurs when dealing with private functions and ensuring that there is not one agent that does not stall its concessions. \citet{zheng2015automated} show that by having an agent consider its own utility change resulting from another agent's offer, it can concede accordingly. There are two cases. If the change in utility that the other agents' offer caused has resulted in a higher utility than the reservation utility, the agent will respond with the non-reactive concession strategy. 
 
-However, if the utility is lower than the reservation utility, the agent will concede by an amount based on the change the agent perceives. By checking the last best offer, the agent checks for the marginal perceived change of utility and the total perceived change from the original offer. This gives two values, of which the maximum will be the agents' concession. Exact details will be discussed in \Cref{sec:reactiveconcessionstr}.
+However, if the utility is lower than the reservation utility, the agent will concede by an amount based on the change the agent perceives. By checking the last best offer, the agent checks for the marginal perceived change of utility and the total perceived change from the original offer. This gives two values, of which the maximum will be the agent's concession. Exact details will be discussed in \Cref{sec:reactiveconcessionstr}.
 
 
 \subsection{Evaluation and Equilibrium Solutions}
-When evaluating the dilemmas of a negotiation between agents, it is essential to determine the Pareto-Frontier. Visualized in \Cref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, lie all the possible agreements, which are all offers, that are acceptable by both agents.
+When evaluating the dilemmas of a negotiation between agents, it is essential to determine the Pareto-Frontier. Visualized in \Cref{fig:paritooptimal}, it is used to determine whether an outcome of a negotiation is efficient. This means that no improvement can be achieved for all agents. In the figure we have the utility of $\text{agent}_\text{i}$ plotted against that of  $\text{agent}_\text{j}$. In the set of all possible outcomes, all the possible agreements are situated. These are all offers that are acceptable by both agents.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/parito_optimal.png}
-	\caption{An example of Pareto optimality. Locations A and B are optimal, since no improvement for at least one agent, without loss for the other agent, is possible. C and D are not optimal since they utility of the agents can be increased. From \citet{fatima2014principles}.}
+	\caption{An example of Pareto optimality for two agents. Locations A and B are optimal, since no improvement for at least one agent, without loss for the other agent, is possible. The points on the outer arc between A and B are Pareto optimal as well. C and D are not optimal since they utility of the agents can be increased. From \citep{fatima2014principles}.}
 	\label{fig:paritooptimal}
 \end{figure}
 
-An offer is Pareto optimal if the agents cannot choose an new offer for which at least one agent has a higher utility, while the other agents have the same utility. In the figure these are shown as $A$ and $B$. Each other offer for these agents decreases at least the utility of one of the agents. Offers $C$ and $D$ are not Pareto optimal since both offers can be improved for at least one agent. The line of points in which an improvement of utility for one agent necessarily means a decrease in utility for the other agent is the Pareto-Frontier. 
+An offer is Pareto optimal if the agents cannot choose a new offer for which at least one agent has a higher utility, while the other agents have at least the same utility. In the figure these are shown as $A$ and $B$, and each point on the arc inbetween. Each other offer for these agents decreases at least the utility of one of the agents. Offers $C$ and $D$ are not Pareto optimal, since both offers can be improved for at least one agent. The line of points in which an improvement of utility for one agent necessarily means a decrease in utility for the other agent is called the Pareto-Frontier. 
 
 Formally: If we have agents $M = \{1,...,m\}$, and issues $N = \{1,...,n\}$ denoted as issue $j\in N$, than an offer $x = \{x_1, ..., x_j\}$ is Pareto optimal if the outcome of negotiation $x$ has no feasible allocation $x'$ such that $ \exists i, u_i(x')> u_i(x) \in M$, while $\forall i, u_i(x')\geq u_i(x)  \in M$. 
 
-The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and shown in \Cref{fig:majorcategoriesofgametheory}. 
+The Nash equilibrium is the best reply to the other players strategies. This means that if both players play their Nash strategy, neither will have the incentive to change their method. Different equilibria are possible and given in \citep{trappey2013multi}. 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/major_categories_of_game_theory}
-	\caption{The four types of games in game theory from \citet{trappey2013multi}.}
-	\label{fig:majorcategoriesofgametheory}
-\end{figure}
-The most common Nash equilibrium and probably most widely known is that of the prisoners dilemma:
+The most common Nash equilibrium and probably most widely known is that of the prisoner's dilemma:
 There are two subjects of a crime, agent $i$ and $j$. However, the evidence is not very convincing and therefore the prisoners are interrogated separately. If both confess, they get three years of prison. If both do not confess, they get a lighter sentence of 1 year. Finally, if one of them confesses to the crime and the other does not, the confessor will be freed, and the other will be jailed for five years.
 This can be visualized in a normal form pay-off matrix. It is common to refer to confessing as defection, and not confessing as cooperating.
 \begin{table}[h]
-
-\begin{tabular}{|c|c|c|c|}
-	\hline 
-		&  				& \multicolumn{2}{c}{Agent $i$}\\ 
+\begin{tabular}{llll}
+	\toprule 
+		&  				& \multicolumn{2}{c}{\textit{Agent i}}\\ 
+		\cmidrule{3-4}
 	 	&				& defect (confess) 	& cooperate ($\neg$ confess) \\ 
-	$Agent j$	& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
+	 	\cmidrule{3-4}
+	\multirow{2}{*}{\textit{Agent j}}	& defect (confess)	&  	(-3, -3)			& (0,-5) \\ 
 		& cooperate($\neg $ confess) 	&  (-5, 0)				& (-1,-1) \\ 
-	\hline 
+	\bottomrule
 \end{tabular} \label{tab:nashprison} \caption{The prisoners dilemma}
 \end{table}
 For agent $i$ it is obvious to reason as follows. Suppose agent $j$ cooperates. Then the best response is to defect. Suppose the agent $j$ defects. Then the best response is to defect. In other words, defection for agent $i$ is the best response to all possible strategies of the player j. This makes defection the dominant strategy for agent $i$. Since both agents reason the same way, the agent will both defect which results in the Nash equilibria (defect, defect).
 
 In general, that two strategies $s_1$ and $s_2$ are in Nash equilibrium if: under the assumption that agent $i$ plays $s_i$, agent $j$ can do no better than play $s_2$, and under the assumption that agent $j$ plays $s_2$, agent $i$ can do no better than play $s_l$. Thus strategies $s_i$ and $s_j$ for agents $i$ and $j$ form a Nash equilibrium if they are the best response to each other  \citep{wooldridge2009introduction}. 
 
-Important to note here is that in the prisoners dilemma, the Nash equilibrium is the only solution which is not Pareto optimum.  THe optimal social solutions, which is if both agents do not confess, is different from the Nash equilibrium.  Furthermore, it should be stated that not every interaction scenario has a Nash equilibrium and some interaction scenarios have more than one Nash equilibrium. 
+Important to note here is that in the prisoner's dilemma, the Nash equilibrium is the only solution which is not a Pareto optimum.  The optimal social solutions, which is if both agents do not confess, is different from the Nash equilibrium.  Furthermore, it should be stated that not every interaction scenario has a Nash equilibrium and some interaction scenarios have more than one Nash equilibrium. 
+\todo[Meer groep versus individueel]{Groep versus individueel}
 \subsection{Principled Negotiation}
 \label{sec:principlednegotiation}
-An example of a common method for negotiation is principled negotiation. This method developed by \citet{fisher1987getting} was founded on the idea that negotiators could reach better agreements by finding favourable agreements. By focussing on interests not positions and using objective criteria, an agreement is more likely to be reached. This method has successfully been deployed in a multi-agent system for air traffic management \citep{wangermann1998principled}. \citet{fisher1987getting} emphasize the fact that it is important to agree on objective criteria for assessing options \citep{fisher1987getting}. If an agreement can be reached using this criterion, it is more likely that it is rational. Furthermore, principled negotiation is useful for systems in which no agent has global knowledge of the system.
+An example of a common method for negotiation is principled negotiation. This method, developed by \citet{fisher1987getting}, was founded on the idea that negotiators could reach better agreements by finding favourable agreements. By focussing on interests not positions and using objective criteria, an agreement is more likely to be reached. This method has successfully been deployed in a multi-agent system for air traffic management \citep{wangermann1998principled}. \citet{fisher1987getting} emphasize the fact that it is important to agree on objective criteria for assessing options \citep{fisher1987getting}. If an agreement can be reached using this criterion, it is more likely that it is rational. Furthermore, principled negotiation is useful for systems in which no agent has global knowledge of the system.
 
-%The purpose of this type of negotiation is to help to reach agreement without jeopardizing the business relations. It was created by \citet{fisher1987getting} and they refer to this kind of agreement as a wise agreement. Wise agreement is agreement that meets the interests of both parties to the extent possible, is long lasting, and also considers the interests of the larger society. The basis of this negotiation principle is to separate the relationship issues from the problem issues, to focus on interests not on positions, while trying to be creative in developing solutions.
 
 % \cite{wangermann1998principled} Principled NegotiationI was developed as a method that negotiators could use to reach better agreements than could be obtained using traditional confrontational tactics. The underlying idea is that in most situations there are options that will benefit all the parties in negotiation. A favorable agreement is more likely to be reached if a negotiator proposes options for mutual gain and if all the parties assess the options using objective criteria (Fig. 3). Traffic management agents would be able to a.pprove many of the proposals, as the proposing agent would try to ensure that the options provided mutual gain. 
 
 
 
-
-
-
-%\subsubsection{Example}
-
-
-%\todo{Breder trekken qua literatuur}%In a cooperative negotiation, agents are allowed to communicate and to receive side payments. Furthermore, in cooperative games, agents can make binding commitments. These cooperative games result in coalitions which can be used to solve some of the problems that occur from the prisoners dilemma. 
-
-%Within negotiation there are several more methods~\cite{wooldridge2009introduction}:
-%\begin{itemize}
-%	\item Patient players;
-%	\item Impatient players;
-%	\item Negotiation decision functions.
-%\end{itemize} All these methods can be used to negotiate/bargain for resource allocation. More examples are available which will also be analysed in the in-depth literature review.
-
-%Several other communication techniques might be useful for decision making~\cite{wooldridge2009introduction}:
-%\begin{itemize}
-%	\item
-%	Arguing;
-%	\item
-%	Public vs private announcement;
-%	\item
-%	Contract net protocol \cite{smith1980communication}.  
-%\end{itemize}
-
-%Contract net protocol is a form of cooperative distributed problem solving that will be discussed in the scheduling section (\Cref{sec:AIscheduling}).
-%\subsubsection{Framework}
-%An overview of these different methods is in Fatima et al.~\cite{fatima2014principles}. Unfortunately this book is still lacking. 
 \subsection{Negotiation using a Mediator}
-A mediator can be used when negotiating, like is used in typical hierarchy, voting, and auction based negotiations. 
+A mediator can be used when negotiating. It is often used in typical hierarchy, voting, and auction based negotiations. 
 
 Voting is a form of group decision making. The agents participating in the voting will take into account their own preferences as well as those of others when making decision about how to vote. This will often have a strategic flavour. By aiming to rank or order the candidates, a group decision can be made.
 
@@ -346,11 +314,11 @@ Another option are auctions, a popular mechanism to reach an agreement within th
 However, in mediated negotiation, the agents have no desire to make concessions, and an (sub-)optimal solution cannot be guaranteed.
 
 \subsection{Mapping of Negotiation Protocols}
-An attempt at the visualization of the different negotiation techniques is strived at. Three variables are decided on. Single- vs Multi-Issue negotiation; bi- vs multi-lateral negotiation, and; perfect vs imperfect information negotiation.  
+An attempt at the visualization of the different negotiation techniques is strived at. Three variables are decided on. Single- versus Multi-Issue negotiation; bi- versus multi-lateral negotiation, and; perfect versus imperfect information negotiation. The overview given here will be explained in the following sections.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/mapping_nego}
-	\caption{Overview of the negotiation protocols used, and researched in the literature. The usage of an proposal based protocol for a multilateral multi-issue situation is missing in the manufacturing literature.}
+	\caption{Overview of the negotiation protocols used and researched in the literature. The usage of a proposal-based protocol for a multilateral multi-issue situation is missing in the manufacturing literature.}
 	\label{fig:mapping_nego}
 \end{figure}
 
@@ -358,63 +326,47 @@ An attempt at the visualization of the different negotiation techniques is striv
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/mapping_nego2}
-	\caption{For completeness, the same figure as in \Cref{fig:mapping_nego}, but with the display of the imperfect information protocols.}
+	\caption{For completeness, the same figure as in \Cref{fig:mapping_nego}, but with the display of the imperfect information protocols which is more applicable in the manufacturing industries.}
 	\label{fig:mapping_nego2}
 \end{figure}
 
-\subsubsection{Single-Issue}
+\subsubsection{Single-Issue Negotiation}
 
-Negotiation among self-interested agents has been studied from the perspective of game theory. This is most obvious when the agents negotiate on single issues. An example might be the price of a product. When dealing with a single issue there is only one goal for both agents and there must be a conflict. If there was no conflict, no negotiation would be necessary. Typical single issue methods are patient vs impatient players, two sided matching. Argumentation based methods, which are based on the beliefs of an agents are also included in the mapping.
+Negotiation among self-interested agents has been studied from the perspective of game theory. This is most obvious when the agents negotiate on single issues. An example is the price of a product. When dealing with a single issue there is only one goal for both agents and there must be a conflict. If there was no conflict, no negotiation would be necessary. Typical single issue methods are patient versus impatient players and two sided matching \citep{fatima2014principles}. Argumentation based methods, which are based on the beliefs of an agent are also included in the mapping \citep{li2013automated}.
 
-Essential is that all these methods are a form of the alternating offers protocol. Depending on the sort of players, the method result in completely different behaviours. These negotiations can either be complete or incomplete meaning that all information is known, or not all. 
+Essential is that all these methods are forms of the alternating offers protocol. Depending on the sort of players, the method result in completely different behaviours. These negotiations can either be complete or incomplete meaning that all information is known, or not all. 
 
-When the game is complete, all the agents know all the information about their states and the strategies of other agents. When not all is known, the game is incomplete. The idea of negotiation is that we have an incomplete game, since if the strategies are known, most negotiation would not be necessary.
+When the game is `complete information', all the agents know all the information about their states and the strategies of other agents. When not all is known, the game is `incomplete information'. The idea of negotiation is that we have an incomplete game, since if the strategies are known, most negotiations would not be necessary.
 
-When looking at perfect vs imperfect information, it means that either the information states of the agents is perfect, meaning that the agent is perfectly informed of all the events that have previously occurred and actions (like chess), or that not all actions are known. Depending on the implementation of the system, with for example public and private announcements, the difference is made. 
+Looking at perfect versus imperfect information, it means that either the information states of the agents is perfect, meaning that the agent is perfectly informed of all the events that have previously occurred and actions (like chess), or that not all actions are known. Depending on the implementation of the system, with for example public and private announcements, the difference is made. 
 
-When looking at single issue negotiation, depending on whether the negotiation happens between 2 (bilateral) or more (multi-lateral) agents, there are a few protocols possible. Bilateral negotiation can be either patient or impatient \citep{fatima2014negotiation} meaning that an agent has a initiative to limit the time of negotiation. Most negotiation in the manufacturing are time restrained, thus impatient agents must be implemented \citep{kraus1995multiagent}. In symmetric vs asymmetric the players are uncertain about the other players utility functions (as is the case in imperfect negotiation), but essential is that one agent might know more than the other in the asymmetric protocol.
+In single issue negotiation, depending on whether the negotiation happens between 2 (bilateral) or more (multi-lateral) agents, there are a few protocols possible. Bilateral negotiation can be either patient or impatient \citep{fatima2014negotiation} meaning that an agent has a initiative to limit the time of negotiation. Most negotiations in the manufacturing are time restrained, thus impatient agents must be implemented \citep{kraus1995multiagent}. In symmetric versus asymmetric negotiation the players are uncertain about the other player's utility functions (as is the case in imperfect information negotiation), but essential is that one agent might know more than the other in the asymmetric protocol.
 
-\subsubsection{Multi-Issue}
- When negotiating multi-issues, agents attempt to combine 2 or more issue in their discussing. An example is the typical seller, buyer relationship between two agents, as for example shown in \citet{schramm2013bilateral}. Here a supply chain construction company is used to asses an method to support bilateral negotiation. Aspects like price, quality and lead-time are considered as issues, on which can be negotiated. Most used multi-issue method, for single-lateral negotiation is the package deal method. In this method, complete packages with all the issues are provided. These can be discussed either sequentially or simultaneously. 
+\subsubsection{Multi-Issue Negotiation}
+ When negotiating about multi-issues, agents attempt to combine two or more issues in their discussion. An example is the typical seller, buyer relationship between two agents, as for example shown in \citep{schramm2013bilateral}. Here a supply chain construction company is used to asses an method to support bilateral negotiation. Aspects like price, quality and lead-time are considered as issues, on which can be negotiated. Most used multi-issue method is the package deal method. In this method, complete packages with all the issues are provided. These can be discussed either sequentially or simultaneously. 
 
  \begin{figure}[h]
  	\centering
  	\includegraphics[width=0.7\linewidth]{img/multi-lateral}
- 	\caption{An overview of the different negotiation method for multi issues bargaining. From \citep{abedin2014agenda}.}
+ 	\caption{An overview of the different negotiation method for multi-issues bargaining. From \citep{abedin2014agenda}.}
  	\label{fig:multi-lateral}
  \end{figure}
  
  Agents can employ either an issue-by-issue (one-at-a-time) approach, or a packaged approach in the negotiation agenda \citep{fatima2004agenda}. \citet{abedin2014agenda} think that a packaged approach is optimal since the agent lack knowledge about the opposing agent. As one issue is settled, the agent subsequently negotiates the other pending issues. This allows the agent to be cautious and opportunistic at the same time.
  
- When choosing the preferred method of negotiation, important to realize is the solution required. As explained above,\citet{abedin2014agenda} says that the issue-by-issue approach has a higher chance of obtaining the Pareto optimal solution. However, since the utility of an offer is not simply a sum of the utilities of the individual issues, some prefer to use the package deal \citep{zheng2015automated}.
-
-%The majority of the existing work on multi-issue negotiations focuses on the negotiation strategy, assuming the agenda and the procedure to be predetermined \citep{fatima2004agenda, lai2004literature}. Interesting to determine would be the influence of the domain and protocol since, depending on the scenario under which the negotiation is taking place a supervised agenda procedure can have a positive impact on the outcome of the negotiation when compared to a procedure without use of an agenda \citep{abedin2014agenda}.
-
-
-% 
- %The agenda based approach specifies how the issues will be settled. Agents can employ either an issue-by-issue (one-at-a-time) approach, or a packaged approach in the negotiation agenda (Fatima et al. 2004). We have adopted the former; negotiation one issue at a time. The main reason for this is lack of knowledge about the opposing agents. As one issue is settled, the agent subsequently negotiates the other pending issues. This allows the agent to be cautious and opportunistic at the same time. For a multi-issue negotiation under incomplete information settings, the ideal solution is one that is Pareto optimal. A solution is said to be Pareto optimal if no agent can be better off without sacrificing the other’s utility (Wilkes 2008). So the proposed negotiation approach should be able to generate Pareto optimal solutions for multi-issue negotiations. The majority of the existing work on multi-issue negotiations focuses on the negotiation strategy, assuming the agenda and the procedure to be predetermined (Fatima et al. 2004; Lai et al. 2004). Depending on the scenario under which the negotiation is taking place a supervised agenda procedure can have a positive impact on the outcome of the negotiation when compared to a procedure without use of an agenda. \cite{abedin2014agenda}
-
-% Issue by issue negotiation gives a high probability to find a negotiation zone in an incomplete information setting rather than package and simultaneous approach. In package and simultaneous negotiation approach, the agents have limited confident and information about each other, the issues, offers and preferences. With issue by issue negotiation, there can be different agendas. Generating the optimal agenda for both agents helps to maximize their utilities. A simple but useful interdependency mechanism is derived to handle the correlation between the issues. \cite{abedin2014agenda} 
-
-% First, in a multi-attribute negotiation the preference of an agent over multiple issues can be complex. A traditional way to deal with this is to characterize the preference with a utility function (a mathematical formula) and agents make decisions based on this utility function. However, it is not trivial for a human to construct such a utility function over multiple issues, especially when preference over one issue is impacted by the values of other issues; thus, preference elicitation may take a long time or sometimes be intractable. Second, in a multi-attribute negotiation the solution space is n-dimensional (n>1) rather than a single dimensional line as in a single-attribute negotiation. This makes the negotiation strategy in multi-attribute negotiations complex: because the space is ndimensional, every time an agent plans to concede, she needs to first decide the direction of concession. Apparently there are many choices on the concession direction she can take: to concede on issue 1, …, n or different combinations of the issues. Specifically, the decision on the concession direction may also depend on the opponent’s preference because conceding on the issue more important to the opponent can make the offer more acceptable. Finally, to decide how much to concede is now more complicated because the direction can impact the amount as well. So the burden of computation and reasoning for the negotiation strategy is higher in a multi-attribute negotiation than in a single-attribute negotiation. Third, as mentioned above, in multi-attribute negotiations there exist “Win-Win” situations. For rational agents, they should not “leave extra money on the table”. In other words, the ideal result for the system is to realize a Pareto-optimal (or Pareto-efficient) solution. A Pareto-optimal solution is one which cannot be improved further without sacrificing someone’s utility, i.e. if there is another solution from which one of the agents can get more than from this Pareto-optimal solution, then the other agent must get less by that other solution. We say a multi-attribute negotiation model is efficient when agents will reach a Pareto-optimal agreement in the negotiation, if there exists a zone of agreement. \cite{lai2004literature}
+ When choosing the preferred method of negotiation, important to realize is the solution required. As explained above, \citet{abedin2014agenda} say that the issue-by-issue approach has a higher chance of obtaining the Pareto optimal solution. However, since the utility of an offer is not simply a sum of the utilities of the individual issues, some prefer to use the package deal \citep{zheng2015automated}.
 
 \subsubsection{Multilateral}
 \label{sec:lit:neg:multilateral}
-The most common used method for multilateral negotiations are contract based methods, most popular being the contract net protocol. Contract net protocol by \citet{smith1980communication} is based on the principle that agents, each with a distinct expertise, can solve sub problems that are required to solve the global problem. This form of cooperative distributed problem solving is based on the assumption that agents in a system implicitly share a common goal, and thus that there is no potential for conflict between them.
+The most commonly used methods for multilateral negotiations are contract based methods, most popular being the contract net protocol. The contract net protocol by \citet{smith1980communication} is based on the principle that agents, each with a distinct expertise, can solve sub problems that are required to solve the global problem. This form of cooperative distributed problem solving is based on the assumption that agents in a system implicitly share a common goal, and thus that there is no potential for conflict between them.
 
-Each agent, called a manager, that has some work to be subcontracted, broadcasts an offer and waits for other agents, the contractors, to send bids. After some delay, the best offers are saved and contracts are allocated to one or more contractors who process their subtasks. The contract-net protocol provides for coordination in task allocation. 
+Each agent, called a manager, that has some work to be subcontracted, broadcasts an offer and waits for other agents, the contractors, to send bids. After some delay, the best offers are saved and contracts are allocated to one or more contractors who process their subtasks. The contract net protocol provides for coordination in task allocation. 
 
-The protocol is best suited to problems in which it is appropriate to define a hierarchy of tasks. Since such problems allow to be decomposed into a set of relatively independent subtasks, there is little need for global information or synchronization. These subtasks can be assigned to separate agents. The contract net protocol main contribution is the mechanism that it offers for structuring high-level interactions between nodes for cooperative task execution \citep{smith1980communication}. With these contracts task allocation is possible. The allocation of resources gives difficulties however. 
+The protocol is best suited for problems in which it is appropriate to define a hierarchy of tasks. Since such problems allow to be decomposed into a set of relatively independent subtasks, there is little need for global information or synchronization. These subtasks can be assigned to separate agents. The contract net protocol main contribution is the mechanism that it offers for structuring high-level interactions between nodes for cooperative task execution \citep{smith1980communication}. With these contracts task allocation is possible. The allocation of resources gives difficulties however. 
 
-Since the contract net protocol has the uncertainty of matches being stable, the protocol of two-sided matching has been developed. Furthermore, it is not certain that the matches are Pareto optimal. Using the two sided matching method, this uncertainty can be avoided, however, this protocol is harder to implement due to the fact that a clear allocation division is required. \citep{fatima2014principles}.
+Since the contract net protocol has the uncertainty of matches being stable, the protocol of two-sided matching has been developed. Furthermore, it is not certain that the matches are Pareto optimal. Using the two-sided matching method, this uncertainty can be avoided, however, this protocol is harder to implement due to the fact that a clear allocation division is required. \citep{fatima2014principles}.
  
-If the game is imperfect two sided matching does not work, and a proposal based protocol is the right fit \citep{rahwan2003argumentation}.
-
-%\todo[Example of the three agents and three resources]{Example of the Three agents and three resources, }
-
-
-%\subsubsection{Reasoning about ones interest}
-%Interest-based negotiation (IBN) is a form of argumentation-based negotiation in which agents exchange (1) information about their underlying goals; and (2) alternative ways to achieve these goals \cite{rahwan2009formal}. 
+If the game is one of imperfect information, two sided matching does not work, and a proposal based protocol is the right fit \citep{rahwan2003argumentation}.
 
 
 \subsubsection{Heuristic methods in Negotiation}
@@ -422,40 +374,40 @@ If the game is imperfect two sided matching does not work, and a proposal based 
 Most of the negotiation in manufacturing can be seen as multi-lateral multi-issue negotiation. Three important distinctions are to be made, based on \citet{lai2004literature}. 
 \begin{enumerate}
 	\item
-	issue by issue negotiation;
+	Issue by issue negotiation;
 	\item
-	multi-issue cooperative negotiation;
+	Multi-issue cooperative negotiation;
 	\item
-	multi-issue negotiation with heuristic methods.
+	Multi-issue negotiation with heuristic methods.
 	\end{enumerate}
 	
-	The first aspect looks at the agreement which is built through a strategy, and examines this individually and interactively, and the parties are considered as non-cooperative and they are built for environments with incomplete and asymmetric information, where an agenda containing the order in which issues are treated is needed. For the second aspect a multi-issue concession strategy is used whose parties are considered cooperative and they have complete and symmetrical information about their environments. These two aspects have been discussed in the sections above. In the last type, an agreement is reached through a hybrid negotiation strategy, which uses the first two types of theoretical framework with the focus in automated models based on autonomous agents for multi-issue negotiation and in negotiation strategies tractable. This is also where possible learning methods are available \citep{schramm2013bilateral}. 
+The first aspect looks at the agreement which is built through a strategy, and examines this individually and interactively, and the parties are considered as non-cooperative and they are built for environments with incomplete and asymmetric information, where an agenda containing the order in which issues are treated is needed. For the second aspect a multi-issue concession strategy is used whose parties are considered cooperative and they have complete and symmetrical information about their environments. These two aspects have been discussed in the sections above. In the last type, an agreement is reached through a hybrid negotiation strategy, which uses the first two types of theoretical framework with the focus in automated models based on autonomous agents for multi-issue negotiation and in negotiation strategies tractable. This is also a context where possible learning methods are available \citep{schramm2013bilateral}. 
 	
-	These heuristic methods are a lot more common in the implementation of negotiation, as discussed by \citet{leitao2013past, monostori2006agent}, since it does not require the through analysis of the states and protocol compared to the game theoretic methods. Also it allows for larger groups and learning in the agents.
+These heuristic methods are a lot more common in the implementation of negotiation, as discussed in \citep{leitao2013past, monostori2006agent}, since they do not require the thorough analysis of the states and protocol compared to the game-theoretic methods. Also they allow for larger groups and learning in the agents.
 	
 \subsubsection{Learning methods in Negotiation}
 When dealing with heuristic methods for negotiation, learning methods can be implemented. An overview can be seen in \Cref{fig:negotiationlearning}. 
-
+\todo[Herschrijven naar mogelijkheid]{Herschrijven naar ene mogelijkheid}
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{img/negotiation_learning}
 \caption{Overview of different learning methods for heuristic negotiation methods from \citet{beheshti2014homan}}
 \label{fig:negotiationlearning}
 \end{figure}
-Based on the research conducted on heuristic methods and \citet{jennings2001automated}, it can be concluded that the optimal research in learning in heuristic methods is not yet known. They are often used however to decide on the optimal counter bid in \citet{beheshti2014homan}. They show that efficient learning algorithms based on an statistical ranking algorithm and linear regression, all with linear time complexities. These characteristics allow our method to be used in real-world applications. 
+Based on the research conducted on heuristic methods by \citet{jennings2001automated}, it can be concluded that the optimal research in learning in heuristic methods is not yet known. These methods are often used however, to decide on the optimal counter bid. In \citep{beheshti2014homan} it is shown that efficient learning algorithms based on a statistical ranking algorithm and linear regression are a suitable learning method and all have linear time complexities. These characteristics allow for a method to be used in real-world applications. 
 \section{Negotiation in Manufacturing}
-There are many applications of agent based solutions in the manufacturing world \citep{monostori2006agent}. In these negotiations an overwhelming aspect is realised in the creation of intelligent individual agents, and less on the overall intelligence of the system. Often ignored is the specific negotiation method in these systems. This is where the problem lays, since conflicting interest, essential in the optimal decision making, are left out. An example where these conflicting interest are well implemented is in \citet{zheng2014cloud}. A cloud consumer usually prefers a high reliability, whereas a cloud provider may only guarantee a less than maximum reliability in order to reduce costs and maximize profits. If such a conflict occurs, a Service Level Agreement cannot be reached without negotiation. Automated negotiation occurs, when software agents negotiate on behalf of their human counterparts.  
+There are many applications of agent-based solutions in the manufacturing world \citep{monostori2006agent}. In the applications an overwhelming aspect is realised in the creation of intelligent individual agents, and less on the overall intelligence of the system. Often ignored is the specific negotiation method in these systems. This is where the problem lies, since conflicting interest, essential in the optimal decision making, are left out. An example where these conflicting interest are well implemented is in \citep{zheng2014cloud}. A cloud consumer usually prefers a high reliability, whereas a cloud provider may only guarantee a less than maximum reliability in order to reduce costs and maximize profits. If such a conflict occurs, a Service Level Agreement cannot be reached without negotiation. Automated negotiation occurs when software agents negotiate on behalf of their human counterparts.  
 
 %Many negotiation solutions have been ``invented'' but little has been truly applied in the manufacturing world \citep{leitao2009agent}. 
 
-Rockwell Automation uses agents in its automation processes and is one of the industrial leaders in the implementation of agent based solutions \citep{vrba2011rockwell}. One of their future insights in the requirements of agent based solutions is to enhance the capabilities of agents for expressing and exchanging knowledge, and as a consequence, to increase the flexibility of control systems. In order to correctly do so, better insights in the negotiation is needed.
+Rockwell Automation uses agents in its automation processes and is one of the industrial leaders in the implementation of agent-based solutions \citep{vrba2011rockwell}. One of their insights on the requirements of agent-based solutions is to enhance the capabilities of agents for expressing and exchanging knowledge, and as a consequence, to increase the flexibility of control systems. In order to correctly do so, better insights in the negotiation are needed.
 
-Overall, nearly all factory scheduling negotiations use some form of these market-based approaches \citep{monostori2006agent} to implement the solutions. Different version of the contract net protocol were used or other auction based methods. The problem with these methods is that no reasoning about another's interest and desires is achievable. If this is known, more efficient and better systems can be achieved. It is however shown in \citep{bruccoleri2005production} that the agent based approach using market auctions out performs the centralized mixed integer programming solution. This system uses bilateral simultaneous negotiation on the medium level of the production plant. It is however a form of auctions, where the agents simultaneously bid towards the goal. If this system already outperforms a centralized system, a non-auction based method might outperform even better.
+Overall, nearly all factory scheduling negotiations use some form of these market-based approaches \citep{monostori2006agent} to implement the solutions. Different versions of the contract net protocol were used, as well as other auction based methods. The problem with these methods is that no reasoning about another's interest and desires is achievable. If this is known, more efficient and better systems can be achieved. It is however shown in \citep{bruccoleri2005production} that the agent-based approach using market auctions outperforms the centralized mixed integer programming solution. This system uses bilateral simultaneous negotiation on the medium level of the production plant. The system uses a form of auctions, where the agents simultaneously bid towards the goal. If this system already outperforms a centralized system, a non-auction based method might exceed even more.
 
 Other examples of negotiation in a multi-agent system have been deployed in Smart Grids for optimal energy delivery \citep{pipattanasomporn2009multi}, the collaborative design of light industrial buildings \citep{anumba2003negotiation}, negotiation in an electronic market of water rights, and for example in the scheduling of Agile software development \citep{rabelo1999multi}.
 
-From the above, in comparison with the knowledge obtained, there are two gaps. Firstly, little multi-issue multi-lateral strategic (game theory wise) application have been implemented. An example from the theory is \citet{wu2009efficient} where a Pareto-optimal-search method for three-agent multilateral negotiation is developed. This however has not been implemented in any real usecase, and would be very interesting to implement. The other gap in the literature is the research into the optimal learning methods for heuristic methods. In \citet{de2015automated} a wireless surveillance sensor networks is optimized using heuristic learning methods. This is limited to a bilateral negotiation protocol with a mediator, where negotiating agents (two access providers, each of them controlling a fraction of the access points in the scenario) negotiate. No multilateral application has been attempted. An attempt at generalizing multilateral heuristic learning has been made in \citet{beheshti2014homan}, but this has not been applied to a real use case yet. 
+From the above, in comparison with the knowledge obtained in the literature, there are two gaps. Firstly, only a few multi-issue multi-lateral strategic applications have been implemented. An example from the theory is \citet{wu2009efficient} where a Pareto-optimal-search method for three-agent multilateral negotiation is developed. This has not been implemented in any real usecase, and would be very interesting to implement. The other gap in the literature is the research into the optimal learning methods for heuristic methods. In \citep{de2015automated} a wireless surveillance sensor network is optimized using heuristic learning methods. This is limited to a bilateral negotiation protocol with a mediator, where negotiating agents (two access providers, each of them controlling a fraction of the access points in the scenario) negotiate. No multilateral application has been attempted. An attempt at generalizing multilateral heuristic learning has been made in \citet{beheshti2014homan}, but this has not been applied to a real use case yet. 
 
-From these knowledge gaps we try to determine whether it is possible to build a multi-issue, multi-lateral negotiation where the utility functions are private. Since it is unknown to the agent whether an concession is made by the other agents, we compare the reactive concession strategy by \citet{zheng2015automated} to a typical non-reactive concession strategy.
+From these knowledge gaps we try to determine whether it is possible to build a multi-issue, multi-lateral negotiation where the utility functions are private. Since it is unknown to the agent whether a concession is made by the other agents, we compare the reactive concession strategy by \citet{zheng2015automated} to a typical non-reactive concession strategy.
 
-The option of having a private utility function allows many more applications than since it allows for negotiations between competitors. This is in line with the optimized principled negotiation, as discussed.
+The option of having a private utility function allows many more applications, since it allows for negotiations between competitors. This is in line with the optimized principled negotiation, as discussed.

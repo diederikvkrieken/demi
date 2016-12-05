@@ -1,12 +1,12 @@
 \chapter{Simulation Comparison and Evaluations}
 \label{ch:eval}
-In the previous chapter we have described our model, with the reactive concession strategy. Here the reactive concession strategy is compared to a non-reactive concession strategy. Furthermore, different values for the reservation utility are checked, and different values for the Mixbed agent water requirements are compared. 
+In the previous chapter a have described of the model is given, with the reactive concession strategy. Here the reactive concession strategy is compared to a non-reactive concession strategy. Furthermore, different values for the reservation utility are checked, and different values for the Mixbed agent water requirements are compared. 
 
 \section{Parameters}
-The parameters that are checked are compared to the baseline non-reactive strategy. Firstly the Nash solution is described to compare to the optimal solution. The parameters will be described in more detail.
+The simulations done are compared to the baseline non-reactive strategy. Firstly the Nash solution is described to compare to the optimal solution. The parameters will be described in more detail.
 
 \subsection{Nash Bargaining Solution}
-The Nash bargaining solution is found using the product of agent's utility, maximizing the joint utility: $\prod_{i=i}^{m}u_i(x).$ We can calculate this since to us the utilities of the agent is known. This information is unknown to the agents since they only know their own utility curve. The joint utility gives the global maximum, and optimal Nash Solution. The utility functions of the agents are convex, which means that the solution is Pareto optimal and maximizes the product of the utilities \citep{nash1950bargaining, roth1977individual, lensberg1988stability}. 
+The Nash bargaining solution is found using the product of agent's utility, maximizing the joint utility: $\prod_{i=i}^{m}u_i(x).$ This optimum can be calculated if all the utility functions of the agents are known. This information is unknown to the agents since they only know their own utility functions. The joint utility gives the global maximum, and optimal Nash Solution. The utility functions of the agents are convex, which means that the solution is Pareto optimal and maximizes the product of the utilities \citep{nash1950bargaining, roth1977individual, lensberg1988stability}. 
 
 \begin{alignat*}{2}
 \text{maximize }   	& \prod_{i=1}^m u_i(x)  \\
@@ -17,50 +17,53 @@ The Nash bargaining solution is found using the product of agent's utility, maxi
 Using the non-linear COUENNE program \citep{belotti2013mixed} implemented in GAMS \citep{GamsSoftware2013}, the solutions are calculated. The limit for the reservation curve is also found. This is dependent on the utility functions, but our default utility give a $\forall i,  ru_i = 0.3182$. This means that there is no solution space, if $\forall i, ru_i > 0.3182$. However, if only a single agent were to have a $ru_i > 0.3182$, there still would be a solution. This obviously depends on the reservation curve values of the other agents.
 
 \subsection{Non-Reactive Concession Strategy}
-As explained in \Cref{sec:concessionstrat} the concession strategy determines whether a solution will be found. If no concession is made during the negotiation, and the agent stay on their initial utility, no agreement can be made. In this result the non-reactive strategy is used as a base line to compare to other methods. As described, there are many methods, and a weak concession is used in here, since the utility functions of the other agents are unknown. The non-reactive concession strategy used is $s_i(t) = \max \{s_0(t) - t * 0.01, ru_i\}$. This monotonic decreasing concession is a linear function until the reservation value. Described by \cite{wu2009efficient}, it is an \textit{amount of utility}, where Agent $ i \in N$ concedes a fixed amount utility $au$. They found that it was well performing, and has the advantage of ending after a known number of rounds. Since the utility functions are private, utilitarian concessions are not possible \citep{endriss2006monotonic}. 
+As explained in \Cref{sec:concessionstrat}, the concession strategy determines whether a solution will be found. If no concession is made during the negotiation, and the agents stay on their initial utility, no agreement can be made. In this result the non-reactive strategy is used as a base line to compare to other methods. As described, there are many methods, and a weak concession strategy is used in here, since the utility functions of the other agents are unknown. The non-reactive concession strategy used is $s_i(t) = \max \{s_0(t) - t * 0.01, ru_i\}$. This monotonic decreasing concession strategy is a linear function until the reservation value. Described by \citet{wu2009efficient} and in \Cref{sec:concessionstrat}, it is an \textit{amount of utility}, where Agent $ i \in N$ concedes a fixed amount utility $au$. \citet{wu2009efficient} found that it was well performing, and has the advantage of ending after a known number of rounds. Since the utility functions are private, utilitarian concessions are not possible \citep{endriss2006monotonic}. 
 
-This means that the minimum utility value is reached after 100 rounds, if only the non-reactive concession strategy is used. Then each agent makes $\frac{100}{4 \text{agents}} = 25 \text{ proposals}$. Since we combine it with the reactive concession strategy, it is possible for the agents to negotiate for more rounds.
+This means that the minimum utility value is reached after 100 rounds, if only the non-reactive concession strategy is used. Then each agent makes $\frac{100}{4 \text{agents}} = 25 \text{ proposals}$. Since we combine it with the reactive concession strategy, it is possible for the agents to negotiate for more rounds. This means that a simulation with more than 100 rounds is prefered.
 
 \subsection{Reactive Concession Strategy}
 The reactive concession strategy (see \Cref{sec:reactiveconcessionstr} for an explanation) is compared to the non-reactive concession strategy. Similar to \citet{zheng2015automated}, however here different reservation utilities are checked, while comparing the reactive to non-reactive strategy.
 
 \subsection{Reservation Curve}
 The curve, as shown in \Cref{sec:design:negmod}, is not really a curve, but a linear limit. The values can differ from 	
-$ru_i = \{0.05, 0.10, 0.15, 0.20, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, \\0.55, 0.6, 0.65\}$. We have seen that in the initial case, there is no agreement zone if the $ru_i$ is larger than $0.3182$. But, since we try different kind of parameters, it could be the case that if one of the reservation curves were to be different, the rest could as well. 
+$ru_i = \{0.05, 0.10, 0.15, 0.20, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, \\0.55, 0.6, 0.65\}$. In the initial case, there is no agreement zone if the $ru_i$ is larger than $0.3182$. But, since different kind of parameters are tried, it could be the case that if one of the reservation curves were to be different, the rest could as well. 
 
 \subsection{Distance}
-For the algorithm \Cref{al:algorithm1} to finish, there are two option. Either the distance from the offer and weight is smaller than a threshold, or the maximum number of rounds is reached. This distance, $ \displaystyle\max_{ j \in {1,2,...,m}} \parallel x^j_t-w_{t-1} \parallel$ gives the maximum distance from the agents to the weight. It tells something about the final solution and is thus used in the results to determine how the efficiency of the solutions. 
+For \Cref{al:algorithm1}, (\cpageref{al:algorithm1}) to finish, there are two option. Either the distance between the current offer and weight is smaller than a threshold, or the maximum number of rounds is reached. This distance, $ \displaystyle\max_{ j \in {1,2,...,m}} \parallel x^j_t-w_{t-1} \parallel$ gives the maximum distance from the agents' offer to the weight. The weight, as shown in \Cref{sec:des:offer}, is the average of all proposals. It tells something about the final solution and is thus used in the results to determine how the efficiency of the solutions. \todo[specifieker uitleggen]{specifieker uitleggen}
 
-If the distance is larger than the threshold, it means that the agents have not found an agreement and the maximum number of rounds has been reached. The final solution will be the average of all proposals. Two options are possible. Either one or more agent(s) has not conceded and thus not moved to the agreement-zone. Another option is that the reservation utilities is too high, meaning that there is no agreement-zone, and thus no agreement possible. 
+If the distance is larger than the threshold, it means that the agents have not found an agreement and the maximum number of rounds has been reached. The final solution will be the average of all proposals. Two options are possible. Either one or more agent(s) has not conceded and thus not moved to the agreement-zone. Another option is that the reservation utilities are too high, meaning that there is no agreement-zone, and thus no agreement possible. For a definition of the agreement zone see \cpageref{def:rev:agree}.
 
 Since we know where the agreement zone lies, we can see when the agent(s) do not concede, and thus refrain from agreement if the distance is larger than the threshold.
-
 
 \subsubsection{Threshold and Maximum Number of Rounds}
 As shown in the algorithm, there is a threshold required to decide on the value and whether an agreement is reached. For this simulation this is set to $\delta = 0.05$.	The maximum number of rounds is set to $200$.
 
-Since the non-reactive concession give a maximum of 100 rounds until zero is reached, 200 seems as an overkill. However, since we are dealing with the combination of different concession strategies, it is useful to check whether a solution is found afterwards. This since there might change something in the proposals due to the reactive concession method. If the non-reactive method were to be changed, it would be important to change the number of rounds as well. 
+Since the non-reactive concession give a maximum of 100 rounds until zero is reached, 200 seems as an overkill. However, since a combination of different concession strategies are compared, it is useful to check whether a solution is found afterwards. This happens since something might change in the proposals due to the reactive concession method. If the non-reactive method were to be changed, it would be important to change the number of rounds as well. 
 
 So if the number of rounds is equal to 199, no agreement has been made.
 
-\section{Reactive Compared to the Non-Reactive Concession Strategy}
+\section{Reactive Compared to Non-Reactive Concession Strategy}
 When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:reactivevsnon-reactive}, it is obvious that the Nash limit indeed lies at $ru_i = 0.3182$. However, unexpectedly, the non-reactive strategy consequently finds the solution closer to the optimal Nash Bargaining Solution then the reactive strategy. For completeness, the Nash solution lies at acid $= 0.571$, base $= 0.571$, water $= 0.714$.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/reactivevsnonreactive}
-	\caption{Distance from the Nash bargaining solution for the reactive and non-reactive concession strategies. }
+	\caption{Distance from the Nash bargaining solution for the reactive and non-reactive concession strategies.}
 	\label{fig:reactivevsnon-reactive}
 \end{figure}
 
 \npdecimalsign{.}
 \nprounddigits{4}
 \begin{table}[h]
-\begin{tabular}{|l|n{1}{4}|c|n{1}{4}|c|}\toprule
-	&	\multicolumn{2}{|c|}{Reactive concession}&\multicolumn{2}{|c|}{Non-reactive concession}\\
-	\cmidrule{2-5}
+\begin{tabular}{l n{1}{4} c n{1}{4} c}
+	\toprule
+	&	\multicolumn{2}{c}{Reactive concession}&\multicolumn{2}{c}{Non-reactive concession}\\
+	\cmidrule(r){2-3} 	
+%	\cmidrule(r){4-5}
 {{reservation utility}}	& {{distance}} & {{\# of rounds}}  & {{distance}} & {{\# of rounds}} \\ 
-	\hline 
+\cmidrule(r){1} 
+%\cmidrule(r){2-3} 
+%\cmidrule(r){4-5}
 0.05&	0&				26&		0.0295631273025621&		23\\
 0.10&	0&				26&		0.0295631273025621&	 	23\\
 0.15&	0&				38&		0.0295631273025621&	 	23\\
@@ -76,7 +79,7 @@ When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:
 0.65&	1.16753472222222&199&	0.874525088634732 &		199\\
 \hline
 \end{tabular} 
-\caption{The distance in the final proposal and number of rounds of a simulation.}
+\caption{The distance in the final proposal and number of rounds of a simulation. As can be seen, the agents do not find an agreement when the reservation utility is 0.25 or larger when using the reactive concession strategy, while the non-reactive concession correctly find an agreement.}
 \label{tab:reactivevsnon-reactive}
 \end{table}
 \npnoround

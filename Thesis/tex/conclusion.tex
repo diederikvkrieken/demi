@@ -1,20 +1,22 @@
 \chapter{Conclusion and Further Research}
-To conclude we discuss our research, and give possible further research options.
+To conclude the research some discussion, and further research options are given.
 \section{Conclusion}
-In this thesis we have given an overview of agent solutions used in the manufacturing world. We found that a gap lies in the ``real'' negotiation, which excludes the use of auctions and or contract net protocol. By using the alternating offer protocol it is checked whether an optimal solution can be found. At the moment, it seems as if the reactive concession strategy, as described in \citet{zheng2015automated} still has some difficulties. This can be clearly seen in \Cref{fig:reactivevsnon-reactive}. 
+In this thesis an overview of agent solutions used in the manufacturing world is given. It is found that a gap lies in the ``real'' negotiation, which excludes the use of auctions and the contract net protocol. By using the alternating offer protocol, it is checked whether an optimal solution can be found. At the moment, it seems as if the reactive concession strategy, as described in \citet{zheng2015automated} still has some difficulties. This can be clearly seen in \Cref{fig:reactivevsnon-reactive}. 
 
-So although it ensures that the agents only concede when the other agents concede, it under-performs However, when looking at the individual utility of an agent, it might be the best protocol to implement since it ensures that an agent only concedes if the other agents do as well.
+So although the reactive concession strategy ensures that the agents only concede when the other agents concede, it under-performs. However, when looking at the individual utility of an agent, it might be the best protocol to implement since it ensures that an agent only concedes if the other agents do as well.
 
-The usage of private utility functions allows for competing companies to use automated negotiation. This is in line with the idea of Industry 4.0, where companies specialize, but require products from other producers. By implementing automated negotiation, without the requirement of releasing the utility functions, competing businesses can flourish together. This is conform to the principled negotiation ideology, which allows an optimal outcome.
+The usage of private utility functions allows for competing companies to use automated negotiation. This is in line with the idea of Industry 4.0, where companies specialize, but require products from other producers. By implementing automated negotiation, without the requirement of releasing the utility functions, competing businesses can flourish together. This conform to the principled negotiation ideology, which allows an optimal outcome.
 
 \section{Discussion}
-Although the alternating offer has been used, it is not usable at all yet at a real case. The largest difficulty lies in the realistic portrayal of the utility function. The requirement for a convex utility function makes it even more difficult. However, if only the non-reactive strategy was used, it should be possible to use a non-convex function.
+Although the alternating offer protocol has been used, it is not usable at all yet in a real case. The largest difficulty lies in the realistic portrayal of the utility function. The requirement for a convex utility function makes it even more difficult. However, if only the non-reactive strategy was used, it should be possible to use a non-convex function.
 
-In the literature we have discussed the concept of principled negotiation. There we discussed the importance of retaining a private utility function, but making it very important to create these utility functions to ensure objective negotiation. This we have achieved, and thus we can say that the negotiation in this thesis is a form of principled negotiation.
+In the literaturethe concept of principled negotiation is discussed. Addressed is the importance of retaining a private utility function, but making it very important to create these utility functions to ensure objective negotiation. This we have achieved, and thus we can say that the negotiation in this thesis is a form of principled negotiation.
 
-In the problem statement we discussed the option of optimizing a production process using negotiation. We can conclude that this has not fully been achieved. We have looked at the implementation of multilateral multi-issue negotiation, without a mediator, and using a very simplified theoretical solution, this is achieved. 
+In the problem statement, the option of optimizing a production process using negotiation is discussed. It can be concluded that this has not fully been achieved. However, when looked at the implementation of multilateral multi-issue negotiation, without a mediator, and using a very simplified theoretical solution, this is achieved. 
 
-A difficulty is that no concession is seen if an agent concedes in a matter that the other agents has no desire in. So if for example the cation concedes in the amount of water to produce (which means that it will produce more water), this concession will not be ``seen'' by the Neut, since it has no desire in this utility. %This makes it a possible undesirable method for the other agents, or .
+\subsection{Discussion of the Reactive Concession Strategy}
+
+A difficulty is that no concession is seen if an agent concedes in a matter that the other agents have no desire in. So if, for example, the cation concedes in the amount of water to produce (which means that it will produce more water), this concession will not be ``seen'' by the Neut, since it has no desire in this utility. %This makes it a possible undesirable method for the other agents, or .
 
 \todo[reactive concession stopping]{Where an agent stops conceding in reaction to another stopping to concede.}
 
@@ -29,11 +31,12 @@ The use case was not an optimal situation for the research. This due to the fact
 Example is the interaction between pedestrians, cars, public transport at an interjection. Future asks for 
 
 \section{Further Research}
+To use negotiation in manufacturing more research should be conducted. 
 A lot of further research could be done on the alternating offer protocol to be used in manufacturing world. The agents could be improved to allow reasoning, using a holonic structure for example. Furthermore, other strategies can be used, while the utility functions can be changed as well. Extra negotiation could be applied using bilateral negotiations, and to finalize heuristic learning methods can be applied.
 
 \subsection{Holonic Agents}
 
-This structure is that of a holon as can be seen in \Cref{fig:holonexample}. As shown in the literature it is based on PROSA by \citep{van1998reference}. Idealy this could be implemented in this usecase to make use of the different parts of the anion filter.
+The structure of a holonic agent is that of a holon as can be seen in \Cref{fig:holonexample}. As shown in the literature (\Cref{ch:literature}) it is based on PROSA by \citep{van1998reference}. Idealy this could be implemented in this usecase to make use of the different parts of the anion filter.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/holon_example}
@@ -63,7 +66,7 @@ This structure is that of a holon as can be seen in \Cref{fig:holonexample}. As 
 	
 \end{figure}
 
-The following facts and rules would than be part of the Anion, meaning that a beginning towards an BDI in the agent can be made.
+The following facts and rules would then be part of the Anion, meaning that a beginning towards a representation of Beliefs, desires, and intentions, in the agent can be made \citep{rao1995bdi}.
 
 \begin{enumerate}
 	\item
@@ -88,7 +91,7 @@ The following facts and rules would than be part of the Anion, meaning that a be
 The use of these holons could allow an agent to reason about the environment, and act upon it accordingly.
 
 \subsection{Utility function}
-The requirement of a convex function forced the use of a specific, and highly theoretical function. This could be perfected using more expert input. Although an attempt was made, using a variable in the Mixbed ratio, this of course still is a highly theoretical and unrealistic representation.
+The requirement of a convex function forced the use of a specific and highly theoretical function. This could be perfected using more expert input. Although an attempt was made, using a variable in the Mixbed ratio, this of course still is a highly theoretical and unrealistic representation.
 \subsubsection{Reservation curve}
 We have used a linear reservation curve for simplicity, since this eliminated the minimization (mixed integer programming) that would have been necessary if a truly curved function was used. An example is shown in \Cref{fig:anionreservationfunction}.
 \begin{figure}[h]
@@ -104,12 +107,15 @@ We have used a linear reservation curve for simplicity, since this eliminated th
 \end{figure}
 \clearpage
 \subsection{Continue negotiation after group agreement}
-After the group has an agreement, the agents now allocate the resource as predefined (see \Cref{sec:design:mean}). This could be optimized to bilateral negotiation between the agents. Take the Mixbed and Anion for example: so if the group agrees to an allocation of 0.5 base, the Mixbed and anion can further negotiate how much of this 0.5 should be allocated to whom. This new bilateral negotiation is simpler, and due to the fact that it only contains a single issues, allows for quick determination.
+After the group has an agreement, the agents now allocate the resource as predefined (see \Cref{sec:design:mean}). This could be optimized to bilateral negotiation between the agents. Take the Mixbed and Anion for example: if the group agrees to an allocation of 0.5 base, the Mixbed and anion can further negotiate how much of this 0.5 should be allocated to whom. This new bilateral negotiation is simpler, and due to the fact that it only contains a single issue, allows for quick determination.
 
 \subsection{Extra concession strategies}
 The many concession strategies, as shown in \Cref{sec:concessionstrat} allow for many strategies to be used. Further research could include using fraction, which was suggested as a good solution by \citet{wu2009efficient}. 
 \subsection{Heuristic learning methods}
 As shown in \Cref{sec:lit:learn}, heuristic learning methods can also be used to learn the desired utility function. This has not been done since the requirement of a convex utility functions forced the usage of predefined functions.
+\todo[Belangrijke beter uitleggen dan anderen]{Belangrijke beter uitleggen dan anderen}
+
+\todo[Agent Coalities]{Agent Coalities}
 
 \todo[Kloppen titels!]{Kloppen Titels?!}
 

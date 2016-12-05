@@ -213,26 +213,26 @@ When negotiating, it is essential for the agents to make concessions, only in TO
 		
 \end{definition*}
 
-%\begin{figure}
-%		\begin{tikzpicture}
-%	\coordinate (v1) at (0,0) {};
-%	\node (v2) at (0,5) {};
-%	\node (v3) at (5,0) {};
-%	\node (v4) at (2.5,2.5) {Agreement-zone}
-%	\draw[->]  (v1) -- (v2) node[left] {Issue 1};
-%	\draw[->]  (v1) -- (v3) node[below] {Issue 2}; 
-%	\draw[name path = C] (5,1) .. controls (3,1) and (1,3) .. (1,5) node[right] {Reservation Curves};
-%%	\draw[clip, name path = B] (0,4) .. controls (2,4) and (4,2) .. (4,0) ;
-%%	\begin{pgfonlayer}{bg}
-%%	\fill [gray!50,
-%%	intersection segments={
-%%		of=B and C,
-%%		sequence={L2--R2}
-%%	}];
-%%	\end{pgfonlayer}
-%	
-%	\end{tikzpicture}
-%\end{figure}
+\begin{figure}
+		\begin{tikzpicture}
+	\coordinate (v1) at (0,0) {};
+	\node (v2) at (0,5) {};
+	\node (v3) at (5,0) {};
+	\node (v4) at (2.5,2.5) {Agreement-zone}
+	\draw[->]  (v1) -- (v2) node[left] {Issue 1};
+	\draw[->]  (v1) -- (v3) node[below] {Issue 2}; 
+	\draw[name path = C] (5,1) .. controls (3,1) and (1,3) .. (1,5) node[right] {Reservation Curves};
+	\draw[clip, name path = B] (0,4) .. controls (2,4) and (4,2) .. (4,0) ;
+	\begin{pgfonlayer}{bg}
+	\fill [gray!50,
+	intersection segments={
+		of=B and C,
+		sequence={L2--R2}
+	}];
+	\end{pgfonlayer}
+	
+	\end{tikzpicture}
+\end{figure}
 When dealing the requirement of conceding, there are multiple strategies. Most of these are one version or another of a monotonic concession protocol, meaning that the desired utility of the agent will never increase. This means that the desired utility will always decrease, or stay the same. After each proposal, there are two options. Either the agent refuses to make a concession and sticks to the previous proposal or it makes a concession and proposes a new deal that is less preferable to the agent. The monotonic concession protocol is verifiable, and guaranteed to terminate. This is due to the conflict deal that would occur if no agents concede, which gives both agents a utility of 0 \citep{endriss2006monotonic}.
 
 %Using the monotonic concession protocol, negotiation is guaranteed to end (with or without agreement) after a finite number of rounds. Since the set of possible deals is finite, the agents cannot negotiate indefinitely: either the agents will reach agreement, or a round will occur in which neither agent concedes. However, the protocol does not guarantee that agreement will be reached quickly. Since th

@@ -36,7 +36,7 @@ If the distance is larger than the threshold, it means that the agents have not 
 Since we know where the agreement zone lies, we can see when the agent(s) do not concede, and thus refrain from agreement if the distance is larger than the threshold.
 
 
-\subsubsection{Threshold \& Maximum Number of Rounds}
+\subsubsection{Threshold and Maximum Number of Rounds}
 As shown in the algorithm, there is a threshold required to decide on the value and whether an agreement is reached. For this simulation this is set to $\delta = 0.05$.	The maximum number of rounds is set to $200$.
 
 Since the non-reactive concession give a maximum of 100 rounds until zero is reached, 200 seems as an overkill. However, since we are dealing with the combination of different concession strategies, it is useful to check whether a solution is found afterwards. This since there might change something in the proposals due to the reactive concession method. If the non-reactive method were to be changed, it would be important to change the number of rounds as well. 
@@ -81,7 +81,7 @@ When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:
 \end{table}
 \npnoround
 
-It can be seen that the non-reactive concession strategy halts after less rounds than the reactive concession strategy, which means that it is faster. The reactive concession strategy has a larger distance than the threshold, which means that there is no agreement, since the distance is larger than 0.05, and the number of rounds is 199. However, when looking at the distance from the reactive concession, it is zero, which means that the average is exactly the same as the proposals. Interestingly when looking at the distance from the optimal solution, \Cref{fig:reactivevsnon-reactive}, it is very large. This unexpected result will be discussed later. 
+It can be seen that the non-reactive concession strategy halts after less rounds than the reactive concession strategy, which means that it is faster. The reactive concession strategy has a larger distance than the threshold, which means that there is no agreement, since the distance is larger than 0.05, and the number of rounds is 199. However, when looking at the distance from the reactive concession, it is zero, which means that the average is exactly the same as the proposals. Interestingly when looking at the distance from the optimal solution, \Cref{fig:reactivevsnon-reactive}, it is very large. This unexpected result will be discussed later.  
 \clearpage
 \section{Reactive Mixbed with other Agents Non-Reactive }
 Although the reactive concession strategy performed worse when compared to the non-reactive concession strategy, a comparison to is made when only the Mixbed agent uses the reactive strategy. The Mixbed agent is the most important agent since it ``produces'' the final demi water product, the most important resource of the production line.

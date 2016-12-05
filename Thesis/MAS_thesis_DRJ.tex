@@ -23,7 +23,6 @@
 \usetikzlibrary{shapes,arrows}
 \usepackage{numprint}
 \usepackage{graphicx}
-\usepackage{refcheck}
 \usepackage{booktabs}
 \usepackage{mdframed}
 
@@ -31,14 +30,15 @@
 	linecolor=blue!30!black,
 	linewidth=1pt,%
 	frametitlerule=true,%
-	backgroundcolor=gray!10,
+	backgroundcolor=gray!5,
 	innertopmargin=\topskip,
 }
 
 \mdfdefinestyle{theoremstyle}{%
-	linecolor=blue!70!black,linewidth=1pt,%
+	linecolor=blue!30!black,linewidth=1pt,%
 	frametitlerule=true,%
 	frametitlebackgroundcolor=gray!20,
+	backgroundcolor=gray!5,
 	innertopmargin=\topskip,
 }
 \mdtheorem[style=theoremstyle]{definition}{Definition}
@@ -94,9 +94,8 @@
 
 % Title Page
 \title{
-	{\bf Negotiation of agents in a manufacturing process}\\
+	{\bf Agent Negotiation in a Manufacturing Process}\\
 	{\it Master Thesis}\\
-	{Final Draft\\}
 }
 \author{ {\bf Diederik van Krieken}  \\
 	MSc Artificial Intelligence \\
@@ -137,5 +136,4 @@
 \newpage
 \bibliographystyle{plainnat}
 \bibliography{./bib/MAS_thesis}
-
 \end{document}          

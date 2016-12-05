@@ -1,23 +1,23 @@
 \chapter{Research Design and Application}
 \label{ch:design}
-As discussed in the literature review \todo[Referentie model versus implementatie]{Referentie model versus implementatie} (\Cref{ch:literature}), this research has a focus on negotiation between agents. Using different methods and techniques, an attempt is made to optimize a production process. The agents attempt to find an approximate-optimal solution while the optimal solution is unknown to the group \todo[Referentie?]{Referentie?}. %Based on learning methods from decentralized holonistic methods, utility and negotation domains a simulation can be build which can be applied to the production process. 
+As discussed in the literature review  (\Cref{ch:literature}), this research has a focus on negotiation between agents. Using different methods and techniques, an attempt is made to optimize a production process. The agents attempt to find an approximate-optimal solution while the optimal solution is unknown to the group. This knowledge is applied to a reference model as explained in \Cref{sec:researchapproach} to ensure that the research has relevance.  %Based on learning methods from decentralized holonistic methods, utility and negotation domains a simulation can be build which can be applied to the production process. 
 
-The system of which a decentralized solution will be simulated is a de-mineralized water plant as described in the introduction and problem chapters (\Cref{ch:intro,chp:problem}).
+The system of which a decentralized solution will be simulated is a de-mineralized water plant as described in the introduction and problem chapters (\Cref{ch:intro,chp:problem}). This continuous production process is optimal to check the workings of negotiation in a multi-agent system. There are limited resources, that have to be allocated towards competing components. Currently there is no optimization in place at this plant, and every decision is made manually. By optimizing this plant, fewer materials will be wasted, having an environmental impact and cost improvement.
 
 As explained in the literature, a negotiation problem can be characterized by a negotiation domain (who negotiate and what do they negotiate about), an interaction protocol (which rules govern the negotiation process) and a set of decision mechanisms or strategies that guide the negotiating agents through every phase of the interaction protocol \citep{fatima2014principles}.
 
-For the scope of this work, we assume a multi-attribute negotiation domain, where a deal or solution to the problem is defined as the set of attributes (issues), and each one of them can be in a certain range.
+For the scope of this work, an assumption in a multi-attribute negotiation domain is made, where a deal or solution to the problem is defined as the set of attributes (issues), and each one of them can be in a certain range.
 
-The coding will be done in Java from scratch. Multiple open-source systems are available, including Jadex and Jade \citep{bellifemine2007developing}, which is optimal for communication research in a multi-agent system \citep{kravari2015survey}. However, since most of these systems are very comprehensive, small adjustments which are necessary for our research are not conceivable. Secondly, specific requirements, which were designed specifically for this usecase, such as the projections and reactive concession, have not been commonly implemented yet. 
+The coding will be done in Java from scratch. Multiple open-source systems are available, including Jadex and Jade \citep{bellifemine2007developing}, which is optimal for communication research in a multi-agent system \citep{kravari2015survey}. However, since most of these systems are very comprehensive, small adjustments which are necessary for our research are not conceivable. Secondly, specific requirements, which were designed specifically for this use case, such as the projections and reactive concession, have not been commonly implemented yet. 
 
 \section{Demineralization of Water}
 \label{sec:demi}
-As discussed in the introduction, the usecase for which a multi-agent system for production will be implemented is a water demineralization plant. An application of this new model will be applied to a large plant that creates de-mineralized water. By removing all the ions from common water, de-mineralized water is obtained. This water is used for many processes and has many applications. In this plant specifically, it is used for the steam turbines, which generate electricity. By burning the by-product, heat is generated, which creates steam to power the turbines. 
+As discussed in the introduction, the use case for which a multi-agent system for production will be implemented is a water demineralization plant. An application of this new model will be applied to a large plant that creates de-mineralized water. By removing all the ions from common water, de-mineralized water is obtained. This water is used for many processes and has many applications. In this plant specifically, it is used for the steam turbines, which generate electricity. By burning the by-product, heat is generated, which creates steam to power the turbines. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{img/demi-plant}
-	\caption{An overview of a water demineralization plant. We simplify the many anion and cation filters to a single anion and cation filter. The same for the Mixbed filter. Result is \Cref{fig:agent-plant}}
+	\caption{An overview of a water demineralization plant. The many anion and cation filters are simplified to a single anion and cation filter. The same for the Mixbed filter. Result is \Cref{fig:agent-plant}}
 	\label{fig:demi-plant}
 \end{figure}
 
@@ -25,14 +25,14 @@ Minerals are removed from water by multiple production steps. The most common me
 
 These filters have to be cleaned every few hours to ensure that proper demineralization occurs. For cleaning, acid and base are used. By filtering the anion with base, the ions that have been retrieved in the filtering are flushed. The residue, still of a base composition, is stored in a storage tank where the combination of the base and acids from the filters is neutralized. This storage tank is called the ``Neut'' shorthand.
 
-So overall, we have three kinds of filters, the anions, the cations, the Mixbed and the residue storage tank: the Neut. Each of the filters is exemplified by multiple items, but for simplification we only look at the allocation of resources. So overall there are 4 agents:
+So overall, there are three kinds of filters, the anions, the cations, the Mixbed and the residue storage tank: the Neut. Each of the filters is exemplified by multiple items, but for simplification only looked is at the allocation of resources. So overall there are 4 agents:
 \begin{enumerate}
 	\item``Anion''
 	\item``Cation''
 	\item``Mixbed''
 	\item``Neut''.
 \end{enumerate}
-Within each agent, the right amount of resources will be allocated. The resources are the acid that is needed for cleaning, the base for cleaning, and the water that has to be delivered at the end of the process. Thus we have:
+Within each agent, the right amount of resources will be allocated. The resources are the acid that is needed for cleaning, the base for cleaning, and the water that has to be delivered at the end of the process. Thus, the resources are:
 \begin{enumerate}
 	\item Acid
 	\item Base
@@ -41,7 +41,7 @@ Within each agent, the right amount of resources will be allocated. The resource
  The decision on the amount of resources used will be done by negotiation and combined with the information that is retrieved from the experts knowledge.
 
 
-\section{Negotiation model}
+\section{Negotiation Model}
 \label{sec:design:negmod}
 The four rational agents defined in \Cref{sec:demi},namely $m = \{1,2,3, 4\}$, partition the  three issues defined $n=\{1,2,3\}$. This can be simplified to a multilateral buyer-seller negotiation.
 
@@ -65,16 +65,16 @@ The four rational agents defined in \Cref{sec:demi},namely $m = \{1,2,3, 4\}$, p
 \end{figure}
 Anion, agent 1, wants as much base as possible, while it wants to minimize the amount of water. For the cation,agent 2, as much acid as possible is required, while still as little water as possible should be produced. The Mixbed, agent 3, requires as much as possible acid and base for cleaning. Since it the final production step, it requires the water to be delivered, forcing it to obtain as much water as possible from the cation. Finally there is the Neut,agent 4, which wants as little base and acid as possible. Also the base and acid should be levelled out as much as possible to attempt to stay as close to a pH of $7$ as possible. 
 
-Each of the above issues is translated to a unit interval $[0, 1]$ in $\mathbb{R}$. Since we have $3$ issues, we have the unit hypercube $[0, 1]^3$ in  $\mathbb{R}^3$. This results in a possible negotiation domain $\Omega = [0,1]$ per issue.
+Each of the above issues is translated to a unit interval $[0, 1]$ in $\mathbb{R}$. Since there are $3$ issues, the unit hypercube $[0, 1]^3$ in  $\mathbb{R}^3$ is the result. This results in a possible negotiation domain $\Omega = [0,1]$ per issue.
 	\begin{definition*}[Convexity]
 
 	\label{def:convex}
-	A convex set is a region such that if one where to connect two points in this set by a straight line segment, each point on that line segment is also within that set. Or formally: $C$ is a convex set if the line segment between any two points in $C$ lies in $C$, i.e., if for any $x_1, x_2 \in C$ and any $\theta$ with $0 \leq \theta \leq 1$, we have $\theta x_1 + (1 - \theta )x_2 \in C$.
+	A convex set is a region such that if one where to connect two points in this set by a straight line segment, each point on that line segment is also within that set. Or formally: $C$ is a convex set if the line segment between any two points in $C$ lies in $C$, i.e., if for any $x_1, x_2 \in C$ and any $\theta$ with $0 \leq \theta \leq 1$, it is that $\theta x_1 + (1 - \theta )x_2 \in C$.
 	
 	{\centering
 		\includegraphics[width=0.7\linewidth]{img/convex}\par}
 	
-	This can be clearly seen in the figure above. Two sets. The left is convex, while the right, kidney shaped is not, as indicated with the line outside the set. From \citep{boyd2004convex}
+	This can be clearly seen in the figure above. Two sets. The left is convex, while the right, kidney shaped is not, as indicated with the line outside the set. From \citep{boyd2004convex}.
 	
 	The boundary of a convex set is always a convex curve. A function is called a convex function if the set of points on or above the graph of the function is a convex set. Well-known examples of convex functions are the quadratic function $x^{2}$ and the exponential function $e^{x} $for any real number $x$.
 	
@@ -106,7 +106,7 @@ Each agent has its own characteristics on which the system will run. As shown in
 
 When the negotiations start, each agent will attempt to obtain as much utility as possible. Thus, when negotiations start, they propose the offer with the highest utility for them. During the negotiation, the required utility slowly decreases. An agent $i$'s concession strategy is defined as a time series of the agent's desirable utility at time $0,1,...,t$. This is written as $s_i(0), s_i(1), s_i(2),..., s_i(t)$.  This is a monotonically decreasing function of the time/rounds $t$. The concession strategy $s$ is agent dependent. However, this utility will always be larger than the agent's minimum utility, or reservation curve: $ \forall t, s_i(t) \geq ru_i$.
 
-Since the utility decreases each round, the set of feasible offers increases as well. This means that at time $t$, agent $i$ has the convex set $A^i_t = \{x\in [0,1]^3 \mid u_i(x) \geq s_i(t)   \}$ as possible offers. Since $s_i(t)$ is monotonically decreasing, this means that $\forall t, A^i_1\subseteq A^i_2 \subseteq ... \subseteq A^i$. In this model, we use the \textit{amount of utility monotonic concession protocol} as described in \Cref{sec:concessionstrat}, since it performs well, and has the advantage of finding a solution in a specific time.
+Since the utility decreases each round, the set of feasible offers increases as well. This means that at time $t$, agent $i$ has the convex set $A^i_t = \{x\in [0,1]^3 \mid u_i(x) \geq s_i(t)   \}$ as possible offers. Since $s_i(t)$ is monotonically decreasing, this means that $\forall t, A^i_1\subseteq A^i_2 \subseteq ... \subseteq A^i$. In this model, the \textit{amount of utility monotonic concession protocol} as described in \Cref{sec:concessionstrat}, is used since it performs well, and has the advantage of finding a solution in a specific time.
 
 \subsection{Reactive Concession Strategy}
 \label{sec:reactiveconcessionstr}
@@ -119,7 +119,7 @@ There are two options for an agent to concede. Either the change in utility that
  
  The perceived change of utility for agent $i$ from agent $j$ is defined as the difference between the utility of the current offer and that of the previous best offer: $u_i(x^j_t)-u_i(x^j_{[,-1]})$.
  
- The total perceived change since the beginning of the negotiation is equal tot the difference between the utility of the current offer and that of the first offer: $u_i(x^j_t)-u_i(x^j_0)$. Since we only want to concede compared to our own concessions, we subtract this perceived change from our change: $(1-u_i(x^i(t-1))$.
+ The total perceived change since the beginning of the negotiation is equal tot the difference between the utility of the current offer and that of the first offer: $u_i(x^j_t)-u_i(x^j_0)$. Since an agent only want to concede compared to their own concessions, this perceived change is subtracted from our change: $(1-u_i(x^i(t-1))$.
  
  The maximum of these function is the amount the agent is willing to concede per agent: $\max \{\Delta_1u_{jk}(t), \Delta_2u_{jk}(t),0\}$
 
@@ -131,12 +131,11 @@ The convex, see the box on \cpageref{def:convex} for an explanation, requirement
 
 \subsection{Offer Generation}
 \label{sec:des:offer}
-We use the sequential projection strategy for multilateral negotiation to generate our offers. \citet{zheng2015automated} have shown that this method converges if all agents have an incentive to concede.
+The sequential projection strategy for multilateral negotiation to generate the offers is used. \citet{zheng2015automated} have shown that this method converges if all agents have an incentive to concede.
 
 When an agent $j$ has offered $x_j\in[0,1]^3$, the next agent $i$ will either accept the offer $x^j_t$, or create a new offer $x^j_{t+1}$. 
 
-To create the new offer, the agent $i$ will first calculate the weight of all the offers by other agents ($j$). This is done by $\sum_{j=1}^{m} a^{i,j}_t x^j_t $ where $\sum_{j=1}^{m}a^{i,j}_t = 1$. For simplicity, we set the $a^{i,j}_t = \frac{1}{m} = \frac{1}{4}$. 
-\todo[Globale overzicht!]{Globale overzicht!}
+To create the new offer, the agent $i$ will first calculate the weight of all the offers by other agents ($j$). This is done by $\sum_{j=1}^{m} a^{i,j}_t x^j_t $ where $\sum_{j=1}^{m}a^{i,j}_t = 1$. Where $a^{i,j}_t = \frac{1}{m} = \frac{1}{4}$. It could be argued to divide by three, since each resource is negotiated over by three agents. However, by dividing by four, a global overview is obtained which is preferable.
 
 This weighted average of the offers is projected by on the border of its feasible offer set $A^i_t$ by the agent who has to propose, $x^j_{t+1}$. This boundary, or indifference curve, is the set of points for which the utility is equal to the desired utility of agent $i$. The projection can be done using convex projection techniques as explained by \citet{boyd2004convex}. In this method, a linear indifference curve will always be obtained, making convex projection calculations unnecessary. This will be done to ensure a high speed run-time, since the state of the world will change quickly.
 
@@ -173,20 +172,20 @@ This function has been chosen based on interviews with industry experts. They co
 
 The reservation curve can be set as the curve where the utility $= 0.3$ e.g.. This means that any offer on the line $0 = - W + B - (\ln(0.3)+1)$, or above, is acceptable for the anion in the stages of negotiation.
 
-If the indifference line is known, a projection on this line is possible. At $t$, the agent $i$ (anion) has the required utility $s^i_t$. Suppose $s^i_t = 0.4$ This means that there is an indifference curve $0 = B - W - (\ln(0.4)+1)$. Suppose that offer $x(t-1)$ contains an offer for base $0.4 \text{ and water } 0.7$ (we can disregard the acid offer in this example, since the Anion has an indifference for the amount of acid used). 
+If the indifference line is known, a projection on this line is possible. At $t$, the agent $i$ (anion) has the required utility $s^i_t$. Suppose $s^i_t = 0.4$ This means that there is an indifference curve $0 = B - W - (\ln(0.4)+1)$. Suppose that offer $x(t-1)$ contains an offer for base $0.4 \text{ and water } 0.7$ (the acid offer can be disregard in this example, since the Anion has an indifference for the amount of acid used). 
 
 A projection to the indifference curve of the Anion is achieved with the following formulae. It has been thoroughly proven that if a function is written as, $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$, the distance is calculated as follows:
 
 \[\text{distance}(ax+by+c=0, (x_0, y_0)) = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}. \]
 
-From this we get the point of the line, which is the line with the minimal distance:
+From this the point of the line is obtained, which is the line with the minimal distance:
 \[x = \frac{b(bx_0 - ay_0)-ac}{a^2 + b^2} \text{ and } y = \frac{a(-bx_0 + ay_0) - bc}{a^2+b^2}\]
 
-This has been proven multiple times, for example by algebaric proof by finding the line that is perpendicular to the original line, and $\frac{b}{-a}$ (the negative reciprocal) by letting it pass trough the point ($x_0, y_0$). Then it is obvious that the distance is indeed as shown above, with the minimal distance point $x \text{ and }y$.
+This can be proven by algebaric proof, for example, by finding the line that is perpendicular to the original line, and $\frac{b}{-a}$ (the negative reciprocal) by letting it pass trough the point ($x_0, y_0$). Then it is obvious that the distance is indeed as shown above, with the minimal distance point $x \text{ and }y$.
 
 The above is important since \citet{zheng2015automated} have proven that if the projection is the point with the shortest minimum Eucilidean distance, the algorithm will converge for any concession strategy.
 
-So given the situation above, we have the function $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$ where $\texttt{a} = 1, \texttt{b} = -1, \texttt{c} = -(\ln(0.4)+1)$. Given the information above, $x_0 = 0.4 \text{ and } y_0 = 0.7$ this gives us the solution of the new $x=\frac{2.1 + \ln(0.4)}{2} \text{and} y = \frac{2.1 - \ln(0.4)}{2}$, which is on the indifference curve of the anion for an utility of 0.4.
+So given the situation above, the function is $\texttt{a} x + \texttt{b} y + \texttt{c} = 0$ where $\texttt{a} = 1, \texttt{b} = -1, \texttt{c} = -(\ln(0.4)+1)$. Given the information above, $x_0 = 0.4 \text{ and } y_0 = 0.7$ this gives us the solution of the new $x=\frac{2.1 + \ln(0.4)}{2} \text{and} y = \frac{2.1 - \ln(0.4)}{2}$, which is on the indifference curve of the anion for an utility of 0.4.
 The above is visualized in \Cref{fig:projectionanionexample}.
 
 \begin{figure}[h]
@@ -220,7 +219,7 @@ where B is base ranging over ([0,1]) and A is acid ranging over ([0,1]).
 
 The reservation curve, however, is a little different. It consists of two functions, namely $0 \geq -B - A - 0.2 \text{ and }  0 \leq -B - A + 0.2$. The value of $0.2$ has been decided on after expert interviews. These two reservation curves are shown in \Cref{fig:neutreservationcurve}.
 
-Furthermore does the Neut have the third reservation curve, dependent on the reservation utility. If the reservation utility is $0.3$ we have the third reservation curve: $0 = - A - B - (\ln(0.3))$,
+Furthermore does the Neut have the third reservation curve, dependent on the reservation utility. If the reservation utility is $0.3$ the third reservation curve is: $0 = - A - B - (\ln(0.3))$,
 
 \begin{figure}[h]
 		\centering
@@ -238,10 +237,10 @@ Furthermore does the Neut have the third reservation curve, dependent on the res
 			\caption{The neut reservation curve of the Neut. The requirement of the acid and base staying near each other is achieved.}
 			\label{fig:neutreservationcurve}
 	\end{figure}
-\clearpage
-\subsection{Mixbed}
 
-The Mixbed is where the final cleaning occurs. It is also the agent responsible for the end water delivery. Since it consists of a mixture of anion and base, it has three issues about it has desires. This is realized with the function below:
+\subsection{Mixbed}
+\label{sec:des:mixb}
+The Mixbed is where the final cleaning occurs. It is also the agent responsible for the end water delivery. Since it consists of a mixture of anion and cation, it has three issues about it has desires. This is realized with the function below:
 \[
 \text{Mixbed utility} = \frac{e^{W+A+B}}{e^3}
 \] 
@@ -260,13 +259,13 @@ y = \frac{y_0 + (\ln(u)+3) - (x_0, y_0, z_0)}{3}
 z = \frac{z_0 + (\ln(u)+3) - (x_0, y_0, z_0)}{3}
 \]
 
-The shortest distance from a point to a plane is along a line perpendicular to the plane. By calculating the normal vector, which is perpendicular to the plane, we find the line that is parallel to the normal vectore, and goes through point ($x_0, y_0, z_0$). 
+The shortest distance from a point to a plane is along a line perpendicular to the plane. By calculating the normal vector, which is perpendicular to the plane, the line that is parallel to the normal vector is found, which goes through point ($x_0, y_0, z_0$). 
 
 Important to note here is that the ratio of water to the base and acid is disputed. Since only a residue of ions have to be removed, the amount of water desired can be much hire compared to the amount of acid and base used. This is solved with the introduction of a variable $l$ with which to multiply the amount of water. 
 
 \[ \Delta_{ij} = \frac{1}{e^4} +\sum_{i=1}^m x^2_i \]
 
-If the amount of water, compared to the amount of base and acid used is 10 i.e., we get the following function:
+If the amount of water, compared to the amount of base and acid used is 10 i.e., following function is obtained:
  \[
  \text{Mixbed utility} = \frac{e^{(10*W)+A+B}}{e^{10+2}}
  \] 
@@ -338,14 +337,14 @@ All in all, there are three kinds of sub-negotiations. These are shown in \Cref{
 So although there is a multi-issue negotiation, the only agent that has interest in all three issues is the Mixbed. This means that if an agent proposes 0.7 Acid to the anion, the anion will not consider this part of the offer, since it cannot project this to its' indifference curve. This means that the anion's new proposal will be the average as shown in the offer generation (\Cref{sec:des:offer}) for the acid, and the adjusted values to the other issues.
 \clearpage
 \subsection{The Solution Space}
-Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agents.
+Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agents. These solution spaces are dependent on the reservation value, and within these solution spaces lies the agreement-zone.
 \begin{figure}[h]
 	\makebox[\linewidth][c]{%
 	\centering
 	\begin{subfigure}[b]{0.7\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{img/reservationcurve_base_acid}
-		\caption{The solution space for the combination of acid and base. This is shown for the Neut and mixbed.}
+		\caption{The solution space for the combination of acid and base. This is shown for the Neut and Mixbed.}
 		\label{fig:solutionbaseacid}
 	\end{subfigure}
 	~
@@ -364,7 +363,7 @@ Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agen
 	\begin{subfigure}[b]{0.7\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{img/reservationcurve_water_base}
-		\caption{The solution space for the combination of base and water, which are negotiated over by the anion and the Mixbed agent.}
+		\caption{The solution space for the combination of base and water, which are negotiated over by the Anion and the Mixbed agent.}
 		\label{fig:solutionwaterbase}
 	\end{subfigure}
 
@@ -434,19 +433,19 @@ Afterwards, depending on the concession protocol, each agents' desired utility d
 			$t \leftarrow t+1$\;
 		}
 	}
-\caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to the four agents which are used in this usecase.}
+\caption{Basic algorithm structure modified from \citep{zheng2015automated}. Applied to the four agents which are used in this use case.}
 \label{al:algorithm1}
 \end{algorithm}
 \clearpage
 \section{Result Interpretation}
 \label{sec:design:mean}
-The outcome of the negotiation has to be translated to a value. We know the maximum production. Thus, 0.5 water means for example that 0.5 of the maximum water will be produced by the anion, cation and Mixbed. When an outcome of 0.7 for the acid is negotiated, this means that 0.7 of the possible acid has to be divided over the cation and Mixbed. We then devide this amount equally over the cation and Mixbed. However, if the Mixbed's water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
+The outcome of the negotiation has to be translated to a value. We know the maximum production. Thus, 0.5 water means for example that 0.5 of the maximum water will be produced by the anion, cation and Mixbed. When an outcome of 0.7 for the acid is negotiated, this means that 0.7 of the possible acid has to be divided over the cation and Mixbed. This amount is than divided equally over the cation and Mixbed. However, if the Mixbed's water $l$ is set to 10, it also requires 10 times as little base than the anion filter i.e..
 
 Thus, the allocation of the base to the anion and Mixbed is dependent on de water $l$. This is a fixed separation. Suppose that the group agree to 0.6 usage of base. If $l$ is set to $1$, we allocate as much base to the Mixbed as the anion (0.3 each). However, if $l$ is set to 10, this means that the Mixbed will receive 1/11th of the base while the anion receives 10/11th. 
 
 \section{Proof of Convergence}
 If there is a non-empty intersection of the agreement zone, the agents will find this.
-This has already proven in the Zeuthen strategy \citep{rosenschein1994rules}, which shows that no agreement is always worse than a bad agreement. In infinite time this will happen. \todo[Meer uitleg]{Meer uitleg}
+This has already proven in the Zeuthen strategy \citep{rosenschein1994rules}, which shows that no agreement is always worse than a bad agreement. In infinite time this will happen since each agent has an incentive to concede \citep{zheng2015automated}.
 
 Furthermore, we have shown that the projection gives us the point closest to the agreement-set of an agent. Since it was proven by \citet{zheng2015automated} that if $x$ is projected on to the agreement-set  ($P_A[x]$), this also can be said of the projection on the linear line with the method used. 
 

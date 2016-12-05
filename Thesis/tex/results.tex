@@ -59,11 +59,10 @@ When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:
 	\toprule
 	&	\multicolumn{2}{c}{Reactive concession}&\multicolumn{2}{c}{Non-reactive concession}\\
 	\cmidrule(r){2-3} 	
-%	\cmidrule(r){4-5}
+	\cmidrule(r){4-5}
 {{reservation utility}}	& {{distance}} & {{\# of rounds}}  & {{distance}} & {{\# of rounds}} \\ 
-\cmidrule(r){1} 
-%\cmidrule(r){2-3} 
-%\cmidrule(r){4-5}
+\cmidrule(r){1-1} 
+	\cmidrule(r){2-5}
 0.05&	0&				26&		0.0295631273025621&		23\\
 0.10&	0&				26&		0.0295631273025621&	 	23\\
 0.15&	0&				38&		0.0295631273025621&	 	23\\
@@ -77,7 +76,7 @@ When comparing the reactive to the non-reactive strategy, as shown in \Cref{fig:
 0.55&	1.16753472222222&199&	0.673260175537175 &		199\\
 0.60&	1.16753472222222&199&	0.780744817700835 &		199\\
 0.65&	1.16753472222222&199&	0.874525088634732 &		199\\
-\hline
+\bottomrule
 \end{tabular} 
 \caption{The distance in the final proposal and number of rounds of a simulation. As can be seen, the agents do not find an agreement when the reservation utility is 0.25 or larger when using the reactive concession strategy, while the non-reactive concession correctly find an agreement.}
 \label{tab:reactivevsnon-reactive}
@@ -106,10 +105,12 @@ In the table it is shown that when the only the Mixbed makes reactive concession
 \nprounddigits{4}
 \begin{table}[h]
 	\centering
-\begin{tabular}{|c|n{1}{4}|c|}
-	\hline 
+\begin{tabular}{c n{1}{4} c }
+	\toprule 
 	reservation utility	& {distance} & \# of rounds \\ 
-	\hline 
+	\cmidrule(r){1-1}
+	\cmidrule(r){2-3}
+	 
 	0.05&	0.0295631273025621	&23\\
 	0.10&	0.0295631273025621	&23\\
 	0.15&	0	&27\\
@@ -123,7 +124,7 @@ In the table it is shown that when the only the Mixbed makes reactive concession
 	0.55&	1.02930993557596	&199\\
 	0.60&	1.11322894186644	&199\\
 	0.65&	1.13049432160727	&199\\
-	\hline
+	\bottomrule
 \end{tabular} 
 \caption{The distance in the final proposal and number of rounds of a simulation. This is where only the Mixbed makes reactive concessions, and the other agents make non-reactive concessions. }
 \label{tab:reactivevsnon-reactivevsMixbedrea}
@@ -150,12 +151,14 @@ It is interesting to note that the new original end proposal is a lot nearer to 
 \nprounddigits{4}
 \begin{table}
 
-\begin{tabular}{|l|n{1}{4}|c|n{1}{4}|c|}
-	\hline 
-		&	\multicolumn{2}{|c|}{Reactive concession}&\multicolumn{2}{|c|}{Non-reactive concession}\\
-	\cline{2-5}
+\begin{tabular}{l n{1}{4} c n{1}{4} c}
+		\toprule
+		&	\multicolumn{2}{c}{Reactive concession}&\multicolumn{2}{c}{Non-reactive concession}\\
+		\cmidrule(r){2-3} 	
+		\cmidrule(r){4-5}
 	{{reservation utility}}	& {{distance}} & {{\# of rounds}}  & {{distance}} & {{\# of rounds}} \\ 
-	\hline 
+\cmidrule(r){1-1} 
+	\cmidrule(r){2-5}
 0.05 & 0                 & 26  & 0                  & 26  \\
 0.10 & 0                 & 30  & 0                  & 26  \\
 0.15 & 0                 & 43  & 0                  & 26  \\
@@ -169,7 +172,7 @@ It is interesting to note that the new original end proposal is a lot nearer to 
 0.55 & 1.23596954345703  & 199 & 0.862468304051885  & 199 \\
 0.60 & 1.23596954345703  & 199 & 0.926781060892920  & 199 \\
 0.65 & 1.23596954345703  & 199 & 0.985943062172507  & 199\\
-\hline
+\bottomrule
 \end{tabular}
 \label{tab:Mixbed2}
 \caption{Here Mixbed ratio is water 2:1:1. The minimum reservation utility is 0.301, meaning that the agreement-zone is non-empty for any value above. Using the non-reactive concession strategy, the agents find this solution, while with the reactive method not even a solution is found when the reservation utility is 0.20.}
@@ -192,12 +195,14 @@ When using a ratio of 10:1:1,  a maximal reservation curve of: $ru_i = 0.274$. T
 \nprounddigits{4}
 \begin{table}[h]
 	\centering
-\begin{tabular}{|l|n{1}{4}|c|n{1}{4}|c|}
-	\hline 
-	&	\multicolumn{2}{|c|}{Reactive concession}&\multicolumn{2}{|c|}{Non-reactive concession}\\
-\cline{2-5}
-{{reservation utility}}	& {{distance}} & {{\# of rounds}}  & {{distance}} & {{\# of rounds}} \\ 
-\hline 
+\begin{tabular}{l n{1}{4} c n{1}{4} c}
+	\toprule
+	&	\multicolumn{2}{c}{Reactive concession}&\multicolumn{2}{c}{Non-reactive concession}\\
+	\cmidrule(r){2-3} 	
+	\cmidrule(r){4-5}
+	{{reservation utility}}	& {{distance}} & {{\# of rounds}}  & {{distance}} & {{\# of rounds}} \\ 
+	\cmidrule(r){1-1} 
+	\cmidrule(r){2-5}
 0.05 & 0                & 34  & 0                  & 26  \\
 0.10  & 0                & 38  & 0                  & 30  \\
 0.15  & 0                & 59  & 0                  & 30  \\
@@ -211,7 +216,7 @@ When using a ratio of 10:1:1,  a maximal reservation curve of: $ru_i = 0.274$. T
 0.55  & 1.30000 & 199 & 0.868348999412338  & 199 \\
 0.60  & 1.30000 & 199 & 0.936024514848705  & 199 \\
 0.65  & 1.30000 & 199 & 0.998279954150336  & 199\\
-\hline
+\bottomrule
 \end{tabular}
 \label{tab:Mixbed10}
 \caption{The distance in the final proposal and number of rounds of a simulation. Here the Mixbed ratio is 10:1:1. }

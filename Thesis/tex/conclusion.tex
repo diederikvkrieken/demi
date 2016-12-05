@@ -10,9 +10,18 @@ The usage of private utility functions allows for competing companies to use aut
 \section{Discussion}
 Although the alternating offer protocol has been used, it is not usable at all yet in a real case. The largest difficulty lies in the realistic portrayal of the utility function. The requirement for a convex utility function makes it even more difficult. However, if only the non-reactive strategy was used, it should be possible to use a non-convex function.
 
-In the literaturethe concept of principled negotiation is discussed. Addressed is the importance of retaining a private utility function, but making it very important to create these utility functions to ensure objective negotiation. This we have achieved, and thus we can say that the negotiation in this thesis is a form of principled negotiation.
+In the literature the concept of principled negotiation is discussed. Addressed is the importance of retaining a private utility function, but making it very important to create these utility functions to ensure objective negotiation. This we have achieved, and thus we can say that the negotiation in this thesis is a form of principled negotiation.
 
 In the problem statement, the option of optimizing a production process using negotiation is discussed. It can be concluded that this has not fully been achieved. However, when looked at the implementation of multilateral multi-issue negotiation, without a mediator, and using a very simplified theoretical solution, this is achieved. 
+
+\todo[answer questions]{answer questions}
+
+How can energy and manufacturing companies use the AI concept of intelligent multi-agent systems (MAS) for the optimization of production process.
+
+The use case was not an optimal situation for the research. This due to the fact that the agents had no purpose to keep their utility private. This addition would have had more impact when looking at processes that require privacy.
+
+Example is the interaction between pedestrians, cars, public transport at an interjection. Future asks for 
+
 
 \subsection{Discussion of the Reactive Concession Strategy}
 
@@ -22,13 +31,13 @@ A difficulty is that no concession is seen if an agent concedes in a matter that
 
 A large flaw in the reactive concession strategy is that an agent can simply propose new offers on its utility curve without making a concession. The other agent can see this as a concession and make a concession. This results in uneven distributed concessions made. 
 
-\todo[answer questions]{answer questions}
+Take for example the Anion and Neut from the usecase. When the Neut looks at the concessions that the Anion does, he perceives an ``anti-concession'', since the Anion increases the Acid in the offer. 
 
-How can energy and manufacturing companies use the AI concept of intelligent multi-agent systems (MAS) for the optimization of production process.
+In the beginning the Anion proposes 0 acid and 1 base. The anion already proposes 0.5 acid. Since it takes the average of all acid proposals (both the Mixbed and Cation start with 1 acid), the Neut perceives a decrease in the offers made by the Anion. This while the Anion actually does concede by increasing the water offer and decreasing the base.
 
-The use case was not an optimal situation for the research. This due to the fact that the agents had no purpose to keep their utility private. This addition would have had more impact when looking at processes that require privacy.
+A possible solution is as follows:
+Since an agent's offer is equal to the weight of the proposals for issues it is indifferent about, the other agents can check. The agent knows the weight of the proposals and the offer of the agent. If the offer is equal to the weight for  
 
-Example is the interaction between pedestrians, cars, public transport at an interjection. Future asks for 
 
 \section{Further Research}
 To use negotiation in manufacturing more research should be conducted. 

@@ -92,10 +92,11 @@
 \contentsline {section}{\numberline {6.1}Conclusion}{71}{section.6.1}
 \contentsline {section}{\numberline {6.2}Discussion}{72}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Discussion of the Reactive Concession Strategy}{72}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Further Research}{73}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Holonic Agents}{73}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Utility function}{75}{subsection.6.3.2}
-\contentsline {subsubsection}{Reservation curve}{75}{section*.52}
-\contentsline {subsection}{\numberline {6.3.3}Continue negotiation after group agreement}{76}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Extra concession strategies}{76}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Heuristic learning methods}{76}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.3}Further Research}{75}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Holonic Agents}{75}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Collaboration }{76}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Utility function}{76}{subsection.6.3.3}
+\contentsline {subsubsection}{Reservation curve}{77}{section*.53}
+\contentsline {subsubsection}{Heuristic learning methods}{77}{section*.55}
+\contentsline {subsection}{\numberline {6.3.4}Continue negotiation after group agreement}{78}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Extra concession strategies}{78}{subsection.6.3.5}

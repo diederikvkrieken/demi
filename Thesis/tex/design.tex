@@ -375,7 +375,7 @@ Below the solution space for the agents is shown, when $ru_i = 0.3$ for all agen
 \section{Algorithm}
 The algorithm, which is programmed in Java, is implemented using different objects. This was originally described in \Cref{ch:literature} as the optimal way to implement agents. The model consists of 4 different agents, which in turn can either be an anion, cation, Mixbed or neut, each with their own characteristics.
 
-The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a non-reactive strategy is easily applied when changing \Cref{al:start} to $\text{if } true$.
+The algorithm starts with each agent proposing their preferred offer, which is the offer with their highest utility. After each agent proposes, the first agent starts with the generation of the offer. \Cref{al:algorithm1} shows the reactive concession strategy, but a non-reactive strategy is easily applied when changing \Cref{al:nonreactive} to $\text{if } true$.
 
 Afterwards, depending on the concession protocol, each agents' desired utility decreases, meaning that the proposal creeps towards the solution space as can be seen in \Cref{fig:searchforsolution}. 
 \begin{figure}[h]
@@ -403,10 +403,10 @@ Afterwards, depending on the concession protocol, each agents' desired utility d
 			\eIf{j == i}
 			{
 				%Agent $i$ concedes by determining $s_i(t)$\:
-				$\Delta u_{j0} = s^0_j(t)-s^0_j(t-1)$\;
+				$\Delta u_{j0} = s^0_j(t)-s^0_j(t-1)$\nllabel{al:start}\;
 				\ForEach{$k\in {1,2,3,4}$}
 				{
-					\eIf{$u_j(x^k_t) \geq ru_j$  \nllabel{al:start}}{
+					\eIf{$u_j(x^k_t) \geq ru_j$  \nllabel{al:nonreactive}}{
 						$\Delta u_{jk} \leftarrow \Delta u_{j0}(t) $\;
 					}{
 						$\Delta_1 u_{jk}(t) \leftarrow u_j(x^k_t)-u_j(x^k_{[j,-1]})$\;

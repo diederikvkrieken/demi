@@ -25,27 +25,64 @@ Example is the interaction between pedestrians, cars, public transport at an int
 
 \subsection{Discussion of the Reactive Concession Strategy}
 
-A difficulty is that no concession is seen if an agent concedes in a matter that the other agents have no desire in. So if, for example, the cation concedes in the amount of water to produce (which means that it will produce more water), this concession will not be ``seen'' by the Neut, since it has no desire in this utility. %This makes it a possible undesirable method for the other agents, or .
+A difficulty is that no concession is seen if an agent concedes in a matter that the other agents have no desire in. So if, for example, the Anion concedes in the amount of water to produce (which means that it will produce more water), this concession will not be ``seen'' by the Neut, since it has no desire in this utility. 
+
+Even worse is the opposite, an agent can perceive that an agent wants an higher utility than initially. %This makes it a possible undesirable method for the other agents, or .
 
 \todo[reactive concession stopping]{Where an agent stops conceding in reaction to another stopping to concede.}
 
-A large flaw in the reactive concession strategy is that an agent can simply propose new offers on its utility curve without making a concession. The other agent can see this as a concession and make a concession. This results in uneven distributed concessions made. 
+%A large flaw in the reactive concession strategy is that an agent can simply propose new offers on its utility curve without making a concession. The other agent can see this as a concession and make a concession. This results in uneven distributed concessions made. 
 
 Take for example the Anion and Neut from the usecase. When the Neut looks at the concessions that the Anion does, he perceives an ``anti-concession'', since the Anion increases the Acid in the offer. 
 
-In the beginning the Anion proposes 0 acid and 1 base. The anion already proposes 0.5 acid. Since it takes the average of all acid proposals (both the Mixbed and Cation start with 1 acid), the Neut perceives a decrease in the offers made by the Anion. This while the Anion actually does concede by increasing the water offer and decreasing the base.
+In the beginning the Anion proposes 0 acid and 1 base. In the first round the Anion already proposes 0.5 acid. Since it takes the average of all acid proposals (both the Mixbed and Cation start with 1 acid), the weight of the Acid proposal is 0.5. This is the value that the Anion will propose, and the Neut perceives a decrease in the offer made by the Anion. This while the Anion actually does concede by increasing the water offer and decreasing the base.
 
 A possible solution is as follows:
-Since an agent's offer is equal to the weight of the proposals for issues it is indifferent about, the other agents can check. The agent knows the weight of the proposals and the offer of the agent. If the offer is equal to the weight for  
+Since an agent's offer is equal to the weight of the proposals for issues it is indifferent about, the other agents can check. The agent knows the weight of the proposals and the offer of the agent. If the offer is equal to the weight for an issue, the proposal will be equal to the offer. This means that the agent that has proposed is indifferent for an issue. 
 
+There are two situations where the proposal is equal to the weight for an issue. Either the agent is indifferent for that issue, and does not project it onto its indifference curve, or the weight is above the agents' indifference curve. Meaning that an agreement to the proposal is made.
 
+If an agent is indifferent to the issue, the other agent must ignore the proposal the agent has done on the issue when looking at the concession. This can be done be setting the proposed value to the agents proposal at initiation.
+
+From this it is possible to update the reactive concession strategy as shown in \Cref{al:algorithm2}. For clarification, we notate an issue $l$ within $x$ as $a_l\in x$ instead of the notation $x_j \in x$ as described in \Cref{sec:design:negmod}. An attempt to keep the algorithm as similar as possible to the original is attempted, since converge was already proven.
+
+The weight is commonly known, since it is the average of all proposals, and thus the average value of each issue is also known. This is notated as $w_l \in w_t$.  
+ 
+\begin{algorithm}[h]
+$\Delta u_{j0} = s^0_j(t)-s^0_j(t-1)$\nllabel{al:start2}\;
+\ForEach{$k\in {1,2,3,4}$}
+{
+	\eIf{$u_j(x^k_t) \geq ru_j$  \nllabel{al:nonreactive2}}{
+		$\Delta u_{jk} \leftarrow \Delta u_{j0}(t) $\;
+	}{
+		\ForEach{$a_l \in x^k_t$}{
+			\eIf{$a_l == w_l$}{
+				Issue is indifferent for agent $k$\;
+				Set to agent's initial value\;
+				$z^k_l  =  x^k_0$\;
+			}{
+				Issue is important for agent $k$\;
+				$z^k_l = x^k_t$\;
+			}
+		}
+		$\Delta_1 u_{jk}(t) \leftarrow u_j(z^k)-u_j(x^k_{[j,-1]})$\;
+		$\Delta_2 u_{jk}(t) \leftarrow u_j(z^k)-u_j(x^k_0)-(1-u_j(x^j_{t-1}))$\;
+		$\Delta u_{jk} \leftarrow \max \{\Delta_1u_{jk}(t), \Delta_2u_{j
+			k}(t),0\}$\;
+	}
+	$\Delta u_j(t)\leftarrow \min \{\displaystyle \min_{k\in 1, 2, 3, 4}\Delta u_{jk}(t), \Delta u_{j0}(t)\}$ \nllabel{al:end2}\;	
+}
+Agent $i$ concedes by determining $s_i(t)\leftarrow s_i(t-1)-\Delta u_j(t)$\;
+\caption{Updated reactive concession strategy of \Cref{al:algorithm1} on \cpageref{al:algorithm1}. By checking whether the issue is indifferent for the agent, the appropiate concession is seen.}
+\label{al:algorithm2}
+\end{algorithm}
+\clearpage
 \section{Further Research}
-To use negotiation in manufacturing more research should be conducted. 
-A lot of further research could be done on the alternating offer protocol to be used in manufacturing world. The agents could be improved to allow reasoning, using a holonic structure for example. Furthermore, other strategies can be used, while the utility functions can be changed as well. Extra negotiation could be applied using bilateral negotiations, and to finalize heuristic learning methods can be applied.
+As discussed, more research has to be conducted before negotiation can commonly be used in production and manufacturing. Some further research subjects are discussed here. Especially a lot of further research could be done on the alternating offer protocol to be able to use this method in manufacturing. Another option is that the agents could be improved to allow reasoning, using a holonic structure for example. Furthermore, other strategies can be used, while the utility functions can be changed as well. Also possible is the implementation of coalitions. Extra negotiation could be applied using bilateral negotiations, and to finalize heuristic learning methods can be applied.
 
 \subsection{Holonic Agents}
 
-The structure of a holonic agent is that of a holon as can be seen in \Cref{fig:holonexample}. As shown in the literature (\Cref{ch:literature}) it is based on PROSA by \citep{van1998reference}. Idealy this could be implemented in this usecase to make use of the different parts of the anion filter.
+The structure of a holonic agent is that of a holon as can be seen in \Cref{fig:holonexample}. As shown in the literature (\Cref{ch:literature}), it is based on PROSA by \citep{van1998reference}. Ideally this could be implemented in this usecase to make use of the different parts of the anion filter.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/holon_example}
@@ -53,7 +90,7 @@ The structure of a holonic agent is that of a holon as can be seen in \Cref{fig:
 	\label{fig:holonexample}
 \end{figure}
 
-
+The sub-agents of the Anion would consist of the different filters, as where originally shown in \Cref{sec:demi}. A consequence of the simplification made in this research, is that an assumption is made that the Anion can clean (receive base) and produce (make water) at the same time. This however is not always possible, since this depends on the current state of the filter. 
 \begin{figure}[h]
 	
 	\centering
@@ -75,7 +112,7 @@ The structure of a holonic agent is that of a holon as can be seen in \Cref{fig:
 	
 \end{figure}
 
-The following facts and rules would then be part of the Anion, meaning that a beginning towards a representation of Beliefs, desires, and intentions, in the agent can be made \citep{rao1995bdi}.
+The following facts and rules would then be part of the Anion, meaning that a beginning towards a representation of Beliefs, desires, and intentions, (BDI) in the agent can be made \citep{rao1995bdi}.
 
 \begin{enumerate}
 	\item
@@ -97,12 +134,14 @@ The following facts and rules would then be part of the Anion, meaning that a be
 	Currently $w$ amount of base being used for cleaning
 \end{enumerate}
 
-The use of these holons could allow an agent to reason about the environment, and act upon it accordingly.
+The use of these holons would allow an agent to reason about the environment, and act upon it accordingly.
+
+\subsection{Collaboration }
 
 \subsection{Utility function}
 The requirement of a convex function forced the use of a specific and highly theoretical function. This could be perfected using more expert input. Although an attempt was made, using a variable in the Mixbed ratio, this of course still is a highly theoretical and unrealistic representation.
 \subsubsection{Reservation curve}
-We have used a linear reservation curve for simplicity, since this eliminated the minimization (mixed integer programming) that would have been necessary if a truly curved function was used. An example is shown in \Cref{fig:anionreservationfunction}.
+A linear reservation curve was used for simplicity, since this eliminated the minimization (mixed integer programming) that would have been necessary if a truly curved function was used. An example is shown in \Cref{fig:anionreservationfunction}. 
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[domain=0.15:4]
@@ -112,16 +151,21 @@ We have used a linear reservation curve for simplicity, since this eliminated th
 	\draw[color=black] plot (\x,{0.07*exp(\x)}) node[left] {$R_A$};
 	\end{tikzpicture}
 	\label{fig:anionreservationfunction}
-	\caption{The reservation function for the Anion filter: the more water is filtered and given, the more base it requires.}
+	\caption{A more realistic reservation curve for the Anion filter: if more water is filtered and given, the more base it requires.}
 \end{figure}
+\subsubsection{Heuristic learning methods}
+As shown in \Cref{sec:lit:learn}, heuristic learning methods can also be used to learn the desired utility function. This has not been done since the requirement of a convex utility function forced the usage of predefined functions.
+
+It would be very interesting to see how learning could be implemented in combination with the reactive concession strategy. Would there still be an incentive to concede if the agents learn that if other agents concede they can obtain their optimum? Or do the agents learn that without concession, no solution is found?
+
+
 \clearpage
 \subsection{Continue negotiation after group agreement}
 After the group has an agreement, the agents now allocate the resource as predefined (see \Cref{sec:design:mean}). This could be optimized to bilateral negotiation between the agents. Take the Mixbed and Anion for example: if the group agrees to an allocation of 0.5 base, the Mixbed and anion can further negotiate how much of this 0.5 should be allocated to whom. This new bilateral negotiation is simpler, and due to the fact that it only contains a single issue, allows for quick determination.
 
 \subsection{Extra concession strategies}
-The many concession strategies, as shown in \Cref{sec:concessionstrat} allow for many strategies to be used. Further research could include using fraction, which was suggested as a good solution by \citet{wu2009efficient}. 
-\subsection{Heuristic learning methods}
-As shown in \Cref{sec:lit:learn}, heuristic learning methods can also be used to learn the desired utility function. This has not been done since the requirement of a convex utility functions forced the usage of predefined functions.
+The many concession strategies, as shown in \Cref{sec:concessionstrat} allow for other strategies to be used. Further research could include using the utilities as discribed there, and compared to each other. Especially the \textit{fraction of utility} method should be considered, which was suggested as another good solution by \citet{wu2009efficient}. 
+
 \todo[Belangrijke beter uitleggen dan anderen]{Belangrijke beter uitleggen dan anderen}
 
 \todo[Agent Coalities]{Agent Coalities}

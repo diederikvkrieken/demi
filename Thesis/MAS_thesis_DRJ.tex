@@ -25,7 +25,31 @@
 \usepackage{graphicx}
 \usepackage{refcheck}
 \usepackage{booktabs}
+\usepackage{mdframed}
 
+\mdfdefinestyle{mystyle}{
+	linecolor=blue!30!black,
+	linewidth=1pt,%
+	frametitlerule=true,%
+	backgroundcolor=gray!10,
+	innertopmargin=\topskip,
+}
+
+\mdfdefinestyle{theoremstyle}{%
+	linecolor=blue!70!black,linewidth=1pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=gray!20,
+	innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{definition}{Definition}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{intersections}
+
+\pgfdeclarelayer{bg}
+\pgfsetlayers{bg,main}
 \usepackage[round]{natbib} % 'round' voor ronde haken, % 'longnamesfirst' voor vermelden van alle auteurs (1e referentie)
 %
 %\ifx\pdfoutput\undefined

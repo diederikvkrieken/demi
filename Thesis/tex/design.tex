@@ -61,6 +61,31 @@ Each of the above issues is translated to a unit interval $[0, 1]$ in $\mathbb{R
 
 The utility function for each agent $u_i(x)$ is convex, as described in \Cref{sec:convex}, and normalized between $[0, 1]^3$. Each agent has a reservation utility $ru_i$. Any offer below this reservation utility is unacceptable. This means that the set of feasible offers, or the agreement-zone, is $A = \{ x\in [0,1]^3 \mid u_i(x)\geq ru_i\}$. Since the function is convex, $A$ is also convex. The solution, if it exists, lies in the intersection of feasible offers, $\mathbb{Z} \cap^M_{i=1}A^i$.
 
+
+%\begin{mdframed}[style=mystyle]
+	\begin{definition*}[Convexity]
+	\label{sec:convex}
+	A convex set is a region such that if one where to connect two points in this set by a straight line segment, each point on that line segment is also within that set. Or formally: $C$ is a convex set if the line segment between any two points in $C$ lies in $C$, i.e., if for any $x_1, x_2 \in C$ and any $\theta$ with $0 \leq \theta \leq 1$, we have $\theta x_1 + (1 - \theta )x_2 \in C$.
+	
+	{\centering
+	\includegraphics[width=0.7\linewidth]{img/convex}\par}
+	
+	This can be clearly seen in the figure above. Two sets. The left is convex, while the right, kidney shaped is not, as indicated with the line outside the set. From \citep{boyd2004convex}
+	
+	The boundary of a convex set is always a convex curve. A function is called a convex function if the set of points on or above the graph of the function is a convex set. Well-known examples of convex functions are the quadratic function $x^{2}$ and the exponential function $e^{x} $for any real number $x$.
+	
+%	\begin{figure}[h]
+%		\centering
+		
+%		\caption{}
+%		\label{fig:convex}
+%	\end{figure}
+	
+	
+	Convex functions play an important role in multiple areas of mathematics. They are especially important in optimization problems since they have some convenient properties. For instance, a convex function has no more than one minimum. Even in n-dimensional spaces convex functions continue to be convex. Furthermore, convex functions are optimal when dealing with multiple convex sets, since the intersect will always be convex as well meaning that the properties of the new sets will contain the same properties  \citep{boyd2004convex}. 
+	
+\end{definition*}
+
 The protocol used is that of the alternating offers protocol, based on \citep{rubinstein1982perfect} as described in \Cref{sec:negotiation}. The agents will propose in a fixed sequence, where the new offer is based on all previous offers given in the previous round. If all agents accept a current offer, the negotiation ends. The overall protocol is based on \citep{zheng2015automated}. 
 	%The protocol is based on the method as proposed by \citet{wu2009efficient}. Here an multilateral multi-issue method for negotiation about the allocation of resources is given. 
 
